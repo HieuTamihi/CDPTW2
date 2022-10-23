@@ -1,0 +1,69 @@
+$border : 1px solid gray;
+$bd : 1px solid white;
+$col : #000;
+$mg_left : 25px;
+
+.content {
+    margin-top: 20px;
+
+    .content__post {
+        padding: 20px 20px;
+        border: $border;
+
+        h3 {
+            text-align: center;
+        }
+
+        label {
+            font-size: 15px;
+            font-weight: 700;
+            color: $col;
+        }
+
+        .content__post__title {
+            margin-left: calc($mg_left + 40px);
+        }
+
+        .content__post__exp {
+            margin-left: calc($mg_left - 4px);
+        }
+
+        .content__post__type {
+            margin-left: calc($mg_left + 40px);
+        }
+
+        .content__post__skill {
+            margin-left: calc($mg_left + 45px);
+        }
+
+        .content__post__salary {
+            margin-left: calc($mg_left + 30px);
+        }
+
+        .content__post__require {
+            margin-left: calc($mg_left + 20px);
+        }
+    }
+
+    .content__recruitment_list {
+        margin-top: 20px;
+
+        h2 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th,
+        td {
+            text-align: center;
+            border: $bd;
+            padding: 10px 10px;
+            i {
+                margin: 0 5px;
+            }
+        }
+    }
+}

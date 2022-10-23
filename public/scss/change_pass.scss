@@ -1,0 +1,61 @@
+//variable
+$bg_btn_change: #0066ff;
+$bg_input: #bfbfbf;
+
+.change__pass {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 80px;
+    margin-top: 25px;
+    border: 1px solid #000;
+}
+
+.title__page {
+    margin-bottom: 20px;
+}
+
+.type__confirm,
+.type__pass,
+.type__email {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid $bg_input;
+    background: $bg_input;
+    color: #fff;
+}
+
+.input__email,
+.input__pass,
+.input__confirm {
+    margin-top: 10px;
+}
+
+.input__email label,
+.input__pass label,
+.input__confirm label {
+    float: left;
+}
+
+.change__btn {
+    width: 100%;
+    margin-top: 15px;
+    color: #fff;
+    background: $bg_btn_change;
+}
+
+.change__btn:hover {
+    color: $bg_btn_change;
+    background: #fff;
+    border: 1px solid $bg_btn_change;
+}
+
+//responsive
+@media only screen and (max-width: 1080px) {
+    .change__pass {
+        width: 90%;
+        padding: 20px 40px;
+    }
+}

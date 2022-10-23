@@ -1,0 +1,45 @@
+.content_company {
+  width: 60%;
+  padding: 100px 20px 40px 25px;
+}
+
+.content_company button {
+  float: right;
+}
+
+.content_company .content_company__detail label {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.content_company .content_company__detail input {
+  width: 50%;
+}
+
+.content_company .content_company__detail img {
+  width: 15%;
+  transform: translateX(100px);
+  margin-top: 10px;
+}
+
+.content_company .content_company__detail .content_company__name {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.content_company .content_company__detail .content_company__address {
+  margin-left: 85px;
+  margin-top: 10px;
+}
+
+.content_company .content_company__detail .content_company__email {
+  margin-left: 110px;
+  margin-top: 10px;
+}
+
+.content_company .content_company__detail .content_company__phone {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+/*# sourceMappingURL=company_infor.css.map */

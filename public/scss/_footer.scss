@@ -1,0 +1,40 @@
+@import "variable";
+
+.footer {
+    padding-top: 22px;
+    background-color: $backgroundFooter;
+
+    // font-size: 14px;
+    ul {
+        padding-left: 0;
+        list-style-type: none;
+    }
+
+    li {
+        padding-top: 6px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+            color: $colorMain;
+        }
+    }
+
+    h6 {
+        padding-top: 10px;
+    }
+
+    .footer__adresse {
+        img {
+            width: 150px;
+            height: 30px;
+        }
+    }
+
+    .footer__footer {
+        padding-left: 150px;
+    }
+}

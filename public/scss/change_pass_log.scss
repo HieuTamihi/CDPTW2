@@ -1,0 +1,123 @@
+//variable
+$bg_btn_change: #0066ff;
+$btn_eye: #0066ff;
+$bg_input: #bfbfbf;
+
+.change__pass {
+    padding-top: 25px;
+}
+
+.input__old__pass,
+.input__new__pass,
+.input__confirm {
+    display: flex;
+    padding-top: 20px;
+    position: relative;
+}
+
+.lb__old__pass label {
+    margin-right: 92px;
+    font-weight: bold;
+}
+
+.lb__new__pass label {
+    margin-right: 84px;
+    font-weight: bold;
+}
+
+.lb__confirm label {
+    margin-right: 21px;
+    font-weight: bold;
+}
+
+.form__change .fa-eye {
+    position: absolute;
+    left: 395px;
+    top: 28px;
+    color: $btn_eye;
+    cursor: pointer;
+}
+
+.form__change .fa-eye-slash {
+    position: absolute;
+    top: 28px;
+    left: 395px;
+    display: none;
+    color: $btn_eye;
+}
+
+.input__old__pass input,
+.input__new__pass input,
+.input__confirm input {
+    border-radius: 5px;
+    border: 1px solid $bg_input;
+}
+
+.confirm__btn {
+    margin-left: 282px;
+    color: white;
+    background-color: $bg_btn_change;
+    margin-top: 10px;
+}
+
+.confirm__btn:hover {
+    color: $bg_btn_change;
+    background-color: white;
+    border: 1px solid $bg_btn_change;
+}
+
+//responsive
+@media only screen and (max-width: 400px) {
+
+    .input__old__pass,
+    .input__new__pass,
+    .input__confirm {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input__old__pass input,
+    .input__new__pass input,
+    .input__confirm input {
+        width: 100%;
+    }
+
+    .form__change .fa-eye {
+        position: absolute;
+        left: 300px;
+        top: 28px;
+        color: #0066ff;
+        cursor: pointer;
+    }
+
+    .form__change .fa-eye-slash {
+        position: absolute;
+        left: 300px;
+        top: 28px;
+        color: #0066ff;
+        cursor: pointer;
+    }
+
+    .confirm__btn {
+        display: block;
+        margin: 0 auto;
+        margin-top: 15px;
+    }
+}
+@media only screen and (max-width: 340px) {
+    .form__change .fa-eye {
+        position: absolute;
+        left: 180px;
+        top: 28px;
+        color: #0066ff;
+        cursor: pointer;
+    }
+
+    .form__change .fa-eye-slash {
+        position: absolute;
+        left: 180px;
+        top: 28px;
+        color: #0066ff;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,56 @@
+$width_img: 100%;
+$height_img: 50%;
+$a: none;
+$textcolor: #d34229;
+
+.tracking__work {
+    padding-top: 25px;
+}
+
+.title__tracking h3 {
+    margin-bottom: 15px;
+    color: $textcolor;
+}
+
+.tracking__work {
+    &__status {
+        border: 1px solid $textcolor;
+        text-align: center;
+        color: $textcolor;
+        font-weight: bold;
+    }
+}
+.tracking__work__status a:hover{
+    color: $textcolor;
+}
+
+.tracking__work .row .col-md-4{
+    margin-top: 15px;
+}
+
+.item__company {
+    border: 1px solid #ccc;
+    padding: 10px;
+
+    &__logo__img {
+        width: $width_img;
+        height: $height_img;
+    }
+}
+
+.title__item__company a {
+    color: black;
+}
+
+.price__item__company {
+    display: flex;
+    justify-content: space-between;
+}
+.price__item__company a:hover{
+    color: $textcolor;
+}
+
+a {
+    text-decoration: $a;
+    color: $textcolor;
+}

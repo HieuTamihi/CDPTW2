@@ -1,0 +1,58 @@
+.jobposting {
+  margin-top: 100px;
+}
+
+.table_list_jobposting {
+  position: relative;
+  text-align: center;
+}
+
+.table_list_jobposting button {
+  position: absolute;
+  background: #2cccff;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  right: 0;
+  top: 0;
+}
+
+.table_list_jobposting table {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+}
+
+.table_list_jobposting .title {
+  width: 12%;
+}
+
+.table_list_jobposting .experience {
+  width: 9%;
+}
+
+.table_list_jobposting .type {
+  width: 8%;
+}
+
+.table_list_jobposting .skill {
+  width: 15%;
+}
+
+.table_list_jobposting .require {
+  width: 44%;
+}
+
+.table_list_jobposting .action {
+  width: 15%;
+}
+
+.table_list_jobposting th {
+  border: 1px solid black;
+}
+
+.table_list_jobposting td {
+  border: 1px solid black;
+}
+
+/*# sourceMappingURL=_jobposting.css.map */

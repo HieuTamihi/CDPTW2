@@ -1,0 +1,46 @@
+$m_top : 10px;
+
+.content_company {
+    width: 60%;
+    padding: 20px 20px 40px 25px;
+    button{
+        float: right;
+    }
+    .content_company__detail {
+        label {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        input {
+            width: 50%;
+        }
+
+        img {
+            width: 15%;
+            transform: translateX(100px);
+            margin-top: $m_top;
+        }
+
+        .content_company__name {
+            margin-left: 10px;
+            margin-top: $m_top;
+        }
+
+        .content_company__address {
+            margin-left: 85px;
+            margin-top: $m_top;
+        }
+
+        .content_company__email {
+            margin-left: 110px;
+            margin-top: $m_top;
+        }
+
+        .content_company__phone {
+            margin-left: 20px;
+            margin-top: $m_top;
+        }
+    }
+    
+}

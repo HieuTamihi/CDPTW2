@@ -1,0 +1,57 @@
+.form__createcv {
+    max-width: 600px;
+    width: 100%;
+    background-color: #f2f2f2;
+    margin: 20px auto;
+    padding: 30px;
+    .attention {
+        font-size: 13px;
+        font-style: italic;
+        line-height: 2;
+    }
+    .title {
+        font-size: 26px;
+        font-weight: bold;
+    }
+    .resume_form {
+        .input__field {
+            margin-bottom: 20px;
+            label {
+                width: 200px;
+                font-weight: bold;
+                font-size: 16px;
+            }
+            .input__input {
+                width: 330px;
+                outline: none;
+                height: 48px;
+                &:focus {
+                    border: 1px solid #d34127;
+                }
+            }
+        }
+        .input__gender {
+            margin-bottom: 30px;
+            .btn-outline-danger {
+                accent-color: #d34127;
+                border: 1px solid #d9d9d9;
+                color: black;
+                &:hover {
+                    color: white;
+                }
+            }
+            .label__gender {
+                width: 200px;
+                font-weight: bold;
+                font-size: 16px;
+            }
+        }
+        .input__button {
+            padding-left: 270px;
+            input {
+                width: 130px;
+                height: 45px;
+            }
+        }
+    }
+}

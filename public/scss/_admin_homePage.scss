@@ -1,0 +1,111 @@
+.slidebar {
+    width: 15%;
+    background-color: #343a40;
+    position: fixed;
+    color: $textColorAdmin;
+    height: 100%;
+    .slidebar__brand {
+        margin: 16px 30px;
+        i {
+            padding-right: 12px;
+        }
+    }
+    .account__admin {
+        font-size: 16px;
+        border-top: 1px solid $textColorAdmin;
+        border-bottom: 1px solid $textColorAdmin;
+        a {
+            padding: 16px 32px;
+            display: block;
+            color: $textColorAdmin;
+            text-decoration: none;
+            i {
+                padding-right: 16px;
+            }
+        }
+    }
+    .slidebar__menu {
+        // padding: 0 20px;
+        li {
+            margin-left: -43px;
+            padding-left: 42px;
+            font-size: 16px;
+            &:hover {
+                background-color: #52575c;
+            }
+            a {
+                display: block;
+                color: $textColorAdmin;
+                text-decoration: none;
+                padding: 16px 0;
+                margin-left: -43px;
+                padding-left: 42px;
+                &:focus {
+                    background-color: #f4f6f9;
+                    color: #343a40;
+                }
+            }
+            i {
+                padding-right: 16px;
+            }
+        }
+    }
+}
+.main__content {
+    width: 85%;
+    float: right;
+
+    // background-color: aqua;
+    .main__header {
+        position: fixed;
+        background-color: white;
+        box-shadow: 5px 10px 20px#e9e4e4;
+        width: 100%;
+        .top__header {
+            float: left;
+            width: 33%;
+            padding-top: 18px;
+            padding-bottom: 12px;
+            i {
+                padding-right: 10px;
+            }
+            .top__header--search {
+                background-color: #f2f4f6;
+                border: none;
+                border-radius: 6px;
+                text-indent: 6px;
+            }
+            .top__header--search ~ i {
+                padding-left: 6px;
+            }
+            h2 {
+                margin-left: 20px;
+                font-size: 24px;
+            }
+            ul {
+                li {
+                    float: left;
+                    padding-right: 20px;
+                    i {
+                        color: #343a40;
+                    }
+                }
+            }
+        }
+    }
+    // body
+    .body {
+        margin: 100px 14px;
+        .manager__user {
+            h4 {
+                padding-left: 6px;
+            }
+            .table-striped {
+                a {
+                    text-decoration: none;
+                    // padding-left: 10px;
+                }
+            }
+        }
+    }
+}

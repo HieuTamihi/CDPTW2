@@ -1,0 +1,23 @@
+.input__field {
+    padding-top: 20px;
+    .input__input {
+        border: none;
+        border-bottom: 1px solid #dfdfdf;
+        width: 100%;
+        font-size: 14px;
+    }
+    label {
+        width: 200px;
+        font-size: 14px;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+}
+.modal-content {
+    .createCV {
+        padding-left: 18px;
+        a {
+            text-decoration: none;
+        }
+    }
+}

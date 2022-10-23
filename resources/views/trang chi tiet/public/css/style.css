@@ -1,0 +1,510 @@
+ul {
+  list-style-type: none;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+}
+
+.topHeader .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.topHeader .topHeader__menu--logo {
+  padding-top: 10px;
+}
+
+.topHeader .topHeader__menu--logo img {
+  width: 150px;
+  height: 30px;
+}
+
+.topHeader .topHeader__menu--contact {
+  display: flex;
+}
+
+.topHeader .topHeader__menu--contact ul {
+  padding-top: 10px;
+}
+
+.topHeader .topHeader__menu--contact ul li {
+  display: inline-block;
+  margin: 0 8px;
+  position: relative;
+}
+
+.topHeader .topHeader__menu--contact ul li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-left: 1px solid black;
+  height: 14px;
+  right: -9px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.topHeader .topHeader__menu--contact ul li a {
+  text-decoration: none;
+  font-size: 14px;
+  color: black;
+}
+
+.topHeader .topHeader__menu--contact ul li a:hover {
+  color: #d34127;
+}
+
+.topHeader .topHeader__menu--contact ul li a i {
+  margin: 0 6px;
+}
+
+.header {
+  background-color: #222831;
+}
+
+.header .header__left {
+  padding: 0;
+}
+
+.header .header__left .navbar-toggler-icon {
+  color: white;
+}
+
+.header .header__left li {
+  margin-right: 40px;
+}
+
+.header .header__left li a {
+  color: white !important;
+}
+
+.header .header__left li a:hover {
+  color: #d34127 !important;
+}
+
+.header .header__right {
+  margin-right: -6px;
+}
+
+.header .header__right ul {
+  padding-top: 14px;
+  display: flex;
+}
+
+.header .header__right ul li {
+  display: inline-block;
+  margin: 0 8px;
+  position: relative;
+  background-color: #d34127;
+}
+
+.header .header__right ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+.header .header__right .header__right--logemp {
+  width: 150px;
+  height: 36px;
+  padding-top: 4px;
+}
+
+.header .header__right .header__right--logcus {
+  border: 2px solid white;
+  width: 120px;
+  height: 36px;
+  padding-top: 4px;
+}
+
+.header .header__right .header__right--logcus:hover {
+  color: #d34127;
+  border-color: #d34127;
+}
+
+.search {
+  position: relative;
+  margin: 20px 0;
+}
+
+.search .fa-sharp {
+  position: absolute;
+  top: 18px;
+  left: 26px;
+}
+
+.search .search__input {
+  height: 50px;
+  border: 2px solid #d34127;
+  text-indent: 30px;
+}
+
+.search .search__btn {
+  position: absolute;
+  right: 14px;
+  height: 50px;
+  width: 120px;
+  top: 0;
+}
+
+.footer {
+  padding-top: 22px;
+  background-color: #efefef;
+}
+
+.footer ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.footer li {
+  padding-top: 6px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer a:hover {
+  color: #d34127;
+}
+
+.footer h6 {
+  padding-top: 10px;
+}
+
+.footer .footer__adresse img {
+  width: 150px;
+  height: 30px;
+}
+
+.footer .footer__footer {
+  padding-left: 150px;
+}
+
+.form__createcv {
+  max-width: 600px;
+  width: 100%;
+  background-color: #f2f2f2;
+  margin: 20px auto;
+  padding: 30px;
+}
+
+.form__createcv .attention {
+  font-size: 13px;
+  font-style: italic;
+  line-height: 2;
+}
+
+.form__createcv .title {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.form__createcv .resume_form .input__field {
+  margin-bottom: 20px;
+}
+
+.form__createcv .resume_form .input__field label {
+  width: 200px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.form__createcv .resume_form .input__field .input__input {
+  width: 330px;
+  outline: none;
+  height: 48px;
+}
+
+.form__createcv .resume_form .input__field .input__input:focus {
+  border: 1px solid #d34127;
+}
+
+.form__createcv .resume_form .input__gender {
+  margin-bottom: 30px;
+}
+
+.form__createcv .resume_form .input__gender .btn-outline-danger {
+  accent-color: #d34127;
+  border: 1px solid #d9d9d9;
+  color: black;
+}
+
+.form__createcv .resume_form .input__gender .btn-outline-danger:hover {
+  color: white;
+}
+
+.form__createcv .resume_form .input__gender .label__gender {
+  width: 200px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.form__createcv .resume_form .input__button {
+  padding-left: 270px;
+}
+
+.form__createcv .resume_form .input__button input {
+  width: 130px;
+  height: 45px;
+}
+
+.slidebar {
+  width: 15%;
+  background-color: #343a40;
+  position: fixed;
+  color: #c2c7d0;
+  height: 100%;
+}
+
+.slidebar .slidebar__brand {
+  margin: 16px 30px;
+}
+
+.slidebar .slidebar__brand i {
+  padding-right: 12px;
+}
+
+.slidebar .account__admin {
+  font-size: 16px;
+  border-top: 1px solid #c2c7d0;
+  border-bottom: 1px solid #c2c7d0;
+}
+
+.slidebar .account__admin a {
+  padding: 16px 32px;
+  display: block;
+  color: #c2c7d0;
+  text-decoration: none;
+}
+
+.slidebar .account__admin a i {
+  padding-right: 16px;
+}
+
+.slidebar .slidebar__menu li {
+  margin-left: -43px;
+  padding-left: 42px;
+  font-size: 16px;
+}
+
+.slidebar .slidebar__menu li:hover {
+  background-color: #52575c;
+}
+
+.slidebar .slidebar__menu li a {
+  display: block;
+  color: #c2c7d0;
+  text-decoration: none;
+  padding: 16px 0;
+  margin-left: -43px;
+  padding-left: 42px;
+}
+
+.slidebar .slidebar__menu li a:focus {
+  background-color: #f4f6f9;
+  color: #343a40;
+}
+
+.slidebar .slidebar__menu li i {
+  padding-right: 16px;
+}
+
+.main__content {
+  width: 85%;
+  float: right;
+}
+
+.main__content .main__header {
+  position: fixed;
+  background-color: white;
+  box-shadow: 5px 10px 20px #e9e4e4;
+  width: 100%;
+}
+
+.main__content .main__header .top__header {
+  float: left;
+  width: 33%;
+  padding-top: 18px;
+  padding-bottom: 12px;
+}
+
+.main__content .main__header .top__header i {
+  padding-right: 10px;
+}
+
+.main__content .main__header .top__header .top__header--search {
+  background-color: #f2f4f6;
+  border: none;
+  border-radius: 6px;
+  text-indent: 6px;
+}
+
+.main__content .main__header .top__header .top__header--search~i {
+  padding-left: 6px;
+}
+
+.main__content .main__header .top__header h2 {
+  margin-left: 20px;
+  font-size: 24px;
+}
+
+.main__content .main__header .top__header ul li {
+  float: left;
+  padding-right: 20px;
+}
+
+.main__content .main__header .top__header ul li i {
+  color: #343a40;
+}
+
+.main__content .body {
+  margin: 100px 14px;
+}
+
+.main__content .body .manager__user h4 {
+  padding-left: 6px;
+}
+
+.main__content .body .manager__user .table-striped a {
+  text-decoration: none;
+}
+
+.input__field {
+  padding-top: 20px;
+}
+
+.input__field .input__input {
+  border: none;
+  border-bottom: 1px solid #dfdfdf;
+  width: 100%;
+  font-size: 14px;
+}
+
+.input__field label {
+  width: 200px;
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.modal-content .createCV {
+  padding-left: 18px;
+}
+
+.modal-content .createCV a {
+  text-decoration: none;
+}
+
+.detail__body {
+  padding-top: 20px;
+}
+
+.detail__body .detail_body__left .information {
+  padding: 10px 10px;
+  display: flex;
+  border: 1px solid gray;
+}
+
+.detail__body .detail_body__left .information .information__content {
+  margin-left: 10px;
+}
+
+.detail__body .detail_body__left .navi {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid gray;
+  padding: 0 10px;
+}
+
+.detail__body .detail_body__left .navi a {
+  text-decoration: none;
+  color: #000;
+}
+
+.detail__body .detail_body__left .navi h6 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.detail__body .detail_body__left .navi .navi__fol {
+  border: 1px solid red;
+  padding: 5px 5px;
+  color: red;
+}
+
+.detail__body .detail_body__left .content {
+  padding: 10px 10px;
+  border: 1px solid gray;
+}
+
+.detail__body .detail_body__left .content .content__left h4 {
+  color: #d34127;
+}
+
+.detail__body .detail_body__left .content .content__right button {
+  width: 100%;
+  background: #d34127;
+}
+
+.detail__body .detail_body__left .content .content__right__skill p {
+  display: inline-block;
+  padding: 0px 5px;
+  border: 1px solid gray;
+}
+
+.detail__body .detail_body__left .format_a {
+  color: #000;
+  text-decoration: none;
+}
+
+.detail__body .detail_body__left .text_align {
+  text-align: center;
+}
+
+.detail__body .detail_body__right {
+  border: 1px solid gray;
+}
+
+.detail__body .detail_body__right a {
+  text-decoration: none;
+  color: #000;
+}
+
+.detail__body .detail_body__right .detail_body__right__skill p {
+  display: inline-block;
+  padding: 0px 5px;
+  border: 1px solid gray;
+}
+
+.detail__body .detail_body__right .detail_body__right__img img {
+  width: 30%;
+}
+
+.detail__body .list_word {
+  margin-top: 10px;
+  border: 1px solid gray;
+  padding: 10px 10px;
+}
+
+.detail__body .list_word .list_word__skill p {
+  display: inline-block;
+  padding: 0px 5px;
+  border: 1px solid gray;
+}
+
+.detail__body .list_word .list_word__recruiment {
+  border-bottom: 1px solid gray;
+  margin-bottom: 10px;
+}
+
+.detail__body .font-size_a {
+  font-size: 12px;
+  text-decoration: none;
+  color: red;
+}
+
+/*# sourceMappingURL=style.css.map */

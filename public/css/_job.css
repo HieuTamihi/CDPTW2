@@ -1,0 +1,30 @@
+.job {
+  border: 1px solid gray;
+  margin: 90px 40px 20px 200px;
+  padding: 20px 20px;
+}
+
+.job h3 {
+  text-align: center;
+}
+
+.job form {
+  padding: 20px 20px 40px 20px;
+}
+
+.job label,
+.job input,
+.job textarea {
+  margin-left: 20px;
+  width: 95%;
+}
+
+.job button {
+  float: right;
+  width: 15%;
+  font-size: 20px;
+  font-weight: 700;
+  background: blue;
+}
+
+/*# sourceMappingURL=_job.css.map */

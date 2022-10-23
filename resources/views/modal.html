@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <script src="https://kit.fontawesome.com/f6dce9b617.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="./public/css/bootstrap.css">
+    <script defer src="./public/js/bootstrap.js"></script>
+</head>
+
+<body>
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Bạn đang ứng tuyển tại công ty TDC</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="input__field d-flex">
+                            <label for="">Họ và tên</label>
+                            <input class="input__input form-control" type="text" placeholder="Vui lòng nhập họ và tên">
+                        </div>
+                        <div class="input__field d-flex">
+                            <label for="">Địa chỉ</label>
+                            <input class="input__input form-control" type="text" placeholder="Vui lòng nhập địa chỉ">
+                        </div>
+                        <div class="input__field d-flex">
+                            <label for="">Email</label>
+                            <input class="input__input form-control" type="email" placeholder="Vui lòng nhập email">
+                        </div>
+                        <div class="input__field d-flex">
+                            <label for="">Số điện thoại</label>
+                            <input class="input__input form-control" type="tel"
+                                placeholder="Vui lòng nhập số điện thoại">
+                        </div>
+                        <div class="input__field d-flex">
+                            <label for="">Chọn CV</label>
+                            <input class="input__input" type="file">
+                        </div>
+                        <div class="input__field d-flex">
+                            <label for="">Giới thiệu bản thân</label>
+                            <textarea name="" id="" cols="100" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="createCV">
+                    <span>Nếu bạn chưa có CV, </span><a href="">tạo CV tại đây</a>
+                </div>
+                <div class=" modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type=" button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button>
+
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+//variable
+$textColor_heading: #fff;
+$bg_heading: #404040;
+$boder_form: #bfbfbf;
+$bg_btn_log: #0066ff;
+$bg_btn_reg: #ff9966;
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.log__reg__page .col-md-6 {
+    margin-top: 25px;
+}
+
+//LOGIN
+.title__log h4 {
+    text-align: center;
+}
+
+.introduce__log p {
+    text-align: center;
+}
+
+.page__log {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+//Form login
+.name__log h4 {
+    text-align: center;
+    border: 1px solid $bg_heading;
+    background-color: $bg_heading;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    padding: 5px;
+    color: $textColor_heading;
+}
+
+.form__log {
+    text-align: center;
+    border: 1px solid $boder_form;
+    padding: 35px;
+}
+
+.email__log,
+.pass__log {
+    width: 100%;
+    margin-top: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid $bg_heading;
+}
+
+.login__btn {
+    background-color: $bg_btn_log !important;
+    color: white !important;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.link__forgot {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+    text-decoration: none;
+}
+
+//Sign up
+.page__reg {
+    width: 100%;
+}
+
+.select__reg {
+    display: flex;
+    justify-content: center;
+}
+.reg__btn{
+    background-color: #ff8000 !important;
+    color: white !important;
+    width: 100%;
+    margin-top: 15px;
+}
+.des__name{
+    float: left;
+    margin-top: 15px;
+}
+.type__info__reg{
+    width: 100%;
+    margin-top: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid $bg_heading;
+}
+//Select sign up
+.sl__employ {
+    color: #fff;
+    padding: 0px 6px;
+    background: $bg_heading;
+    border: 1px solid #000;
+}
+
+.sl__cus {
+    color: #000;
+    padding: 0px 6px;
+    border: 1px solid #000;
+}
+
+.sl__employ span {
+    color: #fff;
+}
+.sl__cus span {
+    color: #000;
+}

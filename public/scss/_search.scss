@@ -1,0 +1,26 @@
+@import "variable";
+
+.search {
+    position: relative;
+    margin: 20px 0;
+
+    .fa-sharp {
+        position: absolute;
+        top: 18px;
+        left: 26px;
+    }
+
+    .search__input {
+        height: 50px;
+        border: 2px solid $colorMain;
+        text-indent: 30px;
+    }
+
+    .search__btn {
+        position: absolute;
+        right: 14px;
+        height: 50px;
+        width: 120px;
+        top: 0;
+    }
+}

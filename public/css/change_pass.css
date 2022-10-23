@@ -1,0 +1,59 @@
+.change__pass {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding: 60px 80px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border: 1px solid #000;
+}
+
+.title__page {
+  margin-bottom: 20px;
+}
+
+.type__confirm,
+.type__pass,
+.type__email {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  background: #bfbfbf;
+  color: #fff;
+}
+
+.input__email__change,
+.input__pass___change,
+.input__confirm__change {
+  margin-top: 10px;
+}
+
+.input__email__change label,
+.input__pass__change label,
+.input__confirm__change label {
+  float: left;
+}
+
+.change__btn {
+  width: 100%;
+  margin-top: 15px;
+  color: #fff;
+  background: #0066ff;
+}
+
+.change__btn:hover {
+  color: #0066ff;
+  background: #fff;
+  border: 1px solid #0066ff;
+}
+
+@media only screen and (max-width: 1080px) {
+  .change__pass {
+    width: 90%;
+    padding: 20px 40px;
+  }
+}
+
+/*# sourceMappingURL=change_pass.css.map */

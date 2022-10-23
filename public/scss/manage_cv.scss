@@ -1,0 +1,44 @@
+$btn_view: #ff6600;
+$btn_delete: #ff0000;
+$btn_update: #3366ff;
+.manage__cv {
+    padding-top: 20px;
+}
+.table__manage{
+    padding-top: 10px;
+}
+
+.table__manage table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table__manage td{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.table__manage th{
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.option__manage{
+    display: flex;
+    justify-content: space-between;
+}
+
+.option__manage .fa-eye{
+    color: $btn_view;
+}
+.option__manage .fa-trash{
+    color: $btn_delete;
+}
+.option__manage .fa-pen{
+    color: $btn_update;
+}

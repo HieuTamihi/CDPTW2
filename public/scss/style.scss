@@ -1,0 +1,204 @@
+$img: 100%;
+$height1: 22%;
+$a: none;
+$colo-a: #d34229;
+
+.cont-top {
+    margin-bottom: 40px;
+
+    a {
+        text-decoration: $a;
+        color: $colo-a;
+    }
+}
+
+.hot-wotk-intem {
+    a {
+        color: black;
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: $colo-a;
+    }
+}
+
+.tags {
+    &-txt {
+        color: #999;
+    }
+}
+
+.tit-recomm-txt-emph {
+    color: $colo-a;
+}
+
+.intem-img {
+    width: $img;
+    height: $img;
+}
+
+.loca-spotlight {
+    margin-top: 0;
+    margin-bottom: 6.5rem;
+}
+
+.supper-hot-job {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+        padding: 6.5px;
+        border: 1px solid #ccc;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.intem-thume {
+    &-img {
+
+        img {
+            width: $img;
+            border: 1px solid #ccc;
+            height: $height1;
+        }
+    }
+}
+
+.cont-bottum-main-item {
+    background: #efefef;
+    padding: 20px;
+
+    &-img {
+        img {
+            width: $img;
+            margin-bottom: 15px;
+        }
+
+        background: #fff;
+        margin-bottom: 15px;
+    }
+
+    &-txt {
+        text-align: center;
+    }
+}
+
+$text_color_red : red;
+$display_flex : flex;
+$border : 1px solid gray;
+$bg_button : #d34127;
+
+.detail__body {
+    padding-top: 20px;
+
+    .detail_body__left {
+
+        .information {
+            padding: 10px 10px;
+            display: $display_flex;
+            border: $border;
+
+            .information__content {
+                margin-left: 10px;
+            }
+        }
+
+        .navi {
+            display: $display_flex;
+            justify-content: space-between;
+            border: $border;
+            padding: 0 10px;
+
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+
+            h6 {
+                margin: 10px 0;
+                font-size: 20px;
+            }
+
+            .navi__fol {
+                border: 1px solid red;
+                padding: 5px 5px;
+                color: red;
+            }
+        }
+
+        .content {
+            padding: 10px 10px;
+            border: $border;
+
+            .content__left h4 {
+                color: $bg_button;
+            }
+
+            .content__right button {
+                width: 100%;
+                background: $bg_button;
+            }
+
+            .content__right__skill p {
+                display: inline-block;
+                padding: 0px 5px;
+                border: $border;
+            }
+        }
+
+        .format_a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .text_align {
+            text-align: center;
+        }
+    }
+
+    .detail_body__right {
+        border: $border;
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .detail_body__right__skill p {
+            display: inline-block;
+            padding: 0px 5px;
+            border: $border;
+        }
+
+        .detail_body__right__img img {
+            width: 30%;
+        }
+    }
+
+    .list_word {
+        margin-top: 10px;
+        border: $border;
+        padding: 10px 10px;
+
+        .list_word__skill p {
+            display: inline-block;
+            padding: 0px 5px;
+            border: $border;
+        }
+
+        .list_word__recruiment {
+            border-bottom: $border;
+            margin-bottom: 10px;
+        }
+    }
+
+    .font-size_a {
+        font-size: 12px;
+        text-decoration: none;
+        color: red;
+    }
+}

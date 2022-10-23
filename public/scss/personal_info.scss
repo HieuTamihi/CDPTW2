@@ -1,0 +1,150 @@
+$boder_input: #b3b3b3;
+$boder_btn: #3366ff;
+
+.personal__info {
+    padding-top: 25px;
+    display: block;
+    text-align: center;
+}
+
+.form__info {
+    padding-top: 15px;
+}
+
+.personal__info label {
+    font-weight: 500;
+}
+
+.personal__info span {
+    color: red;
+}
+
+.lb__fullname {
+    margin-right: 78px;
+}
+
+.lb__date {
+    margin-right: 56px;
+}
+
+.lb__phone {
+    margin-right: 102px;
+}
+
+.lb__email {
+    margin-right: 109px;
+}
+
+.lb__address {
+    margin-right: 97px;
+}
+
+.lb__gender {
+    margin-right: 101px;
+}
+.lb_favorite{
+    margin-right: 10px;
+}
+
+.input__name,
+.input__date,
+.input__phone,
+.input__email,
+.input__address,
+.select__gender,
+.area__favorite {
+    display: flex;
+    justify-content: center;
+}
+
+.input__name input,
+.input__date input,
+.input__phone input,
+.input__email input,
+.input__address input,
+.select__gender select,
+.area__favorite textarea {
+    width: 30%;
+    border: 2px solid $boder_input;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.save__btn {
+    border: 1px solid $boder_btn;
+    background: $boder_btn;
+    color: #fff;
+    padding: 5px 20px;
+    margin-top: 10px;
+}
+
+.change__btn {
+    border: 1px solid $boder_btn;
+    background: $boder_btn;
+    color: #fff;
+    padding: 5px 20px;
+    margin-top: 10px;
+}
+
+.save__btn:hover {
+    color: $boder_btn;
+    background: #fff;
+    border: 1px solid $boder_btn;
+}
+
+.change__btn:hover {
+    color: $boder_btn;
+    background: #fff;
+    border: 1px solid $boder_btn;
+}
+
+//responsive
+@media only screen and (max-width: 1080px) {
+    .input__name input,
+    .input__date input,
+    .input__phone input,
+    .input__email input,
+    .input__address input,
+    .select__gender select,
+    .area__favorite textarea {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .input__name input,
+    .input__date input,
+    .input__phone input,
+    .input__email input,
+    .input__address input,
+    .select__gender select,
+    .area__favorite textarea {
+        width: 100%;
+    }
+
+    .input__name,
+    .input__date,
+    .input__phone,
+    .input__email,
+    .input__address,
+    .select__gender,
+    .area__favorite {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .lb__fullname label,
+    .lb__fullname span,
+    .lb__date label,
+    .lb__date span,
+    .lb__phone label,
+    .lb__phone span,
+    .lb__email label,
+    .lb__email span,
+    .lb__address label,
+    .lb__gender label,
+    .lb_favorite label {
+        float: left;
+        margin-top: 10px;
+    }
+}

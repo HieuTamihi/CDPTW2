@@ -1,0 +1,32 @@
+.company-status {
+  border: 1px solid #d34229;
+  text-align: center;
+  color: #d34229;
+  font-weight: bold;
+}
+.company .intem-company {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.company .intem-company-logo-img {
+  width: 100%;
+  height: 50%;
+}
+.company .title-spotlight a {
+  color: black;
+  text-decoration: none;
+}
+.company .spotlight-btn {
+  display: flex;
+  justify-content: space-between;
+}
+.company .spotlight-btn a {
+  color: black;
+  text-decoration: none;
+}
+.company .company-status a {
+  color: #d34229;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=intem-company.css.map */

@@ -1,0 +1,68 @@
+.content {
+  margin-top: 110px;
+}
+
+.content .content__post {
+  padding: 20px 20px;
+  border: 1px solid gray;
+}
+
+.content .content__post h3 {
+  text-align: center;
+}
+
+.content .content__post label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+}
+
+.content .content__post .content__post__title {
+  margin-left: 65px;
+}
+
+.content .content__post .content__post__exp {
+  margin-left: 21px;
+}
+
+.content .content__post .content__post__type {
+  margin-left: 65px;
+}
+
+.content .content__post .content__post__skill {
+  margin-left: 70px;
+}
+
+.content .content__post .content__post__salary {
+  margin-left: 55px;
+}
+
+.content .content__post .content__post__require {
+  margin-left: 45px;
+}
+
+.content .content__recruitment_list {
+  margin-top: 20px;
+}
+
+.content .content__recruitment_list h2 {
+  text-align: center;
+}
+
+.content .content__recruitment_list table {
+  width: 100%;
+}
+
+.content .content__recruitment_list th,
+.content .content__recruitment_list td {
+  text-align: center;
+  border: 1px solid white;
+  padding: 10px 10px;
+}
+
+.content .content__recruitment_list th i,
+.content .content__recruitment_list td i {
+  margin: 0 5px;
+}
+
+/*# sourceMappingURL=_list_recruitment.css.map */

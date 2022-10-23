@@ -1,0 +1,129 @@
+@import "variable";
+
+ul {
+    list-style-type: none;
+}
+
+html {
+    font-family: $fm-roboto;
+}
+
+.topHeader {
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .topHeader__menu--logo {
+        padding-top: 10px;
+
+        img {
+            width: 150px;
+            height: 30px;
+        }
+    }
+
+    .topHeader__menu--contact {
+        display: flex;
+
+        ul {
+            padding-top: 10px;
+
+            li {
+                // color: #f1f1f1;
+                display: inline-block;
+                margin: 0 8px;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    border-left: 1px solid black;
+                    height: 14px;
+                    right: -9px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                a {
+                    text-decoration: none;
+                    font-size: 14px;
+                    color: $textColor;
+
+                    &:hover {
+                        color: $colorMain;
+                    }
+
+                    i {
+                        margin: 0 6px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header {
+    background-color: $backgroundHeader;
+
+    .header__left {
+        padding: 0;
+
+        .navbar-toggler-icon {
+            color: white;
+        }
+
+        li {
+            margin-right: 40px;
+
+            a {
+                color: white !important;
+
+                &:hover {
+                    color: $colorMain !important;
+                }
+            }
+        }
+    }
+
+    .header__right {
+        margin-right: -6px;
+
+        ul {
+            padding-top: 14px;
+            display: flex;
+
+            li {
+                display: inline-block;
+                margin: 0 8px;
+                position: relative;
+                background-color: $colorMain;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .header__right--logemp {
+            width: 150px;
+            height: 36px;
+            padding-top: 4px;
+        }
+
+        .header__right--logcus {
+            border: 2px solid white;
+            width: 120px;
+            height: 36px;
+            padding-top: 4px;
+
+            &:hover {
+                color: $colorMain;
+                border-color: $colorMain;
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+$bg_button : #2cccff;
+$color : #000;
+.table_list_jobposting{
+    position: relative;
+    button{
+        position: absolute;
+        background: $bg_button;
+        font-size: 20px;
+        font-weight: 700;
+        color: $color;
+        right: 0;
+        top: 0;
+    }
+   table{
+    position: absolute;
+    top: 40px;
+    width: 100%;
+   }
+    text-align: center;
+    .title{
+        width: 12%;
+    }
+    .experience{
+        width: 9%;
+    }
+    .type{
+        width: 8%;
+    }
+    .skill{
+        width: 15%;
+    }
+    .require{
+        width: 44%;
+    }
+    .action{
+        width: 15%;
+    }
+    th{
+        border: 1px solid black;
+    }
+    td{
+        border: 1px solid black;
+    }
+}

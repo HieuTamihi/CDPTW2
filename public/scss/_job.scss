@@ -1,0 +1,30 @@
+$bg_button : blue;
+
+.job {
+    border: 1px solid gray;
+    margin: 90px 40px 20px 200px;
+    padding: 20px 20px;
+
+    h3 {
+        text-align: center;
+    }
+
+    form {
+        padding: 20px 20px 40px 20px;
+    }
+
+    label,
+    input,
+    textarea {
+        margin-left: 20px;
+        width: 95%;
+    }
+
+    button {
+        float: right;
+        width: 15%;
+        font-size: 20px;
+        font-weight: 700;
+        background: $bg_button;
+    }
+}

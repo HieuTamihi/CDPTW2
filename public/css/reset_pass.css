@@ -1,0 +1,46 @@
+.reset__pass {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding: 60px 80px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border: 1px solid #000;
+}
+
+.input__email {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  background: #bfbfbf;
+  color: #fff;
+}
+
+.form__reset ::placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+.reset__btn {
+  width: 100%;
+  margin-top: 15px;
+  color: #fff;
+  background: #0066ff;
+}
+
+.reset__btn:hover {
+  color: #0066ff;
+  background: #fff;
+  border: 1px solid #0066ff;
+}
+
+@media only screen and (max-width: 1080px) {
+  .reset__pass {
+    width: 90%;
+    padding: 20px 40px;
+  }
+}
+
+/*# sourceMappingURL=reset_pass.css.map */

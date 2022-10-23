@@ -1,0 +1,39 @@
+.content_detail {
+  border: 1px solid gray;
+  padding: 20px 100px;
+  margin-top: 110px;
+}
+
+.content_detail .content_detail__top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content_detail .content_detail__top .content_detail__top__title h3 {
+  font-size: 1.75rem;
+}
+
+.content_detail .content_detail__top .content_detail__top__button button {
+  margin: 0 5px;
+  color: #fff;
+  background: blue;
+  padding: 5px 10px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.content_detail .content_detail__bottom h5 {
+  margin-top: 20px;
+  color: brown;
+}
+
+.content_detail .content_detail__bottom p {
+  margin-top: 17px;
+  font-size: 18px;
+}
+
+.content_detail .content_detail__bottom img {
+  width: 100%;
+  margin-top: 100px;
+}
+
+/*# sourceMappingURL=_detail_recruitment.css.map */
