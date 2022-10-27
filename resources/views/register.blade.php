@@ -46,7 +46,7 @@
                                 @if ($errors->has('phone'))
                                 <strong class="text-danger">{{$errors->first('phone')}}</strong>
                                 @endif
-                                <input type="hidden" value="2" name="role">
+                                <input type="hidden" value="3" name="role">
                                 <input type="hidden" value="1" name="status">
                                 <input type="submit" value="Sign up" class="btn reg__btn">
                                 <span class="btn btn login__btn"><a href="{{route('login')}}" style="text-decoration: none;color:white;">Login</a></span>
@@ -77,7 +77,7 @@
                                 @endif
                                 <span class="des__name">Confirm Password</span>
                                 <input type="password" class="form-control" placeholder="Confirm Password" value="" name="password_confirmation" />
-                                <input type="hidden" value="1" name="role">
+                                <input type="hidden" value="2" name="role">
                                 <input type="hidden" value="1" name="status">
                                 <input type="submit" value="Sign up" class="btn reg__btn">
                                 <span class="btn btn login__btn"><a href="{{route('login')}}" style="text-decoration: none;color:white;">Login</a></span>
