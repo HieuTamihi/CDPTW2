@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         employerSeeder::class,
         wishlistSeeder::class,
         recruitmentSeeder::class,
+        userSeeder::class,
        ]);
     }
 }

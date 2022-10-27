@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,12 @@ Route::get('/', function () {
 Route::get('/{name?}', function ($name = "index") {
     return view($name);
 });
+//dang nhap
+Route::get('/login', [UserController::class, 'showLogin'])->name('showLogin');
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+Route::post('/login', [UserController::class, 'login'])->name('login');
+Route::get('/', [UserController::class, 'index'])->name('showHome');
+
+//dang ky
+Route::get('/register', [UserController::class, 'showRegister'])->name('showRegister');
+Route::post('/register', [UserController::class, 'register'])->name('register');

@@ -68,7 +68,14 @@
             <div class="header__right d-flex">
                 <ul>
                     <li><a class="btn btn-danger header__right--logemp" href="#">Đăng tuyển</a></li>
-                    <li><a class="btn btn-dark header__right--logcus" href="{{asset('log_reg')}}">Đăng nhập</a></li>
+                    @if(Auth::check())
+                    <form method="POST" name="logout" action="{{ route('logout') }}">
+                        @csrf
+                        <li> <a class="btn btn-dark header__right--logcus" href="javascript:document.logout.submit()"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
+                    </form>
+                    @else
+                    <li><a class="btn btn-dark header__right--logcus" href="{{asset('login')}}">Đăng nhập</a></li>
+                    @endif
                 </ul>
             </div>
         </nav>
@@ -76,7 +83,7 @@
     <!-- End header -->
     @yield('footer')
     <!-- Footer -->
-<footer class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 footer__adresse ">
@@ -120,9 +127,7 @@
         </div>
     </footer>
     <!-- End Footer -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
