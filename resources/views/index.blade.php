@@ -25,16 +25,18 @@
                 </div>
                 <div class="row">
                     <div class="col-md-10 intem-main">
+                        {{ csrf_field() }}
+                        @foreach ($employer as $row)
                         <div class="intem-main-child">
                             <div class="row">
                                 <div class="col-md-5 intem-slide-img">
-                                    <a href="">
+                                    <a href="#">
                                         <img class="intem-img" src="{{ asset('img/hinh-anh-van-phong-cong-ty-casanova-mccann-2.png') }}" alt="">
                                     </a>
                                 </div>
                                 <div class="col-md-7 name-spotlight">
                                     <h3 class="title-spotlight">
-                                        <a href="">Tên Công IT</a>
+                                        <a href="#">{{$row->name_company}}</a>
                                     </h3>
                                     <div class="spotilght-txt">
                                         <p class="loca-spotlight">Seal Commerce is a Global Product Company that
@@ -51,6 +53,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                         <div class="intem-main-child">
                             <div class="row">
                                 <div class="col-md-5 intem-slide-img">

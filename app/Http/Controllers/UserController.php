@@ -34,23 +34,11 @@ class UserController extends Controller
             if (Auth::user()->role == 1) {
                 return view('admin_homePage');
             } else {
-                return redirect()->route('showHome')->with('message', 'Đăng nhập thành công');
+                return redirect()->route('index')->with('message', 'Đăng nhập thành công');
             }
         } else {
             return redirect()->route('login')->with('message', 'Email hoặc mật khẩu không chính xác');
         }
-    }
-    public function index()
-    {
-        return view('index');
-    }
-    public function showLogin()
-    {
-        return view('login');
-    }
-    public function showRegister()
-    {
-        return view('register');
     }
     public function register(Request $request)
     {

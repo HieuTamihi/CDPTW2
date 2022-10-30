@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -14,18 +15,17 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/index', [EmployerController::class, 'index']);
+
+//dang nhap
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+Route::post('/login', [UserController::class, 'login'])->name('login');
+Route::get('/', [EmployerController::class, 'index'])->name('index');
+
+//dang ky
+Route::post('/register', [UserController::class, 'register'])->name('register');
+
+//chuyen trang
 Route::get('/{name?}', function ($name = "index") {
     return view($name);
 });
-//dang nhap
-Route::get('/login', [UserController::class, 'showLogin'])->name('showLogin');
-Route::post('/logout', [UserController::class, 'logout'])->name('logout');
-Route::post('/login', [UserController::class, 'login'])->name('login');
-Route::get('/', [UserController::class, 'index'])->name('showHome');
-
-//dang ky
-Route::get('/register', [UserController::class, 'showRegister'])->name('showRegister');
-Route::post('/register', [UserController::class, 'register'])->name('register');
