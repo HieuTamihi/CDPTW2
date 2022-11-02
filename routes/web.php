@@ -3,6 +3,7 @@
 use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,7 @@ Route::get('/', [EmployerController::class, 'index'])->name('index');
 Route::post('/register', [UserController::class, 'register'])->name('register');
 
 //chuyen trang
-Route::get('/{name?}', function ($name = "index") {
-    return view($name);
-});
+// Route::get('/{name?}', function ($name = "index") {
+//     return view($name);
+// });
+Route::get('search', [HomeController::class, 'getsearch'])->name('search');
