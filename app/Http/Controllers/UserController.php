@@ -8,13 +8,15 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use App\Models\Employer;
+use Illuminate\Contracts\Session\Session;
 
+session_start();
 class UserController extends Controller
 {
     public function logout()
     {
         Auth::logout();
-        return redirect()->back();
+        return redirect()->route('index');
     }
     public function login(Request $request)
     {
@@ -32,8 +34,10 @@ class UserController extends Controller
                 return redirect()->route('login')->with('message', 'Tài khoản đã bị khóa');
             }
             if (Auth::user()->role == 1) {
+                $_SESSION['permision'] = Auth::user()->employer_id;
                 return view('admin_homePage');
             } else {
+                $_SESSION['permision'] = Auth::user()->employer_id;
                 return redirect()->route('index')->with('message', 'Đăng nhập thành công');
             }
         } else {

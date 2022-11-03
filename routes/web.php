@@ -3,6 +3,7 @@
 use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\jobpostingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,9 @@ Route::get('/', [EmployerController::class, 'index'])->name('index');
 
 //dang ky
 Route::post('/register', [UserController::class, 'register'])->name('register');
+
+//admin
+Route::get('/listjobPosting', [jobpostingController::class, 'showJob']);
 
 //chuyen trang
 Route::get('/{name?}', function ($name = "index") {

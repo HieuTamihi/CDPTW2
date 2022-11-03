@@ -12,17 +12,17 @@
                         <li class="nav-item sl__employ" id="select_employ"><a href="#form-employ" onclick="employ()" data-bs-toggle="tab" class="nav-link active"><span id="color-text-em">Employer</span></a></li>
                         <li class="nav-item sl__cus" id="select_cus"><a href="#form-cus" onclick="cus()" data-bs-toggle="tab" class="nav-link"><span id="color-text-cus">Customer</span></a></li>
                     </ul>
-                    @if(session('message'))
+                    @if(session('message1'))
                     <span class="aler alert-danger">
-                        <strong>{{session('message')}}</strong>
+                        <strong>{{session('message1')}}</strong>
                     </span>
                     @endif
                     <div class="tab-content">
                         <div class="tab-pane active" id="form-employ">
                             <!-- PAGE Employer -->
-                            <form action="" class="tab-pane active" method="POST">
-                                @if(Session::has('message'))
-                                <div class="alert alert-success">{{Session::get('message')}}</div>
+                            <form action="{{route('')}}" class="tab-pane active" method="POST">
+                                @if(Session::has('message1'))
+                                <div class="alert alert-success">{{Session::get('message1')}}</div>
                                 @endif
                                 @csrf
                                 <span class="des__name">Email</span>
