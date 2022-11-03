@@ -12,17 +12,17 @@
                         <li class="nav-item sl__employ" id="select_employ"><a href="#form-employ" onclick="employ()" data-bs-toggle="tab" class="nav-link active"><span id="color-text-em">Employer</span></a></li>
                         <li class="nav-item sl__cus" id="select_cus"><a href="#form-cus" onclick="cus()" data-bs-toggle="tab" class="nav-link"><span id="color-text-cus">Customer</span></a></li>
                     </ul>
-                    @if(session('message1'))
+                    @if(session('message'))
                     <span class="aler alert-danger">
-                        <strong>{{session('message1')}}</strong>
+                        <strong>{{session('message')}}</strong>
                     </span>
                     @endif
                     <div class="tab-content">
                         <div class="tab-pane active" id="form-employ">
                             <!-- PAGE Employer -->
-                            <form action="{{route('')}}" class="tab-pane active" method="POST">
-                                @if(Session::has('message1'))
-                                <div class="alert alert-success">{{Session::get('message1')}}</div>
+                            <form action="{{route('register')}}" class="tab-pane active" method="POST">
+                                @if(Session::has('message'))
+                                <div class="alert alert-success">{{Session::get('message')}}</div>
                                 @endif
                                 @csrf
                                 <span class="des__name">Email</span>
@@ -37,10 +37,6 @@
                                 @endif
                                 <span class="des__name">Re-Password</span>
                                 <input type="password" placeholder="Enter your re-password" class="type__info__reg" name="password_confirmation">
-                                <span class="des__name">Company name</span>
-                                <input type="text" placeholder="Enter your company" class="type__info__reg" name="name_company">
-                                <span class="des__name">Address</span>
-                                <input type="text" placeholder="Enter your address" class="type__info__reg" name="address">
                                 <span class="des__name">Phone number</span>
                                 <input type="text" placeholder="Enter your phone number" class="type__info__reg" name="phone">
                                 @if ($errors->has('phone'))
@@ -48,6 +44,7 @@
                                 @endif
                                 <input type="hidden" value="3" name="role">
                                 <input type="hidden" value="1" name="status">
+                                <input type="hidden" value='{{(int)$employer_id->employer_id+=1}}' name="employer_id">
                                 <input type="submit" value="Sign up" class="btn reg__btn">
                                 <span class="btn btn login__btn"><a href="{{route('login')}}" style="text-decoration: none;color:white;">Login</a></span>
                             </form>
@@ -91,4 +88,4 @@
     </div>
 </div>
 <br>
-@endsection;
+@endsection
