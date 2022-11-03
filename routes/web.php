@@ -27,7 +27,15 @@ Route::get('/', [EmployerController::class, 'index'])->name('index');
 Route::post('/register', [UserController::class, 'register'])->name('register');
 
 //chuyen trang
-// Route::get('/{name?}', function ($name = "index") {
-//     return view($name);
-// });
-Route::get('search', [HomeController::class, 'getsearch'])->name('search');
+
+Route::get('search', [HomeController::class, 'search'])->name('search');
+
+Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
+
+Route::get('admin', function () {
+    return view('DashboardTemplate.dashboard');
+});
+
+Route::get('/{name?}', function ($name = "index") {
+    return view($name);
+});

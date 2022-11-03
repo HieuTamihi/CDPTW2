@@ -7,15 +7,16 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function getsearch(Request $request)
+    public function search(Request $request)
     {
-        $jobTitle = DB::table('job_posting')->where('title', 'like', '%' . $request->keywords . '%')
-            ->orWhere('skill', 'like', '%' . $request->keywords . '%')
-            ->orWhere('salary', 'like', '%' . $request->keywords . '%')
+
+        $jobTitle = DB::table('job_posting')->where('title', 'like', '%' . $request->keyword . '%')
+            ->orWhere('skill', 'like', '%' . $request->keyword . '%')
+            ->orWhere('salary', 'like', '%' . $request->keyword . '%')
             ->get();
 
-        dd($jobTitle);
+        // dd($jobTitle);
 
-        return view('search', compact('jobTitle'));
+        return view('search', compact('jobTitle', 'request'));
     }
 }
