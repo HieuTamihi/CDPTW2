@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Post extends Migration
+class WishLists extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class Post extends Migration
      */
     public function up()
     {
-        Schema::create('post', function (Blueprint $table) {
-            $table->id()->autoIncrement();
-            $table->integer('comment_id');
+        Schema::create('wish_lists', function (Blueprint $table) {
             $table->integer('customer_id');
-            $table->string('title');
-            $table->string('content');
-            $table->integer('status');
+            $table->integer('job_posting_id');
+            $table->integer('number')->nullable();
             $table->timestamps();
         });
     }

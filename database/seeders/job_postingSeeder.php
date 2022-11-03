@@ -13,7 +13,7 @@ class job_postingSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('job_posting')->insert([[
+        DB::table('job_postings')->insert([[
             'employer_id' => '1',
             'title' => 'Full-Stack Java Software Engineer (JEE/ Spring/ Hibernate) | Up to $2000',
             'experience' => '1 năm', 

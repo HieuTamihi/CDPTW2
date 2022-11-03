@@ -13,7 +13,7 @@ class employerSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('employer')->insert([[
+        DB::table('employers')->insert([[
             'name_company' => 'FPT',
             'address' => '5A/2 Trần Phú, Phường 04, Quận 5, Thành phố Hồ Chí Minh Tầng 12 khu Văn phòng tòa MIPEC, 229 Tây Sơn, Phường Ngã Tư Sở, Quận Đống Đa, Thành phố Hà Nội', 
             'image' => 'download.png',
