@@ -17,8 +17,7 @@
                         <a href="#"><img src="{{asset('img/TopDev-Asset-15-1643008749.png')}}" alt=""></a>
                     </div>
                     <div class="information__content">
-                        <p>Viettel Digital</p>
-                        <p>Theo cách của bạn</p>
+                        <p>{{$getEmployerByiD->name_company}}</p>
                     </div>
                 </div>
                 <div class="navi">
@@ -32,25 +31,18 @@
                     <h6 class="navi__fol">Theo dõi</h6>
                 </div>
                 <div class="content">
+               
                     <div class="row">
                         <div class="col-12 col-xl-9 content__left">
-                            <h4>Full-stack Developer (Java, JavaScript)</h4>
-                            <p>Lên tới 2*** USD</p>
+                        @foreach($getRelate as $value)
+                            <h4>{{$value->title}}</h4>
+                            <p>{{$value->salary}}</p>
+                            @endforeach
                             <a href="#" class="font-size_a">
                                 <p>Đăng nhập để xem mức lương</p>
                             </a>
-                            <p>Tổng Công ty Dịch vụ số Viettel - Viettel Digital mang sứ mệnh sáng tạo những sản
-                                phẩm
-                                công nghệ đi đầu lĩnh vực Fintech và Big Data, với mong muốn digital hoá những hình
-                                thức
-                                kinh doanh truyền thống.</p>
-                            <p>Hiện Viettel Digital đang tập trung phát triển một hệ sinh thái tài chính số với core
-                                chính là Viettel Money. Bên cạnh đó, chúng tôi cũng đang mở rộng hoạt động với nhiều
-                                dự
-                                án lớn trong các lĩnh vực Fintech, Big Data, AI, Blockchain,... và mong muốn chiêu
-                                mộ
-                                nhân tài hơn bao giờ hết.</p>
-                            <p>Viettel Digital đang tuyển dụng những <strong>Fullstack Developer</strong> đẳng cấp.
+                            <p><?php echo  str_replace(' . ','<p>',$value->infor) ?> <br></p>
+                         
                             </p>
                             <h2>Trách nhiệm công việc:</h2>
                             <div class="content__left__responsibility" id="responsibility">
@@ -68,12 +60,7 @@
                             <h2>Kỹ năng & Chuyên môn:</h2>
                             <div class="content__left__specialize">
                                 <ul>
-                                    <li>Tốt nghiệp Đại học loại Khá trở lên, chuyên ngành Công nghệ thông tin, Kỹ sư
-                                        phần mềm. Ưu tiên tốt nghiệp từ các trường Đại học Bách khoa Hà Nội, Học
-                                        viện
-                                        Công nghệ Bưu chính viễn thông, Đại học FPT, …</li>
-                                    <li>Có kinh nghiệm từ 1 năm trong các ngôn ngữ lập trình: Java, JavaScript</li>
-                                    <li>Nắm vững giao thức http, mô hình MVC, mô hình client server.</li>
+                                    <li><?php echo str_replace(' , ','<li>',$value->required) ?></li>
                                 </ul>
                             </div>
                         </div>
@@ -132,24 +119,16 @@
                                     Tạo CV Ứng Tuyển
                                 </button>
                             </a>
-                            <p class="text_align">4 ngày trước</p>
+                            <p class="text_align"><?php echo $value->create_at; ?> ngày trước</p>
                             <h6>Địa điểm</h6>
-                            <p>Tầng 44 - 45 Keangnam Landmark, Phường Mễ Trì, Quận Nam Từ Liêm, Thành phố Hà Nội</p>
+                            <p>{{$getEmployerByiD->address}}</p>
                             <h6>Số năm kinh nghiệm</h6>
-                            <p>1 năm</p>
-                            <h6>Cấp bậc</h6>
-                            <p>Chuyên viên</p>
+                            <p>{{$value->experience}}</p>
                             <h6>Loại hình</h6>
-                            <p class="border_type">Fulltime</p>
+                            <p class="border_type">{{$value->type}}</p>
                             <h6>Kỹ năng</h6>
                             <div class="content__right__skill">
-                                <p>CSS</p>
-                                <p>Java</p>
-                                <p>JavaScript</p>
-                                <p>HTML</p>
-                                <p>Full-Stack</p>
-                                <p>Angular</p>
-                                <p>React</p>
+                                <p><?php echo str_replace(',','<p>',$value->skill) ?></p>
                             </div>
                         </div>
                     </div>
@@ -157,24 +136,16 @@
 
             </div>
             <div class="col-12 col-xl-3 detail_body__right">
-                <h6>Website</h6>
-                <a href="#">
-                    <p>https://digital.viettel.vn/</p>
-                </a>
+                <h6>Điện thoại</h6>
+                <p>{{$getEmployerByiD->phone_number}}</p>
                 <h6>Địa điểm</h6>
-                <p>Tầng 44 - 45 Keangnam Landmark, Phường Mễ Trì, Quận Nam Từ Liêm, Thành phố Hà Nội</p>
-                <h6>Quy mô công ty</h6>
-                <p>500 - 999</p>
-                <h6>Ngành nghề</h6>
-                <p>Fintech</p>
+                <p>{{$getEmployerByiD->address}}</p>
                 <h6>Các công nghệ sử dụng</h6>
+                @foreach($getEmployerByiD->jobs as $value)
                 <div class="detail_body__right__skill">
-                    <p>Android</p>
-                    <p>iOS</p>
-                    <p>Java</p>
-                    <p>Sping</p>
-                    <p>Microsoft</p>
+                <p><?php echo str_replace(' , ','<p>',$value->skill) ?></p>
                 </div>
+                @endforeach
                 <h6>Quốc tịch công ty</h6>
                 <div class="detail_body__right__img"><img src="{{asset('img/Vietnam.png')}}" alt="">
                     <p>Việt Nam</p>
@@ -191,32 +162,18 @@
         <div class="row" id="CV">
             <div class="col-12 col-xl-9">
                 <div class="list_word">
-                    <h5>Kiến Trúc Sư Giải Pháp (Solution Architect)</h5>
-                    <p><i class="bi bi-currency-dollar"></i> Quận Nam Từ Liêm, Hà Nội <i class="bi bi-currency-dollar"></i> Fintech</p>
+                @foreach($getEmployerByiD->jobs as $value)
+                    <h5>{{$value->title}}</h5>
                     <a href="#" class="font-size_a">
                         <p>Đăng nhập để xem mức lương</p>
                     </a>
                     <div class="list_word__skill">
-                        <p>Java</p>
-                        <p>JavaScript</p>
-                        <p>Solution Architect</p>
+                        <p><?php echo str_replace(' , ','<p>',$value->skill) ;?></p>
                     </div>
                     <div class="list_word__recruiment">
                         Ứng tuyển
                     </div>
-                    <h5>Kiến Trúc Sư Giải Pháp (Solution Architect)</h5>
-                    <p><i class="bi bi-currency-dollar"></i> Quận Nam Từ Liêm, Hà Nội <i class="bi bi-currency-dollar"></i> Fintech</p>
-                    <a href="#" class="font-size_a">
-                        <p>Đăng nhập để xem mức lương</p>
-                    </a>
-                    <div class="list_word__skill">
-                        <p>Java</p>
-                        <p>JavaScript</p>
-                        <p>Solution Architect</p>
-                    </div>
-                    <div class="list_word__recruiment">
-                        Ứng tuyển
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="col-12 col-xl-3"></div>
