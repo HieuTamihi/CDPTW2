@@ -33,6 +33,15 @@ Route::get('/register', [UserController::class, 'showRegister']);
 Route::resource('listjobPosting', ControllersJobpostingController::class);
 
 //chuyen trang
+
+Route::get('search', [HomeController::class, 'search'])->name('search');
+
+Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
+
+Route::get('admin', function () {
+    return view('DashboardTemplate.dashboard');
+});
+
 Route::get('/{name?}', function ($name = "index") {
     return view($name);
 });
