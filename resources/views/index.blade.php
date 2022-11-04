@@ -31,7 +31,7 @@
                             <div class="row">
                                 <div class="col-md-5 intem-slide-img">
                                     <a href="#">
-                                        <img class="intem-img" src="{{ asset('img/hinh-anh-van-phong-cong-ty-casanova-mccann-2.png') }}" alt="">
+                                        <img class="intem-img" src="{{url('img')}}/{{$row->image}}" alt="">
                                     </a>
                                 </div>
                                 <div class="col-md-7 name-spotlight">
@@ -44,7 +44,7 @@
                                             better...
                                         </p>
                                         <div class="spotilght-txt-DC">
-                                            <p class="loca-spotlight">Hà Nội</p>
+                                            <p class="loca-spotlight">{{$row->address}}</p>
                                         </div>
                                     </div>
                                     <div class="spotlight-btn">
@@ -54,72 +54,13 @@
                             </div>
                         </div>
                         @endforeach
-                        <div class="intem-main-child">
-                            <div class="row">
-                                <div class="col-md-5 intem-slide-img">
-                                    <a href="">
-                                        <img class="intem-img" src="{{ asset('img/hinh-anh-van-phong-cong-ty-casanova-mccann-2.png') }}" alt="">
-                                    </a>
-                                </div>
-                                <div class="col-md-7 name-spotlight">
-                                    <h3 class="title-spotlight">
-                                        <a href="">Tên Công IT</a>
-                                    </h3>
-                                    <div class="spotilght-txt">
-                                        <p class="loca-spotlight">Seal Commerce is a Global Product Company that
-                                            helps people sell
-                                            better...
-                                        </p>
-                                        <div class="spotilght-txt-DC">
-                                            <p class="loca-spotlight">Hà Nội</p>
-                                        </div>
-                                    </div>
-                                    <div class="spotlight-btn">
-                                        <a href="">Xem Thêm &raquo;</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="intem-main-child">
-                            <div class="row">
-                                <div class="col-md-5 intem-slide-img">
-                                    <a href="">
-                                        <img class="intem-img" src="{{ asset('img/hinh-anh-van-phong-cong-ty-casanova-mccann-2.png') }}" alt="">
-                                    </a>
-                                </div>
-                                <div class="col-md-7 name-spotlight">
-                                    <h3 class="title-spotlight">
-                                        <a href="">Tên Công IT</a>
-                                    </h3>
-                                    <div class="spotilght-txt">
-                                        <p class="loca-spotlight">Seal Commerce is a Global Product Company that
-                                            helps people sell
-                                            better...
-                                        </p>
-                                        <div class="spotilght-txt-DC">
-                                            <p class="loca-spotlight">Hà Nội</p>
-                                        </div>
-                                    </div>
-                                    <div class="spotlight-btn">
-                                        <a href="">Xem Thêm &raquo;</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="col-md-2 intem-thume">
+                        @foreach ($employer as $row)
                         <a class="intem-thume-img" href="">
-                            <img src="{{ asset('img/240656610_1057724158393576_5957262079858008168_n.jpg') }}" alt="">
+                            <img src="{{url('img')}}/{{$row->image}}" alt="">
                         </a>
-                        <a class="intem-thume-img" href="">
-                            <img src="{{ asset('img/240656610_1057724158393576_5957262079858008168_n.jpg') }}" alt="">
-                        </a>
-                        <a class="intem-thume-img" href="">
-                            <img src="{{ asset('img/240656610_1057724158393576_5957262079858008168_n.jpg') }}" alt="">
-                        </a>
-                        <a class="intem-thume-img" href="">
-                            <img src="{{ asset('img/240656610_1057724158393576_5957262079858008168_n.jpg') }}" alt="">
-                        </a>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -128,78 +69,21 @@
                     <h2>
                         <strong class="tit-recomm-txt">
                             <span class="tit-recomm-txt-emph">
-                                Công Ty
+                                Công Việc
                             </span>
-                            Nổi Bật
+                            Hot
                         </strong>
                     </h2>
                 </div>
                 <div id="hotid" class="hot-wotk-intem">
                     <ul id="customid" class="supper-hot-job">
+                        @foreach($job as $name)
                         <li>
-                            <span class="tags"><strong class="tags-txt">VietCredit</strong></span>
-                            <br><a href="{{asset('detail_page')}}"> Senior .NET Engineer - 1-month joining bonus </a>
-                            <p class="job-salary-view"> Thương lượng </p>
+                            <span class="tags"><strong class="tags-txt">{{$name->name_company}}</strong></span>
+                            <br><a href="{{asset('detail_page')}}">{{$name->title}}</a>
+                            <p class="job-salary-view">{{$name->salary}}</p>
                         </li>
-                        <li>
-                            <span class="tags"><strong class="tags-txt">VietCredit</strong></span>
-                            <br><a href="{{asset('detail_page')}}"> Senior .NET Engineer - 1-month joining bonus </a>
-                            <p class="job-salary-view"> Thương lượng </p>
-                        </li>
-                        <li>
-                            <span class="tags"><strong class="tags-txt">VietCredit</strong></span>
-                            <br><a href="{{asset('detail_page')}}"> Senior .NET Engineer - 1-month joining bonus </a>
-                            <p class="job-salary-view"> Thương lượng </p>
-                        </li>
-                        <li>
-                            <span class="tags"><strong class="tags-txt">VietCredit</strong></span>
-                            <br><a href="{{asset('detail_page')}}"> Senior .NET Engineer - 1-month joining bonus </a>
-                            <p class="job-salary-view"> Thương lượng </p>
-                        </li>
-                    </ul>
-                    <ul id="customid" class="supper-hot-job">
-                        <li>
-                            <span class="tags"><strong class="tags-txt">VietCredit</strong></span>
-                            <br><a href="{{asset('detail_page')}}"> Senior .NET Engineer - 1-month joining bonus </a>
-                            <p class="job-salary-view"> Thương lượng </p>
-                        </li>
-                        <li>
-                            <span class="tags"><strong class="tags-txt">VietCredit</strong></span>
-                            <br><a href="{{asset('detail_page')}}"> Senior .NET Engineer - 1-month joining bonus </a>
-                            <p class="job-salary-view"> Thương lượng </p>
-                        </li>
-                        <li>
-                            <span class="tags"><strong class="tags-txt">VietCredit</strong></span>
-                            <br><a href="{{asset('detail_page')}}"> Senior .NET Engineer - 1-month joining bonus </a>
-                            <p class="job-salary-view"> Thương lượng </p>
-                        </li>
-                        <li>
-                            <span class="tags"><strong class="tags-txt">VietCredit</strong></span>
-                            <br><a href="{{asset('detail_page')}}"> Senior .NET Engineer - 1-month joining bonus </a>
-                            <p class="job-salary-view"> Thương lượng </p>
-                        </li>
-                    </ul>
-                    <ul id="customid" class="supper-hot-job">
-                        <li>
-                            <span class="tags"><strong class="tags-txt">VietCredit</strong></span>
-                            <br><a href="{{asset('detail_page')}}"> Senior .NET Engineer - 1-month joining bonus </a>
-                            <p class="job-salary-view"> Thương lượng </p>
-                        </li>
-                        <li>
-                            <span class="tags"><strong class="tags-txt">VietCredit</strong></span>
-                            <br><a href=""> Senior .NET Engineer - 1-month joining bonus </a>
-                            <p class="job-salary-view"> Thương lượng </p>
-                        </li>
-                        <li>
-                            <span class="tags"><strong class="tags-txt">VietCredit</strong></span>
-                            <br><a href=""> Senior .NET Engineer - 1-month joining bonus </a>
-                            <p class="job-salary-view"> Thương lượng </p>
-                        </li>
-                        <li>
-                            <span class="tags"><strong class="tags-txt">VietCredit</strong></span>
-                            <br><a href=""> Senior .NET Engineer - 1-month joining bonus </a>
-                            <p class="job-salary-view"> Thương lượng </p>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -214,86 +98,18 @@
             </h2>
         </div>
         <div class="row cont-bottum-main">
+            @foreach ($employer as $row)
             <div class="col-md-2 cont-bottum-main-item">
                 <a href="">
                     <div class="cont-bottum-main-item-img">
-                        <img src="./public/img/240656610_1057724158393576_5957262079858008168_n.jpg" alt="">
+                        <img src="{{url('img')}}/{{$row->image}}" alt="">
                     </div>
                 </a>
                 <div class="cont-bottum-main-item-txt">
-                    <p>Công ty cổ phần</p>
+                    <p>{{$row->name_company}}</p>
                 </div>
             </div>
-            <div class="col-md-2 cont-bottum-main-item">
-                <a href="">
-                    <div class="cont-bottum-main-item-img">
-                        <img src="./public/img/240656610_1057724158393576_5957262079858008168_n.jpg" alt="">
-                    </div>
-                </a>
-                <div class="cont-bottum-main-item-txt">
-                    <p>Công ty cổ phần</p>
-                </div>
-            </div>
-            <div class="col-md-2 cont-bottum-main-item">
-                <a href="">
-                    <div class="cont-bottum-main-item-img">
-                        <img src="./public/img/240656610_1057724158393576_5957262079858008168_n.jpg" alt="">
-                    </div>
-                </a>
-                <div class="cont-bottum-main-item-txt">
-                    <p>Công ty cổ phần</p>
-                </div>
-            </div>
-            <div class="col-md-2 cont-bottum-main-item">
-                <a href="">
-                    <div class="cont-bottum-main-item-img">
-                        <img src="./public/img/240656610_1057724158393576_5957262079858008168_n.jpg" alt="">
-                    </div>
-                </a>
-                <div class="cont-bottum-main-item-txt">
-                    <p>Công ty cổ phần</p>
-                </div>
-            </div>
-            <div class="col-md-2 cont-bottum-main-item">
-                <a href="">
-                    <div class="cont-bottum-main-item-img">
-                        <img src="./public/img/240656610_1057724158393576_5957262079858008168_n.jpg" alt="">
-                    </div>
-                </a>
-                <div class="cont-bottum-main-item-txt">
-                    <p>Công ty cổ phần</p>
-                </div>
-            </div>
-            <div class="col-md-2 cont-bottum-main-item">
-                <a href="">
-                    <div class="cont-bottum-main-item-img">
-                        <img src="./public/img/240656610_1057724158393576_5957262079858008168_n.jpg" alt="">
-                    </div>
-                </a>
-                <div class="cont-bottum-main-item-txt">
-                    <p>Công ty cổ phần</p>
-                </div>
-            </div>
-            <div class="col-md-2 cont-bottum-main-item">
-                <a href="">
-                    <div class="cont-bottum-main-item-img">
-                        <img src="./public/img/240656610_1057724158393576_5957262079858008168_n.jpg" alt="">
-                    </div>
-                </a>
-                <div class="cont-bottum-main-item-txt">
-                    <p>Công ty cổ phần</p>
-                </div>
-            </div>
-            <div class="col-md-2 cont-bottum-main-item">
-                <a href="">
-                    <div class="cont-bottum-main-item-img">
-                        <img src="./public/img/240656610_1057724158393576_5957262079858008168_n.jpg" alt="">
-                    </div>
-                </a>
-                <div class="cont-bottum-main-item-txt">
-                    <p>Công ty cổ phần</p>
-                </div>
-            </div>
+            @endforeach
         </div>
     </section>
 </div>

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\jobpostingController;
 use App\Http\Controllers\JobpostingController as ControllersJobpostingController;
+use App\Models\Job_posting;
 
 /*
 |--------------------------------------------------------------------------
