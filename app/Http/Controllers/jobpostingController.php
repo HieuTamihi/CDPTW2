@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Employer;
 use App\Models\Job_posting;
-use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class EmployerController extends Controller
+use Illuminate\Http\Request;
+
+class JobpostingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +15,10 @@ class EmployerController extends Controller
      */
     public function index()
     {
-        $employer = Employer::all();
-        $job = Job_posting::all();
-        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->select('name_company')->get();
-        return view('index', compact('employer', 'job', 'name'));
+        session_start();
+        $id = $_SESSION['permision'];
+        $all_job = Job_posting::where('employer_id', '=', $id)->get();
+        return view('listjobPosting', compact('all_job'));
     }
 
     /**

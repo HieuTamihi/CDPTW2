@@ -14,7 +14,7 @@ class wishlistSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('wish_list')->insert([
+        DB::table('wish_lists')->insert([
             [
                 'customer_id' => '1',
                 'job_posting_id' => '1',

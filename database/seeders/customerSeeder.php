@@ -13,7 +13,7 @@ class customerSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('customer')->insert([[
+        DB::table('customers')->insert([[
             'email' => 'abc@gmail.com',
             'phone_number' => '000000',
             'fullname' => 'ABC', 

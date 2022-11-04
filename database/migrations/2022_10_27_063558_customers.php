@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class JobPosting extends Migration
+class Customers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class JobPosting extends Migration
      */
     public function up()
     {
-        Schema::create('job_posting', function (Blueprint $table) {
+        Schema::create('customers', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->integer('employer_id');
-            $table->string('title');
-            $table->string('experience')->nullable();
-            $table->string('type');
-            $table->string('skill');
-            $table->string('required');
-            $table->string('salary');
+            $table->string('email');
+            $table->string('phone_number')->unique();
+            $table->string('fullname')->nullable();
+            $table->integer('gender');
+            $table->integer('status');
             $table->timestamps();
         });
     }

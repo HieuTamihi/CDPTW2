@@ -13,7 +13,7 @@ class commentSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('comment')->insert([[
+        DB::table('comments')->insert([[
             'post_id' => '1',
             'customer_id' => '1', 
             'title' => 'Experience with Agile Scrum1',

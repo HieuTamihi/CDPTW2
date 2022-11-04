@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Comment extends Migration
+class Employers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class Comment extends Migration
      */
     public function up()
     {
-        Schema::create('comment', function (Blueprint $table) {
-            $table->id();
-            $table->integer('post_id');
-            $table->integer('customer_id');
-            $table->string('title');
-            $table->string('content_comment');
+        Schema::create('employers', function (Blueprint $table) {
+            $table->id()->autoIncrement();
+            $table->string('name_company');
+            $table->string('address')->nullable();
+            $table->string('image')->nullable();
+            $table->string('email');
+            $table->integer('phone_number');
             $table->timestamps();
         });
     }

@@ -20,7 +20,7 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="form-employ">
                             <!-- PAGE Employer -->
-                            <form action="" class="tab-pane active" method="POST">
+                            <form action="{{route('register')}}" class="tab-pane active" method="POST">
                                 @if(Session::has('message'))
                                 <div class="alert alert-success">{{Session::get('message')}}</div>
                                 @endif
@@ -37,10 +37,6 @@
                                 @endif
                                 <span class="des__name">Re-Password</span>
                                 <input type="password" placeholder="Enter your re-password" class="type__info__reg" name="password_confirmation">
-                                <span class="des__name">Company name</span>
-                                <input type="text" placeholder="Enter your company" class="type__info__reg" name="name_company">
-                                <span class="des__name">Address</span>
-                                <input type="text" placeholder="Enter your address" class="type__info__reg" name="address">
                                 <span class="des__name">Phone number</span>
                                 <input type="text" placeholder="Enter your phone number" class="type__info__reg" name="phone">
                                 @if ($errors->has('phone'))
@@ -48,6 +44,7 @@
                                 @endif
                                 <input type="hidden" value="3" name="role">
                                 <input type="hidden" value="1" name="status">
+                                <input type="hidden" value='{{(int)$employer_id->employer_id+=1}}' name="employer_id">
                                 <input type="submit" value="Sign up" class="btn reg__btn">
                                 <span class="btn btn login__btn"><a href="{{route('login')}}" style="text-decoration: none;color:white;">Login</a></span>
                             </form>
@@ -91,4 +88,4 @@
     </div>
 </div>
 <br>
-@endsection;
+@endsection
