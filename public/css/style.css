@@ -660,7 +660,7 @@ html {
   margin: 0;
 }
 
-.log__reg__page .col-md-6 {
+.log__reg__page {
   margin-top: 25px;
 }
 
@@ -694,6 +694,18 @@ html {
   text-align: center;
   border: 1px solid #bfbfbf;
   padding: 35px;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.form__reg {
+  text-align: center;
+  border: 1px solid #bfbfbf;
+  padding: 35px;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
 }
 
 .email__log,
@@ -822,7 +834,7 @@ html {
 .container-fluid .cont-top .intem-thume-img img {
   width: 100%;
   border: 1px solid #ccc;
-  height: 22%;
+  height: 100px;
 }
 
 .container-fluid .cont-bottum .cont-bottum-main-item {
@@ -837,6 +849,7 @@ html {
 
 .container-fluid .cont-bottum .cont-bottum-main-item-img img {
   width: 100%;
+  height: 100px;
   margin-bottom: 15px;
 }
 

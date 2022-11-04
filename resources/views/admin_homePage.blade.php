@@ -1,3 +1,4 @@
+@if(Auth::check() && Auth::user()->role == 1)
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('css/style.css')}}" />
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
-    <script src="https://kit.fontawesome.com/f6dce9b617.js" crossorigin="anonymous"></script>   
+    <script src="https://kit.fontawesome.com/f6dce9b617.js" crossorigin="anonymous"></script>
     <script defer src="{{asset('bootstrap.js')}}"></script>
     <title>Document</title>
 </head>
@@ -24,10 +25,16 @@
             <ul>
                 <li> <a href="#"><i class="fa-regular fa-user"></i></i>Customer </a></li>
                 <li> <a href="#"><i class="fa-solid fa-pen-to-square"></i>Employer </a></li>
+                <li> <a href="#"><i class="fa-brands fa-github"></i>Job posting </a></li>
                 <li> <a href="#"><i class="fa-brands fa-github"></i>Dashboard </a></li>
-                <li> <a href="#"><i class="fa-brands fa-github"></i>Dashboard </a></li>
-                <li> <a href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
-
+                @if(Auth::check())
+                <form method="POST" name="logout" action="{{ route('logout') }}">
+                    @csrf
+                    <li> <a href="javascript:document.logout.submit()"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+                </form>
+                @else
+                <li> <a href="{{route('login')}}"><i class="fa-solid fa-right-from-bracket"></i>Login</a></li>
+                @endif
             </ul>
         </div>
     </section>
@@ -37,8 +44,7 @@
                 <h2><i class="fas fa-bars"></i>Dashboard</h2>
             </div>
             <div class="top__header">
-                <input class="top__header--search" type="text" placeholder="Tìm kiếm"><i
-                    class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                <input class="top__header--search" type="text" placeholder="Tìm kiếm"><i class="fa-sharp fa-solid fa-magnifying-glass"></i>
 
             </div>
             <div class="top__header" style="padding-left:180px">
@@ -100,3 +106,4 @@
 </body>
 
 </html>
+@endif
