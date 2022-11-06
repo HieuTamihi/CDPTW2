@@ -3,7 +3,7 @@ $('#customid').slick({
     slidesToScroll: 1,
     vertical: true,
     appendArrows: '.contron-pre-next',
-    autoplaySpeed: 1000,
+    autoplaySpeed: 3000,
     arrows: true,
     infinite: true,
     autoplay: true,
@@ -29,7 +29,7 @@ $('.cont-bottum-main').slick({
     autoplay: true,
 });
 $('.intem-thume').slick({
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     vertical: true,
     appendArrows: '.contron-pre-next',
