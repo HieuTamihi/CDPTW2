@@ -15,11 +15,12 @@ class Employers extends Migration
     {
         Schema::create('employers', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('name_company');
+            $table->integer('user_id')->nullable();
+            $table->string('name_company')->nullable();
             $table->string('address')->nullable();
             $table->string('image')->nullable();
-            $table->string('email');
-            $table->integer('phone_number');
+            $table->string('email')->nullable();
+            $table->integer('phone_number')->nullable();
             $table->timestamps();
         });
     }

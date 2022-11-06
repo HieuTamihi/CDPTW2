@@ -28,7 +28,7 @@ $('.cont-bottum-main').slick({
     autoplay: true,
 });
 $('.intem-thume').slick({
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     vertical: true,
     appendArrows: '.contron-pre-next',

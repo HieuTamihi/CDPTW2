@@ -20,7 +20,7 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="form-employ">
                             <!-- PAGE Employer -->
-                            <form action="{{route('register')}}" class="tab-pane active" method="POST">
+                            <form action="" class="tab-pane active" method="POST">
                                 @if(Session::has('message'))
                                 <div class="alert alert-success">{{Session::get('message')}}</div>
                                 @endif
@@ -44,7 +44,7 @@
                                 @endif
                                 <input type="hidden" value="3" name="role">
                                 <input type="hidden" value="1" name="status">
-                                <input type="hidden" value='{{(int)$employer_id->employer_id+=1}}' name="employer_id">
+                                <input type="hidden" value="{{(int)$user_id->user_id}}" name="user_id">
                                 <input type="submit" value="Sign up" class="btn reg__btn">
                                 <span class="btn btn login__btn"><a href="{{route('login')}}" style="text-decoration: none;color:white;">Login</a></span>
                             </form>
@@ -88,4 +88,4 @@
     </div>
 </div>
 <br>
-@endsection
+@endsection;
