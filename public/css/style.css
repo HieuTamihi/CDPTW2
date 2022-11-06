@@ -660,7 +660,7 @@ html {
   margin: 0;
 }
 
-.log__reg__page{
+.log__reg__page {
   margin-top: 25px;
 }
 
@@ -874,6 +874,19 @@ html {
 
 .container-fluid .search-main .form-control {
   margin: 10px;
+}
+
+.body__top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.body__top a {
+  text-decoration: none;
+  background: #0d6efd;
+  color: #ffff;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
