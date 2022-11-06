@@ -19,8 +19,9 @@ class EmployerController extends Controller
     {
         $employer = Employer::all();
         $job = Job_posting::all();
-        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->select('name_company')->get();
-        return view('index', compact('employer', 'job', 'name'));
+        $title = Job_posting::leftjoin('employers', 'job_postings.employer_id', '=', 'employers.id')->get();
+        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->get();
+        return view('index', compact('employer', 'job', 'name', 'title'));
     }
 
     /**

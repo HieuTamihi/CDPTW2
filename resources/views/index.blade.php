@@ -26,25 +26,23 @@
                 <div class="row">
                     <div class="col-md-10 intem-main">
                         {{ csrf_field() }}
-                        @foreach ($employer as $row)
+                        @foreach ($title as $row => $tit)
                         <div class="intem-main-child">
                             <div class="row">
                                 <div class="col-md-5 intem-slide-img">
                                     <a href="#">
-                                        <img class="intem-img" src="{{url('img')}}/{{$row->image}}" alt="">
+                                        <img class="intem-img" src="{{url('img')}}/{{$tit->image}}" alt="">
                                     </a>
                                 </div>
                                 <div class="col-md-7 name-spotlight">
                                     <h3 class="title-spotlight">
-                                        <a href="#">{{$row->name_company}}</a>
+                                        <a href="#">{{$tit->name_company}}</a>
                                     </h3>
                                     <div class="spotilght-txt">
-                                        <p class="loca-spotlight">Seal Commerce is a Global Product Company that
-                                            helps people sell
-                                            better...
+                                        <p class="loca-spotlight">{{$tit->title}}
                                         </p>
                                         <div class="spotilght-txt-DC">
-                                            <p class="loca-spotlight">{{$row->address}}</p>
+                                            <p class="loca-spotlight">{{$tit->address}}</p>
                                         </div>
                                     </div>
                                     <div class="spotlight-btn">
@@ -77,11 +75,11 @@
                 </div>
                 <div id="hotid" class="hot-wotk-intem">
                     <ul id="customid" class="supper-hot-job">
-                        @foreach($job as $name)
+                        @foreach($name as $key => $job)
                         <li>
-                            <span class="tags"><strong class="tags-txt">{{$name->name_company}}</strong></span>
-                            <br><a href="{{asset('detail_page')}}">{{$name->title}}</a>
-                            <p class="job-salary-view">{{$name->salary}}</p>
+                            <span class="tags"><strong class="tags-txt">{{$job->name_company}}</strong></span>
+                            <br><a href="{{asset('detail_page')}}">{{$job->title}}</a>
+                            <p class="job-salary-view">{{$job->salary}}</p>
                         </li>
                         @endforeach
                     </ul>

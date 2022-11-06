@@ -51,6 +51,30 @@ class job_postingSeeder extends Seeder
                 'skill' => 'PHP , Laravel, Back-End',
                 'required' => 'Tạo phân quyền nhóm người sử dụng vào hệ thống ứng dụng CoreBanking; và một số hệ thống quản trị ngoài Corebanking',
                 'salary' => 'Offer '
+            ], [
+                'employer_id' => '5',
+                'title' => 'Working at Korean IT Companies in VietNam',
+                'experience' => '5 năm',
+                'type' => 'Fulltime',
+                'skill' => 'PHP , Laravel, Back-End',
+                'required' => 'Team Leader has 5+ years experience of web developer and experience in a Leader position',
+                'salary' => 'Offer '
+            ], [
+                'employer_id' => '6',
+                'title' => 'TAPTAP QC Fresher 2022',
+                'experience' => '5 năm',
+                'type' => 'Fulltime',
+                'skill' => 'Kiến thức nền tảng về software testing và ISTQB, Mobile App Testing, Web App Testing, API Testing',
+                'required' => 'TAPTAP QC Fresher 2022 là chương trình tuyển dụng & đào tạo những tài năng trẻ, năng động, ham học hỏi để “khai phá” tiềm năng, “nâng cấp” chuyên môn của mình.',
+                'salary' => '8.000.000  '
+            ], [
+                'employer_id' => '7',
+                'title' => '[Team leader/Senior/Junior] Salesforce Solutions Architect',
+                'experience' => '5 năm',
+                'type' => 'Fulltime',
+                'skill' => 'Aventra is a global IT consulting and IT services company with leading capabilities in digital transformation, cloud & Big data.',
+                'required' => 'About Aventra: Aventra is a global IT consulting and IT services company with leading capabilities in digital transformation, cloud & Big data. It is fast paced growing scale up company having offices in Malaysia, Singapore, India, and UAE.',
+                'salary' => '900 USD to 3.000 USD  '
             ]
         ]);
     }
