@@ -44,4 +44,4 @@ Route::get('/{name?}', function ($name = "index") {
 
 //vao trang danh sach bai viet
 // Route::get('/List_of_vacancies', [admin::class, 'List_of_vacancies'])->name('List_of_vacancies');
-Route::get('/List_of_vacancies', [vacancisController::class, 'List_of_vacancies'])->name('List_of_vacancies');
+Route::get('/List_of_vacancies', vacancisController::class);
