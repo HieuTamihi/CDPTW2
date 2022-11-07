@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Employer;
-use App\Models\Job_posting;
-use App\Models\Recruitment;
-use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\Recruitment;
 use Illuminate\Support\Facades\DB;
 
-class EmployerController extends Controller
+class vacancisController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,14 +15,12 @@ class EmployerController extends Controller
      */
     public function index()
     {
-        // lấy hết tất cả dữ liều trong Employer
-        $employer = Employer::all();
-        // lấy hết tất cả dữ liều trong Job_posting
-        $job = Job_posting::all();
-        // lấy dữ liệu theo employer_id kết hợp hai bản Job_posting & Employer
-        $title = Job_posting::leftjoin('employers', 'job_postings.employer_id', '=', 'employers.id')->get();
-        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->get();
-        return view('index', compact('employer', 'job', 'name', 'title'));
+        // lấy dữ liệu theo Jobposting_id và Employer_id của ba bảng recruitment, Job_posting & Employer
+        $vacancis = DB::table('recruitment')
+            ->join('job_postings', 'recruitment.jobposting_id', '=', 'job_postings.id')
+            ->join('employers', 'job_postings.employer_id', '=', 'employers.id')->get();
+        $all_vacancis = view('List_of_vacancies')->with('List_of_vacancies', $vacancis);
+        return view('List_of_vacancies')->with('List_of_vacancies', $all_vacancis);
     }
 
     /**

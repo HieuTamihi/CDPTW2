@@ -23,6 +23,7 @@ Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::get('/', [EmployerController::class, 'index'])->name('index');
 
+
 //dang ky
 Route::post('/register', [UserController::class, 'register'])->name('register');
 Route::get('/register', [UserController::class, 'Showregister']);
@@ -42,4 +43,5 @@ Route::get('/{name?}', function ($name = "index") {
 
 
 //vao trang danh sach bai viet
-Route::get('/List_of_vacancies', [admin::class, 'List_of_vacancies'])->name('List_of_vacancies');
+// Route::get('/List_of_vacancies', [admin::class, 'List_of_vacancies'])->name('List_of_vacancies');
+Route::get('/List_of_vacancies', [vacancisController::class, 'List_of_vacancies'])->name('List_of_vacancies');
