@@ -1,3 +1,4 @@
+@if(Auth::check() && Auth::user()->role == 1)
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +25,7 @@
             <ul>
                 <li> <a href="#"><i class="fa-regular fa-user"></i></i>Customer </a></li>
                 <li> <a href="#"><i class="fa-solid fa-pen-to-square"></i>Employer </a></li>
-                <li> <a href="#"><i class="fa-brands fa-github"></i>Dashboard </a></li>
+                <li> <a href="#"><i class="fa-brands fa-github"></i>Job posting </a></li>
                 <li> <a href="#"><i class="fa-brands fa-github"></i>Dashboard </a></li>
                 @if(Auth::check())
                 <form method="POST" name="logout" action="{{ route('logout') }}">
@@ -105,3 +106,4 @@
 </body>
 
 </html>
+@endif

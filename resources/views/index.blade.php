@@ -26,23 +26,26 @@
                 <div class="row">
                     <div class="col-md-10 intem-main">
                         {{ csrf_field() }}
-                        @foreach ($title as $row => $tit)
+                        @foreach ($employer as $row)
                         <div class="intem-main-child">
                             <div class="row">
                                 <div class="col-md-5 intem-slide-img">
-                                    <a href="#">
-                                        <img class="intem-img" src="{{url('img')}}/{{$tit->image}}" alt="">
+                                    <a href="{{route('employer.show',$row->id)}}">
+                                        {{$row->id}}
+                                        <img class="intem-img" src="{{url('img')}}/{{$row->image}}" alt="">
                                     </a>
                                 </div>
                                 <div class="col-md-7 name-spotlight">
                                     <h3 class="title-spotlight">
-                                        <a href="#">{{$tit->name_company}}</a>
+                                        <a href="{{route('employer.show',$row->id)}}">{{$row->name_company}}</a>
                                     </h3>
                                     <div class="spotilght-txt">
-                                        <p class="loca-spotlight">{{$tit->title}}
+                                        <p class="loca-spotlight">Seal Commerce is a Global Product Company that
+                                            helps people sell
+                                            better...
                                         </p>
                                         <div class="spotilght-txt-DC">
-                                            <p class="loca-spotlight">{{$tit->address}}</p>
+                                            <p class="loca-spotlight">{{$row->address}}</p>
                                         </div>
                                     </div>
                                     <div class="spotlight-btn">
@@ -55,7 +58,7 @@
                     </div>
                     <div class="col-md-2 intem-thume">
                         @foreach ($employer as $row)
-                        <a class="intem-thume-img" href="">
+                        <a class="intem-thume-img" href="{{route('employer.show',$row->id)}}">
                             <img src="{{url('img')}}/{{$row->image}}" alt="">
                         </a>
                         @endforeach
@@ -75,11 +78,11 @@
                 </div>
                 <div id="hotid" class="hot-wotk-intem">
                     <ul id="customid" class="supper-hot-job">
-                        @foreach($name as $key => $job)
+                        @foreach($job as $name)
                         <li>
-                            <span class="tags"><strong class="tags-txt">{{$job->name_company}}</strong></span>
-                            <br><a href="{{asset('detail_page')}}">{{$job->title}}</a>
-                            <p class="job-salary-view">{{$job->salary}}</p>
+                            <span class="tags"><strong class="tags-txt">{{$name->name_company}}</strong></span>
+                            <br><a href="{{route('employer.show',$row->id)}}">{{$name->title}}</a>
+                            <p class="job-salary-view">{{$name->salary}}</p>
                         </li>
                         @endforeach
                     </ul>
@@ -98,7 +101,7 @@
         <div class="row cont-bottum-main">
             @foreach ($employer as $row)
             <div class="col-md-2 cont-bottum-main-item">
-                <a href="">
+                <a href="{{route('employer.show',$row->id)}}">
                     <div class="cont-bottum-main-item-img">
                         <img src="{{url('img')}}/{{$row->image}}" alt="">
                     </div>
