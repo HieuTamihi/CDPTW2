@@ -4,6 +4,9 @@ use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminPostsController;
+use App\Http\Controllers\BlogController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,9 +35,20 @@ Route::get('search', [HomeController::class, 'search'])->name('search');
 
 Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
 
-Route::get('admin', function () {
-    return view('DashboardTemplate.dashboard');
+Route::get('blogSearch', [BlogController::class, 'blogSearch'])->name('blogSearch');
+
+
+// Route::prefix('admin')->group(function () {
+Route::resource('/blog-home', AdminPostsController::class);
+Route::resource('/blog-add', AdminPostsController::class);
+// Route::resource('/blog-edit', AdminPostsController::class);
+// });
+
+Route::prefix('blogit')->group(function () {
+    Route::get('/', [BlogController::class, 'featuredPosts'])->name('blogit');
+    Route::get('blogDetail/{id}', [BlogController::class, 'blogDetail'])->name('blogDetail');
 });
+
 
 Route::get('/{name?}', function ($name = "index") {
     return view($name);
