@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\Employer;
 use App\Models\Job_posting;
-use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-
-class EmployerController extends Controller
+use Illuminate\Support\Facades\Auth;
+class CRUDEmployer extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,16 +15,10 @@ class EmployerController extends Controller
      */
     public function index()
     {
-        $employer = Employer::all();
-        $job = Job_posting::all();
-        $title = Job_posting::leftjoin('employers', 'job_postings.employer_id', '=', 'employers.id')->get();
-        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->get();
-        return view('index', compact('employer', 'job', 'name', 'title'));
-    }
-
-    public function getPostByID()
-    {
-        return view('listemployer', compact('getPostByID'));
+        $id = Auth::user()->employer->id;
+        $getPostByID = Employer::findOrFail($id);
+        $result = $getPostByID->jobs;
+        return view('DashboardTemplate.Employer.list_post_by_id',compact('result'));
     }
 
     /**
@@ -36,7 +28,7 @@ class EmployerController extends Controller
      */
     public function create()
     {
-        //
+        return view('DashboardTemplate.Employer.add_post');
     }
 
     /**
@@ -47,7 +39,18 @@ class EmployerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user_id =2;
+        Job_posting::create([
+            'employer_id' => Auth::user()->id,
+            'title'=>$request->title,
+            'experience' => $request->experience,
+            'type' => $request->type,
+            'skill' => $request->skill,
+            'required' => $request->required,
+            'salary' => $request->salary,  
+            'token' => md5(Auth::user()->id),
+        ]);
+        return redirect()->route('CRUDEmployer.index');
     }
 
     /**
@@ -58,10 +61,8 @@ class EmployerController extends Controller
      */
     public function show($id)
     {
-        $detail = Employer::findOrFail($id);
-        $relate = $detail->jobs->take(1);
-        $job_relate = $detail->jobs->take(3);
-        return view('detail_page', compact('detail', 'relate', 'job_relate'));
+        $show = Job_posting::find($id);
+        return view('DashboardTemplate.Employer.detail_post',compact('show'));
     }
 
     /**
@@ -72,7 +73,8 @@ class EmployerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $show = Job_posting::find($id);
+        return view('DashboardTemplate.Employer.edit_post',compact('show'));
     }
 
     /**
@@ -84,7 +86,9 @@ class EmployerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $job = Job_posting::find($id);
+        $job->update($request->all());
+        return redirect()->route('CRUDEmployer.index');
     }
 
     /**
@@ -95,6 +99,7 @@ class EmployerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $job = Job_posting::destroy($id);
+        return redirect()->route('CRUDEmployer.index');
     }
 }

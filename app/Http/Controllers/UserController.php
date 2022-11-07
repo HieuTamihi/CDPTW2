@@ -63,9 +63,14 @@ class UserController extends Controller
                     'role' => $request->role,
                     'status' => $request->status
                 ]);
-                Employer::create([
-                    'user_id' => $request->user_id
-                ]);
+                    if($request->role == 3){
+                        Employer::create([
+                            'user_id' => $request->user_id,
+                            'name_company' => $request->name_company,
+                            'email' => $request->email,
+                            'phone_number' =>$request->phone,
+                        ]);
+                    }
                 return redirect()->route('register')->with('message', 'Tạo tài khoản thành công !');
             } else {
                 return redirect()->route('register')->with('message', 'Tài khoản đã tồn tại !');
@@ -74,8 +79,9 @@ class UserController extends Controller
     }
     public function Showregister()
     {
-        $user_id = DB::table('employers')->select('user_id')->orderBy('user_id', 'DESC')->first();
-        (int)$user_id->user_id += 1;
+        $user_id = DB::table('users')->select('id')->orderBy('id', 'DESC')->first();
+        (int)$user_id->id += 1;
         return view('register', compact('user_id'));
+       
     }
 }
