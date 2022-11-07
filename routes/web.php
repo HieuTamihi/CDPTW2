@@ -24,10 +24,18 @@ Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::get('/', [EmployerController::class, 'index'])->name('index');
 
 //dang ky
+//dang ky tai khoan employer
 Route::post('/register', [UserController::class, 'register'])->name('register');
-Route::get('/register', [UserController::class, 'Showregister']);
-//chuyen trang
+Route::get('/register', [UserController::class, 'getUserID']);
+//dang ky tai khoan customer
+Route::post('/registerCT', [UserController::class, 'registerCT'])->name('registerCT');
+Route::get('/registerCT', [UserController::class, 'getCustomerID']);
 
+//admin
+Route::resource('listjobPosting', ControllersJobpostingController::class);
+Route::resource('employer', EmployerController::class);
+
+//chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');
 
 Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
@@ -35,7 +43,7 @@ Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
 Route::get('admin', function () {
     return view('DashboardTemplate.dashboard');
 });
-
+Route::get('/detail_page/{id}',[EmployerController::class,'show']);
 Route::get('/{name?}', function ($name = "index") {
     return view($name);
 });

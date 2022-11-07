@@ -69,7 +69,7 @@
             <div class="header__right d-flex">
                 <ul>
                     @if (Auth::check())
-                    @if (Auth::user()->role == 3)
+                    @if (Auth::user()->role == 2)
                     <li><a class="btn btn-danger header__right--logemp" href="#">Đăng tuyển</a></li>
                     @endif
                     <form method="POST" name="logout" action="{{ route('logout') }}">

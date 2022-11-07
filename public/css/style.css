@@ -660,7 +660,7 @@ html {
   margin: 0;
 }
 
-.log__reg__page {
+.log__reg__page{
   margin-top: 25px;
 }
 
@@ -834,7 +834,7 @@ html {
 .container-fluid .cont-top .intem-thume-img img {
   width: 100%;
   border: 1px solid #ccc;
-  height: 100px;
+  height: 22%;
 }
 
 .container-fluid .cont-bottum .cont-bottum-main-item {
@@ -850,7 +850,6 @@ html {
 .container-fluid .cont-bottum .cont-bottum-main-item-img img {
   width: 100%;
   margin-bottom: 15px;
-  height: 100px;
 }
 
 .container-fluid .cont-bottum .cont-bottum-main-item-txt {

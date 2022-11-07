@@ -5,11 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Job_posting extends Model
+class Customer extends Model
 {
     use HasFactory;
-    public function empl()
-    {
-        return $this->belongsTo(Employer::class,'employer_id)');
-    }
+    protected $fillable = [
+        'id','email','phone_number','fullname','gender','status'
+    ];
 }
