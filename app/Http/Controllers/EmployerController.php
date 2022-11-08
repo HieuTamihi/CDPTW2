@@ -22,10 +22,8 @@ class EmployerController extends Controller
         $employer = Employer::all();
         // lấy hết tất cả dữ liều trong Job_posting
         $job = Job_posting::all();
-        // lấy dữ liệu theo employer_id kết hợp hai bản Job_posting & Employer
-        $title = Job_posting::leftjoin('employers', 'job_postings.employer_id', '=', 'employers.id')->get();
-        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->get();
-        return view('index', compact('employer', 'job', 'name', 'title'));
+        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->select('name_company')->get();
+        return view('index', compact('employer', 'job', 'name'));
     }
 
     /**
@@ -57,7 +55,10 @@ class EmployerController extends Controller
      */
     public function show($id)
     {
-        //
+        $detail = Employer::findOrFail($id);
+        $relate = $detail->jobs->take(1);
+        $job_relate = $detail->jobs->take(3);
+        return view('detail_page',compact('detail','relate','job_relate'));
     }
 
     /**

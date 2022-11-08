@@ -32,10 +32,18 @@ Route::get('/', [EmployerController::class, 'index'])->name('index');
 
 
 //dang ky
+//dang ky tai khoan employer
 Route::post('/register', [UserController::class, 'register'])->name('register');
-Route::get('/register', [UserController::class, 'Showregister']);
-//chuyen trang
+Route::get('/register', [UserController::class, 'getUserID']);
+//dang ky tai khoan customer
+Route::post('/registerCT', [UserController::class, 'registerCT'])->name('registerCT');
+Route::get('/registerCT', [UserController::class, 'getCustomerID']);
 
+//admin
+Route::resource('listjobPosting', ControllersJobpostingController::class);
+Route::resource('employer', EmployerController::class);
+
+//chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');
 
 Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
@@ -53,14 +61,10 @@ Route::prefix('blogit')->group(function () {
     Route::get('/', [BlogController::class, 'featuredPosts'])->name('blogit');
     Route::get('blogDetail/{id}', [BlogController::class, 'blogDetail'])->name('blogDetail');
 });
-
-
+Route::get('admin', function () {
+    return view('DashboardTemplate.dashboard');
+});
+Route::get('/detail_page/{id}',[EmployerController::class,'show']);
 Route::get('/{name?}', function ($name = "index") {
     return view($name);
 });
-
-//vao trang danh sach bai viet
-Route::resource('vacancis-home', VacancisController::class);
-Route::resource('employer-home', AdminEmpolyer::class);
-Route::resource('jobpostings-home', AdminJobpostings::class);
-Route::resource('all_users', AdminUser::class);

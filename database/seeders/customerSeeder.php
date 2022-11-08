@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+
 class customerSeeder extends Seeder
 {
     /**
@@ -13,27 +14,21 @@ class customerSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('customers')->insert([[
-            'email' => 'abc@gmail.com',
-            'phone_number' => '000000',
-            'fullname' => 'ABC', 
-            'gender' => '0',
-            'status' => '0', 
-        ],
-        [
-            'email' => 'def@gmail.com',
-            'phone_number' => '111111',
-            'fullname' => 'DEF', 
-            'gender' => '0',
-            'status' => '1', 
-        ],
-        [
-            'email' => 'xyz@gmail.com',
-            'phone_number' => '222222',
-            'fullname' => 'XYZ', 
-            'gender' => '0',
-            'status' => '1', 
-        ],
-    ]);
+        DB::table('customers')->insert([
+            [
+                'email' => 'thaihieu123@gmail.com',
+                'phone_number' => '0123456789',
+                'fullname' => 'ABC',
+                'gender' => '0',
+                'status' => '1',
+            ],
+            [
+                'email' => 'thaihieu124@gmail.com',
+                'phone_number' => '0123456788',
+                'fullname' => 'DEF',
+                'gender' => '0',
+                'status' => '1',
+            ],
+        ]);
     }
 }
