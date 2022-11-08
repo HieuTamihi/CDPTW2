@@ -7,7 +7,7 @@
 
             <div class="card">
                 <a href="{{ route('AdminUser.create') }}"
-                    style="margin: 10px; padding: 5px 20px; background: #007bff; width: 10%; color: #fff; border-radius: 5px;">Add
+                    style="text-align: center; margin: 10px; padding: 5px 20px; background: #007bff; width: 12%; color: #fff; border-radius: 5px;">Add
                     new</a>
                 <div class="card-header">
                     <h3 class="card-title">User</h3>
