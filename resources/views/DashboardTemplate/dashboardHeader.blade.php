@@ -1,5 +1,3 @@
-@if(Auth::check())
-@if(Auth::user()->role == 1)
 <!DOCTYPE html>
 <html>
 
@@ -19,6 +17,8 @@
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f6dce9b617.js" crossorigin="anonymous"></script>
+    <script defer src="{{ asset('bootstrap.js') }}"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -29,7 +29,8 @@
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
+                            class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Home</a>
@@ -39,7 +40,8 @@
             <!-- SEARCH FORM -->
             <form class="form-inline ml-3">
                 <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control form-control-navbar" type="search" placeholder="Search"
+                        aria-label="Search">
                     <div class="input-group-append">
                         <button class="btn btn-navbar" type="submit">
                             <i class="fas fa-search"></i>
@@ -62,7 +64,8 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="#" class="brand-link">
-                <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">AdminLTE 3</span>
             </a>
             <!-- Sidebar -->
@@ -78,7 +81,8 @@
                 </div>
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
 
                         <li class="nav-item has-treeview menu-open">
                             <a href="#" class="nav-link">
@@ -107,7 +111,7 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
-                                    Tables
+                                    Users
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
@@ -133,7 +137,95 @@
                             </ul>
                         </li>
 
-                        <!-- <ul class="nav nav-treeview">
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Employer
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('employer-home.create') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Home Employer</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ URL::to('/DashboardTemplate.dashboard_Employer_add') }}"
+                                        class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Employer</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Edit Employer</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    JodPosting
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('jobpostings-home.create') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Home JodPosting</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add JodPosting</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Edit JodPosting</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    User
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('all_users.create') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Home User</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add User</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Edit User</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
@@ -152,26 +244,7 @@
                                     <p>Read</p>
                                 </a>
                             </li>
-                        </ul> -->
-                        <li class="nav-item has-treeview">
-                            @if(Auth::check())
-                            <form method="POST" name="logout" action="{{ route('logout') }}">
-                                @csrf
-                                <a href="javascript:document.logout.submit()" class="nav-link">
-                                    <i class="nav-icon fas fa-table"></i>
-                                    <p>
-                                        Logout
-                                    </p>
-                                </a>
-                            </form>
-                            @else
-                            <a href="{{route('login')}}" class="nav-link">
-                                <i class="nav-icon fas fa-table"></i>
-                                <p>
-                                    Login
-                                </p>
-                            </a>
-                            @endif
+                        </ul>
                         </li>
                     </ul>
                 </nav>
@@ -196,37 +269,3 @@
 </body>
 
 </html>
-@else
-<section>
-    <div class="error404" style="text-align: center; padding-top:25px;">
-        <div class="error-content">
-            <h3>Xin lỗi, chúng tôi không tìm thấy trang mà bạn cần!</h3>
-            <div class="list-contact">
-                <div class="itemct">
-                    <a href="{{route('index')}}" class="link link--yellow" style="color: blue;">
-                        <i class="iconerror-tgdd"></i>
-                        <p>Trở về trang chủ</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-@endif
-@else
-<section>
-    <div class="error404" style="text-align: center; padding-top:25px;">
-        <div class="error-content">
-            <h3>Xin lỗi, chúng tôi không tìm thấy trang mà bạn cần!</h3>
-            <div class="list-contact">
-                <div class="itemct">
-                    <a href="{{route('index')}}" class="link link--yellow" style="color: blue;">
-                        <i class="iconerror-tgdd"></i>
-                        <p>Trở về trang chủ</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-@endif
