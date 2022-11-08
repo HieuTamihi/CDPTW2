@@ -6,7 +6,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminPostsController;
 use App\Http\Controllers\BlogController;
-
+use App\Http\Controllers\VacancisController;
+use PhpParser\Node\Stmt\Return_;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,7 +56,6 @@ Route::get('/{name?}', function ($name = "index") {
     return view($name);
 });
 
-
 //vao trang danh sach bai viet
-// Route::get('/List_of_vacancies', [admin::class, 'List_of_vacancies'])->name('List_of_vacancies');
-Route::get('/List_of_vacancies', vacancisController::class);
+
+Route::resource('vacancis-home', VacancisController::class);

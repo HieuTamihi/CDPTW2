@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Recruitment;
-use Illuminate\Support\Facades\DB;
 
-class vacancisController extends Controller
+class VacancisController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +13,6 @@ class vacancisController extends Controller
      */
     public function index()
     {
-        // lấy dữ liệu theo Jobposting_id và Employer_id của ba bảng recruitment, Job_posting & Employer
-        $vacancis = DB::table('recruitment')
-            ->join('job_postings', 'recruitment.jobposting_id', '=', 'job_postings.id')
-            ->join('employers', 'job_postings.employer_id', '=', 'employers.id')->get();
-        $all_vacancis = view('List_of_vacancies')->with('List_of_vacancies', $vacancis);
-        return view('List_of_vacancies')->with('List_of_vacancies', $all_vacancis);
     }
 
     /**
@@ -30,7 +22,6 @@ class vacancisController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
