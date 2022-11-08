@@ -7,6 +7,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminPostsController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\VacancisController;
+use App\Http\Controllers\AdminEmpolyer;
+use App\Http\Controllers\AdminJobpostings;
+use App\Http\Controllers\AdminUser;
 use PhpParser\Node\Stmt\Return_;
 
 /*
@@ -57,5 +60,7 @@ Route::get('/{name?}', function ($name = "index") {
 });
 
 //vao trang danh sach bai viet
-
 Route::resource('vacancis-home', VacancisController::class);
+Route::resource('employer-home', AdminEmpolyer::class);
+Route::resource('jobpostings-home', AdminJobpostings::class);
+Route::resource('all_users', AdminUser::class);

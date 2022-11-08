@@ -22,7 +22,7 @@
         <section class="content">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Vacancis home</h3>
+                    <h3 class="card-title">Employer home</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                             <i class="fas fa-minus"></i>
@@ -33,36 +33,32 @@
                     <thead>
                         <tr>
                             <th scope=" col">ID</th>
-                            <th scope="col">Logo</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Request</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Sent date</th>
+                            <th scope="col">email</th>
+                            <th scope="col">email_verified_at</th>
+                            <th scope="col">phone</th>
+                            <th scope="col">password</th>
+                            <th scope="col">role</th>
+                            <th scope="col">status</th>
+                            <th scope="col">remember_token</th>
                             <th scope="col">Action</th>
-
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            @foreach ($all_vacancis as $row)
+                        @foreach ($all_users as $row)
+                            <tr>
                                 <th scope="row">{{ $row->id }}</th>
-                                <td style="width: 10%;">
-                                    <div class="img">
-                                        <img style="width: 100%;" src="{{ url('img') }}/{{ $row->image }}"
-                                            alt="">
-                                    </div>
-                                </td>
-                                <td>{{ $row->name_company }}</td>
-                                <td>{{ $row->address }}</td>
-                                <td>{{ $row->required }}</td>
+                                <th scope="row">{{ $row->email }}</th>
+                                <td>{{ $row->email_verified_at }}</td>
+                                <td>{{ $row->phone }}</td>
+                                <td>{{ $row->password }}</td>
+                                <td>{{ $row->role }}</td>
                                 <td>{{ $row->status }}</td>
-                                <td>{{ date('d-m-Y', strtotime($row->created_at)) }}</td>
+                                <td>{{ $row->remember_token }}</td>
                                 <td>
                                     <a href=""><i class="fa-solid fa-pen"></i></a>
                                     <a href=""><i class="fa-solid fa-trash"></i></a>
                                 </td>
-                        </tr>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
@@ -70,7 +66,7 @@
             </div>
             <!-- /.card -->
             <div>
-                {{ $all_vacancis->links() }}
+                {{ $all_users->links() }}
             </div>
         </section>
     </div>

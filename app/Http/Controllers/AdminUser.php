@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Job_posting;
-use App\Models\Employer;
-use App\Models\Recruitment;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
-class VacancisController extends Controller
+class AdminUser extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,6 +16,7 @@ class VacancisController extends Controller
      */
     public function index()
     {
+        //
     }
 
     /**
@@ -27,10 +26,8 @@ class VacancisController extends Controller
      */
     public function create()
     {
-        $all_vacancis = DB::table('recruitment')
-            ->join('job_postings', 'recruitment.jobposting_id', '=', 'job_postings.id')
-            ->join('employers', 'job_postings.employer_id', '=', 'employers.id')->paginate(5);
-        return view('DashboardTemplate.dashboard_vacancis_home', compact('all_vacancis'));
+        $all_users = User::all();
+        return view('DashboardTemplate.dashboard_User_home', compact('all_users'));
     }
 
     /**
