@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CRUDUserController;
 use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -35,6 +36,8 @@ Route::get('/registerCT', [UserController::class, 'getCustomerID']);
 Route::resource('listjobPosting', ControllersJobpostingController::class);
 Route::resource('employer', EmployerController::class);
 
+Route::resource('AdminUser', CRUDUserController::class);
+
 //chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');
 
@@ -43,7 +46,7 @@ Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
 Route::get('admin', function () {
     return view('DashboardTemplate.dashboard');
 });
-Route::get('/detail_page/{id}',[EmployerController::class,'show']);
+Route::get('/detail_page/{id}', [EmployerController::class, 'show']);
 Route::get('/{name?}', function ($name = "index") {
     return view($name);
 });
