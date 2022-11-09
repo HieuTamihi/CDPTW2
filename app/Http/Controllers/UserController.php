@@ -49,6 +49,12 @@ class UserController extends Controller
             } else {
                 return redirect()->route('index')->with('message', 'Đăng nhập thành công');
             }
+            // Dang nhap employer
+            if (Auth::user()->role == 2) {
+                return redirect()->route('index')->with('message', 'Đăng nhập thành công');
+            } else {
+                return redirect()->route('index')->with('message', 'Đăng nhập thành công');
+            }
         } else {
             return redirect()->route('login')->with('message', 'Email hoặc mật khẩu không chính xác');
         }
@@ -69,7 +75,7 @@ class UserController extends Controller
             }
             $user = DB::table('users')->where('email', $request->email)->first();
             if (!$user) {
-                User::create([
+                $newUser = User::create([
                     'email' => $request->email,
                     'password' => $request->password,
                     'phone' => $request->phone,
@@ -77,7 +83,11 @@ class UserController extends Controller
                     'status' => $request->status = 1
                 ]);
                 Employer::create([
-                    'user_id' => $request->user_id
+                    'user_id' => $newUser->id,
+                    'name_company' => $request->name_company,
+                    'address' => $request->address,
+                    'email' => $request->email,
+                    'phone_number' =>$request->phone,
                 ]);
                 return redirect()->route('register')->with('message', 'Tạo tài khoản thành công !');
             } else {
