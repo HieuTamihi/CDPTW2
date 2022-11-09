@@ -3,9 +3,7 @@
 use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\jobpostingController;
-use App\Http\Controllers\JobpostingController as ControllersJobpostingController;
-use App\Models\Job_posting;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,15 +21,20 @@ Route::get('/index', [EmployerController::class, 'index']);
 //dang nhap
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 Route::post('/login', [UserController::class, 'login'])->name('login');
-Route::resource('/', EmployerController::class);
+Route::get('/', [EmployerController::class, 'index'])->name('index');
 
 //dang ky
+//dang ky tai khoan employer
 Route::post('/register', [UserController::class, 'register'])->name('register');
-Route::get('/register', [UserController::class, 'showRegister']);
+Route::get('/register', [UserController::class, 'getUserID']);
+//dang ky tai khoan customer
+Route::post('/registerCT', [UserController::class, 'registerCT'])->name('registerCT');
+Route::get('/registerCT', [UserController::class, 'getCustomerID']);
 
 //admin
 Route::resource('listjobPosting', ControllersJobpostingController::class);
 Route::resource('employer', EmployerController::class);
+
 //chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');
 

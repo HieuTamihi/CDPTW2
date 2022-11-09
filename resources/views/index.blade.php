@@ -31,7 +31,6 @@
                             <div class="row">
                                 <div class="col-md-5 intem-slide-img">
                                     <a href="{{route('employer.show',$row->id)}}">
-                                        {{$row->id}}
                                         <img class="intem-img" src="{{url('img')}}/{{$row->image}}" alt="">
                                     </a>
                                 </div>

@@ -13,8 +13,8 @@
         <div class="row">
             <div class="col-12 col-xl-9 detail_body__left">
                 <div class="information">
-                    <div class="information__logo">
-                        <a href="#"><img src="{{asset('img/$detail->image')}}" alt=""></a>
+                    <div class="information__logo" style="width:35%;">
+                        <img src="{{asset('img/'.$detail->image)}}" alt="" >
                     </div>
                     <div class="information__content">
                         <p>{{$detail->name_company}}</p>
@@ -63,7 +63,9 @@
                                     Tạo CV Ứng Tuyển
                                 </button>
                             </a>
-                            <p class="text_align">4 ngày trước</p>
+                            @foreach($relate as $value)
+                            <p class="text_align">{{$date - date('d',strtotime($value->created_at))}} ngày trước</p>
+                            @endforeach
                             <h6>Địa điểm</h6>
                             <p>{{$detail->address}}</p>
                             <h6>Số năm kinh nghiệm</h6>
