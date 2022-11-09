@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -144,21 +145,21 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('blog-home.index') }}" class="nav-link">
+                                    <a href="{{ route('admin-blog-home.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Home Posts</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('blog-add.create') }}" class="nav-link">
+                                    <a href="{{ route('admin-blog-home.create') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add Posts</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{{ route('admin-blog-comment.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Edit Posts</p>
+                                        <p>Comment Posts</p>
                                     </a>
                                 </li>
                             </ul>
@@ -204,6 +205,10 @@
     <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('dist/js/demo.js') }}"></script>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script>
+        CKEDITOR.replace('ckeditorPost');
+    </script>
 </body>
 
 </html>

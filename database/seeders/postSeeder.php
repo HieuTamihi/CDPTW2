@@ -25,7 +25,7 @@ class postSeeder extends Seeder
 
                 Theo số liệu thống kê, IoT phát triển với tốc độ tăng trưởng kép hằng năm là 26,4%. Quy mô của toàn thị trường sẽ đạt 2,5 nghìn tỷ USD vào năm 2029. Gấp năm lần so với quy mô thị trường dự đoán hiện nay là 0,5 nghìn tỷ đô.',
                 'image' => '11277_2021_8907_Fig4_HTML.jpg',
-                'views' => '100',
+                'views' => '1',
                 'created_at' => '2022-11-01'
             ],
             [
@@ -35,7 +35,7 @@ class postSeeder extends Seeder
                 'content' => 'AngularJS từ lâu đã là một web application framework phổ biến, nhưng AngularJS là gì? Hiện tại Angular còn đang phổ biến hay không?. Có nên tiếp tục học Angular hay không? Tất cả những câu hỏi này sẽ được giải đáp tường tận trong bài viết dưới đây.
                 Mong là thông qua bài viết này, sẽ nhiều hơn anh em định dấn thân vào frontend sẽ lựa chọn Angular là ngôn ngữ chiến đấu của mình.',
                 'image' => 'JAngualrjs-la-gi-1-1024x538.jpg',
-                'views' => '900',
+                'views' => '1',
                 'created_at' => '2022-11-02'
             ],
             [
@@ -54,7 +54,7 @@ class postSeeder extends Seeder
                 6. Hiểu biết về các deep learning framework – Knowledge of DL Frameworks.
                 Tại sao lại là Deep Learning?, rồi anh em vào mục 1 sẽ thấy ngay.',
                 'image' => '60f6feb4be651f666b46194a_AI-vs-Machine-Learning-vs-Deep-Learning-1024x1024.jpg',
-                'views' => '800',
+                'views' => '2',
                 'created_at' => '2022-11-03'
 
             ],
@@ -71,7 +71,7 @@ class postSeeder extends Seeder
 
                 Theo Báo cáo thị trường IT Việt Nam – Tech Hiring 2022, Lập trình viên với từ 1 đến 3 năm kinh nghiệm làm về AWS có mức lương Gross trung bình $1,775; đối với GCP là $1,698; với Azure là $1,526. Mức lương Lập trình viên làm về các công nghệ thuộc nhóm High Tech bao gồm Tensor Flows, Kubernetes, Python,  lần lượt đạt mức $1,732, $1,669, $1,389. Mức lương Gross của Lập trình viên Unity hiện ở mức trung bình $1,378/tháng khi có từ 1 đến 3 năm kinh nghiệm.',
                 'image' => 'TopDev_VietnamITMarketReport_TechHiring2022-copy-20-768x494.jpg',
-                'views' => '404',
+                'views' => '3',
                 'created_at' => '2022-11-04'
 
             ],
@@ -86,7 +86,7 @@ class postSeeder extends Seeder
 
                 Để làm được điều này, kỹ sư cầu nối phải luôn theo sát tiến độ dự án, từ giai đoạn nhận yêu cầu đến khi bàn giao sản phẩm. ',
                 'image' => 'ky-su-cau-noi-brse-la-gi-1-2048x1365.jpg',
-                'views' => '303',
+                'views' => '4',
                 'created_at' => '2022-11-05'
 
             ],
@@ -113,7 +113,7 @@ class postSeeder extends Seeder
                 Thực hiện nhiệm vụ cụ thể theo sự hướng dẫn của leader
                 Làm quen với công cụ, xây dựng dần kỹ năng làm việc.',
                 'image' => 'Fresher-la-gi-768x512.jpg',
-                'views' => '607',
+                'views' => '5',
                 'created_at' => '2022-11-06'
 
             ],
@@ -125,7 +125,7 @@ class postSeeder extends Seeder
                 Thời mình còn là sinh viên, mình rất sợ hai từ thất nghiệp nó ám ảnh mình khiến mình học tập rất chăm chỉ, chỉ mong rằng sự cố gắng của mình sẽ được đền đáp sau đó. Thời điểm đó mình chỉ có một hy vọng duy nhất là được nhận vào một công ty nào đó, để học hỏi và lấy kinh nghiệm, mình cũng không mường tượng được một công ty tốt nó trông như nào, được gì và mất gì khi xin việc vào một công ty. Đến khi vào làm việc tại công ty A, B, C thì mình vẫn chỉ biết cố gắng trau dồi, học hỏi mỗi ngày để có được càng nhiều kiến thức và kinh nghiệm càng tốt. Mình đã cày như một cái máy, thật sự đó. Nhưng chắc chắn đó là cái nhân mình đã gieo, sau gần 4 năm lăn lộn thì mình thấy trước mắt mình có nhiều cánh cửa rộng mở hơn, có nhiều sự lựa chọn hơn và mình có thể đúc kết được thế nào là một công ty tốt để mình có thể cống hiến lâu dài.
                 Dưới đây có những câu hỏi mà bạn nên tự đặt ra cho bạn, để bạn có thể tìm được con đường đi của mình nhé.',
                 'image' => 'Leadership-and-teamwork-concept-768x476.jpg',
-                'views' => '705',
+                'views' => '6',
                 'created_at' => '2022-11-07'
 
             ],
@@ -152,7 +152,7 @@ class postSeeder extends Seeder
 
                 ',
                 'image' => 'cong-ty-nuoc-ngoai-tai-vn.jpg',
-                'views' => '',
+                'views' => '7',
                 'created_at' => '2022-11-08'
 
             ],

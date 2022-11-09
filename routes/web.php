@@ -6,7 +6,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminPostsController;
 use App\Http\Controllers\BlogController;
-
+use App\Http\Controllers\AdminCommentsController;
+use App\Http\Controllers\BlogCommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,17 +39,17 @@ Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
 Route::get('blogSearch', [BlogController::class, 'blogSearch'])->name('blogSearch');
 
 
-// Route::prefix('admin')->group(function () {
-Route::resource('/blog-home', AdminPostsController::class);
-Route::resource('/blog-add', AdminPostsController::class);
-// Route::resource('/blog-edit', AdminPostsController::class);
-// });
+Route::resource('/admin-blog-home', AdminPostsController::class);
+Route::resource('/admin-blog-comment', AdminCommentsController::class);
+
+
+
+
 
 Route::prefix('blogit')->group(function () {
     Route::get('/', [BlogController::class, 'featuredPosts'])->name('blogit');
     Route::get('blogDetail/{id}', [BlogController::class, 'blogDetail'])->name('blogDetail');
 });
-
 
 Route::get('/{name?}', function ($name = "index") {
     return view($name);

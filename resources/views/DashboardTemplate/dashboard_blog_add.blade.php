@@ -6,23 +6,19 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Posts</h1>
+                        <h1>Add posts</h1>
+                        @if (session('msg'))
+                            <div class="alert alert-success" style="width: 250px">{{ session('msg') }}</div>
+                        @endif
                     </div>
                     <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Layout</a></li>
-                            <li class="breadcrumb-item active">Fixed Layout</li>
-                        </ol>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
         </section>
         <section class="content">
-            <form action="{{ route('blog-add.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('admin-blog-home.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
-                @if ($errors->any())
-                @endif
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card card-primary">
@@ -30,19 +26,29 @@
                                 <div class="form-group">
                                     <div class="mb-3">
                                         <label for="inputName">Title</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="post_title" placeholder="Tiêu đề">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ old('post_title') }}" name="post_title" placeholder="Tiêu đề">
+                                        @error('post_title')
+                                            <span style="color: red;">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="mb-3">
                                         <label for="formFile" class="form-label">Image</label>
-                                        <input class="form-control" type="file" id="formFile" value=""
+                                        <input class="form-control" type="file" id="formFile"
+                                            value="{{ old('post_image') }}" accept="image/jpg, image/jpeg, image/png"
                                             name="post_image">
+                                        @error('post_image')
+                                            <span style="color: red;">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <div class="mb-3">
                                             <label for="inputName">Content</label>
-                                            <textarea id="inputName" class="form-control" value="" name="post_content" rows="4" cols="50"
-                                                placeholder="Nội dung"></textarea>
+                                            <textarea id="ckeditorPost" class="form-control" value="" name="post_content" rows="4" cols="50"
+                                                placeholder="Nội dung">{{ old('post_content') }}</textarea>
+                                            @error('post_content')
+                                                <span style="color: red;">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
