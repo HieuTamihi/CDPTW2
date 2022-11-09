@@ -16,9 +16,9 @@ class Employer extends Model
         'welfare',
         'name_company',
         'address',
-        'image',
         'email',
-        'phone_number'
+        'phone_number',
+        'image'
     ];
     public function jobs()
     {

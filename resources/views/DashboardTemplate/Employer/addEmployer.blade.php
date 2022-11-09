@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>ADD Jobposting</h1>
+                        <h1>ADD Employer</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -27,39 +27,54 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <div class="mb-3">
-                                        <label for="inputName">Employer Id</label>
+                                        <label for="inputName">User id</label>
                                         <input type="text" id="inputName" class="form-control" value=""
-                                            name="employer_id" placeholder="employer_id">
+                                            name="user_id" placeholder="User id">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="inputName">Title</label>
+                                        <label for="inputName">Website</label>
                                         <input type="text" id="inputName" class="form-control" value=""
-                                            name="title" placeholder="title">
+                                            name="website" placeholder="website">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="inputName">Experience</label>
+                                        <label for="inputName">infor</label>
                                         <input type="text" id="inputName" class="form-control" value=""
-                                            name="experience" placeholder="experience">
+                                            name="infor" placeholder="infor">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="inputName">Type</label>
+                                        <label for="inputName">responsibility</label>
                                         <input type="text" id="inputName" class="form-control" value=""
-                                            name="type" placeholder="type">
+                                            name="responsibility" placeholder="responsibility">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="inputName">Skill</label>
+                                        <label for="inputName">welfare</label>
                                         <input type="text" id="inputName" class="form-control" value=""
-                                            name="skill" placeholder="skill">
+                                            name="welfare" placeholder="welfare">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="inputName">Required</label>
+                                        <label for="inputName">Name Company</label>
                                         <input type="text" id="inputName" class="form-control" value=""
-                                            name="required" placeholder="required">
+                                            name="name_company" placeholder="Tên công ty">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="inputName">Salary</label>
+                                        <label for="inputName">Address</label>
                                         <input type="text" id="inputName" class="form-control" value=""
-                                            name="salary" placeholder="salary">
+                                            name="address" placeholder="Địa chỉ công ty">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inputName">Email</label>
+                                        <input type="email" id="inputName" class="form-control" value=""
+                                            name="email" placeholder="Email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inputName">Phone number</label>
+                                        <input type="text" id="inputName" class="form-control" value=""
+                                            name="phone_number" placeholder="số điện thoại">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="formFile" class="form-label">Image</label>
+                                        <input class="form-control" type="file" id="formFile" value=""
+                                            name="image">
                                     </div>
                                 </div>
                             </div>
@@ -72,6 +87,7 @@
                             <button type="submit" class="btn btn-success float-right">Add</button>
                         </div>
                     </div>
+                </div>
             </form>
         </section>
         <br>

@@ -45,6 +45,7 @@ class CRUDEmloyerController extends Controller
         $data['website'] = $request->website;
         $data['infor'] = $request->infor;
         $data['responsibility'] = $request->responsibility;
+        $data['welfare'] = $request->welfare;
         $data['name_company'] = $request->name_company;
         $data['address'] = $request->address;
         $get_image = $request->file('image');
@@ -58,12 +59,12 @@ class CRUDEmloyerController extends Controller
             $data['image'] = $new_image;
             DB::table('employers')->insert($data);
             Session::put('message', 'Cập nhật sản phẩm thành công');
-            return Redirect::to('AdminEmloyer.index');
+            return redirect()->route('AdminEmloyer.index');
         }
 
         DB::table('employers')->insert($data);
         Session::put('message', 'Cập nhật sản phẩm thành công');
-        return Redirect::to('AdminEmloyer.index');
+        return redirect()->route('AdminEmloyer.index');
     }
 
     /**
@@ -85,7 +86,8 @@ class CRUDEmloyerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $employer = Employer::find($id);
+        return view('DashboardTemplate.Employer.editEmployer', compact('employer'));
     }
 
     /**
@@ -97,7 +99,9 @@ class CRUDEmloyerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $employer = Employer::find($id);
+        $employer->update($request->all());
+        return redirect()->route('AdminEmloyer.index');
     }
 
     /**
@@ -108,6 +112,7 @@ class CRUDEmloyerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $employer = Employer::destroy($id);
+        return redirect()->route('AdminEmloyer.index');
     }
 }

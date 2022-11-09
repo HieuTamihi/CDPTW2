@@ -55,6 +55,24 @@
                                 <td>{{ $emplo->email }}</td>
                                 <td>{{ $emplo->website }}</td>
                                 <td>{{ $emplo->phone_number }}</td>
+                                <td class="project-actions text-left">
+                                    <form method="POST" action="{{ route('AdminEmloyer.destroy', $emplo->id) }}">
+
+                                        <a class="btn btn-info btn-sm modify-icon"
+                                            href="{{ route('AdminEmloyer.edit', $emplo->id) }}">
+                                            <i class="fas fa-pencil-alt ">
+                                            </i>
+                                            Edit
+                                        </a>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm modify-icon">
+                                            <i class="fas fa-trash ">
+                                            </i>
+                                            Delete
+                                        </button>
+                                    </form>
+                                </td>
                             </tbody>
                         @endforeach
                     </table>
