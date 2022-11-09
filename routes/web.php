@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CRUDUserController;
+use App\Http\Controllers\CRUDEmloyerController;
 use App\Http\Controllers\CRUDJobpostingController;
 use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
@@ -47,7 +48,7 @@ Route::resource('employer', EmployerController::class);
 Route::resource('AdminUser', CRUDUserController::class);
 
 Route::resource('AdminJobposting', CRUDJobpostingController::class);
-
+Route::resource('AdminEmloyer', CRUDEmloyerController::class);
 
 //chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');
