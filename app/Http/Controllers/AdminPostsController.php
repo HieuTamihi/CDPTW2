@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Employer;
-use App\Models\Job_posting;
-use App\Models\Recruitment;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
-class EmployerController extends Controller
+use App\Models\Post;
+
+class AdminPostsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,12 +14,9 @@ class EmployerController extends Controller
      */
     public function index()
     {
-        // lấy hết tất cả dữ liều trong Employer
-        $employer = Employer::all();
-        // lấy hết tất cả dữ liều trong Job_posting
-        $job = Job_posting::all();
-        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->select('name_company')->get();
-        return view('index', compact('employer', 'job', 'name'));
+        $resultPosts = Post::orderBy('id', 'desc')->paginate(5);
+        // dd($resultPosts);
+        return view('DashboardTemplate.dashboard_blog_home', compact('resultPosts'));
     }
 
     /**
@@ -33,7 +26,7 @@ class EmployerController extends Controller
      */
     public function create()
     {
-        //
+        return view('DashboardTemplate.dashboard_blog_add');
     }
 
     /**
@@ -44,7 +37,19 @@ class EmployerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'post_title' => 'required|min:6',
+            'post_content' => 'required|min:10',
+            'post_image' => 'required'
+        ]);
+
+        $posts = new Post();
+        $posts->title = $request->post_title;
+        $posts->content = $request->post_content;
+        $posts->image = $request->post_image;
+        $posts->save();
+        session()->flash('msg', 'new post added successfully!');
+        return redirect()->back();
     }
 
     /**
@@ -55,11 +60,7 @@ class EmployerController extends Controller
      */
     public function show($id)
     {
-        $detail = Employer::findOrFail($id);
-        $relate = $detail->jobs->take(1);
-        $date = Carbon::now()->day;
-        $job_relate = $detail->jobs->take(3);
-        return view('detail_page',compact('detail','relate','job_relate','date'));
+        //
     }
 
     /**

@@ -661,7 +661,11 @@ html {
 }
 
 .log__reg__page {
+<<<<<<< HEAD
     margin-top: 25px;
+=======
+  margin-top: 25px;
+>>>>>>> all_vacancies
 }
 
 .title__log h4 {
@@ -877,4 +881,21 @@ html {
     margin: 10px;
 }
 
+<<<<<<< HEAD
 /*# sourceMappingURL=style.css.map */
+=======
+.body__top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.body__top a {
+  text-decoration: none;
+  background: #0d6efd;
+  color: #ffff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */
+>>>>>>> all_vacancies
