@@ -1,0 +1,114 @@
+.change__pass1 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.input__old__pass1,
+.input__new__pass1,
+.input__confirm1 {
+  display: flex;
+  padding-top: 20px;
+  position: relative;
+}
+
+.lb__old__pass label {
+  margin-right: 92px;
+  font-weight: bold;
+}
+
+.lb__new__pass label {
+  margin-right: 84px;
+  font-weight: bold;
+}
+
+.lb__confirm label {
+  margin-right: 21px;
+  font-weight: bold;
+}
+
+.form__change1 .fa-eye {
+  position: absolute;
+  left: 395px;
+  top: 28px;
+  color: #0066ff;
+  cursor: pointer;
+}
+
+.form__change1 .fa-eye-slash {
+  position: absolute;
+  top: 28px;
+  left: 395px;
+  display: none;
+  color: #0066ff;
+}
+
+.input__old__pass1 input,
+.input__new__pass1 input,
+.input__confirm1 input {
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+}
+
+.confirm__btn {
+  margin-left: 282px;
+  color: white;
+  background-color: #0066ff;
+  margin-top: 10px;
+}
+
+.confirm__btn:hover {
+  color: #0066ff;
+  background-color: white;
+  border: 1px solid #0066ff;
+}
+
+@media only screen and (max-width: 400px) {
+  .input__old__pass1,
+.input__new__pass1,
+.input__confirm1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .input__old__pass1 input,
+.input__new__pass1 input,
+.input__confirm1 input {
+    width: 100%;
+  }
+  .form__change1 .fa-eye {
+    position: absolute;
+    left: 300px;
+    top: 28px;
+    color: #0066ff;
+    cursor: pointer;
+  }
+  .form__change1 .fa-eye-slash {
+    position: absolute;
+    left: 300px;
+    top: 28px;
+    color: #0066ff;
+    cursor: pointer;
+  }
+  .confirm__btn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .form__change1 .fa-eye {
+    position: absolute;
+    left: 180px;
+    top: 28px;
+    color: #0066ff;
+    cursor: pointer;
+  }
+  .form__change1 .fa-eye-slash {
+    position: absolute;
+    left: 180px;
+    top: 28px;
+    color: #0066ff;
+    cursor: pointer;
+  }
+}
+
+/*# sourceMappingURL=change_pass_log.css.map */
