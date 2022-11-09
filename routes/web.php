@@ -44,6 +44,10 @@ Route::get('admin', function () {
     return view('DashboardTemplate.dashboard');
 });
 Route::get('/detail_page/{id}',[EmployerController::class,'show']);
+
+//Active
+Route::get('active/{newUser}/{confirm}',[UserController::class,'active'])->name('activeAcount');
+
 Route::get('/{name?}', function ($name = "index") {
     return view($name);
 });

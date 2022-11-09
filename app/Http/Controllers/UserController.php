@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use App\Models\Employer;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -75,12 +77,14 @@ class UserController extends Controller
             }
             $user = DB::table('users')->where('email', $request->email)->first();
             if (!$user) {
+                $conf = Str::random(10);
                 $newUser = User::create([
                     'email' => $request->email,
                     'password' => $request->password,
                     'phone' => $request->phone,
                     'role' => $request->role = 2,
-                    'status' => $request->status = 1
+                    'status' => $request->status = 0,
+                    'confirm' => $conf,
                 ]);
                 Employer::create([
                     'user_id' => $newUser->id,
@@ -89,7 +93,13 @@ class UserController extends Controller
                     'email' => $request->email,
                     'phone_number' =>$request->phone,
                 ]);
-                return redirect()->route('register')->with('message', 'Tạo tài khoản thành công !');
+
+                //Send mail
+                Mail::send('DashboardTemplate.emails.active',compact('newUser'),function($email) use($newUser) {
+                    $email->subject('Active Acount');
+                    $email->to($newUser->email);
+                });
+                return redirect()->route('register')->with('message', 'Tạo tài khoản thành công vui lòng vào email để xác thực!');
             } else {
                 return redirect()->route('register')->with('message', 'Tài khoản đã tồn tại !');
             }
@@ -142,5 +152,17 @@ class UserController extends Controller
         $customer_id = DB::table('customers')->select('id')->orderBy('id', 'DESC')->first();
         (int)$customer_id->id += 1;
         return view('registerCT', compact('customer_id'));
+    }
+
+    // Active
+    public function active(User $newUser,$confirm)
+    {
+        if($newUser->confirm == $confirm){
+            $newUser->update([
+                'status'=> '1',
+                'confirm' => '',
+            ]);
+            return redirect()->route('login');
+        }
     }
 }

@@ -11,14 +11,24 @@ use Illuminate\Support\Facades\Hash;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
-
+    public function employer()
+    {
+      return $this->hasOne(Employer::class);
+    }
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'email', 'user_id', 'customer_id', 'phone', 'password', 'role', 'status'
+        'email',
+        'user_id', 
+        'customer_id', 
+        'phone', 
+        'password', 
+        'role', 
+        'status',
+        'confirm'
     ];
 
     /**

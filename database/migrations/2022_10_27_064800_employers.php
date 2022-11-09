@@ -16,10 +16,10 @@ class Employers extends Migration
         Schema::create('employers', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->integer('user_id');
-            $table->string('website');
-            $table->string('infor',5000);
-            $table->string('responsibility',5000);
-            $table->string('welfare',500);
+            $table->string('website')->nullable();
+            $table->string('infor',5000)->nullable();
+            $table->string('responsibility',5000)->nullable();
+            $table->string('welfare',500)->nullable();
             $table->string('name_company');
             $table->string('address')->nullable();
             $table->string('image')->nullable();
