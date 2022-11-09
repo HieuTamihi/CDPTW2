@@ -6,14 +6,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Employer</h1>
-                        <?php
-                        $message = Session::get('message');
-                        if ($message) {
-                            echo '<span class="text-alert">' . $message . '</span>';
-                            Session::put('message', null);
-                        }
-                        ?>
+                        <h1>Edit Job Posting</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -26,44 +19,49 @@
             </div><!-- /.container-fluid -->
         </section>
         <section class="content">
-            <form action="{{ route('employer-home.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('AdminJobposting.update', $jobposting->id) }}" method="post"
+                enctype="multipart/form-data">
                 @csrf
-                @if ($errors->any())
-                @endif
+                @method('PUT')
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card card-primary">
                             <div class="card-body">
                                 <div class="form-group">
                                     <div class="mb-3">
-                                        <label for="inputName">User id</label>
+                                        <label for="inputName">Employer Id</label>
                                         <input type="text" id="inputName" class="form-control" value=""
-                                            name="user_id" placeholder="User id">
+                                            name="employer_id" placeholder="employer_id">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="inputName">Name Company</label>
+                                        <label for="inputName">Title</label>
                                         <input type="text" id="inputName" class="form-control" value=""
-                                            name="name_company" placeholder="Tên công ty">
+                                            name="title" placeholder="title">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="inputName">Address</label>
+                                        <label for="inputName">Experience</label>
                                         <input type="text" id="inputName" class="form-control" value=""
-                                            name="address" placeholder="Địa chỉ công ty">
+                                            name="experience" placeholder="experience">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="formFile" class="form-label">Image</label>
-                                        <input class="form-control" type="file" id="formFile" value=""
-                                            name="image">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="inputName">Email</label>
-                                        <input type="email" id="inputName" class="form-control" value=""
-                                            name="email" placeholder="Email">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="inputName">Phone number</label>
+                                        <label for="inputName">Type</label>
                                         <input type="text" id="inputName" class="form-control" value=""
-                                            name="phone_number" placeholder="số điện thoại">
+                                            name="type" placeholder="type">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inputName">Skill</label>
+                                        <input type="text" id="inputName" class="form-control" value=""
+                                            name="skill" placeholder="skill">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inputName">Required</label>
+                                        <input type="text" id="inputName" class="form-control" value=""
+                                            name="required" placeholder="required">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inputName">Salary</label>
+                                        <input type="text" id="inputName" class="form-control" value=""
+                                            name="salary" placeholder="salary">
                                     </div>
                                 </div>
                             </div>

@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Employer;
-use App\Models\Job_posting;
-use App\Models\Recruitment;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
-class EmployerController extends Controller
+
+class CRUDUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,12 +15,8 @@ class EmployerController extends Controller
      */
     public function index()
     {
-        // lấy hết tất cả dữ liều trong Employer
-        $employer = Employer::all();
-        // lấy hết tất cả dữ liều trong Job_posting
-        $job = Job_posting::all();
-        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->select('name_company')->get();
-        return view('index', compact('employer', 'job', 'name'));
+        $users = User::all();
+        return view('DashboardTemplate.Admin.index', compact('users'));
     }
 
     /**
@@ -33,7 +26,7 @@ class EmployerController extends Controller
      */
     public function create()
     {
-        //
+        return view('DashboardTemplate.Admin.addUsers');
     }
 
     /**
@@ -44,7 +37,8 @@ class EmployerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create($request->all());
+        return redirect()->route('AdminUser.index');
     }
 
     /**
@@ -55,11 +49,7 @@ class EmployerController extends Controller
      */
     public function show($id)
     {
-        $detail = Employer::findOrFail($id);
-        $relate = $detail->jobs->take(1);
-        $date = Carbon::now()->day;
-        $job_relate = $detail->jobs->take(3);
-        return view('detail_page',compact('detail','relate','job_relate','date'));
+        //
     }
 
     /**
@@ -70,7 +60,8 @@ class EmployerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('DashboardTemplate.Admin.editUsers', compact('user'));
     }
 
     /**
@@ -82,7 +73,9 @@ class EmployerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user->update($request->all());
+        return redirect()->route('AdminUser.index');
     }
 
     /**
@@ -93,6 +86,7 @@ class EmployerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::destroy($id);
+        return redirect()->route('AdminUser.index');
     }
 }
