@@ -1,13 +1,17 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CvController;
 use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobpostingController;
 use App\Http\Controllers\RecruimentController;
+use App\Http\Controllers\TrackingworkController;
+use App\Http\Controllers\WishlistController;
 use App\Models\Customer;
+use App\Models\Wish_lists;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +50,12 @@ Route::post('/change_pass_log', [CustomerController::class, 'updatePassword'])->
 
 //upload CV
 Route::post('/uploadCV', [RecruimentController::class, 'store']);
+
+//CV
+Route::resource('cv', CvController::class);
+
+//tracking work
+Route::resource('wishlist', WishlistController::class);
 
 //admin
 Route::resource('listjobPosting', JobpostingController::class);

@@ -10,46 +10,56 @@
                 <div class="col-md-4">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="up__cv">Tải CV lên</div>
                         </div>
                         <div class="col-md-6">
-                            <div class="add__cv">Tạo CV mới</div>
+                            <a href="{{url('createCV')}}" style="text-decoration: none;">
+                                <div class="add__cv">Tạo CV mới</div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        @if(Session::has('message'))
+        <div class="alert alert-success">{{Session::get('message')}}</div>
+        @endif
         <div class="table__manage">
             <table>
                 <thead>
                     <tr>
-                        <th>CV name</th>
+                        <th>STT</th>
+                        <th>Name CV</th>
                         <th>CV status</th>
                         <th>Last edited</th>
                         <th>Options</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($cv as $item)
                     <tr>
-                        <td>ABC</td>
-                        <td>Chưa dùng để ứng tuyển</td>
-                        <td>10:00 10/10/2022</td>
+                        <td>{{++$i}}</td>
+                        <td>{{$item->namecv}}</td>
+                        <td>@if($item->status == 0)
+                            Chưa dùng để ứng tuyển
+                            @if($item->status == 1)
+                            Đã dùng để ứng tuyển
+                            @endif
+                            @endif
+                        </td>
+                        <td>{{$item->updated_at}}</td>
                         <td class="option__manage">
                             <a href="#"><i class="fa-solid fa-eye"></i></a>
-                            <a href="#"><i class="fa-solid fa-trash"></i></a>
+                            @foreach($cv as $item)
+                            <form action="{{route('cv.destroy', $item->customer_id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" style="border: none;background: transparent;"><i class="fa-solid fa-trash"></i></button>
+                            </form>
+                            @endforeach
                             <a href="#"><i class="fa-solid fa-pen"></i></a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>XYZ</td>
-                        <td>Đã dùng để ứng tuyển</td>
-                        <td>10:00 10/10/2022</td>
-                        <td class="option__manage">
-                            <a href="#"><i class="fa-solid fa-eye"></i></a>
-                            <a href="#"><i class="fa-solid fa-trash"></i></a>
-                            <a href="#"><i class="fa-solid fa-pen"></i></a>
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

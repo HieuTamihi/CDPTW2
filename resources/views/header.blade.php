@@ -80,9 +80,9 @@
                             <div class="dropbtn">{{Auth::user()->email}}</div>
                             <div class="dropdown-content">
                                 <a href="{{route('ShowEditUser',['id'=>Auth::user()->customer_id])}}">Thông tin cá nhân</a>
-                                <a href="{{asset('manage_cv')}}">Quản lý CV</a>
+                                <a href="{{route('cv.index')}}">Quản lý CV</a>
                                 <a href="{{asset('apply_job')}}">Việc đã ứng tuyển</a>
-                                <a href="{{asset('tracking_work')}}">Việc đang theo dõi</a>
+                                <a href="{{route('wishlist.index')}}">Việc đang theo dõi</a>
                                 <form method="POST" name="logout" action="{{ route('logout') }}">
                                     @csrf
                                     <a href="javascript:document.logout.submit()"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
