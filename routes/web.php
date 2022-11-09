@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CRUDUserController;
+use App\Http\Controllers\CRUDJobpostingController;
 use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -36,6 +37,9 @@ Route::get('/registerCT', [UserController::class, 'getCustomerID']);
 Route::resource('listjobPosting', ControllersJobpostingController::class);
 Route::resource('employer', EmployerController::class);
 Route::resource('AdminUser', CRUDUserController::class);
+
+Route::resource('AdminJobposting', CRUDJobpostingController::class);
+
 
 //chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');
