@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/blogit.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/reset_pass.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/change_pass.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/tracking_work.css') }}" rel="stylesheet" type="text/css">
@@ -20,7 +21,7 @@
     <div class="topHeader">
         <div class="container">
             <div class="topHeader__menu--logo">
-                <a href="{{asset('index')}}"><img src="{{ asset('img/logo-td.png') }}" alt="" /></a>
+                <a href="{{ asset('index') }}"><img src="{{ asset('img/logo-td.png') }}" alt="" /></a>
                 <span>Việc làm hàng đầu</span>
             </div>
             <div class="topHeader__menu--contact">
@@ -53,22 +54,32 @@
                                 IT</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{asset('createCV')}}">Tạo CV</a>
+                            <a class="nav-link active" aria-current="page" href="{{ asset('createCV') }}">Tạo CV</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{asset('company_information')}}">Công ty
+                            <a class="nav-link active" aria-current="page" href="{{ asset('company_information') }}">Công ty
                                 IT</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Blog IT</a>
+                            <a class="nav-link active" aria-current="page" href="{{ asset('blogit') }}">Blog IT</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="header__right d-flex">
                 <ul>
+                    @if (Auth::check())
+                    @if (Auth::user()->role == 2)
                     <li><a class="btn btn-danger header__right--logemp" href="#">Đăng tuyển</a></li>
-                    <li><a class="btn btn-dark header__right--logcus" href="{{asset('log_reg')}}">Đăng nhập</a></li>
+                    @endif
+                    <form method="POST" name="logout" action="{{ route('logout') }}">
+                        @csrf
+                        <li> <a class="btn btn-dark header__right--logcus" href="javascript:document.logout.submit()"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
+                    </form>
+                    @else
+                    <li><a class="btn btn-dark header__right--logcus" href="{{ asset('login') }}">Đăng nhập</a>
+                    </li>
+                    @endif
                 </ul>
             </div>
         </nav>
@@ -76,7 +87,7 @@
     <!-- End header -->
     @yield('footer')
     <!-- Footer -->
-<footer class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 footer__adresse ">
@@ -120,14 +131,13 @@
         </div>
     </footer>
     <!-- End Footer -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="{{asset('js/js.js')}}"></script>
-    <script src="{{asset('js/script.js')}}"></script>
+    <script src="{{ asset('js/js.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 </body>
 
 </html>
