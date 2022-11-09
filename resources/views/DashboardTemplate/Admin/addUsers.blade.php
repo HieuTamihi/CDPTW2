@@ -21,8 +21,6 @@
         <section class="content">
             <form action="{{ route('AdminUser.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
-                @if ($errors->any())
-                @endif
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card card-primary">
