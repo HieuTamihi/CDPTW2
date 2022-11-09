@@ -7,7 +7,7 @@ use App\Models\Job_posting;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Carbon\Carbon;
 class EmployerController extends Controller
 {
     /**
@@ -19,9 +19,8 @@ class EmployerController extends Controller
     {
         $employer = Employer::all();
         $job = Job_posting::all();
-        $title = Job_posting::leftjoin('employers', 'job_postings.employer_id', '=', 'employers.id')->get();
-        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->get();
-        return view('index', compact('employer', 'job', 'name', 'title'));
+        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->select('name_company')->get();
+        return view('index', compact('employer', 'job', 'name'));
     }
 
     /**
@@ -55,8 +54,9 @@ class EmployerController extends Controller
     {
         $detail = Employer::findOrFail($id);
         $relate = $detail->jobs->take(1);
+        $date = Carbon::now()->day;
         $job_relate = $detail->jobs->take(3);
-        return view('detail_page', compact('detail', 'relate', 'job_relate'));
+        return view('detail_page',compact('detail','relate','job_relate','date'));
     }
 
     /**
