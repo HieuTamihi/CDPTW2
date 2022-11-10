@@ -31,13 +31,6 @@
                                 <div class="alert alert-success">{{Session::get('message')}}</div>
                                 @endif
                                 @csrf
-
-                                <span class="des__name">Name Company</span>
-                                <input type="text" placeholder="Enter your email" class="type__info__reg" name="name_company">
-
-                                <span class="des__name">Address</span>
-                                <input type="text" placeholder="Enter your email" class="type__info__reg" name="address">
-
                                 <span class="des__name">Email</span>
                                 <input type="text" placeholder="Enter your email" class="type__info__reg" name="email">
                                 @if ($errors->has('email'))

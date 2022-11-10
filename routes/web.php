@@ -1,9 +1,13 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\JobpostingController;
+use App\Http\Controllers\RecruimentController;
+use App\Models\Customer;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,19 +35,29 @@ Route::get('/register', [UserController::class, 'getUserID']);
 Route::post('/registerCT', [UserController::class, 'registerCT'])->name('registerCT');
 Route::get('/registerCT', [UserController::class, 'getCustomerID']);
 
+//customer
+// Route::resource('/personal_info', CustomerController::class);
+Route::get('/ShowEditUser/{id}', [CustomerController::class, 'ShowEditUser'])->name('ShowEditUser');
+Route::put('/editUser/{id}', [CustomerController::class, 'editUser'])->name('editUser');
+
+//change password
+Route::get('/change_pass_log', [CustomerController::class, 'changePassword'])->name('change_pass_log');
+Route::post('/change_pass_log', [CustomerController::class, 'updatePassword'])->name('update-password');
+
+//upload CV
+Route::post('/uploadCV', [RecruimentController::class, 'store']);
+
 //admin
-Route::resource('listjobPosting', ControllersJobpostingController::class);
+Route::resource('listjobPosting', JobpostingController::class);
 Route::resource('employer', EmployerController::class);
 
 //chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');
-
 Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
-
 Route::get('admin', function () {
     return view('DashboardTemplate.dashboard');
 });
-Route::get('/detail_page/{id}',[EmployerController::class,'show']);
+Route::get('/detail_page/{id}', [EmployerController::class, 'show']);
 Route::get('/{name?}', function ($name = "index") {
     return view($name);
 });

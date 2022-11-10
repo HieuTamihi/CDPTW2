@@ -1,11 +1,10 @@
 @extends('header')
 @section('footer')
-
 <!-- Search -->
-<div class="search container-fluid">
-    <form action="">
+<div class="search container">
+    <form action="{{ route('search') }}" method="GET">
         <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
-        <input type="text" class="search__input form-control" placeholder="Nhập từ khoá tìm kiếm">
+        <input type="text" class="search__input form-control" name="keyword" placeholder="Nhập từ khoá tìm kiếm">
         <button type="submit" class="search__btn btn btn-danger">Tìm kiếm</button>
     </form>
 </div>
@@ -31,6 +30,7 @@
                             <div class="row">
                                 <div class="col-md-5 intem-slide-img">
                                     <a href="{{route('employer.show',$row->id)}}">
+                                        {{$row->id}}
                                         <img class="intem-img" src="{{url('img')}}/{{$row->image}}" alt="">
                                     </a>
                                 </div>
