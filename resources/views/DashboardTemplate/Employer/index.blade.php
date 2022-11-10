@@ -83,7 +83,9 @@
 
             </div>
             <!-- /.card -->
-
+            <div>
+                {{ $employer->links() }}
+            </div>
         </section>
     </div>
 @endsection

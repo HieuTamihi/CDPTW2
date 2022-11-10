@@ -18,7 +18,7 @@ class CRUDEmloyerController extends Controller
      */
     public function index()
     {
-        $employer = Employer::all();
+        $employer = Employer::orderBy('id', 'desc')->paginate(5);
         return view('DashboardTemplate.Employer.index', compact('employer'));
     }
 
