@@ -19,10 +19,7 @@ class employerSeeder extends Seeder
                 'name_company' => 'FPT',
                 'user_id'=>'1',
                 'website'=>'https://fpt.com.vn/',
-                'infor'=>'Tổng Công ty Dịch vụ số FPT - FPT mang sứ mệnh sáng tạo những sản 
-                phẩm công nghệ đi đầu lĩnh vực Fintech và Big Data, với mong muốn digital hoá những hình 
-                thức kinh doanh truyền thống. , Hiện Viettel Digital đang tập trung phát triển một hệ sinh 
-                thái tài chính số với core chính là Viettel Money. Bên cạnh đó, chúng tôi cũng đang mở rộng 
+                'infor'=>'Tổng Công ty Dịch vụ số FPT - FPT mang sứ mệnh sáng tạo những sản phẩm công nghệ đi đầu lĩnh vực Fintech và Big Data, với mong muốn digital hoá những hình thức kinh doanh truyền thống. , Hiện Viettel Digital đang tập trung phát triển một hệ sinh thái tài chính số với core chính là Viettel Money. Bên cạnh đó, chúng tôi cũng đang mở rộng 
                 hoạt động với nhiều dự án lớn trong các lĩnh vực Fintech, Big Data, AI, Blockchain,... 
                 và mong muốn chiêu mộ nhân tài hơn bao giờ hết.',
                 'responsibility'=>'Tham gia phát triển các dự án trong Hệ sinh thái Tài chính số 
@@ -36,14 +33,12 @@ class employerSeeder extends Seeder
                 'name_company' => 'Go2Joy Việt Nam',
                 'user_id'=> '2',
                 'website'=>'https://go2joy.com.vn/',
-                'infor'=>'Tổng Công ty Dịch vụ số Go2Joy - Go2Joy  mang sứ mệnh sáng tạo những sản 
-                phẩm công nghệ đi đầu lĩnh vực Fintech và Big Data, với mong muốn digital hoá những hình 
+                'infor'=>'Tổng Công ty Dịch vụ số Go2Joy - Go2Joy  mang sứ mệnh sáng tạo những sản phẩm công nghệ đi đầu lĩnh vực Fintech và Big Data, với mong muốn digital hoá những hình 
                 thức kinh doanh truyền thống. , Hiện Viettel Digital đang tập trung phát triển một hệ sinh 
                 thái tài chính số với core chính là Viettel Money. Bên cạnh đó, chúng tôi cũng đang mở rộng 
                 hoạt động với nhiều dự án lớn trong các lĩnh vực Fintech, Big Data, AI, Blockchain,... 
                 và mong muốn chiêu mộ nhân tài hơn bao giờ hết.',
-                'responsibility'=>'Tham gia phát triển các dự án trong Hệ sinh thái Tài chính số 
-                (Go2Joy Pay, Mobile Money, ví cá nhân, ví doanh nghiệp, ...) , ',
+                'responsibility'=>'Tham gia phát triển các dự án trong Hệ sinh thái Tài chính số (Go2Joy Pay, Mobile Money, ví cá nhân, ví doanh nghiệp, ...) , ',
                 'welfare'=>'Mức lương thu hút nhân tài, ứng viên tự thỏa thuận khi tham gia phỏng vấn , Có cơ hội làm việc trong một tập đoàn lớn nhưng môi trường không khác gì StartUp , Tham gia vào các dự án công ty.',
                 'address' => '5A/2 Trần Phú, Phường 04, Quận 5, Thành phố Hồ Chí Minh Tầng 12 khu Văn phòng tòa MIPEC, 229 Tây Sơn, Phường Ngã Tư Sở, Quận Đống Đa, Thành phố Hà Nội',
                 'image' => 'logo.4089b512.png',

@@ -12,4 +12,15 @@ class Job_posting extends Model
     {
         return $this->belongsTo(Employer::class,'employer_id)');
     }
+    protected $table = 'Job_postings';
+    protected $fillable = [
+        'employer_id',
+        'title',
+        'experience',
+        'type',
+        'skill',
+        'required',
+        'salary',
+        'token',
+    ];
 }
