@@ -17,7 +17,7 @@
             <div class="col-12 col-xl-9 detail_body__left">
                 <div class="information">
                     <div class="information__logo">
-                        <a href="#"><img src="{{asset('img/$detail->image')}}" alt=""></a>
+                        <a href="#"><img src="{{asset('img/'.$detail->image)}}" alt=""></a>
                     </div>
                     <div class="information__content">
                         <p>{{$detail->name_company}}</p>
@@ -31,6 +31,7 @@
                         <h6>Công việc</h6>
                     </a>
                     <h6>Chia sẻ</h6>
+                    @if(Auth::check())
                     <form action="{{route('wishlist.store')}}" method="POST">
                         @csrf
                         @foreach($job_relate as $value)
@@ -40,6 +41,13 @@
                             <h6 class="navi__fol">Theo dõi</h6>
                         </button>
                     </form>
+                    @else
+                    <a href="{{route('login')}}">
+                        <button class="btn__like" style="border: none;background: transparent;">
+                            <h6 class="navi__fol">Theo dõi</h6>
+                        </button>
+                    </a>
+                    @endif
                 </div>
                 <div class="content">
                     <div class="row">
@@ -150,6 +158,7 @@
             <div class="modal-body">
                 <form action="{{url('uploadCV')}}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @if(Auth::check() && Auth::user()->role == 3)
                     <div class="input__field d-flex">
                         <label for="">Họ và tên</label>
                         @foreach($job_relate as $value)
@@ -196,6 +205,11 @@
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-danger">Save changes</button>
                     </div>
+                    @elseif(Auth::check() && Auth::user()->role != 3)
+                    <p>Phải là tài khoản customer mới có thể ứng tuyển</p>
+                    @else
+                    <a href="{{route('login')}}">Bạn cần phải đăng nhập để ứng tuyển</a>
+                    @endif
                 </form>
             </div>
         </div>

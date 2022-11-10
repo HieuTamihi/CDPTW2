@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CRUDListJobController;
 use App\Http\Controllers\CvController;
 use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
@@ -60,6 +61,8 @@ Route::resource('wishlist', WishlistController::class);
 //admin
 Route::resource('listjobPosting', JobpostingController::class);
 Route::resource('employer', EmployerController::class);
+// Employer - quan ly job by employer_id
+Route::resource('CRUDJobByEmployer',CRUDListJobController::class);
 
 //chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');

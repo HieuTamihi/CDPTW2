@@ -21,7 +21,29 @@ class recruitmentSeeder extends Seeder
                 'cv_id' => null,
                 'status' => '0',
                 'file' => '1667982000.pdf',
-            ], [
+            ], 
+            [
+                'customer_id' => '2',
+                'jobposting_id' => '2',
+                'cv_id' => null,
+                'status' => '0',
+                'file' => '1667982000.pdf',
+            ],
+            [
+                'customer_id' => '3',
+                'jobposting_id' => '2',
+                'cv_id' => null,
+                'status' => '0',
+                'file' => '1667982000.pdf',
+            ],
+            [
+                'customer_id' => '4',
+                'jobposting_id' => '2',
+                'cv_id' => null,
+                'status' => '0',
+                'file' => '1667982000.pdf',
+            ],
+            [
                 'customer_id' => '2',
                 'jobposting_id' => '2',
                 'cv_id' => null,
