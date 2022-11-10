@@ -31,7 +31,15 @@
                         <h6>Công việc</h6>
                     </a>
                     <h6>Chia sẻ</h6>
-                    <h6 class="navi__fol">Theo dõi</h6>
+                    <form action="{{route('wishlist.store')}}" method="POST">
+                        @csrf
+                        @foreach($job_relate as $value)
+                        <input value="{{$value->id}}" hidden name="id" class="input__input form-control" type="text">
+                        @endforeach
+                        <button type="submit" value="1" name="number" class="btn__like" style="border: none;background: transparent;">
+                            <h6 class="navi__fol">Theo dõi</h6>
+                        </button>
+                    </form>
                 </div>
                 <div class="content">
                     <div class="row">
@@ -167,6 +175,15 @@
                     <div class="input__field d-flex">
                         <label for="">Chọn CV</label>
                         <input class="input__input" type="file" name="file">
+                    </div>
+                    <div class="input__field d-flex">
+                        <label for="" style="color: #99bbff;">Hoặc chọn CV bạn đã tạo</label>
+                        <select style="width: 100%;" name="cv_id">
+                            <option>Chọn CV</option>
+                            @foreach($cv as $value)
+                            <option value="{{$value->id}}">{{$value->namecv}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="input__field d-flex">
                         <label for="">Giới thiệu bản thân</label>

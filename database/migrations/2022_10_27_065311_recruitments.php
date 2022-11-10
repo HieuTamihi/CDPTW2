@@ -16,6 +16,7 @@ class Recruitments extends Migration
         Schema::create('recruitments', function (Blueprint $table) {
             $table->integer('customer_id');
             $table->integer('jobposting_id');
+            $table->integer('cv_id')->nullable();
             $table->string('status')->nullable();
             $table->text('introduce')->nullable();
             $table->string('file')->nullable();
