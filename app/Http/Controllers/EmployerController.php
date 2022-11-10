@@ -25,7 +25,7 @@ class EmployerController extends Controller
         $employer = Employer::all();
         // lấy hết tất cả dữ liều trong Job_posting
         $job = Job_posting::all();
-        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->select('name_company')->get();
+        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->get();
         return view('index', compact('employer', 'job', 'name'));
     }
 

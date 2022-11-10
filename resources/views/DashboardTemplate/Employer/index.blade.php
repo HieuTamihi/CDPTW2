@@ -24,7 +24,7 @@
                             <tr>
                                 <th style="width:1%">ID</th>
                                 <th style="width:1%">user_id</th>
-                                <th style="width:70%">Logo</th>
+                                <th style="width:20%">Logo</th>
                                 <th style="width:5%">Name</th>
                                 <th style="width:2%">address</th>
                                 <th style="width:70%">infor</th>
@@ -41,17 +41,17 @@
 
                                 <td>{{ $emplo->id }}</td>
                                 <td>{{ $emplo->user_id }}</td>
-                                <td style="width: 100%;">
-                                    <div class="img">
+                                <td>
+                                    <div class="img" style="width: 100px;">
                                         <img style="width: 100%;" src="{{ url('img') }}/{{ $emplo->image }}"
                                             alt="">
                                     </div>
                                 </td>
                                 <td>{{ $emplo->name_company }}</td>
-                                <td>{{ $emplo->address }}</td>
-                                <td>{{ $emplo->infor }}</td>
-                                <td>{{ $emplo->responsibility }}</td>
-                                <td>{{ $emplo->welfare }}</td>
+                                <td> <?php echo substr($emplo->address, 0, 20) . '...'; ?> </td>
+                                <td> <?php echo substr($emplo->infor, 0, 30) . '...'; ?> </td>
+                                <td> <?php echo substr($emplo->responsibility, 0, 30) . '...'; ?> </td>
+                                <td> <?php echo substr($emplo->welfare, 0, 30) . '...'; ?></td>
                                 <td>{{ $emplo->email }}</td>
                                 <td>{{ $emplo->website }}</td>
                                 <td>{{ $emplo->phone_number }}</td>
