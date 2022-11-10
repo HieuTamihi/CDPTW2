@@ -1,3 +1,4 @@
+@if(!Auth::check())
 @extends('header')
 @section('footer')
 <div class="log__reg__page">
@@ -42,3 +43,4 @@
 </div>
 <br>
 @endsection;
+@endif

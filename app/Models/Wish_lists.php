@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Customer extends Model
+class Wish_lists extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id', 'email', 'phone_number', 'fullname', 'date', 'address', 'gender', 'favorite', 'status'
+        'customer_id','job_posting_id','number',
     ];
 }

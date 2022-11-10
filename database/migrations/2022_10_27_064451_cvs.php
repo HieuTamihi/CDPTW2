@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Cv extends Migration
+class Cvs extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class Cv extends Migration
      */
     public function up()
     {
-        Schema::create('cv', function (Blueprint $table) {
+        Schema::create('cvs', function (Blueprint $table) {
             $table->id();
             $table->integer('customer_id');
+            $table->string('namecv');
             $table->string('fullname');
             $table->string('avatar');
             $table->string('apply_position');
@@ -28,6 +29,7 @@ class Cv extends Migration
             $table->string('learn_time');
             $table->string('majors');
             $table->string('infor_other')->nullable();
+            $table->integer('status');
             $table->timestamps();
         });
     }

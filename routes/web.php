@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CvController;
 use App\Http\Controllers\CRUDUserController;
 use App\Http\Controllers\CRUDEmloyerController;
 use App\Http\Controllers\CRUDJobpostingController;
@@ -7,13 +9,12 @@ use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AdminPostsController;
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\VacancisController;
-use App\Http\Controllers\AdminEmpolyer;
-use App\Http\Controllers\AdminJobpostings;
-use App\Http\Controllers\AdminUser;
-use PhpParser\Node\Stmt\Return_;
+use App\Http\Controllers\JobpostingController;
+use App\Http\Controllers\RecruimentController;
+use App\Http\Controllers\TrackingworkController;
+use App\Http\Controllers\WishlistController;
+use App\Models\Customer;
+use App\Models\Wish_lists;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,8 +43,26 @@ Route::get('/register', [UserController::class, 'getUserID']);
 Route::post('/registerCT', [UserController::class, 'registerCT'])->name('registerCT');
 Route::get('/registerCT', [UserController::class, 'getCustomerID']);
 
+//customer
+// Route::resource('/personal_info', CustomerController::class);
+Route::get('/ShowEditUser/{id}', [CustomerController::class, 'ShowEditUser'])->name('ShowEditUser');
+Route::put('/editUser/{id}', [CustomerController::class, 'editUser'])->name('editUser');
+
+//change password
+Route::get('/change_pass_log', [CustomerController::class, 'changePassword'])->name('change_pass_log');
+Route::post('/change_pass_log', [CustomerController::class, 'updatePassword'])->name('update-password');
+
+//upload CV
+Route::post('/uploadCV', [RecruimentController::class, 'store']);
+
+//CV
+Route::resource('cv', CvController::class);
+
+//tracking work
+Route::resource('wishlist', WishlistController::class);
+
 //admin
-Route::resource('listjobPosting', ControllersJobpostingController::class);
+Route::resource('listjobPosting', JobpostingController::class);
 Route::resource('employer', EmployerController::class);
 Route::resource('AdminUser', CRUDUserController::class);
 
@@ -52,11 +71,7 @@ Route::resource('AdminEmloyer', CRUDEmloyerController::class);
 
 //chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');
-
 Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
-
-Route::get('blogSearch', [BlogController::class, 'blogSearch'])->name('blogSearch');
-
 Route::get('admin', function () {
     return view('DashboardTemplate.dashboard');
 });

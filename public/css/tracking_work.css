@@ -44,7 +44,11 @@
   color: #d34229;
 }
 
-a {
+.price__item__company a {
+  text-decoration: none;
+  color: #d34229;
+}
+.tracking__work__status a{
   text-decoration: none;
   color: #d34229;
 }

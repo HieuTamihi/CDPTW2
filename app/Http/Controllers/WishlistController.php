@@ -2,17 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer;
-use App\Models\Cv;
 use App\Models\Employer;
-use App\Models\Job_posting;
-use App\Models\Recruitment;
-use App\Models\User;
+use App\Models\Wish_lists;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
-class EmployerController extends Controller
+class WishlistController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,12 +16,12 @@ class EmployerController extends Controller
      */
     public function index()
     {
-        // lấy hết tất cả dữ liều trong Employer
-        $employer = Employer::all();
-        // lấy hết tất cả dữ liều trong Job_posting
-        $job = Job_posting::all();
-        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->select('name_company')->get();
-        return view('index', compact('employer', 'job', 'name'));
+        $id = Auth::user()->customer_id;
+        $wishlist = Wish_lists::leftjoin('customers', 'wish_lists.customer_id', '=', 'customers.id')
+            ->leftjoin('job_postings', 'wish_lists.job_posting_id', '=', 'job_postings.id')
+            ->leftjoin('employers', 'employers.id', '=', 'job_postings.employer_id')
+            ->where('customers.id', '=', $id)->where('wish_lists.number', '=', '1')->get();
+        return view('tracking_work', compact('wishlist'));
     }
 
     /**
@@ -47,7 +42,12 @@ class EmployerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Wish_lists::create([
+            'customer_id' => Auth::user()->customer_id,
+            'job_posting_id' => $request->id,
+            'number' => $request->number,
+        ]);
+        return redirect()->route('wishlist.index')->with('message', 'Công việc đã được thêm vào danh sách theo dõi');
     }
 
     /**
@@ -58,14 +58,7 @@ class EmployerController extends Controller
      */
     public function show($id)
     {
-        $detail = Employer::findOrFail($id);
-        $relate = $detail->jobs->take(1);
-        $job_relate = $detail->jobs->take(3);
-        $customer_id = Auth::user()->customer_id;
-        $apply = Customer::leftJoin('users', 'users.customer_id', '=', 'customers.id')->where('customers.id', '=', $customer_id)->first();
-        $id = Auth::user()->customer_id;
-        $cv = Cv::where('customer_id', '=', $id)->get();
-        return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv'));
+        //
     }
 
     /**

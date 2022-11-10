@@ -1,5 +1,6 @@
 .manage__cv {
-  padding-top: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .table__manage {
@@ -42,6 +43,22 @@ tr:nth-child(even) {
 
 .option__manage .fa-pen {
   color: #3366ff;
+}
+
+.up__cv {
+  padding: 5px;
+  background-color: rgb(57, 62, 70);
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.add__cv {
+  padding: 5px;
+  background-color: rgb(211, 65, 39);
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=manage_cv.css.map */

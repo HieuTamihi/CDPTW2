@@ -36,7 +36,6 @@ class UserController extends Controller
         ];
         if (Auth::attempt($arr)) {
             if (Auth::user()->status != 1) {
-                $_SESSION['permision'] = Auth::user()->employer_id;
                 return redirect()->route('login')->with('message', 'Tài khoản đã bị khóa');
             }
             if (Auth::user()->role == 1) {
@@ -47,12 +46,7 @@ class UserController extends Controller
             if (Auth::user()->role == 3) {
                 return redirect()->route('index')->with('message', 'Đăng nhập thành công');
             } else {
-                return redirect()->route('index')->with('message', 'Đăng nhập thành công');
-            }
-            // Dang nhap employer
-            if (Auth::user()->role == 2) {
-                return redirect()->route('index')->with('message', 'Đăng nhập thành công');
-            } else {
+                $_SESSION['permision'] = Auth::user()->employer_id;
                 return redirect()->route('index')->with('message', 'Đăng nhập thành công');
             }
         } else {
@@ -75,7 +69,7 @@ class UserController extends Controller
             }
             $user = DB::table('users')->where('email', $request->email)->first();
             if (!$user) {
-                $newUser = User::create([
+                User::create([
                     'email' => $request->email,
                     'password' => $request->password,
                     'phone' => $request->phone,
@@ -83,11 +77,7 @@ class UserController extends Controller
                     'status' => $request->status = 1
                 ]);
                 Employer::create([
-                    'user_id' => $newUser->id,
-                    'name_company' => $request->name_company,
-                    'address' => $request->address,
-                    'email' => $request->email,
-                    'phone_number' =>$request->phone,
+                    'user_id' => $request->user_id
                 ]);
                 return redirect()->route('register')->with('message', 'Tạo tài khoản thành công !');
             } else {
