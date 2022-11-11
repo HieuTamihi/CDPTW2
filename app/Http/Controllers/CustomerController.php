@@ -130,6 +130,7 @@ class CustomerController extends Controller
             'password' => Hash::make($request->new_password)
         ]);
 
-        return back()->with("status", "Đổi mật khẩu thành công!");
+        Auth::logout();
+        return redirect()->route('login')->with("status", "Đổi mật khẩu thành công, Vui lòng đăng nhập lại!");
     }
 }

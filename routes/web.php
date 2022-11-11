@@ -7,11 +7,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobpostingController;
-use App\Http\Controllers\RecruimentController;
-use App\Http\Controllers\TrackingworkController;
+use App\Http\Controllers\RecruitmentController;
 use App\Http\Controllers\WishlistController;
-use App\Models\Customer;
-use App\Models\Wish_lists;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,11 +45,18 @@ Route::put('/editUser/{id}', [CustomerController::class, 'editUser'])->name('edi
 Route::get('/change_pass_log', [CustomerController::class, 'changePassword'])->name('change_pass_log');
 Route::post('/change_pass_log', [CustomerController::class, 'updatePassword'])->name('update-password');
 
+//reset password
+Route::get('/reset_pass',[UserController::class, 'resetPass']);
+Route::post('/recover_pass',[UserController::class, 'recover_pass']);
+Route::get('/update-new-pass',[UserController::class, 'update_new_pass']);
+Route::post('/reset-new-pass',[UserController::class, 'reset_new_pass']);
+
 //upload CV
-Route::post('/uploadCV', [RecruimentController::class, 'store']);
+Route::post('/uploadCV', [RecruitmentController::class, 'store']);
 
 //CV
 Route::resource('cv', CvController::class);
+Route::get('/viewCV/{id}', [CvController::class, 'viewCV'])->name('viewCV');
 
 //tracking work
 Route::resource('wishlist', WishlistController::class);
