@@ -41,7 +41,7 @@
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->email_verified_at }}</td>
                                 <td>{{ $user->phone }}</td>
-                                <td>{{ $user->password }}</td>
+                                <td><?php echo substr($user->password, 0, 0) . '.........'; ?></td>
                                 <td>{{ $user->role }}</td>
                                 <td>{{ $user->status }}</td>
                                 <td>{{ $user->remember_token }}</td>
