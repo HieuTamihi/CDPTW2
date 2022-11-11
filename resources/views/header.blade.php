@@ -38,6 +38,13 @@
                     <li>
                         <a href="#"><i class="fa-solid fa-address-book"></i>Liên hệ</a>
                     </li>
+                    @if(Auth::check())
+                    @if(Auth::user()->role ==2)
+                    <li>
+                        <a href="DashboardTemplate.dashboard">Quản lý bài tuyển dụng</a>
+                    </li>
+                    @endif
+                    @endif
                 </ul>
             </div>
         </div>
@@ -71,10 +78,15 @@
             </div>
             <div class="header__right d-flex">
                 <ul>
-                    @if (Auth::check())
-                    @if (Auth::user()->role == 2)
+                    @if (Auth::check() && Auth::user()->role == 2)
                     <li><a class="btn btn-danger header__right--logemp" href="#">Đăng tuyển</a></li>
-                    @endif
+                    <li>
+                        <form method="POST" name="logout" action="{{ route('logout') }}">
+                            @csrf
+                            <a href="javascript:document.logout.submit()" class="btn btn-dark header__right--logcus"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
+                        </form>
+                    </li>
+                    @elseif(Auth::check() && Auth::user()->role == 3)
                     <li>
                         <div class="dropdown">
                             <div class="dropbtn">{{Auth::user()->email}}</div>
@@ -91,7 +103,8 @@
                         </div>
                     </li>
                     @else
-                    <li><a class="btn btn-dark header__right--logcus" href="{{ asset('login') }}">Đăng nhập</a>
+                    <li>
+                        <a class="btn btn-dark header__right--logcus" href="{{ asset('login') }}">Đăng nhập</a>
                     </li>
                     @endif
                 </ul>

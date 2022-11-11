@@ -12,7 +12,7 @@
     <section id="section-container" class="cont-top">
         <div class="row main-slide-home-page">
             <div class="col-md-8 intem-slide">
-                <div class="tit-recomm">
+                <div class="tit-recomm">    
                     <h2>
                         <strong class="tit-recomm-txt">
                             <span class="tit-recomm-txt-emph">

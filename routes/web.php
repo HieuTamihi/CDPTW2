@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CRUDListJobController;
+use App\Http\Controllers\RUEmployerController;
 use App\Http\Controllers\CvController;
 use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +41,9 @@ Route::get('/register', [UserController::class, 'getUserID']);
 Route::post('/registerCT', [UserController::class, 'registerCT'])->name('registerCT');
 Route::get('/registerCT', [UserController::class, 'getCustomerID']);
 
+//Active tai khoan
+Route::get('active/{newUser}/{confirm}',[UserController::class,'active'])->name('activeAcount');
+
 //customer
 // Route::resource('/personal_info', CustomerController::class);
 Route::get('/ShowEditUser/{id}', [CustomerController::class, 'ShowEditUser'])->name('ShowEditUser');
@@ -60,6 +65,22 @@ Route::resource('wishlist', WishlistController::class);
 //admin
 Route::resource('listjobPosting', JobpostingController::class);
 Route::resource('employer', EmployerController::class);
+
+
+
+
+// Employer - quan ly job by employer_id
+Route::resource('CRUDJobByEmployer',CRUDListJobController::class);
+// RU employer 
+Route::resource('RUEmployer',RUEmployerController::class);
+// detail_recruitment
+Route::get('/detail_re/{id}',[RUEmployerController::class,'detail_recruitment'])->name('detail_recruitment');
+// Send mail recruitment
+Route::get('recruit/{customer}',[RUEmployerController::class,'recruit'])->name('recruit');
+
+// Change pass Employer
+Route::get('showlayout/{id}',[RUEmployerController::class,'showlayout'])->name('showlayout');
+Route::put('changepass/{id}',[RUEmployerController::class,'changepass'])->name('changepass');
 
 //chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');
