@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\Job_posting\StoreRequest;
 use App\Http\Requests\Job_posting\UpdateRequest;
+use App\Models\Recruitment;
 
 class CRUDListJobController extends Controller
 {
@@ -65,8 +66,9 @@ class CRUDListJobController extends Controller
     public function show($id)
     {
         $show = Job_posting::find($id);
+        $list_recruitmet = $show->customers()->paginate(3);
         $getstatus = DB::table('recruitments')->where('jobposting_id', '=', $id);
-        return view('DashboardTemplate.Job_postings.detail_post', compact('show'));
+        return view('DashboardTemplate.Job_postings.detail_post', compact('show','list_recruitmet'));
     }
 
     /**

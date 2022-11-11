@@ -44,7 +44,7 @@ class recruitmentSeeder extends Seeder
                 'file' => '1667982000.pdf',
             ],
             [
-                'customer_id' => '2',
+                'customer_id' => '5',
                 'jobposting_id' => '2',
                 'cv_id' => null,
                 'status' => '0',

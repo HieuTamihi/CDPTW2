@@ -11,6 +11,6 @@ class Recruitment extends Model
     use HasFactory;
     protected $table = 'recruitments';
     protected $fillable = [
-
+        'status',
     ];
 }

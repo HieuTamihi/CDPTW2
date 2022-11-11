@@ -82,7 +82,8 @@
                                     Tạo CV Ứng Tuyển
                                 </button>
                             </a>
-                            <p class="text_align">4 ngày trước</p>
+                            <p class="text_align"><?php echo str_replace('-','',date('d',strtotime($detail->created_at)) - $date);?> ngày trước</p>
+                            @endforeach
                             <h6>Địa điểm</h6>
                             <p>{{$detail->address}}</p>
                             <h6>Số năm kinh nghiệm</h6>

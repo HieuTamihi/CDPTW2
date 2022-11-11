@@ -6,10 +6,9 @@ use App\Models\Customer;
 use App\Models\Cv;
 use App\Models\Employer;
 use App\Models\Job_posting;
-use App\Models\User;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class EmployerController extends Controller
 {
@@ -57,12 +56,13 @@ class EmployerController extends Controller
     {
         $detail = Employer::findOrFail($id);
         $relate = $detail->jobs->take(1);
+        $date = Carbon::now()->day;
         $job_relate = $detail->jobs->take(3);
         $customer_id = Auth::user()->customer_id;
         $apply = Customer::leftJoin('users', 'users.customer_id', '=', 'customers.id')->where('customers.id', '=', $customer_id)->first();
         $id = Auth::user()->customer_id;
         $cv = Cv::where('customer_id', '=', $id)->get();
-        return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv'));
+        return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv','date'));
     }
 
     /**

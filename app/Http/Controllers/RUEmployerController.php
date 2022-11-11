@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 use App\Models\Employer;
 use App\Models\Customer;
 use App\Models\Recruitment;
-use App\Http\Requests\Employer\UpdateRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\File;
+use Carbon\Carbon;
+use App\Http\Requests\Employer\UpdateRequest;
 use App\Http\Requests\Employer\ChangePasswordRequest;
 
 class RUEmployerController extends Controller
@@ -86,8 +87,8 @@ class RUEmployerController extends Controller
             $file = $request->file('image_upload');
             $file_name = $file->getClientOriginalName();
             $file->move('img', $file_name);
-            $imagePath = public_path('img/'.$Employer->image);
-            if(File::exists($imagePath)){
+            $imagePath = public_path('img/' . $Employer->image);
+            if (File::exists($imagePath)) {
                 unlink($imagePath);
             }
             $Employer->image = $file_name;
@@ -106,35 +107,39 @@ class RUEmployerController extends Controller
     {
         $re = DB::table('recruitments')->select('id')->where('customer_id', '=', $id)->get();
         Recruitment::destroy($re[0]->id);
-        return redirect()->back()->with('notify','Delete Susscessfully');
+        return redirect()->back()->with('notify', 'Delete Susscessfully');
     }
 
     public function detail_recruitment($id)
     {
         $customer = Customer::find($id);
+        $re = DB::table('recruitments')->select('id')->where('customer_id', '=', $id)->get();
+        $update_status = Recruitment::find($re[0]->id);
+        $update_status->update([
+            'status' => '1',
+        ]);
         return view('DashboardTemplate.Job_postings.detail', compact('customer'));
     }
     public function recruit(Customer $customer)
     {
-        Mail::send('DashboardTemplate.emails.send', compact('customer'), function ($email) use ($customer) {
+        $id = Customer::find($customer->id);
+        $job = $id->job_postings->take(1);
+        $tomorrow = Carbon::tomorrow();
+        Mail::send('DashboardTemplate.emails.send', compact('customer', 'job','tomorrow'), function ($email) use ($customer) {
             $email->subject('Thông báo tuyển dụng');
             $email->to($customer->email);
         });
         return redirect()->back()->with('notify', 'Send mail susscrssfully !');
     }
 
-    public function changepass(ChangePasswordRequest $request,$id)
+    public function changepass(ChangePasswordRequest $request, $id)
     {
-        $request -> validate([
-            
-        ]);
-        if(!Hash::check($request->old_pass,auth()->user()->password)){
+        if (!Hash::check($request->old_pass, auth()->user()->password)) {
             return redirect()->back()->with("error", "Đổi mật khẩu thất bại!");
-        }
-        else{
+        } else {
             $change = User::find($id);
             $change->update([
-                'password' =>$request->new_pass,
+                'password' => $request->new_pass,
             ]);
             Auth::logout();
             return redirect()->route('login')->with("status", "Đổi mật khẩu thành công, Vui lòng đăng nhập lại!");
@@ -143,6 +148,6 @@ class RUEmployerController extends Controller
     public function showlayout($id)
     {
         $showEmployByID = User::find($id);
-        return view('DashboardTemplate.employer.showlayout',compact('showEmployByID')) ;
+        return view('DashboardTemplate.employer.showlayout', compact('showEmployByID'));
     }
 }

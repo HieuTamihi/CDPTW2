@@ -29,6 +29,7 @@ class employerSeeder extends Seeder
                 'image' => 'CGSQtFPgvd7HKMXvon4l.png',
                 'email' => 'FPT@gmail.com',
                 'phone_number' => '0123456789',
+                'created_at' => '2022-11-01 22:21:11',
             ], [
                 'name_company' => 'Go2Joy Việt Nam',
                 'user_id'=> '2',
@@ -44,6 +45,7 @@ class employerSeeder extends Seeder
                 'image' => 'logo.4089b512.png',
                 'email' => 'go2joyvn@gmail.com',
                 'phone_number' => '0123456789',
+                'created_at' => '2022-11-02 22:21:11',
             ], [
                 'name_company' => 'SAMO',
                 'user_id'=>'3',
@@ -61,6 +63,7 @@ class employerSeeder extends Seeder
                 'image' => 'TopDev-LogoSAMO-1659088259.png',
                 'email' => 'SAMO@gmail.com',
                 'phone_number' => '0123456789',
+                'created_at' => '2022-11-03 22:21:11',
             ], [
                 'name_company' => 'TMA Solutions',
                 'user_id'=>'4',
@@ -78,6 +81,7 @@ class employerSeeder extends Seeder
                 'image' => 'TopDev-logoleXQXRp4F3f6eLCRvvxOklk4Q5ctPEoh-1656988646.png',
                 'email' => 'Solutions@gmail.com',
                 'phone_number' => '0123456789',
+                'created_at' => '2022-11-04 22:21:11',
             ], [
                 'name_company' => 'Korean IT Companies ',
                 'user_id' => '5',
@@ -95,6 +99,7 @@ class employerSeeder extends Seeder
                 'image' => 'logo-it-ocmp-AdqRx.jpg',
                 'email' => 'Korean@gmail.com',
                 'phone_number' => '0123456789',
+                'created_at' => '2022-11-05 22:21:11',
             ], [
                 'name_company' => 'TAPTAP',
                 'user_id'=>'6',
@@ -112,6 +117,7 @@ class employerSeeder extends Seeder
                 'image' => 'TopDev-logoCmAkkDByOMNZJDE0e4VoD7vIhooacXEH-1654749314.jpg',
                 'email' => 'TAPTAP@gmail.com',
                 'phone_number' => '0123456789',
+                'created_at' => '2022-11-06 22:21:11',
             ], [
                 'name_company' => 'Aventra Group',
                 'user_id'=>'7',
@@ -129,6 +135,7 @@ class employerSeeder extends Seeder
                 'image' => 'TopDev-4725e148-96ec-4048-8de8-e41e3959686b-PhuongNguyen-1666144852.jpg',
                 'email' => 'Aventra@gmail.com',
                 'phone_number' => '0123456789',
+                'created_at' => '2022-11-08 22:21:11',
             ]
         ]);
     }

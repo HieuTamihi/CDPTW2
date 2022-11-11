@@ -9,6 +9,12 @@ class Customer extends Model
 {
     use HasFactory;
     protected $table = 'customers'; 
+
+    public function job_postings()
+    {
+        return $this->belongsToMany(Job_posting::class,'Recruitments','jobposting_id','customer_id')
+        ->withPivot('status');
+    }
     protected $fillable = [
         'id',
         'email',

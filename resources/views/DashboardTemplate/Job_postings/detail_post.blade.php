@@ -6,7 +6,7 @@
         @if(Session::has('notify'))
             <div class="alert alert-success" style="text-align:center;">{{Session::get('notify')}}</div>
             @endif
-            <a href=""><button class="btn btn-primary" style="float: right;">List Post</button></a>
+            <a href="{{route('CRUDJobByEmployer.index')}}"><button class="btn btn-primary" style="float: right;">List Post</button></a>
             <br>
             <br>
             <div class="row">
@@ -58,16 +58,21 @@
                 <tbody>
                     <?php
                     $i = 1;
+                    $str = "";
                     ?>
-                    @foreach($show->customers as $value)
+                    @foreach($list_recruitmet as $value)
+                    <?php 
+                    $value->pivot->status == 1 ? $str = "Đã xem" : $str = "Chưa xem";
+                    $value->gender == 0 ? $gt = "Nam" : $gt = "Nữ"; 
+                    ?>
                     <tr>
                         <th scope="row">{{$i++}}</th>
                         <td>{{$value->fullname}}</td>
                         <td>{{$value->phone_number}}</td>
                         <td>{{$value->address}}</td>
-                        <td>{{$value->gender}}</td>
+                        <td>{{$gt}}</td>
                         <td>{{$value->favorite}}</td>
-                        <td>{{$value->pivot->status}}</td>
+                        <td>{{$str}}</td>
                         <td style="display: flex; justify-content: space-evenly">
                             <a href="{{route('detail_recruitment',$value->id)}}">
                             <i class='fas fa-eye'></i>
@@ -84,6 +89,9 @@
                     @endforeach
                 </tbody>
             </table>
+            <div>
+              {{$list_recruitmet->links()}}
+            </div>
         </div>
     </section>
 </div>
