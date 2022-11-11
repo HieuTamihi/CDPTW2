@@ -2,17 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer;
-use App\Models\Cv;
-use App\Models\Employer;
-use App\Models\Job_posting;
-use App\Models\Recruitment;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Job_posting;
 use Illuminate\Support\Facades\DB;
 
-class EmployerController extends Controller
+class CRUDJobpostingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,12 +15,8 @@ class EmployerController extends Controller
      */
     public function index()
     {
-        // lấy hết tất cả dữ liều trong Employer
-        $employer = Employer::all();
-        // lấy hết tất cả dữ liều trong Job_posting
-        $job = Job_posting::all();
-        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->get();
-        return view('index', compact('employer', 'job', 'name'));
+        $jobposting = Job_posting::orderBy('id', 'desc')->paginate(5);
+        return view('DashboardTemplate.Jobposting.index', compact('jobposting'));
     }
 
     /**
@@ -36,7 +26,7 @@ class EmployerController extends Controller
      */
     public function create()
     {
-        //
+        return view('DashboardTemplate.Jobposting.addJobposting');
     }
 
     /**
@@ -47,7 +37,8 @@ class EmployerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Job_posting::create($request->all());
+        return redirect()->route('AdminJobposting.index');
     }
 
     /**
@@ -58,14 +49,7 @@ class EmployerController extends Controller
      */
     public function show($id)
     {
-        $detail = Employer::findOrFail($id);
-        $relate = $detail->jobs->take(1);
-        $job_relate = $detail->jobs->take(3);
-        $customer_id = Auth::user()->customer_id;
-        $apply = Customer::leftJoin('users', 'users.customer_id', '=', 'customers.id')->where('customers.id', '=', $customer_id)->first();
-        $id = Auth::user()->customer_id;
-        $cv = Cv::where('customer_id', '=', $id)->get();
-        return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv'));
+        //
     }
 
     /**
@@ -76,7 +60,8 @@ class EmployerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $jobposting = Job_posting::find($id);
+        return view('DashboardTemplate.Jobposting.editJobposting', compact('jobposting'));
     }
 
     /**
@@ -88,7 +73,9 @@ class EmployerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $jobposting = Job_posting::find($id);
+        $jobposting->update($request->all());
+        return redirect()->route('AdminJobposting.index');
     }
 
     /**
@@ -99,6 +86,7 @@ class EmployerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $jobposting = Job_posting::destroy($id);
+        return redirect()->route('AdminJobposting.index');
     }
 }

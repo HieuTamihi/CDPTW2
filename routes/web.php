@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CvController;
+use App\Http\Controllers\CRUDUserController;
+use App\Http\Controllers\CRUDEmloyerController;
+use App\Http\Controllers\CRUDJobpostingController;
 use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -30,6 +33,7 @@ Route::get('/index', [EmployerController::class, 'index']);
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::get('/', [EmployerController::class, 'index'])->name('index');
+
 
 //dang ky
 //dang ky tai khoan employer
@@ -60,6 +64,10 @@ Route::resource('wishlist', WishlistController::class);
 //admin
 Route::resource('listjobPosting', JobpostingController::class);
 Route::resource('employer', EmployerController::class);
+Route::resource('AdminUser', CRUDUserController::class);
+
+Route::resource('AdminJobposting', CRUDJobpostingController::class);
+Route::resource('AdminEmloyer', CRUDEmloyerController::class);
 
 //chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');
