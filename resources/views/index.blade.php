@@ -76,7 +76,7 @@
                             @foreach ($name as $key => $job)
                                 <li>
                                     <span class="tags"><strong class="tags-txt">{{ $job->name_company }}</strong></span>
-                                    <br><a href="{{ route('employer.show', $row->id) }}">{{ $job->title }}</a>
+                                    <br><a href="{{ route('employer.show', $job->id) }}">{{ $job->title }}</a>
                                     <p class="job-salary-view">{{ $job->salary }}</p>
                                 </li>
                             @endforeach
