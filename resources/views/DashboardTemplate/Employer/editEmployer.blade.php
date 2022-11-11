@@ -28,53 +28,55 @@
                                 <div class="form-group">
                                     <div class="mb-3">
                                         <label for="inputName">User id</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="user_id" placeholder="User id">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $employer->user_id }}" name="user_id">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Website</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="website" placeholder="website">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $employer->website }}" name="website">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="inputName">infor</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="infor" placeholder="infor">
+                                        <label for="inputName">Infor</label>
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $employer->infor }}" name="infor">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="inputName">responsibility</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="responsibility" placeholder="responsibility">
+                                        <label for="inputName">Responsibility</label>
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $employer->responsibility }}" name="responsibility">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="inputName">welfare</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="welfare" placeholder="welfare">
+                                        <label for="inputName">Welfare</label>
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $employer->welfare }}" name="welfare">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Name Company</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="name_company" placeholder="Tên công ty">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $employer->name_company }}" name="name_company">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Address</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="address" placeholder="Địa chỉ công ty">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $employer->address }}" name="address">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Email</label>
-                                        <input type="email" id="inputName" class="form-control" value=""
-                                            name="email" placeholder="Email">
+                                        <input type="email" id="inputName" class="form-control"
+                                            value="{{ $employer->email }}" name="email">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Phone number</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="phone_number" placeholder="số điện thoại">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $employer->phone_number }}" name="phone_number">
                                     </div>
                                     <div class="mb-3">
                                         <label for="formFile" class="form-label">Image</label>
-                                        <input class="form-control" type="file" id="formFile" value=""
-                                            name="image">
+                                        <input class="form-control" type="file" id="formFile" name="image">
+                                        <div class="img">
+                                            <img src="{{ url('img') }}/{{ $employer->image }}" alt="">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
