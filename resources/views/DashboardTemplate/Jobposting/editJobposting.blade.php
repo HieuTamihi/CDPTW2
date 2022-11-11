@@ -30,38 +30,38 @@
                                 <div class="form-group">
                                     <div class="mb-3">
                                         <label for="inputName">Employer Id</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="employer_id" placeholder="employer_id">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $jobposting->employer_id }}" name="employer_id">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Title</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="title" placeholder="title">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $jobposting->title }}" name="title">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Experience</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="experience" placeholder="experience">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $jobposting->experience }}" name="experience">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Type</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="type" placeholder="type">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $jobposting->type }}" name="type">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Skill</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="skill" placeholder="skill">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $jobposting->skill }}" name="skill">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Required</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="required" placeholder="required">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $jobposting->required }}" name="required">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Salary</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="salary" placeholder="salary">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $jobposting->salary }}" name="salary">
                                     </div>
                                 </div>
                             </div>
