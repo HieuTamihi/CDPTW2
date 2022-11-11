@@ -46,9 +46,6 @@
                                                     <p class="loca-spotlight">{{ $row->address }}</p>
                                                 </div>
                                             </div>
-                                            <div class="spotlight-btn">
-                                                <a href="">Xem Thêm &raquo;</a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
