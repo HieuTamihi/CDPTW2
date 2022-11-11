@@ -2,6 +2,7 @@
   padding-top: 25px;
   display: block;
   text-align: center;
+  padding-bottom: 25px;
 }
 
 .form__info {
@@ -44,31 +45,31 @@
   margin-right: 10px;
 }
 
-.input__name,
-.input__date,
-.input__phone,
-.input__email,
-.input__address,
-.select__gender,
-.area__favorite {
+.input__name1,
+.input__date1,
+.input__phone1,
+.input__email1,
+.input__address1,
+.select__gender1,
+.area__favorite1 {
   display: flex;
   justify-content: center;
 }
 
-.input__name input,
-.input__date input,
-.input__phone input,
-.input__email input,
-.input__address input,
-.select__gender select,
-.area__favorite textarea {
+.input__name1 input,
+.input__date1 input,
+.input__phone1 input,
+.input__email1 input,
+.input__address1 input,
+.select__gender1 select,
+.area__favorite1 textarea {
   width: 30%;
   border: 2px solid #b3b3b3;
   border-radius: 5px;
   margin-top: 15px;
 }
 
-.save__btn {
+.save__btn1 {
   border: 1px solid #3366ff;
   background: #3366ff;
   color: #fff;
@@ -76,7 +77,7 @@
   margin-top: 10px;
 }
 
-.change__btn {
+.change__btn1 {
   border: 1px solid #3366ff;
   background: #3366ff;
   color: #fff;
@@ -84,60 +85,65 @@
   margin-top: 10px;
 }
 
-.save__btn:hover {
+.save__btn1:hover {
   color: #3366ff;
   background: #fff;
   border: 1px solid #3366ff;
 }
 
-.change__btn:hover {
+.change__btn1:hover {
   color: #3366ff;
   background: #fff;
   border: 1px solid #3366ff;
 }
 
 @media only screen and (max-width: 1080px) {
-  .input__name input,
-.input__date input,
-.input__phone input,
-.input__email input,
-.input__address input,
-.select__gender select,
-.area__favorite textarea {
+
+  .input__name1 input,
+  .input__date1 input,
+  .input__phone1 input,
+  .input__email1 input,
+  .input__address1 input,
+  .select__gender1 select,
+  .area__favorite1 textarea {
     width: 70%;
   }
 }
+
 @media only screen and (max-width: 550px) {
-  .input__name input,
-.input__date input,
-.input__phone input,
-.input__email input,
-.input__address input,
-.select__gender select,
-.area__favorite textarea {
+
+  .input__name1 input,
+  .input__date1 input,
+  .input__phone1 input,
+  .input__email1 input,
+  .input__address1 input,
+  .select__gender1 select,
+  .area__favorite1 textarea {
     width: 100%;
   }
-  .input__name,
-.input__date,
-.input__phone,
-.input__email,
-.input__address,
-.select__gender,
-.area__favorite {
+
+  .input__name1,
+  .input__date1,
+  .input__phone1,
+  .input__email1,
+  .input__address1,
+  .select__gender1,
+  .area__favorite1 {
     display: flex;
     flex-direction: column;
   }
+
   .lb__fullname label,
-.lb__fullname span,
-.lb__date label,
-.lb__date span,
-.lb__phone label,
-.lb__phone span,
-.lb__email label,
-.lb__email span,
-.lb__address label,
-.lb__gender label,
-.lb_favorite label {
+  .lb__fullname span,
+  .lb__date label,
+  .lb__date span,
+  .lb__phone label,
+  .lb__phone span,
+  .lb__email label,
+  .lb__email span,
+  .lb__address label,
+  .lb__gender label,
+  .lb_favorite label {
     float: left;
     margin-top: 10px;
   }

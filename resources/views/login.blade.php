@@ -1,7 +1,11 @@
+@if(!Auth::check())
 @extends('header')
 @section('footer')
 <div class="log__reg__page">
     <div class="container">
+        @if(session('status'))
+        <div class="alert alert-success" style="text-align:center;">{{session('status')}}</div>
+        @endif
         <div class="row">
             <div class="page__log">
                 <div class="title__log">
@@ -42,3 +46,4 @@
 </div>
 <br>
 @endsection;
+@endif
