@@ -48,8 +48,4 @@
 </div>
 <br>
 @endsection
-<<<<<<< HEAD
 @endif
-=======
-@endif
->>>>>>> origin/merge_all_branch

@@ -24,7 +24,7 @@ class Employers extends Migration
             $table->string('address')->nullable();
             $table->string('image')->nullable();
             $table->string('email');
-            $table->integer('phone_number');
+            $table->string('phone_number',11);
             $table->timestamps();
         });
     }

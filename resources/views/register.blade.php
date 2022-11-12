@@ -31,27 +31,7 @@
                                 <div class="alert alert-success">{{Session::get('message')}}</div>
                                 @endif
                                 @csrf
-<<<<<<< HEAD
                                 <span class="des__name">Name Company</span>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                <input type="text" placeholder="Enter name company" class="type__info__reg" name="name_company">
-                                
-                                <span class="des__name">Address</span>
-                                <input type="text" placeholder="Enter address" class="type__info__reg" name="address">
-
-                                <!-- <span>Image</span>
-                                <input type="file" placeholder="Enter select" class="type__info__reg" name="image"> -->
-
-=======
-=======
->>>>>>> origin/change_password_employer
-=======
->>>>>>> origin/detail_page
-=======
->>>>>>> origin/register_and_send_mail
                                 <input type="text" placeholder="Enter your name company" class="type__info__reg" name="name_company">
                                 @if ($errors->has('name_company'))
                                 <strong class="text-danger">{{$errors->first('name_company')}}</strong>
@@ -61,25 +41,6 @@
                                 @if ($errors->has('address'))
                                 <strong class="text-danger">{{$errors->first('address')}}</strong>
                                 @endif
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> RUEmployer_By_ID
-=======
->>>>>>> origin/change_password_employer
-=======
->>>>>>> origin/detail_page
-=======
->>>>>>> origin/register_and_send_mail
-=======
-
-                                <span class="des__name">Name Company</span>
-                                <input type="text" placeholder="Enter your email" class="type__info__reg" name="name_company">
-
-                                <span class="des__name">Address</span>
-                                <input type="text" placeholder="Enter your email" class="type__info__reg" name="address">
-
->>>>>>> origin/register_employer
                                 <span class="des__name">Email</span>
                                 <input type="text" placeholder="Enter your email" class="type__info__reg" name="email">
                                 @if ($errors->has('email'))
@@ -96,29 +57,7 @@
                                 <input type="text" placeholder="Enter your phone number" class="type__info__reg" name="phone">
                                 @if ($errors->has('phone'))
                                 <strong class="text-danger">{{$errors->first('phone')}}</strong>
-                                @endif
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                <input type="hidden" value="{{(int)$user_id->user_id}}" name="user_id">
-=======
-                                <input type="hidden" value="3" name="role">
-                                <input type="hidden" value="1" name="status">
->>>>>>> CRUD_Employer_By_ID
-=======
->>>>>>> RUEmployer_By_ID
-=======
->>>>>>> origin/change_password_employer
-=======
->>>>>>> origin/detail_page
-=======
->>>>>>> origin/register_and_send_mail
-=======
-                                <input type="hidden" value="{{(int)$user_id->user_id}}" name="user_id">
->>>>>>> origin/register_employer
+                                @endif  
                                 <input type="submit" value="Sign up" class="btn reg__btn">
                                 <span class="btn btn login__btn"><a href="{{route('login')}}" style="text-decoration: none;color:white;">Login</a></span>
                             </form>

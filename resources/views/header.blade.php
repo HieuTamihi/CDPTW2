@@ -38,6 +38,13 @@
                     <li>
                         <a href="#"><i class="fa-solid fa-address-book"></i>Liên hệ</a>
                     </li>
+                    @if(Auth::check())
+                    @if(Auth::user()->role ==2)
+                    <li>
+                        <a href="DashboardTemplate.dashboard">Quản lý Job</a>
+                    </li>
+                    @endif
+                    @endif
                 </ul>
             </div>
         </div>

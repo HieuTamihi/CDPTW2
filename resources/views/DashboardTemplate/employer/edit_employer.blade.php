@@ -1,5 +1,7 @@
 @extends('DashboardTemplate.dashboardHeader')
 @section('main')
+@if(Auth::check())
+@if(Auth::user()->role == 2)
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -23,19 +25,7 @@
                             <br>
                             <input type="file" name='image_upload' accept="image/*">
                             <br>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            @if ($errors->has('image_upload'))
-=======
                             @if($errors->has('image_upload'))
->>>>>>> origin/change_password_employer
-=======
-                            @if($errors->has('image_upload'))
->>>>>>> origin/detail_page
-=======
-                            @if ($errors->has('image_upload'))
->>>>>>> origin/recruitment_customer
                             <strong class="text-danger">{{$errors->first('image_upload')}}</strong>
                             @endif
                         </div>
@@ -60,19 +50,7 @@
                             <strong class="text-danger">{{$errors->first('address')}}</strong>
                             @endif
                         </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        
-=======
 
->>>>>>> origin/change_password_employer
-=======
-
->>>>>>> origin/detail_page
-=======
-                        
->>>>>>> origin/recruitment_customer
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
@@ -106,27 +84,12 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary" style="float:right;">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-                <i class="fas fa-pencil-alt ">
-                                        </i>
-            </button>
-=======
                     <i class="fas fa-pencil-alt "></i>
                 </button>
->>>>>>> origin/change_password_employer
-=======
-                    <i class="fas fa-pencil-alt "></i>
-                </button>
->>>>>>> origin/detail_page
-=======
-                <i class="fas fa-pencil-alt ">
-                                        </i>
-            </button>
->>>>>>> origin/recruitment_customer
             </form>
         </div>
     </section>
 </div>
+@endif
+@endif
 @endsection
