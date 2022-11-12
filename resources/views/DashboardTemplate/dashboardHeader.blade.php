@@ -79,12 +79,56 @@
                         </div>
                     </form>
 
+<<<<<<< HEAD
                     <!-- Right navbar links -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"
                                 role="button">
                                 <i class="fas fa-th-large"></i>
+=======
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+                        <i class="fas fa-th-large"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="#" class="brand-link">
+                <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">AdminLTE 3</span>
+            </a>
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user (optional) -->
+                @if(Auth::user()->role == 2)
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="{{asset('img/'.Auth::user()->employer->image)}}" class="" alt="User Image" style="width:5.1rem;">
+                    </div>
+                    <div class="info">       
+                        <a href="{{route('RUEmployer.show',Auth::user()->employer->id)}}" class="d-block">{{Auth::user()->employer->name_company}}</a>
+                    </div>
+                </div>
+                @endif
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+                        <li class="nav-item has-treeview menu-open">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-copy"></i>
+                                <p>
+                                    Tables
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+>>>>>>> RUEmployer_By_ID
                             </a>
                         </li>
                     </ul>
@@ -196,24 +240,33 @@
                             </ul>
                         </li>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <!-- Employer -->
 =======
                         <!-- List Job By Employer_ID -->
 >>>>>>> CRUD_Job_By_Emloy_id
+=======
+                        <!-- List Job By Employer_ID -->
+>>>>>>> RUEmployer_By_ID
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     Employer
 =======
                                     Lists Job Posting
 >>>>>>> CRUD_Job_By_Emloy_id
+=======
+                                    Lists Job Posting
+>>>>>>> RUEmployer_By_ID
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
+<<<<<<< HEAD
 <<<<<<< HEAD
                                     <a href="{{route('CRUDEmployer.index')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
@@ -232,10 +285,16 @@
                                     <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>jsGrid</p>
+=======
+                                    <a href="{{route('CRUDJobByEmployer.index')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Lists job</p>
+>>>>>>> RUEmployer_By_ID
                                     </a>
                                 </li>
                             </ul>
                         </li>
+<<<<<<< HEAD
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
@@ -271,6 +330,8 @@
                         <ul class="nav nav-treeview">
 >>>>>>> CRUD_Employer_By_ID
 =======
+=======
+>>>>>>> RUEmployer_By_ID
                         <!-- END List Job  -->
 
                         <!-- <ul class="nav nav-treeview">

@@ -25,15 +25,21 @@ class job_postingSeeder extends Seeder
                 'salary' => '2000',
                 'token' => 'c4ca4238a0b923820dcc509a6f75849b'
 <<<<<<< HEAD
+<<<<<<< HEAD
             ], [
 =======
             ],
             [
 >>>>>>> CRUD_Job_By_Emloy_id
+=======
+            ],
+            [
+>>>>>>> RUEmployer_By_ID
                 'employer_id' => '2',
                 'title' => '[All Levels/Fresher] Software engineers (SalesForce/Apex/Java)',
                 'experience' => 'Mới ra trường, All Levels', 'type' => 'Fulltime',
                 'skill' => 'Java , Salesforce, Software Engineer',
+<<<<<<< HEAD
 <<<<<<< HEAD
                 'required' => 'Software engineers have bachelor degree in relevant field, from 0 up to 2 years of work experience ,
                 Familiar with Salesforce Apex programming language or JAVA, C++, .Net, 
@@ -41,6 +47,9 @@ class job_postingSeeder extends Seeder
 =======
                 'required' => 'Software engineers have bachelor degree in relevant field, from 0 up to 2 years of work experience , Familiar with Salesforce Apex programming language or JAVA, C++, .Net, Good mindset, ability to multi-task, prioritize, and manage time effectively',
 >>>>>>> CRUD_Job_By_Emloy_id
+=======
+                'required' => 'Software engineers have bachelor degree in relevant field, from 0 up to 2 years of work experience , Familiar with Salesforce Apex programming language or JAVA, C++, .Net, Good mindset, ability to multi-task, prioritize, and manage time effectively',
+>>>>>>> RUEmployer_By_ID
                 'salary' => '5** - 2***',
                 'token' => 'c81e728d9d4c2f636f067f89cc14862c'
             ], [
@@ -63,6 +72,7 @@ class job_postingSeeder extends Seeder
                 'required' => 'Tạo phân quyền nhóm người sử dụng vào hệ thống ứng dụng CoreBanking; và một số hệ thống quản trị ngoài Corebanking',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 'salary' => 'Offer '
 =======
                 'salary' => 'Offer ',
@@ -72,6 +82,10 @@ class job_postingSeeder extends Seeder
                 'salary' => 'Offer ',
                 'token' => 'a87ff679a2f3e71d9181a67b7542122c'
 >>>>>>> CRUD_Job_By_Emloy_id
+=======
+                'salary' => 'Offer ',
+                'token' => 'a87ff679a2f3e71d9181a67b7542122c'
+>>>>>>> RUEmployer_By_ID
             ],
             [
                 'employer_id' => '5',
@@ -82,6 +96,7 @@ class job_postingSeeder extends Seeder
                 'required' => 'Tạo phân quyền nhóm người sử dụng vào hệ thống ứng dụng CoreBanking; và một số hệ thống quản trị ngoài Corebanking',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 'salary' => 'Offer '
 =======
                 'salary' => 'Offer ',
@@ -91,6 +106,10 @@ class job_postingSeeder extends Seeder
                 'salary' => 'Offer ',
                 'token' => 'e4da3b7fbbce2345d7772b0674a318d5'
 >>>>>>> CRUD_Job_By_Emloy_id
+=======
+                'salary' => 'Offer ',
+                'token' => 'e4da3b7fbbce2345d7772b0674a318d5'
+>>>>>>> RUEmployer_By_ID
             ],
             [
                 'employer_id' => '6',
@@ -101,6 +120,7 @@ class job_postingSeeder extends Seeder
                 'required' => 'Tạo phân quyền nhóm người sử dụng vào hệ thống ứng dụng CoreBanking; và một số hệ thống quản trị ngoài Corebanking',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 'salary' => 'Offer '
 =======
                 'salary' => 'Offer ',
@@ -110,6 +130,10 @@ class job_postingSeeder extends Seeder
                 'salary' => 'Offer ',
                 'token' => '1679091c5a880faf6fb5e6087eb1b2dc'
 >>>>>>> CRUD_Job_By_Emloy_id
+=======
+                'salary' => 'Offer ',
+                'token' => '1679091c5a880faf6fb5e6087eb1b2dc'
+>>>>>>> RUEmployer_By_ID
             ],
             [
                 'employer_id' => '7',
@@ -120,6 +144,7 @@ class job_postingSeeder extends Seeder
                 'required' => 'Tạo phân quyền nhóm người sử dụng vào hệ thống ứng dụng CoreBanking; và một số hệ thống quản trị ngoài Corebanking',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 'salary' => 'Offer '
 =======
                 'salary' => 'Offer ',
@@ -129,6 +154,10 @@ class job_postingSeeder extends Seeder
                 'salary' => 'Offer ',
                 'token' => '8f14e45fceea167a5a36dedd4bea2543'
 >>>>>>> CRUD_Job_By_Emloy_id
+=======
+                'salary' => 'Offer ',
+                'token' => '8f14e45fceea167a5a36dedd4bea2543'
+>>>>>>> RUEmployer_By_ID
             ]
         ]);
     }

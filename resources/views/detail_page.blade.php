@@ -129,8 +129,11 @@
                     </a>
                     <h6>Chia sẻ</h6>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <h6 class="navi__fol">Theo dõi</h6>
 =======
+=======
+>>>>>>> RUEmployer_By_ID
                     @if(Auth::check())
                     <form action="{{route('wishlist.store')}}" method="POST">
                         @csrf
@@ -148,7 +151,10 @@
                         </button>
                     </a>
                     @endif
+<<<<<<< HEAD
 >>>>>>> CRUD_Job_By_Emloy_id
+=======
+>>>>>>> RUEmployer_By_ID
                 </div>
                 <div class="content">
                     <div class="row">

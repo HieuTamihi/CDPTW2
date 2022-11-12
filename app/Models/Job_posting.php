@@ -21,11 +21,20 @@ class Job_posting extends Model
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 =======
     protected $table = 'Job_postings';
 >>>>>>> CRUD_Job_By_Emloy_id
+=======
+    public function customers()
+    {
+        return $this->belongsToMany(Customer::class,'Recruitments','jobposting_id','customer_id');
+    }
+    
+    protected $table = 'Job_postings';
+>>>>>>> RUEmployer_By_ID
     protected $fillable = [
         'employer_id',
         'title',
@@ -37,8 +46,12 @@ class Job_posting extends Model
         'token',
     ];
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 >>>>>>> CRUD_Employer_By_ID
 =======
 }
 >>>>>>> CRUD_Job_By_Emloy_id
+=======
+}
+>>>>>>> RUEmployer_By_ID

@@ -18,6 +18,7 @@ class Employers extends Migration
             $table->integer('user_id');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->string('website');
             $table->string('infor',5000);
             $table->string('responsibility',5000);
@@ -25,14 +26,19 @@ class Employers extends Migration
 =======
 =======
 >>>>>>> CRUD_Job_By_Emloy_id
+=======
+>>>>>>> RUEmployer_By_ID
             $table->string('website')->nullable();
             $table->string('infor',5000)->nullable();
             $table->string('responsibility',5000)->nullable();
             $table->string('welfare',500)->nullable();
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> CRUD_Employer_By_ID
 =======
 >>>>>>> CRUD_Job_By_Emloy_id
+=======
+>>>>>>> RUEmployer_By_ID
             $table->string('name_company');
             $table->string('address')->nullable();
             $table->string('image')->nullable();

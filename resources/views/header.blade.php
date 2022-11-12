@@ -81,6 +81,7 @@
             <div class="header__right d-flex">
                 <ul>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     @if (Auth::check() && Auth::user()->role == 2)
 <<<<<<< HEAD
                         <li><a class="btn btn-danger header__right--logemp" href="#">Đăng tuyển</a></li>
@@ -110,6 +111,9 @@
                                     </form>
                                 </div>
 =======
+=======
+                    @if (Auth::check() && Auth::user()->role == 2)
+>>>>>>> RUEmployer_By_ID
                     <li><a class="btn btn-danger header__right--logemp" href="#">Đăng tuyển</a></li>
                     <li>
                         <form method="POST" name="logout" action="{{ route('logout') }}">
@@ -135,10 +139,13 @@
                         </li>
                     @else
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <li>
                             <a class="btn btn-dark header__right--logcus" href="{{ asset('login') }}">Đăng nhập</a>
                         </li>
 =======
+=======
+>>>>>>> RUEmployer_By_ID
                     <li>
                         <a class="btn btn-dark header__right--logcus" href="{{ asset('login') }}">Đăng nhập</a>
                     </li>

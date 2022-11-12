@@ -9,7 +9,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use App\Models\Employer;
-
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\User\RegisterRequest;
+use App\Http\Requests\User\LoginRequest;
 class UserController extends Controller
 {
     public function logout()
@@ -17,12 +20,9 @@ class UserController extends Controller
         Auth::logout();
         return redirect()->route('login');
     }
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            'email' => 'required|email',
-            'password' => 'required'
-        ]);
+        $validator = Validator::make($request->all(), []);
 
         if ($validator->fails()) {
             return redirect()->back()
@@ -49,11 +49,17 @@ class UserController extends Controller
                 $_SESSION['permision'] = Auth::user()->employer_id;
                 return redirect()->route('index')->with('message', 'Đăng nhập thành công');
             }
+            // Dang nhap employer
+            if (Auth::user()->role == 2) {
+                return redirect()->route('index')->with('message', 'Đăng nhập thành công');
+            } else {
+                return redirect()->route('index')->with('message', 'Đăng nhập thành công');
+            }
         } else {
             return redirect()->route('login')->with('message', 'Email hoặc mật khẩu không chính xác');
         }
     }
-    public function register(Request $request)
+    public function register(RegisterRequest $request)
     {
         if ($request->isMethod('post')) {
             $validator = Validator::make($request->all(), [
@@ -69,13 +75,16 @@ class UserController extends Controller
             }
             $user = DB::table('users')->where('email', $request->email)->first();
             if (!$user) {
-                User::create([
+                $conf = Str::random(10);
+                $newUser = User::create([
                     'email' => $request->email,
                     'password' => $request->password,
                     'phone' => $request->phone,
                     'role' => $request->role = 2,
-                    'status' => $request->status = 1
+                    'status' => $request->status = 0,
+                    'confirm' => $conf,
                 ]);
+<<<<<<< HEAD
                     if($request->role == 3){
                         Employer::create([
                             'user_id' => $request->user_id,
@@ -84,12 +93,31 @@ class UserController extends Controller
                             'phone_number' =>$request->phone,
                         ]);
                     }
+=======
+
+                //Add Employer table
+                Employer::create([
+                    'user_id' => $newUser->id,
+                    'name_company' => $request->name_company,
+                    'address' => $request->address,
+                    'email' => $request->email,
+                    'phone_number' => $request->phone,
+                ]);
+
+                //Send mail
+                Mail::send('DashboardTemplate.emails.active', compact('newUser'), function ($email) use ($newUser) {
+                    $email->subject('Active Acount');
+                    $email->to($newUser->email);
+                });
+>>>>>>> RUEmployer_By_ID
                 return redirect()->route('register')->with('message', 'Tạo tài khoản thành công !');
             } else {
                 return redirect()->route('register')->with('message', 'Tài khoản đã tồn tại !');
             }
         }
     }
+
+
     public function getUserID()
     {
         $user_id = DB::table('users')->select('id')->orderBy('id', 'DESC')->first();
@@ -97,14 +125,11 @@ class UserController extends Controller
         return view('register', compact('user_id'));
        
     }
-    public function registerCT(Request $request)
+    public function registerCT(RegisterRequest $request)
     {
         if ($request->isMethod('post')) {
             $validator = Validator::make($request->all(), [
-                'email' => 'required|email',
-                'phone' => 'required|numeric|min:10',
-                'password' => 'required|confirmed|min:6',
-
+            
             ]);
             if ($validator->fails()) {
                 return redirect()->back()
@@ -113,13 +138,15 @@ class UserController extends Controller
             }
             $user = DB::table('users')->where('email', $request->email)->first();
             if (!$user) {
-                User::create([
+                $conf = Str::random(10);
+                $newUserCT = User::create([
                     'email' => $request->email,
                     'password' => $request->password,
                     'phone' => $request->phone,
                     'role' => $request->role = 3,
-                    'status' => $request->status = 1,
-                    'customer_id' => $request->customer_id
+                    'status' => $request->status = 0,
+                    'customer_id' => $request->customer_id,
+                    'confirm' => $conf,
                 ]);
                 Customer::create([
                     'id' => $request->customer_id,
@@ -127,6 +154,12 @@ class UserController extends Controller
                     'phone_number' => $request->phone,
                     'status' => $request->status = 1,
                 ]);
+
+                 //Send mail
+                 Mail::send('DashboardTemplate.emails.activeCT', compact('newUserCT'), function ($email) use ($newUserCT) {
+                    $email->subject('Active Acount');
+                    $email->to($newUserCT->email);
+                });
                 return redirect()->route('registerCT')->with('message', 'Tạo tài khoản thành công !');
             } else {
                 return redirect()->route('registerCT')->with('message', 'Tài khoản đã tồn tại !');
@@ -139,4 +172,19 @@ class UserController extends Controller
         (int)$customer_id->id += 1;
         return view('registerCT', compact('customer_id'));
     }
+<<<<<<< HEAD
 }
+=======
+    // Active
+    public function active(User $newUser, $confirm)
+    {
+        if ($newUser->confirm == $confirm) {
+            $newUser->update([
+                'status' => '1',
+                'confirm' => '',
+            ]);
+            return redirect()->route('login');
+        }
+    }
+}
+>>>>>>> RUEmployer_By_ID

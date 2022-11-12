@@ -23,10 +23,14 @@ class JobPostings extends Migration
             $table->string('required');
             $table->string('salary');
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->string('token');
 =======
             $table->string('token')->nullable();
 >>>>>>> CRUD_Job_By_Emloy_id
+=======
+            $table->string('token')->nullable();
+>>>>>>> RUEmployer_By_ID
             $table->timestamps();
         });
     }
