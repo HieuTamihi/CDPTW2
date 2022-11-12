@@ -52,7 +52,7 @@
                             @endforeach
                         </div>
                         <div class="col-md-2 intem-thume">
-                            @foreach ($employer as $row)
+                            @foreach ($employerOuts as $key => $row)
                                 <a class="intem-thume-img" href="{{ route('employer.show', $row->id) }}">
                                     <img src="{{ url('img') }}/{{ $row->image }}" alt="">
                                 </a>

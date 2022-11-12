@@ -31,7 +31,7 @@ class CRUDEmlpoyerRequests extends FormRequest
             'name_company' => 'required|regex:/(^([a-zA-z]+)?$)/u|min:5|max:255',
             'address' => 'required|min:5',
             'image' => 'mimes:jpeg,jpg,png,gif|required|max:255',
-            'email' => 'required|email|min:5|max:255',
+            'email' => 'required|email|min:10|max:255',
             'phone_number' => 'required|nullable|regex:/(^([0-9]+) {10} ?$)/u',
 
 
@@ -73,7 +73,7 @@ class CRUDEmlpoyerRequests extends FormRequest
 
             'email.required' => __('image không được để trống.'),
             'email.email' => __('email phải là @.'),
-            'email.min' => __('email phải hơn 5 ký tự.'),
+            'email.min' => __('email phải hơn 10 ký tự.'),
             'email.max' => __('email phải không được vượt quá 255 ký tự.'),
 
             'phone_number.required' => __('image không được để trống.'),
