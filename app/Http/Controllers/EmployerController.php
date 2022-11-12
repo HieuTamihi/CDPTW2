@@ -7,13 +7,12 @@ use App\Models\Cv;
 use App\Models\Employer;
 use App\Models\Job_posting;
 use App\Models\Recruitment;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
-class EmployerController extends Controller
-{
+use Carbon\Carbon;
+class EmployerController extends Controller{
     /**
      * Display a listing of the resource.
      *
@@ -26,6 +25,17 @@ class EmployerController extends Controller
         // lấy hết tất cả dữ liều trong Job_posting
         $job = Job_posting::all();
         $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->get();
+        return view('index', compact('employer', 'job', 'name'));
+    }
+
+    public function getPostByID()
+    {
+        return view('listemployer', compact('getPostByID'));
+        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->select('name_company')->get();
+        return view('index', compact('employer', 'job', 'name'));
+        $employer = Employer::all();
+        $job = Job_posting::all();
+        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->select('name_company')->get();
         return view('index', compact('employer', 'job', 'name'));
     }
 
@@ -61,11 +71,27 @@ class EmployerController extends Controller
         $detail = Employer::findOrFail($id);
         $relate = $detail->jobs->take(1);
         $job_relate = $detail->jobs->take(3);
+        $date = Carbon::now()->day;
+        $job_relate = $detail->jobs->take(3);
         $customer_id = Auth::user()->customer_id;
         $apply = Customer::leftJoin('users', 'users.customer_id', '=', 'customers.id')->where('customers.id', '=', $customer_id)->first();
         $id = Auth::user()->customer_id;
         $cv = Cv::where('customer_id', '=', $id)->get();
         return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv'));
+        return view('detail_page', compact('detail', 'relate', 'job_relate'));
+        return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv','date'));
+        $date = Carbon::now()->day;
+        $job_relate = $detail->jobs->take(3);
+        return view('detail_page',compact('detail','relate','job_relate','date'));
+        if(Auth::check())
+        {
+            $customer_id = Auth::user()->customer_id;
+            $apply = Customer::leftJoin('users', 'users.customer_id', '=', 'customers.id')->where('customers.id', '=', $customer_id)->first();
+            $id = Auth::user()->customer_id;
+            $cv = Cv::where('customer_id', '=', $id)->get();
+            return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv'));
+        }
+        return view('detail_page', compact('detail', 'relate', 'job_relate'));
     }
 
     /**

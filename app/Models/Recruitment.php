@@ -8,4 +8,30 @@ use Illuminate\Database\Eloquent\Model;
 class Recruitment extends Model
 {
     use HasFactory;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    use HasFactory;
+    protected $table = 'recruitments';
+    protected $fillable = [
+
+    ];
+>>>>>>> origin/change_password_employer
 }
+=======
+    use HasFactory;
+    protected $table = 'recruitments';
+    protected $fillable = [
+
+    ];
+}
+>>>>>>> RUEmployer_By_ID
+=======
+    use HasFactory;
+    protected $table = 'recruitments';
+    protected $fillable = [
+        'status',
+    ];
+}
+>>>>>>> origin/detail_page

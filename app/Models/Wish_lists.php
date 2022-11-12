@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Wish_lists extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'id';
     protected $fillable = [
-        'customer_id','job_posting_id','number',
+        'id', 'customer_id', 'job_posting_id', 'number',
     ];
 }
