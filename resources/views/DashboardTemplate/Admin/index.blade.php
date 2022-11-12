@@ -31,6 +31,7 @@
                                 <th style="width:4%">role</th>
                                 <th style="width:4%">status</th>
                                 <th style="width:4%">remember_token</th>
+                                <th style="width:4%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
