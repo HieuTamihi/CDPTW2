@@ -4,10 +4,12 @@ use Carbon\Carbon;
 
 namespace App\Http\Controllers;
 
-use App\Models\Comment;
 use App\Models\Post;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+
 
 class BlogController extends Controller
 {
@@ -38,16 +40,33 @@ class BlogController extends Controller
         return view('blogit.blogit_search', compact('request', 'blogSearch'));
     }
 
-    public function blogDetail($id)
+    public function blogDetail($id, Request $request)
     {
         $viewMore = Post::orderBy('views', 'desc')->limit(5)->get();
 
         $postDetail = Post::findOrFail($id);
 
-        $countView = Post::find($id)->increment('views');
+        $countView = Post::findOrFail($id)->increment('views');
 
-        $resultComments = Comment::orderBy('id', 'desc')->paginate(5);
+        $resultComment = Comment::with('customers')->where('post_id', $id)
+            ->where('status', 1)
+            ->get()->toArray();
+        return view('blogit.blogit_details', compact('viewMore', 'postDetail', 'resultComment'));
+    }
 
-        return view('blogit.blogit_details', compact('viewMore', 'postDetail', 'resultComments'));
+    public function storeComments(Request $request, $id)
+    {
+
+        Comment::create([
+            'customer_id' => Auth::user()->customer_id,
+            'post_id' => $id,
+            'comment' => $request->comment,
+            'created_at' => $request->created_at,
+        ]);
+        return redirect()->back()->with('msg', 'Bình luận thành công');
+    }
+
+    public function destroyComments($id)
+    {
     }
 }

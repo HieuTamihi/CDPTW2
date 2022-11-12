@@ -58,7 +58,8 @@
                                 IT</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ asset('resume.createCV') }}">Tạo
+                            <a class="nav-link active" aria-current="page"
+                                href="{{ asset('resume.resume_create_cv') }}">Tạo
                                 CV</a>
                         </li>
                         <li class="nav-item">

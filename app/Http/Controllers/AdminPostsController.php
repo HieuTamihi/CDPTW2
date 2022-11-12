@@ -16,7 +16,6 @@ class AdminPostsController extends Controller
     public function index()
     {
         $resultPosts = Post::orderBy('id', 'desc')->paginate(5);
-        // dd($resultPosts);
         return view('DashboardTemplate.dashboard_blog_home', compact('resultPosts'));
     }
     /**
@@ -36,16 +35,20 @@ class AdminPostsController extends Controller
      */
     public function store(AdminPostsRequest $request)
     {
-        $posts = new Post();
         if ($request->hasFile('post_image')) {
             $image = $request->post_image;
             $image_name = $image->getClientOriginalName();
             $image->move(base_path('public/img/blogit'), $image_name);
         }
-        $posts->title = $request->post_title;
-        $posts->content = $request->post_content;
-        $posts->image = $image_name;
-        $posts->save();
+        Post::create([
+            'title' => $request->post_title,
+            'content' => $request->post_content,
+            'image' => $image_name,
+        ]);
+
+
+
+        // $posts->save();
         return redirect()->back()->with('msg', 'Post added successfully');
     }
     /**
@@ -66,7 +69,7 @@ class AdminPostsController extends Controller
      */
     public function edit($id)
     {
-        $showDataEdit = Post::find($id);
+        $showDataEdit = Post::findOrFail($id);
         return view('DashboardTemplate.dashboard_blog_edit', compact('showDataEdit'));
     }
     /**
@@ -78,7 +81,7 @@ class AdminPostsController extends Controller
      */
     public function update(AdminPostsRequest $request, $id)
     {
-        $posts = Post::find($id);
+        $posts = Post::findOrFail($id);
         if ($request->hasFile('post_image')) {
             $image = $request->post_image;
             $image_name = $image->getClientOriginalName();
@@ -101,5 +104,17 @@ class AdminPostsController extends Controller
         $postDelete = Post::find($id);
         $postDelete->delete();
         return redirect()->back()->with('msg', 'Post deleted successfully');
+    }
+
+    public function blogTrash()
+    {
+        $resultPosts = Post::orderBy('id', 'desc')->onlyTrashed()->paginate(5);
+        return view('DashboardTemplate.dashboard_blog_trash', compact('resultPosts'));
+    }
+    public function blogRestore($id)
+    {
+        $postDelete = Post::withTrashed()->find($id);
+        $postDelete->restore();
+        return redirect()->back()->with('msg', 'Post restore successfully');
     }
 }

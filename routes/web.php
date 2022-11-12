@@ -7,7 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminPostsController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\AdminCommentsController;
-use App\Http\Controllers\BlogCommentController;
+use App\Http\Controllers\ResumeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,18 +34,21 @@ Route::get('/register', [UserController::class, 'Showregister']);
 
 Route::get('search', [HomeController::class, 'search'])->name('search');
 
-Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
-
 Route::get('blogSearch', [BlogController::class, 'blogSearch'])->name('blogSearch');
 
-
 Route::resource('/admin-blog-home', AdminPostsController::class);
+Route::get('/admin-blog-trash', [AdminPostsController::class, 'blogTrash'])->name('blogTrash');
+Route::get('/admin-blog-restore/{id}', [AdminPostsController::class, 'blogRestore'])->name('blogRestore');
+Route::get('/admin-blog-permanentlyDelete/{id}', [AdminPostsController::class, 'permanentlyDelete'])->name('permanentlyDelete');
+
+
 Route::resource('/admin-blog-comment', AdminCommentsController::class);
+Route::get('/admin-comment-status/{id}/{status}', [AdminCommentsController::class, 'commentStatus'])->name('commentStatus');
 
 
-
-
-
+Route::prefix('comment')->group(function () {
+    Route::post('/store-comment/{id}', [BlogController::class, 'storeComments'])->name('storeComments');
+});
 Route::prefix('blogit')->group(function () {
     Route::get('/', [BlogController::class, 'featuredPosts'])->name('blogit');
     Route::get('blogDetail/{id}', [BlogController::class, 'blogDetail'])->name('blogDetail');

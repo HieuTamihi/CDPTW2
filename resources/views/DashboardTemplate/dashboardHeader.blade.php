@@ -159,7 +159,7 @@
                                 <li class="nav-item">
                                     <a href="{{ route('admin-blog-comment.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Comment Posts</p>
+                                        <p>Home comment</p>
                                     </a>
                                 </li>
                             </ul>
