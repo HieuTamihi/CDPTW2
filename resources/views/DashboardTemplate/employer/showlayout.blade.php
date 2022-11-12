@@ -1,5 +1,7 @@
 @extends('DashboardTemplate.dashboardHeader')
 @section('main')
+@if(Auth::check())
+@if(Auth::user()->role == 2)
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -37,4 +39,6 @@
         </div>
     </section>
 </div>
+@endif
+@endif
 @endsection

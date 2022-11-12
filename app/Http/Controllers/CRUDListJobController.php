@@ -9,16 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\Job_posting\StoreRequest;
 use App\Http\Requests\Job_posting\UpdateRequest;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 use App\Models\Recruitment;
->>>>>>> origin/detail_page
-=======
->>>>>>> origin/recruitment_customer
-=======
->>>>>>> origin/register_and_send_mail
 
 class CRUDListJobController extends Controller
 {
@@ -32,23 +23,7 @@ class CRUDListJobController extends Controller
         $id = Auth::user()->employer->id;
         $getPostByID = Employer::findOrFail($id);
         $result = $getPostByID->jobs;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        return view('DashboardTemplate.Job_postings.list_post_by_id',compact('result'));
-=======
         return view('DashboardTemplate.Job_postings.list_post_by_id', compact('result'));
->>>>>>> origin/change_password_employer
-=======
-        return view('DashboardTemplate.Job_postings.list_post_by_id', compact('result'));
->>>>>>> origin/detail_page
-=======
-        return view('DashboardTemplate.Job_postings.list_post_by_id',compact('result'));
->>>>>>> origin/recruitment_customer
-=======
-        return view('DashboardTemplate.Job_postings.list_post_by_id',compact('result'));
->>>>>>> origin/register_and_send_mail
     }
 
     /**
@@ -71,56 +46,15 @@ class CRUDListJobController extends Controller
     {
         Job_posting::create([
             'employer_id' => Auth::user()->employer->id,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            'title'=>$request->title,
-=======
             'title' => $request->title,
->>>>>>> origin/change_password_employer
-=======
-            'title' => $request->title,
->>>>>>> origin/detail_page
-=======
-            'title'=>$request->title,
->>>>>>> origin/recruitment_customer
-=======
-            'title'=>$request->title,
->>>>>>> origin/register_and_send_mail
             'experience' => $request->experience,
             'type' => $request->type,
             'skill' => $request->skill,
             'required' => $request->required,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> origin/recruitment_customer
-=======
->>>>>>> origin/register_and_send_mail
-            'salary' => $request->salary,  
-            'token' => md5(Auth::user()->id),
-        ]);
-        return redirect()->route('CRUDJobByEmployer.index')->with('notify','Add news is successfully');
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/detail_page
             'salary' => $request->salary,
             'token' => md5(Auth::user()->id),
         ]);
         return redirect()->route('CRUDJobByEmployer.index')->with('notify', 'Add news is successfully');
-<<<<<<< HEAD
->>>>>>> origin/change_password_employer
-=======
->>>>>>> origin/detail_page
-=======
->>>>>>> origin/recruitment_customer
-=======
->>>>>>> origin/register_and_send_mail
     }
 
     /**
@@ -132,29 +66,9 @@ class CRUDListJobController extends Controller
     public function show($id)
     {
         $show = Job_posting::find($id);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        $getstatus = DB::table('recruitments')->where('jobposting_id','=',$id);
-        return view('DashboardTemplate.Job_postings.detail_post',compact('show'));
-=======
-        $getstatus = DB::table('recruitments')->where('jobposting_id', '=', $id);
-        return view('DashboardTemplate.Job_postings.detail_post', compact('show'));
->>>>>>> origin/change_password_employer
-=======
         $list_recruitmet = $show->customers()->paginate(3);
         $getstatus = DB::table('recruitments')->where('jobposting_id', '=', $id);
         return view('DashboardTemplate.Job_postings.detail_post', compact('show','list_recruitmet'));
->>>>>>> origin/detail_page
-=======
-        $getstatus = DB::table('recruitments')->where('jobposting_id','=',$id);
-        return view('DashboardTemplate.Job_postings.detail_post',compact('show'));
->>>>>>> origin/recruitment_customer
-=======
-        $getstatus = DB::table('recruitments')->where('jobposting_id','=',$id);
-        return view('DashboardTemplate.Job_postings.detail_post',compact('show'));
->>>>>>> origin/register_and_send_mail
     }
 
     /**
@@ -166,23 +80,7 @@ class CRUDListJobController extends Controller
     public function edit($id)
     {
         $show = Job_posting::find($id);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        return view('DashboardTemplate.Job_postings.edit_post',compact('show'));
-=======
         return view('DashboardTemplate.Job_postings.edit_post', compact('show'));
->>>>>>> origin/change_password_employer
-=======
-        return view('DashboardTemplate.Job_postings.edit_post', compact('show'));
->>>>>>> origin/detail_page
-=======
-        return view('DashboardTemplate.Job_postings.edit_post',compact('show'));
->>>>>>> origin/recruitment_customer
-=======
-        return view('DashboardTemplate.Job_postings.edit_post',compact('show'));
->>>>>>> origin/register_and_send_mail
     }
 
     /**
@@ -196,23 +94,7 @@ class CRUDListJobController extends Controller
     {
         $job = Job_posting::find($id);
         $job->update($request->all());
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        return redirect()->route('CRUDJobByEmployer.index')->with('notify','Update Susscessfully');
-=======
         return redirect()->route('CRUDJobByEmployer.index')->with('notify', 'Update Susscessfully');
->>>>>>> origin/change_password_employer
-=======
-        return redirect()->route('CRUDJobByEmployer.index')->with('notify', 'Update Susscessfully');
->>>>>>> origin/detail_page
-=======
-        return redirect()->route('CRUDJobByEmployer.index')->with('notify','Update Susscessfully');
->>>>>>> origin/recruitment_customer
-=======
-        return redirect()->route('CRUDJobByEmployer.index')->with('notify','Update Susscessfully');
->>>>>>> origin/register_and_send_mail
     }
 
     /**
@@ -225,37 +107,11 @@ class CRUDListJobController extends Controller
     {
         $token = md5(Auth::user()->employer->id);
         DB::table('Job_postings')
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> origin/recruitment_customer
-=======
->>>>>>> origin/register_and_send_mail
-        ->where([
-            'id' => $id,
-            'token' => $token])
-        ->delete();
-        return redirect()->route('CRUDJobByEmployer.index')->with('notify','Delete Susscessfully');
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/detail_page
             ->where([
                 'id' => $id,
                 'token' => $token
             ])
             ->delete();
         return redirect()->route('CRUDJobByEmployer.index')->with('notify', 'Delete Susscessfully');
-<<<<<<< HEAD
->>>>>>> origin/change_password_employer
-=======
->>>>>>> origin/detail_page
-=======
->>>>>>> origin/recruitment_customer
-=======
->>>>>>> origin/register_and_send_mail
     }
 }

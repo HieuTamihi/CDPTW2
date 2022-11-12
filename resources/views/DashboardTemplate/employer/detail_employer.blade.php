@@ -1,5 +1,7 @@
 @extends('DashboardTemplate.dashboardHeader')
 @section('main')
+@if(Auth::check())
+@if(Auth::user()->role == 2)
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -54,22 +56,12 @@
                     <i class="fas fa-pencil-alt "></i>
                 </button>
             </a>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
             <a href="{{route('showlayout',Auth::user()->id)}}">
                 <button class="btn btn-primary" style="float: right; transform: translateX(-20px);">Change Password</button>
             </a>
->>>>>>> origin/change_password_employer
-=======
-            <a href="{{route('showlayout',Auth::user()->id)}}">
-                <button class="btn btn-primary" style="float: right; transform: translateX(-20px);">Change Password</button>
-            </a>
->>>>>>> origin/detail_page
-=======
->>>>>>> origin/recruitment_customer
         </div>
     </section>
 </div>
+@endif
+@endif
 @endsection

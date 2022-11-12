@@ -557,6 +557,10 @@ html {
     border: 1px solid gray;
 }
 
+.detail__body .detail_body__left .information .information__logo{
+    width: 25%;
+}
+
 .detail__body .detail_body__left .information .information__content {
     margin-left: 10px;
 }
@@ -599,6 +603,7 @@ html {
 }
 
 .detail__body .detail_body__left .content .content__right__skill p {
+    margin-left: 5px;
     display: inline-block;
     padding: 0px 5px;
     border: 1px solid gray;
@@ -623,6 +628,7 @@ html {
 }
 
 .detail__body .detail_body__right .detail_body__right__skill p {
+    margin-left: 5px;
     display: inline-block;
     padding: 0px 5px;
     border: 1px solid gray;
@@ -639,6 +645,7 @@ html {
 }
 
 .detail__body .list_word .list_word__skill p {
+    margin-left: 5px;
     display: inline-block;
     padding: 0px 5px;
     border: 1px solid gray;
@@ -647,6 +654,11 @@ html {
 .detail__body .list_word .list_word__recruiment {
     border-bottom: 1px solid gray;
     margin-bottom: 10px;
+}
+
+.detail__body .list_word a {
+    text-decoration: none;
+    color: orange;
 }
 
 .detail__body .font-size_a {
@@ -661,10 +673,9 @@ html {
 }
 
 .log__reg__page {
-    <<<<<<< HEAD <<<<<<< HEAD margin-top: 25px;
-    =======margin-top: 25px;
-    >>>>>>>all_vacancies=======margin-top: 25px;
-    >>>>>>>main
+    margin-top: 25px;
+    margin-top: 25px;
+    margin-top: 25px;
 }
 
 .title__log h4 {
@@ -880,10 +891,8 @@ html {
     margin: 10px;
 }
 
-<<<<<<< HEAD <<<<<<< HEAD
-
 /*# sourceMappingURL=style.css.map */
-=======.body__top {
+.body__top {
     display: flex;
     justify-content: space-between;
 }
@@ -897,7 +906,7 @@ html {
 }
 
 /*# sourceMappingURL=style.css.map */
->>>>>>>all_vacancies=======.dropbtn {
+.dropbtn {
     color: white;
     padding: 10px;
     font-size: 16px;
@@ -932,6 +941,3 @@ html {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
-/*# sourceMappingURL=style.css.map */
->>>>>>>main

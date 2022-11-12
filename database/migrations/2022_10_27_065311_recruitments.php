@@ -16,7 +16,9 @@ class Recruitments extends Migration
         Schema::create('recruitments', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->integer('customer_id');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
             $table->integer('jobposting_id');
+            $table->foreign('jobposting_id')->references('id')->on('job_postings')->onDelete('cascade');
             $table->integer('cv_id')->nullable();
             $table->string('status')->nullable();
             $table->text('introduce')->nullable();
