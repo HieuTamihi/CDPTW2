@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 @if (Auth::check())
     @if (Auth::user()->role == 1)
         <!DOCTYPE html>
         <html>
+=======
+@if(Auth::check())
+@if(Auth::user()->role == 1 || Auth::user()->role == 2 )
+<!DOCTYPE html>
+<html>
+>>>>>>> CRUD_Job_By_Emloy_id
 
         <head>
             <meta charset="utf-8">
@@ -167,27 +174,47 @@
 =======
                             </ul>
                         </li>
+<<<<<<< HEAD
                         <!-- Employer -->
+=======
+                        <!-- List Job By Employer_ID -->
+>>>>>>> CRUD_Job_By_Emloy_id
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
+<<<<<<< HEAD
                                     Employer
+=======
+                                    Lists Job Posting
+>>>>>>> CRUD_Job_By_Emloy_id
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
+<<<<<<< HEAD
                                     <a href="{{route('CRUDEmployer.index')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List Post</p>
+=======
+                                    <a href="{{route('CRUDJobByEmployer.index')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Lists job</p>
+>>>>>>> CRUD_Job_By_Emloy_id
                                     </a>
                                 </li>
                             </ul>
                         </li>
+<<<<<<< HEAD
                         <!-- /Employer -->
                         <ul class="nav nav-treeview">
 >>>>>>> CRUD_Employer_By_ID
+=======
+                        <!-- END List Job  -->
+
+                        <!-- <ul class="nav nav-treeview">
+>>>>>>> CRUD_Job_By_Emloy_id
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>

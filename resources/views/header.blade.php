@@ -56,7 +56,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Việc làm
+<a class="nav-link active" aria-current="page" href="#">Việc làm
                                 IT</a>
                         </li>
                         <li class="nav-item">
@@ -76,6 +76,7 @@
             <div class="header__right d-flex">
                 <ul>
                     @if (Auth::check() && Auth::user()->role == 2)
+<<<<<<< HEAD
                         <li><a class="btn btn-danger header__right--logemp" href="#">Đăng tuyển</a></li>
                         <li>
                             <form method="POST" name="logout" action="{{ route('logout') }}">
@@ -102,12 +103,40 @@
                                                 class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
                                     </form>
                                 </div>
+=======
+                    <li><a class="btn btn-danger header__right--logemp" href="#">Đăng tuyển</a></li>
+                    <li>
+                        <form method="POST" name="logout" action="{{ route('logout') }}">
+                            @csrf
+                            <a href="javascript:document.logout.submit()" class="btn btn-dark header__right--logcus"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
+                        </form>
+                    </li>
+                    @elseif(Auth::check() && Auth::user()->role == 3)
+                    <li>
+                        <div class="dropdown">
+                            <div class="dropbtn">{{Auth::user()->email}}</div>
+                            <div class="dropdown-content">
+                                <a href="{{route('ShowEditUser',['id'=>Auth::user()->customer_id])}}">Thông tin cá nhân</a>
+                                <a href="{{route('cv.index')}}">Quản lý CV</a>
+                                <a href="{{asset('apply_job')}}">Việc đã ứng tuyển</a>
+                                <a href="{{route('wishlist.index')}}">Việc đang theo dõi</a>
+                                <form method="POST" name="logout" action="{{ route('logout') }}">
+                                    @csrf
+                                    <a href="javascript:document.logout.submit()"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
+                                </form>
+>>>>>>> CRUD_Job_By_Emloy_id
                             </div>
                         </li>
                     @else
+<<<<<<< HEAD
                         <li>
                             <a class="btn btn-dark header__right--logcus" href="{{ asset('login') }}">Đăng nhập</a>
                         </li>
+=======
+                    <li>
+                        <a class="btn btn-dark header__right--logcus" href="{{ asset('login') }}">Đăng nhập</a>
+                    </li>
+>>>>>>> CRUD_Job_By_Emloy_id
                     @endif
                 </ul>
             </div>
@@ -118,7 +147,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="row">
+<div class="row">
                 <div class="col-md-3 footer__adresse ">
                     <!-- <a href=""><img src="img/logo-td.png" alt="" /></a> -->
                     <ul>

@@ -2,6 +2,7 @@
 
 <<<<<<< HEAD
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CRUDListJobController;
 use App\Http\Controllers\CvController;
 use App\Http\Controllers\CRUDUserController;
 use App\Http\Controllers\CRUDEmloyerController;
@@ -69,10 +70,15 @@ Route::resource('wishlist', WishlistController::class);
 //admin
 Route::resource('listjobPosting', JobpostingController::class);
 Route::resource('employer', EmployerController::class);
+<<<<<<< HEAD
 Route::resource('AdminUser', CRUDUserController::class);
 
 Route::resource('AdminJobposting', CRUDJobpostingController::class);
 Route::resource('AdminEmloyer', CRUDEmloyerController::class);
+=======
+// Employer - quan ly job by employer_id
+Route::resource('CRUDJobByEmployer',CRUDListJobController::class);
+>>>>>>> CRUD_Job_By_Emloy_id
 
 //chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');

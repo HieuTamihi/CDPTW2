@@ -114,7 +114,7 @@
             <div class="col-12 col-xl-9 detail_body__left">
                 <div class="information">
                     <div class="information__logo">
-                        <a href="#"><img src="{{asset('img/$detail->image')}}" alt=""></a>
+                        <a href="#"><img src="{{asset('img/'.$detail->image)}}" alt=""></a>
                     </div>
                     <div class="information__content">
                         <p>{{$detail->name_company}}</p>
@@ -128,7 +128,27 @@
                         <h6>Công việc</h6>
                     </a>
                     <h6>Chia sẻ</h6>
+<<<<<<< HEAD
                     <h6 class="navi__fol">Theo dõi</h6>
+=======
+                    @if(Auth::check())
+                    <form action="{{route('wishlist.store')}}" method="POST">
+                        @csrf
+                        @foreach($job_relate as $value)
+                        <input value="{{$value->id}}" hidden name="id" class="input__input form-control" type="text">
+                        @endforeach
+                        <button type="submit" value="1" name="number" class="btn__like" style="border: none;background: transparent;">
+                            <h6 class="navi__fol">Theo dõi</h6>
+                        </button>
+                    </form>
+                    @else
+                    <a href="{{route('login')}}">
+                        <button class="btn__like" style="border: none;background: transparent;">
+                            <h6 class="navi__fol">Theo dõi</h6>
+                        </button>
+                    </a>
+                    @endif
+>>>>>>> CRUD_Job_By_Emloy_id
                 </div>
                 <div class="content">
                     <div class="row">
@@ -275,6 +295,7 @@
         </div>
 >>>>>>> CRUD_Employer_By_ID
     </div>
+<<<<<<< HEAD
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -347,6 +368,73 @@
                         @endif
                     </form>
                 </div>
+=======
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Bạn đang ứng tuyển tại công ty TDC</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{{url('uploadCV')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @if(Auth::check() && Auth::user()->role == 3)
+                    <div class="input__field d-flex">
+                        <label for="">Họ và tên</label>
+                        @foreach($job_relate as $value)
+                        <input value="{{$value->id}}" hidden name="id" class="input__input form-control" type="text">
+                        @endforeach
+                    </div>
+                    <div class="input__field d-flex">
+                        <label for="">Họ và tên</label>
+                        <input value="{{$apply->fullname}}" name="fullname" class="input__input form-control" type="text" placeholder="Vui lòng nhập họ và tên">
+                    </div>
+                    <div class="input__field d-flex">
+                        <label for="">Địa chỉ</label>
+                        <input value="{{$apply->address}}" name="address" class="input__input form-control" type="text" placeholder="Vui lòng nhập địa chỉ">
+                    </div>
+                    <div class="input__field d-flex">
+                        <label for="">Email</label>
+                        <input value="{{$apply->email}}" name="email" class="input__input form-control" type="email" placeholder="Vui lòng nhập email">
+                    </div>
+                    <div class="input__field d-flex">
+                        <label for="">Số điện thoại</label>
+                        <input value="{{$apply->phone_number}}" name="phone" class="input__input form-control" type="tel" placeholder="Vui lòng nhập số điện thoại">
+                    </div>
+                    <div class="input__field d-flex">
+                        <label for="">Chọn CV</label>
+                        <input class="input__input" type="file" name="file">
+                    </div>
+                    <div class="input__field d-flex">
+                        <label for="" style="color: #99bbff;">Hoặc chọn CV bạn đã tạo</label>
+                        <select style="width: 100%;" name="cv_id">
+                            <option>Chọn CV</option>
+                            @foreach($cv as $value)
+                            <option value="{{$value->id}}">{{$value->namecv}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="input__field d-flex">
+                        <label for="">Giới thiệu bản thân</label>
+                        <textarea name="introduce" id="" cols="100" rows="3"></textarea>
+                    </div>
+                    <div class="createCV">
+                        <span>Nếu bạn chưa có CV, </span><a href="{{asset('createCV')}}">tạo CV tại đây</a>
+                    </div>
+                    <div class=" modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger">Save changes</button>
+                    </div>
+                    @elseif(Auth::check() && Auth::user()->role != 3)
+                    <p>Phải là tài khoản customer mới có thể ứng tuyển</p>
+                    @else
+                    <a href="{{route('login')}}">Bạn cần phải đăng nhập để ứng tuyển</a>
+                    @endif
+                </form>
+>>>>>>> CRUD_Job_By_Emloy_id
             </div>
         </div>
     </div>

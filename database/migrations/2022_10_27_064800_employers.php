@@ -17,21 +17,27 @@ class Employers extends Migration
             $table->id()->autoIncrement();
             $table->integer('user_id');
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->string('website');
             $table->string('infor',5000);
             $table->string('responsibility',5000);
             $table->string('welfare',500);
 =======
+=======
+>>>>>>> CRUD_Job_By_Emloy_id
             $table->string('website')->nullable();
             $table->string('infor',5000)->nullable();
             $table->string('responsibility',5000)->nullable();
             $table->string('welfare',500)->nullable();
+<<<<<<< HEAD
 >>>>>>> CRUD_Employer_By_ID
+=======
+>>>>>>> CRUD_Job_By_Emloy_id
             $table->string('name_company');
             $table->string('address')->nullable();
             $table->string('image')->nullable();
             $table->string('email');
-            $table->integer('phone_number');
+            $table->string('phone_number',11);
             $table->timestamps();
         });
     }
