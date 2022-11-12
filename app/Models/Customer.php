@@ -10,7 +10,10 @@ class Customer extends Model
     use HasFactory;
     protected $table = 'customers'; 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/change_password_employer
     protected $fillable = [
         'id',
         'email',

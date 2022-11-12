@@ -23,7 +23,11 @@
                             <br>
                             <input type="file" name='image_upload' accept="image/*">
                             <br>
+<<<<<<< HEAD
                             @if ($errors->has('image_upload'))
+=======
+                            @if($errors->has('image_upload'))
+>>>>>>> origin/change_password_employer
                             <strong class="text-danger">{{$errors->first('image_upload')}}</strong>
                             @endif
                         </div>
@@ -48,7 +52,11 @@
                             <strong class="text-danger">{{$errors->first('address')}}</strong>
                             @endif
                         </div>
+<<<<<<< HEAD
                         
+=======
+
+>>>>>>> origin/change_password_employer
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
@@ -82,9 +90,14 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary" style="float:right;">
+<<<<<<< HEAD
                 <i class="fas fa-pencil-alt ">
                                         </i>
             </button>
+=======
+                    <i class="fas fa-pencil-alt "></i>
+                </button>
+>>>>>>> origin/change_password_employer
             </form>
         </div>
     </section>

@@ -9,6 +9,7 @@ class Employer extends Model
 {
     use HasFactory;
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function jobs()
     {
         return $this->hasMany(Job_posting::class);
@@ -25,12 +26,18 @@ class Employer extends Model
     protected $fillable = [
         'user_id',
 >>>>>>> RUEmployer_By_ID
+=======
+    protected $table = 'employers';
+    protected $fillable = [
+        'user_id',
+>>>>>>> origin/change_password_employer
         'website',
         'infor',
         'responsibility',
         'welfare',
         'name_company',
         'address',
+<<<<<<< HEAD
 <<<<<<< HEAD
         'email',
         'phone_number',
@@ -45,6 +52,11 @@ class Employer extends Model
         'email',
         'phone_number'
 >>>>>>> RUEmployer_By_ID
+=======
+        'image',
+        'email',
+        'phone_number'
+>>>>>>> origin/change_password_employer
     ];
     public function jobs()
     {

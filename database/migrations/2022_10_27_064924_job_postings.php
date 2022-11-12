@@ -25,6 +25,7 @@ class JobPostings extends Migration
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->string('token');
 =======
             $table->string('token')->nullable();
@@ -34,6 +35,9 @@ class JobPostings extends Migration
 >>>>>>> RUEmployer_By_ID
 =======
 >>>>>>> blog_home
+=======
+            $table->string('token')->nullable();
+>>>>>>> origin/change_password_employer
             $table->timestamps();
         });
     }

@@ -54,6 +54,12 @@
                     <i class="fas fa-pencil-alt "></i>
                 </button>
             </a>
+<<<<<<< HEAD
+=======
+            <a href="{{route('showlayout',Auth::user()->id)}}">
+                <button class="btn btn-primary" style="float: right; transform: translateX(-20px);">Change Password</button>
+            </a>
+>>>>>>> origin/change_password_employer
         </div>
     </section>
 </div>

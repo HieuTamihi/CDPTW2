@@ -33,6 +33,7 @@
                                 @csrf
                                 <span class="des__name">Name Company</span>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <input type="text" placeholder="Enter name company" class="type__info__reg" name="name_company">
                                 
                                 <span class="des__name">Address</span>
@@ -42,6 +43,8 @@
                                 <input type="file" placeholder="Enter select" class="type__info__reg" name="image"> -->
 
 =======
+=======
+>>>>>>> origin/change_password_employer
                                 <input type="text" placeholder="Enter your name company" class="type__info__reg" name="name_company">
                                 @if ($errors->has('name_company'))
                                 <strong class="text-danger">{{$errors->first('name_company')}}</strong>
@@ -51,7 +54,10 @@
                                 @if ($errors->has('address'))
                                 <strong class="text-danger">{{$errors->first('address')}}</strong>
                                 @endif
+<<<<<<< HEAD
 >>>>>>> RUEmployer_By_ID
+=======
+>>>>>>> origin/change_password_employer
                                 <span class="des__name">Email</span>
                                 <input type="text" placeholder="Enter your email" class="type__info__reg" name="email">
                                 @if ($errors->has('email'))
@@ -71,6 +77,7 @@
                                 @endif
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <input type="hidden" value="{{(int)$user_id->user_id}}" name="user_id">
 =======
                                 <input type="hidden" value="3" name="role">
@@ -78,6 +85,8 @@
 >>>>>>> CRUD_Employer_By_ID
 =======
 >>>>>>> RUEmployer_By_ID
+=======
+>>>>>>> origin/change_password_employer
                                 <input type="submit" value="Sign up" class="btn reg__btn">
                                 <span class="btn btn login__btn"><a href="{{route('login')}}" style="text-decoration: none;color:white;">Login</a></span>
                             </form>

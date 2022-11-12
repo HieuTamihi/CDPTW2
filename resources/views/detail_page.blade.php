@@ -130,10 +130,13 @@
                     <h6>Chia sẻ</h6>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <h6 class="navi__fol">Theo dõi</h6>
 =======
 =======
 >>>>>>> RUEmployer_By_ID
+=======
+>>>>>>> origin/change_password_employer
                     @if(Auth::check())
                     <form action="{{route('wishlist.store')}}" method="POST">
                         @csrf
@@ -152,9 +155,12 @@
                     </a>
                     @endif
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> CRUD_Job_By_Emloy_id
 =======
 >>>>>>> RUEmployer_By_ID
+=======
+>>>>>>> origin/change_password_employer
                 </div>
                 <div class="content">
                     <div class="row">

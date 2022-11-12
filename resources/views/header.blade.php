@@ -52,6 +52,13 @@
                     <li>
                         <a href="#"><i class="fa-solid fa-address-book"></i>Liên hệ</a>
                     </li>
+                    @if(Auth::check())
+                    @if(Auth::user()->role ==2)
+                    <li>
+                        <a href="DashboardTemplate.dashboard">Quản lý bài tuyển dụng</a>
+                    </li>
+                    @endif
+                    @endif
                 </ul>
             </div>
         </div>
@@ -100,6 +107,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     @if (Auth::check() && Auth::user()->role == 2)
 <<<<<<< HEAD
                         <li><a class="btn btn-danger header__right--logemp" href="#">Đăng tuyển</a></li>
@@ -132,6 +140,9 @@
 =======
                     @if (Auth::check() && Auth::user()->role == 2)
 >>>>>>> RUEmployer_By_ID
+=======
+                    @if (Auth::check() && Auth::user()->role == 2)
+>>>>>>> origin/change_password_employer
                     <li><a class="btn btn-danger header__right--logemp" href="#">Đăng tuyển</a></li>
                     <li>
                         <form method="POST" name="logout" action="{{ route('logout') }}">
@@ -158,12 +169,15 @@
                     @else
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <li>
                             <a class="btn btn-dark header__right--logcus" href="{{ asset('login') }}">Đăng nhập</a>
                         </li>
 =======
 =======
 >>>>>>> RUEmployer_By_ID
+=======
+>>>>>>> origin/change_password_employer
                     <li>
                         <a class="btn btn-dark header__right--logcus" href="{{ asset('login') }}">Đăng nhập</a>
                     </li>

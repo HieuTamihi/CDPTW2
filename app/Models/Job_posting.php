@@ -22,6 +22,7 @@ class Job_posting extends Model
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 =======
@@ -35,6 +36,15 @@ class Job_posting extends Model
     
     protected $table = 'Job_postings';
 >>>>>>> RUEmployer_By_ID
+=======
+    public function customers()
+    {
+        return $this->belongsToMany(Customer::class,'Recruitments','jobposting_id','customer_id')
+        ->withPivot('status');
+    }
+    
+    protected $table = 'Job_postings';
+>>>>>>> origin/change_password_employer
     protected $fillable = [
         'employer_id',
         'title',
@@ -47,6 +57,7 @@ class Job_posting extends Model
     ];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 >>>>>>> CRUD_Employer_By_ID
 =======
@@ -55,3 +66,6 @@ class Job_posting extends Model
 =======
 }
 >>>>>>> RUEmployer_By_ID
+=======
+}
+>>>>>>> origin/change_password_employer

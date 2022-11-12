@@ -9,6 +9,14 @@ class Recruitment extends Model
 {
     use HasFactory;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    use HasFactory;
+    protected $table = 'recruitments';
+    protected $fillable = [
+
+    ];
+>>>>>>> origin/change_password_employer
 }
 =======
     use HasFactory;

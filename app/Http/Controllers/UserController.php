@@ -85,6 +85,7 @@ class UserController extends Controller
                     'confirm' => $conf,
                 ]);
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if($request->role == 3){
                         Employer::create([
                             'user_id' => $request->user_id,
@@ -94,6 +95,8 @@ class UserController extends Controller
                         ]);
                     }
 =======
+=======
+>>>>>>> origin/change_password_employer
 
                 //Add Employer table
                 Employer::create([
@@ -109,7 +112,10 @@ class UserController extends Controller
                     $email->subject('Active Acount');
                     $email->to($newUser->email);
                 });
+<<<<<<< HEAD
 >>>>>>> RUEmployer_By_ID
+=======
+>>>>>>> origin/change_password_employer
                 return redirect()->route('register')->with('message', 'Tạo tài khoản thành công !');
             } else {
                 return redirect()->route('register')->with('message', 'Tài khoản đã tồn tại !');
@@ -128,9 +134,13 @@ class UserController extends Controller
     public function registerCT(RegisterRequest $request)
     {
         if ($request->isMethod('post')) {
+<<<<<<< HEAD
             $validator = Validator::make($request->all(), [
             
             ]);
+=======
+            $validator = Validator::make($request->all(), []);
+>>>>>>> origin/change_password_employer
             if ($validator->fails()) {
                 return redirect()->back()
                     ->withErrors($validator)
@@ -173,6 +183,20 @@ class UserController extends Controller
         return view('registerCT', compact('customer_id'));
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    // Active
+    public function active(User $newUser, $confirm)
+    {
+        if ($newUser->confirm == $confirm) {
+            $newUser->update([
+                'status' => '1',
+                'confirm' => '',
+            ]);
+            return redirect()->route('login');
+        }
+    }
+>>>>>>> origin/change_password_employer
 }
 =======
     // Active

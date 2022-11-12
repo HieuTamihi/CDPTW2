@@ -64,6 +64,7 @@ class customerSeeder extends Seeder
                 'address' => 'Quận 7',
                 'gender' => '1',
                 'favorite' => 'Java, PHP, JS',
+<<<<<<< HEAD
 =======
                 'email' => 'abc@gmail.com',
                 'phone_number' => '000000',
@@ -84,6 +85,8 @@ class customerSeeder extends Seeder
                 'fullname' => 'XYZ',
                 'gender' => '0',
 >>>>>>> blog_home
+=======
+>>>>>>> origin/change_password_employer
                 'status' => '1',
             ],
         ]);

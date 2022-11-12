@@ -7,6 +7,7 @@
 =======
 @if(Auth::check())
 @if(Auth::user()->role == 1 || Auth::user()->role == 2 )
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 >>>>>>> CRUD_Job_By_Emloy_id
@@ -32,6 +33,8 @@
         </head>
 =======
 =======
+=======
+>>>>>>> origin/change_password_employer
 <!DOCTYPE html>
 <html>
 
@@ -153,6 +156,7 @@
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
 <<<<<<< HEAD
+<<<<<<< HEAD
                 @if(Auth::user()->role == 2)
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
@@ -167,14 +171,18 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 =======
+=======
+                @if(Auth::user()->role == 2)
+>>>>>>> origin/change_password_employer
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{asset('img/'.Auth::user()->employer->image)}}" class="" alt="User Image" style="width:5.1rem;">
                     </div>
-                    <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                    <div class="info">       
+                        <a href="{{route('RUEmployer.show',Auth::user()->employer->id)}}" class="d-block">{{Auth::user()->employer->name_company}}</a>
                     </div>
                 </div>
+                @endif
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
@@ -326,11 +334,16 @@
                                 </li>
                             </ul>
                         </li>
+<<<<<<< HEAD
 >>>>>>> blog_home
+=======
+                        <!-- List Job By Employer_ID -->
+>>>>>>> origin/change_password_employer
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -344,11 +357,15 @@
 =======
                                     Tables
 >>>>>>> blog_home
+=======
+                                    Lists Job Posting
+>>>>>>> origin/change_password_employer
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -387,10 +404,16 @@
 >>>>>>> RUEmployer_By_ID
 =======
 >>>>>>> blog_home
+=======
+                                    <a href="{{route('CRUDJobByEmployer.index')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Lists job</p>
+>>>>>>> origin/change_password_employer
                                     </a>
                                 </li>
                             </ul>
                         </li>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -447,6 +470,8 @@
 =======
 =======
 >>>>>>> RUEmployer_By_ID
+=======
+>>>>>>> origin/change_password_employer
                         <!-- END List Job  -->
 
                         <!-- <ul class="nav nav-treeview">

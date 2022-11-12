@@ -5,9 +5,13 @@
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CRUDListJobController;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use App\Http\Controllers\RUEmployerController;
 >>>>>>> RUEmployer_By_ID
+=======
+use App\Http\Controllers\RUEmployerController;
+>>>>>>> origin/change_password_employer
 use App\Http\Controllers\CvController;
 use App\Http\Controllers\CRUDUserController;
 use App\Http\Controllers\CRUDEmloyerController;
@@ -115,6 +119,22 @@ Route::get('/detail_re/{id}',[RUEmployerController::class,'detail_recruitment'])
 
 
 
+
+
+
+
+// Employer - quan ly job by employer_id
+Route::resource('CRUDJobByEmployer',CRUDListJobController::class);
+// RU employer 
+Route::resource('RUEmployer',RUEmployerController::class);
+// detail_recruitment
+Route::get('/detail_re/{id}',[RUEmployerController::class,'detail_recruitment'])->name('detail_recruitment');
+// Send mail recruitment
+Route::get('recruit/{customer}',[RUEmployerController::class,'recruit'])->name('recruit');
+
+// Change pass Employer
+Route::get('showlayout/{id}',[RUEmployerController::class,'showlayout'])->name('showlayout');
+Route::put('changepass/{id}',[RUEmployerController::class,'changepass'])->name('changepass');
 
 //chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');
