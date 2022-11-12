@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @if (Auth::check())
     @if (Auth::user()->role == 1)
         <!DOCTYPE html>
@@ -47,6 +48,13 @@
 <html>
 
 >>>>>>> blog_home
+=======
+@if(Auth::check())
+@if(Auth::user()->role == 1)
+<!DOCTYPE html>
+<html>
+
+>>>>>>> origin/register_employer
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -63,6 +71,7 @@
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 </head>
@@ -106,6 +115,8 @@
                                 <i class="fas fa-th-large"></i>
 =======
 =======
+=======
+>>>>>>> origin/register_employer
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -135,7 +146,10 @@
                 </div>
             </form>
 
+<<<<<<< HEAD
 >>>>>>> blog_home
+=======
+>>>>>>> origin/register_employer
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -152,6 +166,7 @@
             <a href="#" class="brand-link">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
 =======
                 <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
@@ -160,11 +175,15 @@
 =======
                 <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
 >>>>>>> origin/detail_page
+=======
+                <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+>>>>>>> origin/register_employer
                 <span class="brand-text font-weight-light">AdminLTE 3</span>
             </a>
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user (optional) -->
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -207,6 +226,19 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 >>>>>>> origin/detail_page
+=======
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block">Alexander Pierce</a>
+                    </div>
+                </div>
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+>>>>>>> origin/register_employer
 
                         <li class="nav-item has-treeview menu-open">
                             <a href="#" class="nav-link">
@@ -215,6 +247,7 @@
                                     Tables
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> RUEmployer_By_ID
                             </a>
@@ -337,6 +370,8 @@
                         <!-- List Job By Employer_ID -->
 >>>>>>> RUEmployer_By_ID
 =======
+=======
+>>>>>>> origin/register_employer
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
@@ -356,6 +391,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> blog_home
 =======
                         <!-- List Job By Employer_ID -->
@@ -366,10 +402,13 @@
 =======
                         <!-- List Job By Employer_ID -->
 >>>>>>> origin/register_and_send_mail
+=======
+>>>>>>> origin/register_employer
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -395,11 +434,15 @@
 =======
                                     Lists Job Posting
 >>>>>>> origin/register_and_send_mail
+=======
+                                    Tables
+>>>>>>> origin/register_employer
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -417,6 +460,8 @@
 >>>>>>> CRUD_Job_By_Emloy_id
 =======
 =======
+=======
+>>>>>>> origin/register_employer
                                     <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Simple Tables</p>
@@ -425,7 +470,10 @@
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
+<<<<<<< HEAD
 >>>>>>> blog_home
+=======
+>>>>>>> origin/register_employer
                                         <p>DataTables</p>
                                     </a>
                                 </li>
@@ -433,6 +481,7 @@
                                     <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>jsGrid</p>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
                                     <a href="{{route('CRUDJobByEmployer.index')}}" class="nav-link">
@@ -456,10 +505,13 @@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Lists job</p>
 >>>>>>> origin/register_and_send_mail
+=======
+>>>>>>> origin/register_employer
                                     </a>
                                 </li>
                             </ul>
                         </li>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -535,6 +587,10 @@
 
                         <!-- <ul class="nav nav-treeview">
 >>>>>>> origin/detail_page
+=======
+
+                        <!-- <ul class="nav nav-treeview">
+>>>>>>> origin/register_employer
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
@@ -553,6 +609,7 @@
                                     <p>Read</p>
                                 </a>
                             </li>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                         </ul> -->
@@ -638,6 +695,8 @@
 =======
                         </ul>
 =======
+=======
+>>>>>>> origin/register_employer
                         </ul> -->
                         <li class="nav-item has-treeview">
                             @if(Auth::check())
@@ -658,14 +717,20 @@
                                 </p>
                             </a>
                             @endif
+<<<<<<< HEAD
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_employer
                         </li>
                     </ul>
                 </nav>
             </div>
         </aside>
 
+<<<<<<< HEAD
 >>>>>>> blog_home
+=======
+>>>>>>> origin/register_employer
         @yield('main')
 
         <aside class="control-sidebar control-sidebar-dark">
@@ -682,6 +747,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('dist/js/demo.js') }}"></script>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
         CKEDITOR.replace('ckeditorPost');
@@ -697,6 +763,11 @@
 </html>
 >>>>>>> blog_home
 =======
+=======
+</body>
+
+</html>
+>>>>>>> origin/register_employer
 @else
 <section>
     <div class="error404" style="text-align: center; padding-top:25px;">
@@ -730,5 +801,9 @@
         </div>
     </div>
 </section>
+<<<<<<< HEAD
 @endif
 >>>>>>> origin/detail_page
+=======
+@endif
+>>>>>>> origin/register_employer

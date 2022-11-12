@@ -18,6 +18,7 @@ class Cv extends Migration
             $table->integer('customer_id');
             $table->string('fullname');
             $table->string('avatar');
+<<<<<<< HEAD
             $table->string('apply_position');
             $table->string('email');
             $table->integer('phone_number');
@@ -28,6 +29,16 @@ class Cv extends Migration
             $table->string('learn_time');
             $table->string('majors');
             $table->string('infor_other')->nullable();
+=======
+            $table->string('enjoy_tech');
+            $table->string('aplly_posion');
+            $table->string('email');
+            $table->integer('phone_number');
+            $table->integer('gender');
+            $table->string('exp_work')->nullable();
+            $table->string('skill')->nullable();
+            $table->string('infor_order')->nullable();
+>>>>>>> origin/register_employer
             $table->timestamps();
         });
     }

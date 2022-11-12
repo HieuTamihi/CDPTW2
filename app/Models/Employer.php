@@ -12,6 +12,7 @@ class Employer extends Model
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function jobs()
     {
         return $this->hasMany(Job_posting::class);
@@ -72,6 +73,8 @@ class Employer extends Model
 >>>>>>> origin/detail_page
 =======
     protected $table = 'employers';
+=======
+>>>>>>> origin/register_employer
     protected $fillable = [
         'user_id',
         'name_company',
@@ -79,14 +82,21 @@ class Employer extends Model
         'image',
         'email',
         'phone_number'
+<<<<<<< HEAD
 >>>>>>> origin/register_and_send_mail
+=======
+>>>>>>> origin/register_employer
     ];
     public function jobs()
     {
         return $this->hasMany(Job_posting::class);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 >>>>>>> origin/detail_page
+=======
+}
+>>>>>>> origin/register_employer

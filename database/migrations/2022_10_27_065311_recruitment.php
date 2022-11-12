@@ -13,6 +13,7 @@ class Recruitment extends Migration
      */
     public function up()
     {
+<<<<<<< HEAD
         Schema::create('recruitments', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->integer('customer_id');
@@ -23,6 +24,12 @@ class Recruitment extends Migration
             $table->string('status')->nullable();
             $table->text('introduce')->nullable();
             $table->string('file')->nullable();
+=======
+        Schema::create('recruitment', function (Blueprint $table) {
+            $table->integer('customer_id');
+            $table->integer('jobposting_id');
+            $table->string('status')->nullable();
+>>>>>>> origin/register_employer
             $table->timestamps();
         });
     }

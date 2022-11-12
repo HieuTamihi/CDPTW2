@@ -116,8 +116,13 @@
         <div class="row">
             <div class="col-12 col-xl-9 detail_body__left">
                 <div class="information">
+<<<<<<< HEAD
                     <div class="information__logo">
                         <a href="#"><img src="{{asset('img/'.$detail->image)}}" alt=""></a>
+=======
+                    <div class="information__logo" style="width:35%;">
+                        <img src="{{asset('img/'.$detail->image)}}" alt="" >
+>>>>>>> origin/register_employer
                     </div>
                     <div class="information__content">
                         <p>{{$detail->name_company}}</p>
@@ -184,35 +189,49 @@
                             <h4>{{$value->title}}</h4>
                             <p>{{$value->salary}}</p>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/register_employer
                             <a href="#" class="font-size_a">
                                 <p>Đăng nhập để xem mức lương</p>
                             </a>
                             <p><?php echo str_replace(' , ','<p>',$detail->infor) ?></p>
+<<<<<<< HEAD
 =======
                             <a href="{{route('login')}}" class="font-size_a">
                                 <p>Đăng nhập để xem mức lương</p>
                             </a>
                             <p><?php echo str_replace(' , ', '<p>', $detail->infor) ?></p>
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_employer
                             </p>
                             <h2>Trách nhiệm công việc:</h2>
                             <div class="content__left__responsibility" id="responsibility">
                                 <ul>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <li><?php echo str_replace(' , ','<li>',$detail->responsibility) ?></li>
 =======
                                     <li><?php echo str_replace(' , ', '<li>', $detail->responsibility) ?></li>
 >>>>>>> origin/detail_page
+=======
+                                    <li><?php echo str_replace(' , ','<li>',$detail->responsibility) ?></li>
+>>>>>>> origin/register_employer
                                 </ul>
                             </div>
                             <h2>Kỹ năng & Chuyên môn:</h2>
                             <div class="content__left__specialize">
                                 <ul>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <li><?php echo str_replace(', ','<li>',$value->required) ?></li>
 =======
                                     <li><?php echo str_replace(', ', '<li>', $value->required) ?></li>
 >>>>>>> origin/detail_page
+=======
+                                    <li><?php echo str_replace(', ','<li>',$value->required) ?></li>
+>>>>>>> origin/register_employer
                                 </ul>
                             </div>
                             @endforeach
@@ -230,7 +249,12 @@
                                     Tạo CV Ứng Tuyển
                                 </button>
                             </a>
+<<<<<<< HEAD
                             <p class="text_align"><?php echo str_replace('-','',date('d',strtotime($detail->created_at)) - $date);?> ngày trước</p>
+=======
+                            @foreach($relate as $value)
+                            <p class="text_align">{{$date - date('d',strtotime($value->created_at))}} ngày trước</p>
+>>>>>>> origin/register_employer
                             @endforeach
                             <h6>Địa điểm</h6>
                             <p>{{$detail->address}}</p>
@@ -242,11 +266,15 @@
                             <h6>Kỹ năng</h6>
                             <div class="content__right__skill">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <p><?php echo str_replace(', ','<p>',$value->skill) ?></p>
 >>>>>>> CRUD_Employer_By_ID
 =======
                                 <p><?php echo str_replace(', ', '<p>', $value->skill) ?></p>
 >>>>>>> origin/detail_page
+=======
+                                <p><?php echo str_replace(', ','<p>',$value->skill) ?></p>
+>>>>>>> origin/register_employer
                             </div>
                             @endforeach
                         </div>
@@ -310,6 +338,9 @@
                 @foreach($relate as $value)
                 <div class="detail_body__right__skill">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/register_employer
                     <p><?php echo str_replace(' , ','<p>',$value->skill) ?></p>
                 </div>
                 @endforeach
@@ -319,6 +350,7 @@
                 </div> -->
                 <h6>Phúc lợi dành cho bạn</h6>
                 <p><?php echo str_replace(' , ','<p>',$detail->welfare) ?></p>
+<<<<<<< HEAD
 >>>>>>> CRUD_Employer_By_ID
             </div>
          
@@ -331,12 +363,17 @@
             </div>
 
 >>>>>>> origin/detail_page
+=======
+            </div>
+         
+>>>>>>> origin/register_employer
         </div>
 <<<<<<< HEAD
 =======
         <div class="row" id="CV">
             <div class="col-12 col-xl-9">
                 <div class="list_word">
+<<<<<<< HEAD
 <<<<<<< HEAD
                   @foreach($job_relate as $value)
                     <a href="{{route('employer.show',$value->id)}}"><h5>{{$value->title}}</h5></a>
@@ -346,23 +383,33 @@
                         <h5>{{$value->title}}</h5>
                     </a>
 >>>>>>> origin/detail_page
+=======
+                  @foreach($job_relate as $value)
+                    <a href="{{route('employer.show',$value->id)}}"><h5>{{$value->title}}</h5></a>
+>>>>>>> origin/register_employer
                     <a href="#" class="font-size_a">
                         <p>Đăng nhập để xem mức lương</p>
                     </a>
                     <div class="list_word__skill">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/register_employer
                         <p><?php echo str_replace(' , ','<p>',$value->skill) ?></p>
                         <p>JavaScript</p>
                         <p>Solution Architect</p>
                     </div>
                     <div class="list_word__recruiment">
                         <a href="#">Ứng tuyển</a> 
+<<<<<<< HEAD
 =======
                         <p><?php echo str_replace(', ', '<p>', $value->skill) ?></p>
                     </div>
                     <div class="list_word__recruiment">
                         <a href="{{route('employer.show',$value->id)}}">Ứng tuyển</a>
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_employer
                     </div>
                     @endforeach
                 </div>

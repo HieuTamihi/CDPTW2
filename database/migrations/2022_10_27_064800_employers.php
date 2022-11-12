@@ -17,6 +17,7 @@ class Employers extends Migration
             $table->id()->autoIncrement();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->integer('user_id');
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -24,10 +25,14 @@ class Employers extends Migration
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+            $table->integer('user_id');
+>>>>>>> origin/register_employer
             $table->string('website');
             $table->string('infor',5000);
             $table->string('responsibility',5000);
             $table->string('welfare',500);
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> CRUD_Job_By_Emloy_id
@@ -67,10 +72,13 @@ class Employers extends Migration
 >>>>>>> origin/detail_page
 =======
 >>>>>>> origin/register_and_send_mail
+=======
+>>>>>>> origin/register_employer
             $table->string('name_company');
             $table->string('address')->nullable();
             $table->string('image')->nullable();
             $table->string('email');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -88,6 +96,9 @@ class Employers extends Migration
 =======
             $table->string('phone_number',11);
 >>>>>>> origin/register_and_send_mail
+=======
+            $table->integer('phone_number');
+>>>>>>> origin/register_employer
             $table->timestamps();
         });
     }

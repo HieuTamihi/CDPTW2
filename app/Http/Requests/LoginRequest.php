@@ -28,4 +28,8 @@ class LoginRequest extends FormRequest
             'password' => 'required|confirmed|min:6',
         ];
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/register_employer

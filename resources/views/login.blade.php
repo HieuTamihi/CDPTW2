@@ -1,11 +1,17 @@
+<<<<<<< HEAD
 @if(!Auth::check())
+=======
+>>>>>>> origin/register_employer
 @extends('header')
 @section('footer')
 <div class="log__reg__page">
     <div class="container">
+<<<<<<< HEAD
         @if(session('status'))
         <div class="alert alert-success" style="text-align:center;">{{session('status')}}</div>
         @endif
+=======
+>>>>>>> origin/register_employer
         <div class="row">
             <div class="page__log">
                 <div class="title__log">
@@ -45,5 +51,9 @@
     </div>
 </div>
 <br>
+<<<<<<< HEAD
 @endsection;
 @endif
+=======
+@endsection;
+>>>>>>> origin/register_employer

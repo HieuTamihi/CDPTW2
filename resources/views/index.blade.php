@@ -83,9 +83,12 @@
                                 <div class="col-md-5 intem-slide-img">
                                     <a href="{{route('employer.show',$row->id)}}">
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                                         {{$row->id}}
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_employer
                                         <img class="intem-img" src="{{url('img')}}/{{$row->image}}" alt="">
                                     </a>
                                 </div>
@@ -101,6 +104,7 @@
                                         <div class="spotilght-txt-DC">
                                             <p class="loca-spotlight">{{$row->address}}</p>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> CRUD_Employer_By_ID
 =======
 >>>>>>> origin/detail_page
@@ -115,7 +119,17 @@
                                     <img src="{{ url('img') }}/{{ $row->image }}" alt="">
                                 </a>
                             @endforeach
+=======
+                                        </div>
+                                    </div>
+                                    <div class="spotlight-btn">
+                                        <a href="">Xem Thêm &raquo;</a>
+                                    </div>
+                                </div>
+                            </div>
+>>>>>>> origin/register_employer
                         </div>
+                        @endforeach
                     </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -148,7 +162,10 @@
                             <img src="{{url('img')}}/{{$row->image}}" alt="">
                         </a>
                         @endforeach
+<<<<<<< HEAD
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_employer
                     </div>
                 </div>
             </div>
@@ -203,10 +220,14 @@
                         <li>
                             <span class="tags"><strong class="tags-txt">{{$name->name_company}}</strong></span>
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <br><a href="{{route('employer.show',$row->id)}}">{{$name->title}}</a>
 =======
                             <br><a href="{{route('employer.show',$name->id)}}">{{$name->title}}</a>
 >>>>>>> origin/detail_page
+=======
+                            <br><a href="{{route('employer.show',$row->id)}}">{{$name->title}}</a>
+>>>>>>> origin/register_employer
                             <p class="job-salary-view">{{$name->salary}}</p>
                         </li>
                         @endforeach

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Customer extends Model
 {
     use HasFactory;
+<<<<<<< HEAD
     protected $table = 'customers'; 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -41,4 +42,9 @@ class Customer extends Model
 >>>>>>> RUEmployer_By_ID
 =======
 >>>>>>> origin/detail_page
+=======
+    protected $fillable = [
+        'id','email','phone_number','fullname','gender','status'
+    ];
+>>>>>>> origin/register_employer
 }

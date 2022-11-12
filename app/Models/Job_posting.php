@@ -10,6 +10,7 @@ class Job_posting extends Model
     use HasFactory;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     protected $fillable = [
         'employer_id', 'title', 'experience', 'type', 'skill', 'required', 'salary'
     ];
@@ -91,3 +92,10 @@ class Job_posting extends Model
 =======
 }
 >>>>>>> origin/register_and_send_mail
+=======
+    public function empl()
+    {
+        return $this->belongsTo(Employer::class,'employer_id)');
+    }
+}
+>>>>>>> origin/register_employer

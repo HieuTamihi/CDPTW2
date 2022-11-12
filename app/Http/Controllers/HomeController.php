@@ -16,9 +16,13 @@ class HomeController extends Controller
             ->get();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         // dd($jobTitle);
 =======
 >>>>>>> blog_home
+=======
+        // dd($jobTitle);
+>>>>>>> origin/register_employer
 
         return view('search', compact('jobTitle', 'request'));
     }

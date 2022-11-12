@@ -15,12 +15,20 @@ class Posts extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id()->autoIncrement();
+<<<<<<< HEAD
             $table->integer('comment_id')->nullable();
             $table->integer('customer_id')->nullable();
             $table->string('title', 255);
             $table->text('content');
             $table->string('image', 255);
             $table->integer('views')->nullable();
+=======
+            $table->integer('comment_id');
+            $table->integer('customer_id');
+            $table->string('title');
+            $table->string('content');
+            $table->integer('status');
+>>>>>>> origin/register_employer
             $table->timestamps();
         });
     }

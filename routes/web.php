@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CRUDListJobController;
 <<<<<<< HEAD
@@ -64,6 +65,12 @@ use App\Http\Controllers\WishlistController;
 use App\Models\Customer;
 use App\Models\Wish_lists;
 >>>>>>> origin/detail_page
+=======
+use App\Http\Controllers\EmployerController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
+>>>>>>> origin/register_employer
 
 /*
 |--------------------------------------------------------------------------
@@ -84,7 +91,10 @@ Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::get('/', [EmployerController::class, 'index'])->name('index');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/register_employer
 //dang ky
 //dang ky tai khoan employer
 Route::post('/register', [UserController::class, 'register'])->name('register');
@@ -93,6 +103,7 @@ Route::get('/register', [UserController::class, 'getUserID']);
 Route::post('/registerCT', [UserController::class, 'registerCT'])->name('registerCT');
 Route::get('/registerCT', [UserController::class, 'getCustomerID']);
 
+<<<<<<< HEAD
 //Active tai khoan
 Route::get('active/{newUser}/{confirm}',[UserController::class,'active'])->name('activeAcount');
 
@@ -290,6 +301,21 @@ Route::get('admin', function () {
 });
 Route::get('/detail_page/{id}', [EmployerController::class, 'show']);
 >>>>>>> origin/detail_page
+=======
+//admin
+Route::resource('listjobPosting', ControllersJobpostingController::class);
+Route::resource('employer', EmployerController::class);
+
+//chuyen trang
+Route::get('search', [HomeController::class, 'search'])->name('search');
+
+Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
+
+Route::get('admin', function () {
+    return view('DashboardTemplate.dashboard');
+});
+Route::get('/detail_page/{id}',[EmployerController::class,'show']);
+>>>>>>> origin/register_employer
 Route::get('/{name?}', function ($name = "index") {
     return view($name);
 });

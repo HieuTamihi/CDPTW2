@@ -19,11 +19,20 @@ class employerSeeder extends Seeder
                 'name_company' => 'FPT',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/detail_page
                 'user_id'=>'1',
                 'website'=>'https://fpt.com.vn/',
                 'infor'=>'Tổng Công ty Dịch vụ số FPT - FPT mang sứ mệnh sáng tạo những sản phẩm công nghệ đi đầu lĩnh vực Fintech và Big Data, với mong muốn digital hoá những hình thức kinh doanh truyền thống. , Hiện Viettel Digital đang tập trung phát triển một hệ sinh thái tài chính số với core chính là Viettel Money. Bên cạnh đó, chúng tôi cũng đang mở rộng 
+=======
+                'user_id'=>'1',
+                'website'=>'https://fpt.com.vn/',
+                'infor'=>'Tổng Công ty Dịch vụ số FPT - FPT mang sứ mệnh sáng tạo những sản 
+                phẩm công nghệ đi đầu lĩnh vực Fintech và Big Data, với mong muốn digital hoá những hình 
+                thức kinh doanh truyền thống. , Hiện Viettel Digital đang tập trung phát triển một hệ sinh 
+                thái tài chính số với core chính là Viettel Money. Bên cạnh đó, chúng tôi cũng đang mở rộng 
+>>>>>>> origin/register_employer
                 hoạt động với nhiều dự án lớn trong các lĩnh vực Fintech, Big Data, AI, Blockchain,... 
                 và mong muốn chiêu mộ nhân tài hơn bao giờ hết.',
                 'responsibility'=>'Tham gia phát triển các dự án trong Hệ sinh thái Tài chính số 
@@ -32,14 +41,18 @@ class employerSeeder extends Seeder
                 'address' => '5A/2 Trần Phú, Phường 04, Quận 5, Thành phố Hồ Chí Minh Tầng 12 khu Văn phòng tòa MIPEC, 229 Tây Sơn, Phường Ngã Tư Sở, Quận Đống Đa, Thành phố Hà Nội',
                 'image' => 'CGSQtFPgvd7HKMXvon4l.png',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 'address' => '5A/2 Trần Phú, Phường 04, Quận 5, Thành phố Hồ Chí Minh Tầng 12 khu Văn phòng tòa MIPEC, 229 Tây Sơn, Phường Ngã Tư Sở, Quận Đống Đa, Thành phố Hà Nội',
                 'image' => 'download.png',
 >>>>>>> blog_home
+=======
+>>>>>>> origin/register_employer
                 'email' => 'FPT@gmail.com',
                 'phone_number' => '0123456789',
             ], [
                 'name_company' => 'Go2Joy Việt Nam',
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
                 'email' => 'FPT@gmail.com',
@@ -51,20 +64,34 @@ class employerSeeder extends Seeder
                 'user_id'=> '2',
                 'website'=>'https://go2joy.com.vn/',
                 'infor'=>'Tổng Công ty Dịch vụ số Go2Joy - Go2Joy  mang sứ mệnh sáng tạo những sản phẩm công nghệ đi đầu lĩnh vực Fintech và Big Data, với mong muốn digital hoá những hình 
+=======
+                'user_id'=> '2',
+                'website'=>'https://go2joy.com.vn/',
+                'infor'=>'Tổng Công ty Dịch vụ số Go2Joy - Go2Joy  mang sứ mệnh sáng tạo những sản 
+                phẩm công nghệ đi đầu lĩnh vực Fintech và Big Data, với mong muốn digital hoá những hình 
+>>>>>>> origin/register_employer
                 thức kinh doanh truyền thống. , Hiện Viettel Digital đang tập trung phát triển một hệ sinh 
                 thái tài chính số với core chính là Viettel Money. Bên cạnh đó, chúng tôi cũng đang mở rộng 
                 hoạt động với nhiều dự án lớn trong các lĩnh vực Fintech, Big Data, AI, Blockchain,... 
                 và mong muốn chiêu mộ nhân tài hơn bao giờ hết.',
+<<<<<<< HEAD
                 'responsibility'=>'Tham gia phát triển các dự án trong Hệ sinh thái Tài chính số (Go2Joy Pay, Mobile Money, ví cá nhân, ví doanh nghiệp, ...) , ',
+=======
+                'responsibility'=>'Tham gia phát triển các dự án trong Hệ sinh thái Tài chính số 
+                (Go2Joy Pay, Mobile Money, ví cá nhân, ví doanh nghiệp, ...) , ',
+>>>>>>> origin/register_employer
                 'welfare'=>'Mức lương thu hút nhân tài, ứng viên tự thỏa thuận khi tham gia phỏng vấn , Có cơ hội làm việc trong một tập đoàn lớn nhưng môi trường không khác gì StartUp , Tham gia vào các dự án công ty.',
                 'address' => '5A/2 Trần Phú, Phường 04, Quận 5, Thành phố Hồ Chí Minh Tầng 12 khu Văn phòng tòa MIPEC, 229 Tây Sơn, Phường Ngã Tư Sở, Quận Đống Đa, Thành phố Hà Nội',
                 'image' => 'logo.4089b512.png',
                 'email' => 'go2joyvn@gmail.com',
                 'phone_number' => '0123456789',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 'created_at' => '2022-11-02 22:21:11',
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_employer
             ], [
                 'name_company' => 'SAMO',
                 'user_id'=>'3',
@@ -83,9 +110,12 @@ class employerSeeder extends Seeder
                 'email' => 'SAMO@gmail.com',
                 'phone_number' => '0123456789',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 'created_at' => '2022-11-03 22:21:11',
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_employer
             ], [
                 'name_company' => 'TMA Solutions',
                 'user_id'=>'4',
@@ -104,9 +134,12 @@ class employerSeeder extends Seeder
                 'email' => 'Solutions@gmail.com',
                 'phone_number' => '0123456789',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 'created_at' => '2022-11-04 22:21:11',
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_employer
             ], [
                 'name_company' => 'Korean IT Companies ',
                 'user_id' => '5',
@@ -125,9 +158,12 @@ class employerSeeder extends Seeder
                 'email' => 'Korean@gmail.com',
                 'phone_number' => '0123456789',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 'created_at' => '2022-11-05 22:21:11',
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_employer
             ], [
                 'name_company' => 'TAPTAP',
                 'user_id'=>'6',
@@ -146,9 +182,12 @@ class employerSeeder extends Seeder
                 'email' => 'TAPTAP@gmail.com',
                 'phone_number' => '0123456789',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 'created_at' => '2022-11-06 22:21:11',
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_employer
             ], [
                 'name_company' => 'Aventra Group',
                 'user_id'=>'7',
@@ -166,6 +205,7 @@ class employerSeeder extends Seeder
                 'image' => 'TopDev-4725e148-96ec-4048-8de8-e41e3959686b-PhuongNguyen-1666144852.jpg',
                 'email' => 'Aventra@gmail.com',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 'address' => '5A/2 Trần Phú, Phường 04, Quận 5, Thành phố Hồ Chí Minh Tầng 12 khu Văn phòng tòa MIPEC, 229 Tây Sơn, Phường Ngã Tư Sở, Quận Đống Đa, Thành phố Hà Nội',
                 'image' => 'download.png',
@@ -177,10 +217,13 @@ class employerSeeder extends Seeder
                 'image' => 'download.png',
                 'email' => 'FPTHCM@gmail.com',
 >>>>>>> blog_home
+=======
+>>>>>>> origin/register_employer
                 'phone_number' => '0123456789',
             ]
         ]);
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 }
 =======
@@ -194,3 +237,6 @@ class employerSeeder extends Seeder
     }
 }
 >>>>>>> origin/detail_page
+=======
+}
+>>>>>>> origin/register_employer

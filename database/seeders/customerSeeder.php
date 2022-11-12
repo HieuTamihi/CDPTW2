@@ -18,6 +18,7 @@ class customerSeeder extends Seeder
             [
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/detail_page
                 'email' => 'thaihieu123@gmail.com',
@@ -27,11 +28,18 @@ class customerSeeder extends Seeder
                 'address' => 'Quận 9',
                 'gender' => '0',
                 'favorite' => 'Java, PHP',
+=======
+                'email' => 'thaihieu123@gmail.com',
+                'phone_number' => '0123456789',
+                'fullname' => 'ABC',
+                'gender' => '0',
+>>>>>>> origin/register_employer
                 'status' => '1',
             ],
             [
                 'email' => 'thaihieu124@gmail.com',
                 'phone_number' => '0123456788',
+<<<<<<< HEAD
                 'fullname' => 'Nguyen Van A',
                 'date' => '2002-10-10',
                 'address' => 'Quận 7',
@@ -80,10 +88,13 @@ class customerSeeder extends Seeder
             [
                 'email' => 'def@gmail.com',
                 'phone_number' => '111111',
+=======
+>>>>>>> origin/register_employer
                 'fullname' => 'DEF',
                 'gender' => '0',
                 'status' => '1',
             ],
+<<<<<<< HEAD
             [
                 'email' => 'xyz@gmail.com',
                 'phone_number' => '222222',
@@ -98,6 +109,8 @@ class customerSeeder extends Seeder
 >>>>>>> origin/register_and_send_mail
                 'status' => '1',
             ],
+=======
+>>>>>>> origin/register_employer
         ]);
     }
 }

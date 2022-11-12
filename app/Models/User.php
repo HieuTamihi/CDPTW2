@@ -24,6 +24,7 @@ class User extends Authenticatable
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         'customer_id', 
         'email',
 =======
@@ -44,6 +45,9 @@ class User extends Authenticatable
         'role', 
         'status',
         'confirm'
+=======
+        'email', 'user_id', 'customer_id', 'phone', 'password', 'role', 'status'
+>>>>>>> origin/register_employer
     ];
 
     /**

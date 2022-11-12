@@ -101,11 +101,17 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{ asset('createCV') }}">Tạo CV</a>
+<<<<<<< HEAD
 >>>>>>> blog_home
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page"
                                 href="{{ asset('company_information') }}">Công ty
+=======
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ asset('company_information') }}">Công ty
+>>>>>>> origin/register_employer
                                 IT</a>
                         </li>
                         <li class="nav-item">
@@ -116,6 +122,7 @@
             </div>
             <div class="header__right d-flex">
                 <ul>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -253,6 +260,19 @@
 >>>>>>> CRUD_post
 =======
 >>>>>>> blog_home
+=======
+                    @if (Auth::check())
+                    @if (Auth::user()->role == 2)
+                    <li><a class="btn btn-danger header__right--logemp" href="#">Đăng tuyển</a></li>
+                    @endif
+                    <form method="POST" name="logout" action="{{ route('logout') }}">
+                        @csrf
+                        <li> <a class="btn btn-dark header__right--logcus" href="javascript:document.logout.submit()"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
+                    </form>
+                    @else
+                    <li><a class="btn btn-dark header__right--logcus" href="{{ asset('login') }}">Đăng nhập</a>
+                    </li>
+>>>>>>> origin/register_employer
                     @endif
                 </ul>
             </div>
@@ -313,8 +333,12 @@
         </div>
     </footer>
     <!-- End Footer -->
+<<<<<<< HEAD
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+=======
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+>>>>>>> origin/register_employer
     </script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

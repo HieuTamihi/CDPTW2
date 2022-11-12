@@ -4,7 +4,10 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/register_employer
 class recruitmentSeeder extends Seeder
 {
     /**
@@ -14,6 +17,7 @@ class recruitmentSeeder extends Seeder
      */
     public function run()
     {
+<<<<<<< HEAD
         DB::table('recruitments')->insert([
             [
                 'customer_id' => '1',
@@ -85,5 +89,22 @@ class recruitmentSeeder extends Seeder
                 'file' => '1667982000.pdf',
             ]
         ]);
+=======
+        DB::table('recruitment')->insert([[
+            'customer_id' => '1',
+            'jobposting_id' => '1', 
+            'status' => '0',
+        ],[
+            'customer_id' => '2',
+            'jobposting_id' => '2', 
+            'status' => '0',
+        ]
+        ,[
+            'customer_id' => '3',
+            'jobposting_id' => '3', 
+            'status' => '1',
+        ]
+    ]);
+>>>>>>> origin/register_employer
     }
 }

@@ -31,6 +31,7 @@
                                 <div class="alert alert-success">{{Session::get('message')}}</div>
                                 @endif
                                 @csrf
+<<<<<<< HEAD
                                 <span class="des__name">Name Company</span>
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -70,6 +71,15 @@
 >>>>>>> origin/detail_page
 =======
 >>>>>>> origin/register_and_send_mail
+=======
+
+                                <span class="des__name">Name Company</span>
+                                <input type="text" placeholder="Enter your email" class="type__info__reg" name="name_company">
+
+                                <span class="des__name">Address</span>
+                                <input type="text" placeholder="Enter your email" class="type__info__reg" name="address">
+
+>>>>>>> origin/register_employer
                                 <span class="des__name">Email</span>
                                 <input type="text" placeholder="Enter your email" class="type__info__reg" name="email">
                                 @if ($errors->has('email'))
@@ -92,6 +102,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <input type="hidden" value="{{(int)$user_id->user_id}}" name="user_id">
 =======
                                 <input type="hidden" value="3" name="role">
@@ -105,6 +116,9 @@
 >>>>>>> origin/detail_page
 =======
 >>>>>>> origin/register_and_send_mail
+=======
+                                <input type="hidden" value="{{(int)$user_id->user_id}}" name="user_id">
+>>>>>>> origin/register_employer
                                 <input type="submit" value="Sign up" class="btn reg__btn">
                                 <span class="btn btn login__btn"><a href="{{route('login')}}" style="text-decoration: none;color:white;">Login</a></span>
                             </form>

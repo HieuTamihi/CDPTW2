@@ -20,6 +20,7 @@ class Customers extends Migration
             $table->string('fullname')->nullable();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/detail_page
             $table->date('date')->nullable();
@@ -34,6 +35,10 @@ class Customers extends Migration
 >>>>>>> blog_home
 =======
 >>>>>>> origin/detail_page
+=======
+            $table->integer('gender')->nullable();
+            $table->integer('status')->nullable();
+>>>>>>> origin/register_employer
             $table->timestamps();
         });
     }

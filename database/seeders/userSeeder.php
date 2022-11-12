@@ -30,6 +30,7 @@ class userSeeder extends Seeder
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 'customer_id' => null,
 =======
 >>>>>>> CRUD_Employer_By_ID
@@ -39,6 +40,9 @@ class userSeeder extends Seeder
 =======
                 'customer_id' => null,
 >>>>>>> origin/detail_page
+=======
+                'customer_id' => null,
+>>>>>>> origin/register_employer
                 'role' => '1',
                 'status' => '1',
             ],
@@ -49,6 +53,7 @@ class userSeeder extends Seeder
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 'customer_id' => null,
 =======
 >>>>>>> CRUD_Employer_By_ID
@@ -58,6 +63,9 @@ class userSeeder extends Seeder
 =======
                 'customer_id' => null,
 >>>>>>> origin/detail_page
+=======
+                'customer_id' => null,
+>>>>>>> origin/register_employer
                 'role' => '2',
                 'status' => '1',
             ],
@@ -67,8 +75,11 @@ class userSeeder extends Seeder
                 'password' => '$2y$10$y2NorDtAaQ9Wpkymi86zsu7U8X1zezLFKqPqkpT42pjkdJqVCTuLm',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_employer
                 'customer_id' => null,
                 'role' => '2',
                 'status' => '1',
@@ -101,6 +112,7 @@ class userSeeder extends Seeder
                 'customer_id' => '2',
                 'role' => '3',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 'role' => '2',
                 'status' => '1',
@@ -127,6 +139,8 @@ class userSeeder extends Seeder
 >>>>>>> CRUD_Employer_By_ID
 =======
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_employer
                 'status' => '1',
             ]
         ]);

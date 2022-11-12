@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Models\Customer;
 use App\Models\Cv;
 use App\Models\Employer;
@@ -18,6 +19,14 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 >>>>>>> origin/detail_page
 
+=======
+use App\Models\Employer;
+use App\Models\Job_posting;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+>>>>>>> origin/register_employer
 class EmployerController extends Controller
 {
     /**
@@ -27,6 +36,7 @@ class EmployerController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         // lấy hết tất cả dữ liều trong Employer
         $employer = Employer::all();
         // lấy hết tất cả dữ liều trong Job_posting
@@ -43,6 +53,12 @@ class EmployerController extends Controller
         $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->select('name_company')->get();
         return view('index', compact('employer', 'job', 'name'));
 >>>>>>> origin/detail_page
+=======
+        $employer = Employer::all();
+        $job = Job_posting::all();
+        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->select('name_company')->get();
+        return view('index', compact('employer', 'job', 'name'));
+>>>>>>> origin/register_employer
     }
 
     /**
@@ -77,6 +93,7 @@ class EmployerController extends Controller
         $detail = Employer::findOrFail($id);
         $relate = $detail->jobs->take(1);
 <<<<<<< HEAD
+<<<<<<< HEAD
         $job_relate = $detail->jobs->take(3);
 <<<<<<< HEAD
 =======
@@ -95,6 +112,11 @@ class EmployerController extends Controller
 =======
         return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv','date'));
 >>>>>>> origin/detail_page
+=======
+        $date = Carbon::now()->day;
+        $job_relate = $detail->jobs->take(3);
+        return view('detail_page',compact('detail','relate','job_relate','date'));
+>>>>>>> origin/register_employer
     }
 
     /**
@@ -130,4 +152,8 @@ class EmployerController extends Controller
     {
         //
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/register_employer
