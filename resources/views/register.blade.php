@@ -35,6 +35,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <input type="text" placeholder="Enter name company" class="type__info__reg" name="name_company">
                                 
                                 <span class="des__name">Address</span>
@@ -48,6 +49,8 @@
 >>>>>>> origin/change_password_employer
 =======
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_and_send_mail
                                 <input type="text" placeholder="Enter your name company" class="type__info__reg" name="name_company">
                                 @if ($errors->has('name_company'))
                                 <strong class="text-danger">{{$errors->first('name_company')}}</strong>
@@ -59,11 +62,14 @@
                                 @endif
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> RUEmployer_By_ID
 =======
 >>>>>>> origin/change_password_employer
 =======
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_and_send_mail
                                 <span class="des__name">Email</span>
                                 <input type="text" placeholder="Enter your email" class="type__info__reg" name="email">
                                 @if ($errors->has('email'))
@@ -85,6 +91,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <input type="hidden" value="{{(int)$user_id->user_id}}" name="user_id">
 =======
                                 <input type="hidden" value="3" name="role">
@@ -96,6 +103,8 @@
 >>>>>>> origin/change_password_employer
 =======
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_and_send_mail
                                 <input type="submit" value="Sign up" class="btn reg__btn">
                                 <span class="btn btn login__btn"><a href="{{route('login')}}" style="text-decoration: none;color:white;">Login</a></span>
                             </form>

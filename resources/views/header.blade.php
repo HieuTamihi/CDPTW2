@@ -85,6 +85,7 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
 <<<<<<< HEAD
+<<<<<<< HEAD
 <a class="nav-link active" aria-current="page" href="#">Việc làm
                                 IT</a>
                         </li>
@@ -93,6 +94,9 @@
                                 CV</a>
 =======
                             <a class="nav-link active" aria-current="page" href="#">Việc làm
+=======
+<a class="nav-link active" aria-current="page" href="#">Việc làm
+>>>>>>> origin/register_and_send_mail
                                 IT</a>
                         </li>
                         <li class="nav-item">
@@ -112,6 +116,7 @@
             </div>
             <div class="header__right d-flex">
                 <ul>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -155,6 +160,9 @@
 =======
                     @if (Auth::check() && Auth::user()->role == 2)
 >>>>>>> origin/detail_page
+=======
+                    @if (Auth::check() && Auth::user()->role == 2)
+>>>>>>> origin/register_and_send_mail
                     <li><a class="btn btn-danger header__right--logemp" href="#">Đăng tuyển</a></li>
                     <li>
                         <form method="POST" name="logout" action="{{ route('logout') }}">
@@ -162,7 +170,10 @@
                             <a href="javascript:document.logout.submit()" class="btn btn-dark header__right--logcus"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
                         </form>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/register_and_send_mail
                     </li>
                     @elseif(Auth::check() && Auth::user()->role == 3)
                     <li>
@@ -183,7 +194,10 @@
                     @else
                     <li>
                         <a class="btn btn-dark header__right--logcus" href="{{ asset('login') }}">Đăng nhập</a>
+<<<<<<< HEAD
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_and_send_mail
                     </li>
                     @elseif(Auth::check() && Auth::user()->role == 3)
                     <li>
@@ -250,10 +264,14 @@
     <footer class="footer">
         <div class="container">
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div class="row">
 =======
             <div class="row">
 >>>>>>> blog_home
+=======
+<div class="row">
+>>>>>>> origin/register_and_send_mail
                 <div class="col-md-3 footer__adresse ">
                     <!-- <a href=""><img src="img/logo-td.png" alt="" /></a> -->
                     <ul>

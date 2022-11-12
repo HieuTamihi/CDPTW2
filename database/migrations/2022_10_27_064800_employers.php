@@ -23,6 +23,7 @@ class Employers extends Migration
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->string('website');
             $table->string('infor',5000);
             $table->string('responsibility',5000);
@@ -39,10 +40,13 @@ class Employers extends Migration
 =======
             $table->integer('user_id');
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_and_send_mail
             $table->string('website')->nullable();
             $table->string('infor',5000)->nullable();
             $table->string('responsibility',5000)->nullable();
             $table->string('welfare',500)->nullable();
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -61,10 +65,13 @@ class Employers extends Migration
 >>>>>>> origin/confirm_email
 =======
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_and_send_mail
             $table->string('name_company');
             $table->string('address')->nullable();
             $table->string('image')->nullable();
             $table->string('email');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -78,6 +85,9 @@ class Employers extends Migration
 =======
             $table->string('phone_number',11);
 >>>>>>> origin/detail_page
+=======
+            $table->string('phone_number',11);
+>>>>>>> origin/register_and_send_mail
             $table->timestamps();
         });
     }

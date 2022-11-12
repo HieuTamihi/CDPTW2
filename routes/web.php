@@ -7,12 +7,15 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CRUDListJobController;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use App\Http\Controllers\RUEmployerController;
 >>>>>>> RUEmployer_By_ID
 =======
 use App\Http\Controllers\RUEmployerController;
 >>>>>>> origin/change_password_employer
+=======
+>>>>>>> origin/register_and_send_mail
 use App\Http\Controllers\CvController;
 use App\Http\Controllers\CRUDUserController;
 use App\Http\Controllers\CRUDEmloyerController;
@@ -93,6 +96,7 @@ Route::get('/registerCT', [UserController::class, 'getCustomerID']);
 //Active tai khoan
 Route::get('active/{newUser}/{confirm}',[UserController::class,'active'])->name('activeAcount');
 
+<<<<<<< HEAD
 //customer
 // Route::resource('/personal_info', CustomerController::class);
 Route::get('/ShowEditUser/{id}', [CustomerController::class, 'ShowEditUser'])->name('ShowEditUser');
@@ -182,6 +186,8 @@ Route::get('/registerCT', [UserController::class, 'getCustomerID']);
 //Active tai khoan
 Route::get('active/{newUser}/{confirm}',[UserController::class,'active'])->name('activeAcount');
 
+=======
+>>>>>>> origin/register_and_send_mail
 //customer
 // Route::resource('/personal_info', CustomerController::class);
 Route::get('/ShowEditUser/{id}', [CustomerController::class, 'ShowEditUser'])->name('ShowEditUser');
@@ -203,6 +209,8 @@ Route::resource('wishlist', WishlistController::class);
 //admin
 Route::resource('listjobPosting', JobpostingController::class);
 Route::resource('employer', EmployerController::class);
+// Employer - quan ly job by employer_id
+Route::resource('CRUDJobByEmployer',CRUDListJobController::class);
 
 
 

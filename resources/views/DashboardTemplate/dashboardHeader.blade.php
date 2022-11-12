@@ -9,6 +9,7 @@
 @if(Auth::check())
 @if(Auth::user()->role == 1 || Auth::user()->role == 2 )
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 >>>>>>> CRUD_Job_By_Emloy_id
@@ -40,6 +41,8 @@
 @if(Auth::check())
 @if(Auth::user()->role == 1 || Auth::user()->role == 2 )
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_and_send_mail
 <!DOCTYPE html>
 <html>
 
@@ -352,6 +355,7 @@
                         </li>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> blog_home
 =======
                         <!-- List Job By Employer_ID -->
@@ -359,10 +363,14 @@
 =======
                         <!-- List Job By Employer_ID -->
 >>>>>>> origin/detail_page
+=======
+                        <!-- List Job By Employer_ID -->
+>>>>>>> origin/register_and_send_mail
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -384,11 +392,15 @@
 =======
                                     Lists Job Posting
 >>>>>>> origin/detail_page
+=======
+                                    Lists Job Posting
+>>>>>>> origin/register_and_send_mail
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -439,10 +451,16 @@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Lists job</p>
 >>>>>>> origin/detail_page
+=======
+                                    <a href="{{route('CRUDJobByEmployer.index')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Lists job</p>
+>>>>>>> origin/register_and_send_mail
                                     </a>
                                 </li>
                             </ul>
                         </li>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -503,6 +521,8 @@
 >>>>>>> RUEmployer_By_ID
 =======
 >>>>>>> origin/change_password_employer
+=======
+>>>>>>> origin/register_and_send_mail
                         <!-- END List Job  -->
 
                         <!-- <ul class="nav nav-treeview">

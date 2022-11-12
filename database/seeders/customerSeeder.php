@@ -69,6 +69,7 @@ class customerSeeder extends Seeder
                 'favorite' => 'Java, PHP, JS',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 'email' => 'abc@gmail.com',
                 'phone_number' => '000000',
@@ -93,6 +94,8 @@ class customerSeeder extends Seeder
 >>>>>>> origin/change_password_employer
 =======
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_and_send_mail
                 'status' => '1',
             ],
         ]);

@@ -135,6 +135,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <h6 class="navi__fol">Theo dõi</h6>
 =======
 =======
@@ -143,6 +144,8 @@
 >>>>>>> origin/change_password_employer
 =======
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_and_send_mail
                     @if(Auth::check())
                     <form action="{{route('wishlist.store')}}" method="POST">
                         @csrf
@@ -163,6 +166,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> CRUD_Job_By_Emloy_id
 =======
 >>>>>>> RUEmployer_By_ID
@@ -170,6 +174,8 @@
 >>>>>>> origin/change_password_employer
 =======
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_and_send_mail
                 </div>
                 <div class="content">
                     <div class="row">

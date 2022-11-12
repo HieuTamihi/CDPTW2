@@ -11,6 +11,7 @@ class Employer extends Model
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function jobs()
     {
         return $this->hasMany(Job_posting::class);
@@ -69,6 +70,16 @@ class Employer extends Model
         'email',
         'phone_number'
 >>>>>>> origin/detail_page
+=======
+    protected $table = 'employers';
+    protected $fillable = [
+        'user_id',
+        'name_company',
+        'address',
+        'image',
+        'email',
+        'phone_number'
+>>>>>>> origin/register_and_send_mail
     ];
     public function jobs()
     {

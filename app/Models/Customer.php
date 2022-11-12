@@ -12,6 +12,7 @@ class Customer extends Model
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/change_password_employer
@@ -23,6 +24,8 @@ class Customer extends Model
         ->withPivot('status');
     }
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_and_send_mail
     protected $fillable = [
         'id',
         'email',

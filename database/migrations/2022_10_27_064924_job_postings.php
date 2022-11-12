@@ -27,6 +27,7 @@ class JobPostings extends Migration
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->string('token');
 =======
             $table->string('token')->nullable();
@@ -42,6 +43,9 @@ class JobPostings extends Migration
 =======
             $table->string('token')->nullable();
 >>>>>>> origin/detail_page
+=======
+            $table->string('token')->nullable();
+>>>>>>> origin/register_and_send_mail
             $table->timestamps();
         });
     }

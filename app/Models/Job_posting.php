@@ -24,6 +24,7 @@ class Job_posting extends Model
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 =======
@@ -55,6 +56,9 @@ class Job_posting extends Model
 >>>>>>> origin/change_password_employer
 =======
 >>>>>>> origin/detail_page
+=======
+    protected $table = 'Job_postings';
+>>>>>>> origin/register_and_send_mail
     protected $fillable = [
         'employer_id',
         'title',
@@ -65,6 +69,7 @@ class Job_posting extends Model
         'salary',
         'token',
     ];
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -83,3 +88,6 @@ class Job_posting extends Model
 =======
 }
 >>>>>>> origin/detail_page
+=======
+}
+>>>>>>> origin/register_and_send_mail

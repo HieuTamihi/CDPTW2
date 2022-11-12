@@ -13,9 +13,13 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use App\Http\Requests\User\RegisterRequest;
 use App\Http\Requests\User\LoginRequest;
 =======
+=======
+use App\Http\Requests\User\RegisterRequest;
+>>>>>>> origin/register_and_send_mail
 
 >>>>>>> origin/confirm_email
 =======
@@ -29,7 +33,11 @@ class UserController extends Controller
         Auth::logout();
         return redirect()->route('login');
     }
+<<<<<<< HEAD
     public function login(LoginRequest $request)
+=======
+    public function login(RegisterRequest $request)
+>>>>>>> origin/register_and_send_mail
     {
         $validator = Validator::make($request->all(), []);
 
@@ -71,12 +79,7 @@ class UserController extends Controller
     public function register(RegisterRequest $request)
     {
         if ($request->isMethod('post')) {
-            $validator = Validator::make($request->all(), [
-                'email' => 'required|email',
-                'phone' => 'required|numeric|min:10',
-                'password' => 'required|confirmed|min:6',
-
-            ]);
+            $validator = Validator::make($request->all(), []);
             if ($validator->fails()) {
                 return redirect()->back()
                     ->withErrors($validator)
@@ -96,6 +99,7 @@ class UserController extends Controller
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if($request->role == 3){
                         Employer::create([
                             'user_id' => $request->user_id,
@@ -109,6 +113,8 @@ class UserController extends Controller
 >>>>>>> origin/change_password_employer
 =======
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_and_send_mail
 
                 //Add Employer table
                 Employer::create([
@@ -122,12 +128,16 @@ class UserController extends Controller
                 //Send mail
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_and_send_mail
                 Mail::send('DashboardTemplate.emails.active', compact('newUser'), function ($email) use ($newUser) {
                     $email->subject('Active Acount');
                     $email->to($newUser->email);
                 });
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> RUEmployer_By_ID
@@ -135,6 +145,8 @@ class UserController extends Controller
 >>>>>>> origin/change_password_employer
 =======
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_and_send_mail
                 return redirect()->route('register')->with('message', 'Tạo tài khoản thành công !');
 =======
                 Mail::send('DashboardTemplate.emails.active',compact('newUser'),function($email) use($newUser) {
@@ -211,13 +223,17 @@ class UserController extends Controller
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/register_and_send_mail
     // Active
     public function active(User $newUser, $confirm)
     {
         if ($newUser->confirm == $confirm) {
             $newUser->update([
                 'status' => '1',
+<<<<<<< HEAD
 =======
 
     // Active
@@ -227,15 +243,20 @@ class UserController extends Controller
             $newUser->update([
                 'status'=> '1',
 >>>>>>> origin/confirm_email
+=======
+>>>>>>> origin/register_and_send_mail
                 'confirm' => '',
             ]);
             return redirect()->route('login');
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/change_password_employer
 =======
 >>>>>>> origin/confirm_email
+=======
+>>>>>>> origin/register_and_send_mail
 }
 =======
     // Active

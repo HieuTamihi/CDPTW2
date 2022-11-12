@@ -25,6 +25,7 @@ class job_postingSeeder extends Seeder
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 'salary' => '2000',
                 'token' => 'c4ca4238a0b923820dcc509a6f75849b'
 <<<<<<< HEAD
@@ -38,10 +39,17 @@ class job_postingSeeder extends Seeder
             ],
             [
 >>>>>>> RUEmployer_By_ID
+=======
+                'salary' => '2000',
+                'token' => 'c4ca4238a0b923820dcc509a6f75849b'
+            ],
+            [
+>>>>>>> origin/register_and_send_mail
                 'employer_id' => '2',
                 'title' => '[All Levels/Fresher] Software engineers (SalesForce/Apex/Java)',
                 'experience' => 'Mới ra trường, All Levels', 'type' => 'Fulltime',
                 'skill' => 'Java , Salesforce, Software Engineer',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 'required' => 'Software engineers have bachelor degree in relevant field, from 0 up to 2 years of work experience ,
@@ -92,6 +100,11 @@ class job_postingSeeder extends Seeder
                 'salary' => '5** - 2***',
                 'token' => 'c81e728d9d4c2f636f067f89cc14862c'
 >>>>>>> origin/detail_page
+=======
+                'required' => 'Software engineers have bachelor degree in relevant field, from 0 up to 2 years of work experience , Familiar with Salesforce Apex programming language or JAVA, C++, .Net, Good mindset, ability to multi-task, prioritize, and manage time effectively',
+                'salary' => '5** - 2***',
+                'token' => 'c81e728d9d4c2f636f067f89cc14862c'
+>>>>>>> origin/register_and_send_mail
             ], [
                 'employer_id' => '3',
                 'title' => 'Sr. Back-end Developer (PHP/Laravel)',
@@ -102,10 +115,13 @@ class job_postingSeeder extends Seeder
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> origin/change_password_employer
 =======
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/register_and_send_mail
                 5+ years of professional experience in building Web Applications using PHP Laravel; MySQL, 
                 Sound knowledge of Frontend Technologies including HTML5, JavaScript; CSS3',
                 'salary' => 'Offer ',
@@ -122,6 +138,7 @@ class job_postingSeeder extends Seeder
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 'salary' => 'Offer '
 =======
                 'salary' => 'Offer ',
@@ -143,6 +160,10 @@ class job_postingSeeder extends Seeder
                 'salary' => 'Offer ',
                 'token' => 'a87ff679a2f3e71d9181a67b7542122c'
 >>>>>>> origin/detail_page
+=======
+                'salary' => 'Offer ',
+                'token' => 'a87ff679a2f3e71d9181a67b7542122c'
+>>>>>>> origin/register_and_send_mail
             ],
             [
                 'employer_id' => '5',
@@ -156,6 +177,7 @@ class job_postingSeeder extends Seeder
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 'salary' => 'Offer '
 =======
                 'salary' => 'Offer ',
@@ -179,6 +201,10 @@ class job_postingSeeder extends Seeder
                 'salary' => 'Offer ',
                 'token' => 'e4da3b7fbbce2345d7772b0674a318d5'
 >>>>>>> origin/detail_page
+=======
+                'salary' => 'Offer ',
+                'token' => 'e4da3b7fbbce2345d7772b0674a318d5'
+>>>>>>> origin/register_and_send_mail
             ],
             [
                 'employer_id' => '6',
@@ -192,6 +218,7 @@ class job_postingSeeder extends Seeder
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 'salary' => 'Offer '
 =======
                 'salary' => 'Offer ',
@@ -215,6 +242,10 @@ class job_postingSeeder extends Seeder
                 'salary' => 'Offer ',
                 'token' => '1679091c5a880faf6fb5e6087eb1b2dc'
 >>>>>>> origin/detail_page
+=======
+                'salary' => 'Offer ',
+                'token' => '1679091c5a880faf6fb5e6087eb1b2dc'
+>>>>>>> origin/register_and_send_mail
             ],
             [
                 'employer_id' => '7',
@@ -224,6 +255,7 @@ class job_postingSeeder extends Seeder
 <<<<<<< HEAD
                 'skill' => 'PHP , Laravel, Back-End',
                 'required' => 'Tạo phân quyền nhóm người sử dụng vào hệ thống ứng dụng CoreBanking; và một số hệ thống quản trị ngoài Corebanking',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -256,6 +288,10 @@ class job_postingSeeder extends Seeder
                 'salary' => 'Offer ',
                 'token' => '8f14e45fceea167a5a36dedd4bea2543'
 >>>>>>> origin/detail_page
+=======
+                'salary' => 'Offer ',
+                'token' => '8f14e45fceea167a5a36dedd4bea2543'
+>>>>>>> origin/register_and_send_mail
             ]
         ]);
     }
