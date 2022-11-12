@@ -11,8 +11,12 @@ use App\Models\User;
 use App\Models\Employer;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
+<<<<<<< HEAD
 use App\Http\Requests\User\RegisterRequest;
 use App\Http\Requests\User\LoginRequest;
+=======
+
+>>>>>>> origin/confirm_email
 class UserController extends Controller
 {
     public function logout()
@@ -108,6 +112,7 @@ class UserController extends Controller
                 ]);
 
                 //Send mail
+<<<<<<< HEAD
                 Mail::send('DashboardTemplate.emails.active', compact('newUser'), function ($email) use ($newUser) {
                     $email->subject('Active Acount');
                     $email->to($newUser->email);
@@ -117,6 +122,13 @@ class UserController extends Controller
 =======
 >>>>>>> origin/change_password_employer
                 return redirect()->route('register')->with('message', 'Tạo tài khoản thành công !');
+=======
+                Mail::send('DashboardTemplate.emails.active',compact('newUser'),function($email) use($newUser) {
+                    $email->subject('Active Acount');
+                    $email->to($newUser->email);
+                });
+                return redirect()->route('register')->with('message', 'Tạo tài khoản thành công vui lòng vào email để xác thực!');
+>>>>>>> origin/confirm_email
             } else {
                 return redirect()->route('register')->with('message', 'Tài khoản đã tồn tại !');
             }
@@ -184,6 +196,7 @@ class UserController extends Controller
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     // Active
     public function active(User $newUser, $confirm)
@@ -191,12 +204,24 @@ class UserController extends Controller
         if ($newUser->confirm == $confirm) {
             $newUser->update([
                 'status' => '1',
+=======
+
+    // Active
+    public function active(User $newUser,$confirm)
+    {
+        if($newUser->confirm == $confirm){
+            $newUser->update([
+                'status'=> '1',
+>>>>>>> origin/confirm_email
                 'confirm' => '',
             ]);
             return redirect()->route('login');
         }
     }
+<<<<<<< HEAD
 >>>>>>> origin/change_password_employer
+=======
+>>>>>>> origin/confirm_email
 }
 =======
     // Active

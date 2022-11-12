@@ -21,6 +21,7 @@ class Employers extends Migration
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->string('website');
             $table->string('infor',5000);
             $table->string('responsibility',5000);
@@ -32,10 +33,13 @@ class Employers extends Migration
 >>>>>>> RUEmployer_By_ID
 =======
 >>>>>>> origin/change_password_employer
+=======
+>>>>>>> origin/confirm_email
             $table->string('website')->nullable();
             $table->string('infor',5000)->nullable();
             $table->string('responsibility',5000)->nullable();
             $table->string('welfare',500)->nullable();
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -48,6 +52,8 @@ class Employers extends Migration
 >>>>>>> blog_home
 =======
 >>>>>>> origin/change_password_employer
+=======
+>>>>>>> origin/confirm_email
             $table->string('name_company');
             $table->string('address')->nullable();
             $table->string('image')->nullable();

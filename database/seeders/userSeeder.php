@@ -28,9 +28,13 @@ class userSeeder extends Seeder
                 'phone' => '0987712063',
                 'password' => '$2y$10$MMo3y1jxrv5hxGNzZrzivumc/FOzkCAXM6JumDcANaoCi23/wRHka',
 <<<<<<< HEAD
+<<<<<<< HEAD
                 'customer_id' => null,
 =======
 >>>>>>> CRUD_Employer_By_ID
+=======
+                'customer_id' => '1',
+>>>>>>> origin/confirm_email
                 'role' => '1',
                 'status' => '1',
             ],
@@ -39,9 +43,13 @@ class userSeeder extends Seeder
                 'phone' => '0987712063',
                 'password' => '$2y$10$y2NorDtAaQ9Wpkymi86zsu7U8X1zezLFKqPqkpT42pjkdJqVCTuLm',
 <<<<<<< HEAD
+<<<<<<< HEAD
                 'customer_id' => null,
 =======
 >>>>>>> CRUD_Employer_By_ID
+=======
+                'customer_id' => '1',
+>>>>>>> origin/confirm_email
                 'role' => '2',
                 'status' => '1',
             ],

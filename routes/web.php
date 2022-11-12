@@ -185,6 +185,7 @@ Route::get('/detail_page/{id}', [EmployerController::class, 'show']);
 Route::get('listpostbyid',[EmployerController::class,'getPostByID']);
 Route::resource('employer', EmployerController::class);
 Route::get('/detail_page/{id}',[EmployerController::class,'show']);
+<<<<<<< HEAD
 // get post by id employer
 // Route::get('Employser/listpost', [viewController::class,'getListPostByID'])->name('view_employer');
 
@@ -203,6 +204,12 @@ Route::resource('CRUDEmployer',CRUDEmployer::class);
 
 
 >>>>>>> blog_home
+=======
+
+//Active
+Route::get('active/{newUser}/{confirm}',[UserController::class,'active'])->name('activeAcount');
+
+>>>>>>> origin/confirm_email
 Route::get('/{name?}', function ($name = "index") {
     return view($name);
 });
