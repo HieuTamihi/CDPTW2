@@ -16,101 +16,25 @@ class customerSeeder extends Seeder
     {
         DB::table('customers')->insert([
             [
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> origin/detail_page
                 'email' => 'thaihieu123@gmail.com',
                 'phone_number' => '0123456789',
-                'fullname' => 'Thai Hieu',
+                'fullname' => 'ABC',
                 'date' => '2002-10-11',
                 'address' => 'Quận 9',
                 'gender' => '0',
                 'favorite' => 'Java, PHP',
-=======
-                'email' => 'thaihieu123@gmail.com',
-                'phone_number' => '0123456789',
-                'fullname' => 'ABC',
-                'gender' => '0',
->>>>>>> origin/register_employer
                 'status' => '1',
             ],
             [
                 'email' => 'thaihieu124@gmail.com',
                 'phone_number' => '0123456788',
-<<<<<<< HEAD
-                'fullname' => 'Nguyen Van A',
-                'date' => '2002-10-10',
-                'address' => 'Quận 7',
-                'gender' => '0',
-                'favorite' => 'Java, PHP, JS',
-                'status' => '1',
-            ],
-            [
-                'email' => 'thaihieu124@gmail.com',
-                'phone_number' => '0123456785',
-                'fullname' => 'Tran Van B',
-                'date' => '2002-10-10',
-                'address' => 'Quận 7',
-                'gender' => '1',
-                'favorite' => 'Java, PHP, JS',
-                'status' => '1',
-            ],
-            [
-                'email' => 'thaihieu124@gmail.com',
-                'phone_number' => '0123456780',
-                'fullname' => 'Nguyen Van C',
-                'date' => '2002-10-10',
-                'address' => 'Quận 7',
-                'gender' => '1',
-                'favorite' => 'Java, PHP, JS',
-                'status' => '1',
-            ],
-            [
-                'email' => 'thaihieu124@gmail.com',
-                'phone_number' => '0123456782',
-                'fullname' => 'Tran Van C',
-                'date' => '2002-10-10',
-                'address' => 'Quận 7',
-                'gender' => '1',
-                'favorite' => 'Java, PHP, JS',
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-                'email' => 'abc@gmail.com',
-                'phone_number' => '000000',
-                'fullname' => 'ABC',
-                'gender' => '0',
-                'status' => '0',
-            ],
-            [
-                'email' => 'def@gmail.com',
-                'phone_number' => '111111',
-=======
->>>>>>> origin/register_employer
                 'fullname' => 'DEF',
+                'date' => '2002-10-10',
+                'address' => 'Quận 7',
                 'gender' => '0',
+                'favorite' => 'Java, PHP, JS',
                 'status' => '1',
             ],
-<<<<<<< HEAD
-            [
-                'email' => 'xyz@gmail.com',
-                'phone_number' => '222222',
-                'fullname' => 'XYZ',
-                'gender' => '0',
->>>>>>> blog_home
-=======
->>>>>>> origin/change_password_employer
-=======
->>>>>>> origin/detail_page
-=======
->>>>>>> origin/register_and_send_mail
-                'status' => '1',
-            ],
-=======
->>>>>>> origin/register_employer
         ]);
     }
 }

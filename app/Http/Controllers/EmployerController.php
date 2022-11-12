@@ -2,33 +2,17 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use App\Models\Customer;
 use App\Models\Cv;
 use App\Models\Employer;
 use App\Models\Job_posting;
-<<<<<<< HEAD
 use App\Models\Recruitment;
-use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-=======
-use Illuminate\Http\Request;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Auth;
->>>>>>> origin/detail_page
-
-=======
-use App\Models\Employer;
-use App\Models\Job_posting;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
->>>>>>> origin/register_employer
-class EmployerController extends Controller
-{
+class EmployerController extends Controller{
     /**
      * Display a listing of the resource.
      *
@@ -36,12 +20,10 @@ class EmployerController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
         // lấy hết tất cả dữ liều trong Employer
         $employer = Employer::all();
         // lấy hết tất cả dữ liều trong Job_posting
         $job = Job_posting::all();
-<<<<<<< HEAD
         $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->get();
         return view('index', compact('employer', 'job', 'name'));
     }
@@ -49,16 +31,12 @@ class EmployerController extends Controller
     public function getPostByID()
     {
         return view('listemployer', compact('getPostByID'));
-=======
         $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->select('name_company')->get();
         return view('index', compact('employer', 'job', 'name'));
->>>>>>> origin/detail_page
-=======
         $employer = Employer::all();
         $job = Job_posting::all();
         $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->select('name_company')->get();
         return view('index', compact('employer', 'job', 'name'));
->>>>>>> origin/register_employer
     }
 
     /**
@@ -92,33 +70,19 @@ class EmployerController extends Controller
     {
         $detail = Employer::findOrFail($id);
         $relate = $detail->jobs->take(1);
-<<<<<<< HEAD
-<<<<<<< HEAD
         $job_relate = $detail->jobs->take(3);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         $date = Carbon::now()->day;
         $job_relate = $detail->jobs->take(3);
->>>>>>> origin/detail_page
         $customer_id = Auth::user()->customer_id;
         $apply = Customer::leftJoin('users', 'users.customer_id', '=', 'customers.id')->where('customers.id', '=', $customer_id)->first();
         $id = Auth::user()->customer_id;
         $cv = Cv::where('customer_id', '=', $id)->get();
-<<<<<<< HEAD
         return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv'));
-=======
         return view('detail_page', compact('detail', 'relate', 'job_relate'));
->>>>>>> CRUD_Employer_By_ID
-=======
         return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv','date'));
->>>>>>> origin/detail_page
-=======
         $date = Carbon::now()->day;
         $job_relate = $detail->jobs->take(3);
         return view('detail_page',compact('detail','relate','job_relate','date'));
->>>>>>> origin/register_employer
-=======
         if(Auth::check())
         {
             $customer_id = Auth::user()->customer_id;
@@ -128,7 +92,6 @@ class EmployerController extends Controller
             return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv'));
         }
         return view('detail_page', compact('detail', 'relate', 'job_relate'));
->>>>>>> origin/update_cv,unfollow_wish_list,reset_password
     }
 
     /**
@@ -164,8 +127,4 @@ class EmployerController extends Controller
     {
         //
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/register_employer

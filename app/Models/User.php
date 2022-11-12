@@ -21,33 +21,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         'customer_id', 
         'email',
-=======
-        'email',
-        'user_id', 
-        'customer_id', 
->>>>>>> origin/confirm_email
-=======
-        'customer_id', 
-        'email',
->>>>>>> origin/detail_page
-=======
-        'customer_id', 
-        'email',
->>>>>>> origin/register_and_send_mail
         'phone', 
         'password', 
         'role', 
         'status',
         'confirm'
-=======
-        'email', 'user_id', 'customer_id', 'phone', 'password', 'role', 'status'
->>>>>>> origin/register_employer
     ];
 
     /**

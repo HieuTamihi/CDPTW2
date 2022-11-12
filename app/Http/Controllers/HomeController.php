@@ -14,16 +14,8 @@ class HomeController extends Controller
             ->orWhere('skill', 'like', '%' . $request->keyword . '%')
             ->orWhere('salary', 'like', '%' . $request->keyword . '%')
             ->get();
-
-<<<<<<< HEAD
-<<<<<<< HEAD
         // dd($jobTitle);
-=======
->>>>>>> blog_home
-=======
         // dd($jobTitle);
->>>>>>> origin/register_employer
-
         return view('search', compact('jobTitle', 'request'));
     }
 }

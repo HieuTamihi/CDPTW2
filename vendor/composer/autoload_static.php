@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit3acf5955aeaec02e63728b4e6ee8ad79
+class ComposerStaticInite4f3c215e8755cd86f910ffc8dcf1335
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -319,8 +319,8 @@ class ComposerStaticInit3acf5955aeaec02e63728b4e6ee8ad79
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -498,11 +498,21 @@ class ComposerStaticInit3acf5955aeaec02e63728b4e6ee8ad79
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
-        'App\\Http\\Controllers\\BlogController' => __DIR__ . '/../..' . '/app/Http/Controllers/BlogController.php',
+        'App\\Http\\Controllers\\AdminCommentsController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminCommentsController.php',
+        'App\\Http\\Controllers\\AdminPostsController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminPostsController.php',
+        'App\\Http\\Controllers\\CRUDEmloyerController' => __DIR__ . '/../..' . '/app/Http/Controllers/CRUDEmloyerController.php',
+        'App\\Http\\Controllers\\CRUDEmployer' => __DIR__ . '/../..' . '/app/Http/Controllers/CRUDEmployer.php',
+        'App\\Http\\Controllers\\CRUDJobpostingController' => __DIR__ . '/../..' . '/app/Http/Controllers/CRUDJobpostingController.php',
+        'App\\Http\\Controllers\\CRUDUserController' => __DIR__ . '/../..' . '/app/Http/Controllers/CRUDUserController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\CustomerController' => __DIR__ . '/../..' . '/app/Http/Controllers/CustomerController.php',
+        'App\\Http\\Controllers\\CvController' => __DIR__ . '/../..' . '/app/Http/Controllers/CvController.php',
         'App\\Http\\Controllers\\EmployerController' => __DIR__ . '/../..' . '/app/Http/Controllers/EmployerController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
-        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
+        'App\\Http\\Controllers\\RecruimentController' => __DIR__ . '/../..' . '/app/Http/Controllers/RecruimentController.php',
+        'App\\Http\\Controllers\\RecruitmentController' => __DIR__ . '/../..' . '/app/Http/Controllers/RecruitmentController.php',
+        'App\\Http\\Controllers\\WishlistController' => __DIR__ . '/../..' . '/app/Http/Controllers/WishlistController.php',
+        'App\\Http\\Controllers\\viewController' => __DIR__ . '/../..' . '/app/Http/Controllers/viewController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -512,8 +522,25 @@ class ComposerStaticInit3acf5955aeaec02e63728b4e6ee8ad79
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\AdminPostsRequest' => __DIR__ . '/../..' . '/app/Http/Requests/AdminPostsRequest.php',
+        'App\\Http\\Requests\\CRUDEmlpoyerRequests' => __DIR__ . '/../..' . '/app/Http/Requests/CRUDEmlpoyerRequests.php',
+        'App\\Http\\Requests\\CRUDJobpostingRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CRUDJobpostingRequest.php',
+        'App\\Http\\Requests\\Employer\\ChangePasswordRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Employer/ChangePasswordRequest.php',
+        'App\\Http\\Requests\\Employer\\UpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Employer/UpdateRequest.php',
+        'App\\Http\\Requests\\Job_posting\\StoreRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Job_posting/StoreRequest.php',
+        'App\\Http\\Requests\\Job_posting\\UpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Job_posting/UpdateRequest.php',
+        'App\\Http\\Requests\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/LoginRequest.php',
+        'App\\Http\\Requests\\RecruitmentRequest' => __DIR__ . '/../..' . '/app/Http/Requests/RecruitmentRequest.php',
+        'App\\Http\\Requests\\User\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/User/LoginRequest.php',
+        'App\\Http\\Requests\\User\\RegisterRequest' => __DIR__ . '/../..' . '/app/Http/Requests/User/RegisterRequest.php',
+        'App\\Models\\Comment' => __DIR__ . '/../..' . '/app/Models/Comment.php',
+        'App\\Models\\Customer' => __DIR__ . '/../..' . '/app/Models/Customer.php',
+        'App\\Models\\Cv' => __DIR__ . '/../..' . '/app/Models/Cv.php',
         'App\\Models\\Employer' => __DIR__ . '/../..' . '/app/Models/Employer.php',
+        'App\\Models\\Job_posting' => __DIR__ . '/../..' . '/app/Models/Job_posting.php',
+        'App\\Models\\Recruitment' => __DIR__ . '/../..' . '/app/Models/Recruitment.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\Wish_lists' => __DIR__ . '/../..' . '/app/Models/Wish_lists.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -611,6 +638,7 @@ class ComposerStaticInit3acf5955aeaec02e63728b4e6ee8ad79
         'Carbon\\Traits\\Serialization' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Serialization.php',
         'Carbon\\Traits\\Test' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Test.php',
         'Carbon\\Traits\\Timestamp' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Timestamp.php',
+        'Carbon\\Traits\\ToStringFormat' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/ToStringFormat.php',
         'Carbon\\Traits\\Units' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Units.php',
         'Carbon\\Traits\\Week' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Week.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
@@ -629,13 +657,9 @@ class ComposerStaticInit3acf5955aeaec02e63728b4e6ee8ad79
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
-        'Database\\Seeders\\commentSeeder' => __DIR__ . '/../..' . '/database/seeders/commentSeeder.php',
         'Database\\Seeders\\customerSeeder' => __DIR__ . '/../..' . '/database/seeders/customerSeeder.php',
-        'Database\\Seeders\\cvSeeder' => __DIR__ . '/../..' . '/database/seeders/cvSeeder.php',
         'Database\\Seeders\\employerSeeder' => __DIR__ . '/../..' . '/database/seeders/employerSeeder.php',
         'Database\\Seeders\\job_postingSeeder' => __DIR__ . '/../..' . '/database/seeders/job_postingSeeder.php',
-        'Database\\Seeders\\postSeeder' => __DIR__ . '/../..' . '/database/seeders/postSeeder.php',
-        'Database\\Seeders\\recruitmentSeeder' => __DIR__ . '/../..' . '/database/seeders/recruitmentSeeder.php',
         'Database\\Seeders\\userSeeder' => __DIR__ . '/../..' . '/database/seeders/userSeeder.php',
         'Database\\Seeders\\wishlistSeeder' => __DIR__ . '/../..' . '/database/seeders/wishlistSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
@@ -4064,7 +4088,6 @@ class ComposerStaticInit3acf5955aeaec02e63728b4e6ee8ad79
         'Psy\\Command\\WtfCommand' => __DIR__ . '/..' . '/psy/psysh/src/Command/WtfCommand.php',
         'Psy\\ConfigPaths' => __DIR__ . '/..' . '/psy/psysh/src/ConfigPaths.php',
         'Psy\\Configuration' => __DIR__ . '/..' . '/psy/psysh/src/Configuration.php',
-        'Psy\\ConsoleColorFactory' => __DIR__ . '/..' . '/psy/psysh/src/ConsoleColorFactory.php',
         'Psy\\Context' => __DIR__ . '/..' . '/psy/psysh/src/Context.php',
         'Psy\\ContextAware' => __DIR__ . '/..' . '/psy/psysh/src/ContextAware.php',
         'Psy\\EnvInterface' => __DIR__ . '/..' . '/psy/psysh/src/EnvInterface.php',
@@ -4098,6 +4121,7 @@ class ComposerStaticInit3acf5955aeaec02e63728b4e6ee8ad79
         'Psy\\Output\\PassthruPager' => __DIR__ . '/..' . '/psy/psysh/src/Output/PassthruPager.php',
         'Psy\\Output\\ProcOutputPager' => __DIR__ . '/..' . '/psy/psysh/src/Output/ProcOutputPager.php',
         'Psy\\Output\\ShellOutput' => __DIR__ . '/..' . '/psy/psysh/src/Output/ShellOutput.php',
+        'Psy\\Output\\Theme' => __DIR__ . '/..' . '/psy/psysh/src/Output/Theme.php',
         'Psy\\ParserFactory' => __DIR__ . '/..' . '/psy/psysh/src/ParserFactory.php',
         'Psy\\Readline\\GNUReadline' => __DIR__ . '/..' . '/psy/psysh/src/Readline/GNUReadline.php',
         'Psy\\Readline\\HoaConsole' => __DIR__ . '/..' . '/psy/psysh/src/Readline/HoaConsole.php',
@@ -4198,9 +4222,15 @@ class ComposerStaticInit3acf5955aeaec02e63728b4e6ee8ad79
         'Psy\\VarDumper\\Presenter' => __DIR__ . '/..' . '/psy/psysh/src/VarDumper/Presenter.php',
         'Psy\\VarDumper\\PresenterAware' => __DIR__ . '/..' . '/psy/psysh/src/VarDumper/PresenterAware.php',
         'Psy\\VersionUpdater\\Checker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/Checker.php',
+        'Psy\\VersionUpdater\\Downloader' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/Downloader.php',
+        'Psy\\VersionUpdater\\Downloader\\CurlDownloader' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/Downloader/CurlDownloader.php',
+        'Psy\\VersionUpdater\\Downloader\\Factory' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/Downloader/Factory.php',
+        'Psy\\VersionUpdater\\Downloader\\FileDownloader' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/Downloader/FileDownloader.php',
         'Psy\\VersionUpdater\\GitHubChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/GitHubChecker.php',
+        'Psy\\VersionUpdater\\Installer' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/Installer.php',
         'Psy\\VersionUpdater\\IntervalChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/IntervalChecker.php',
         'Psy\\VersionUpdater\\NoopChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/NoopChecker.php',
+        'Psy\\VersionUpdater\\SelfUpdate' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/SelfUpdate.php',
         'Ramsey\\Collection\\AbstractArray' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractArray.php',
         'Ramsey\\Collection\\AbstractCollection' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractCollection.php',
         'Ramsey\\Collection\\AbstractSet' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractSet.php',
@@ -5366,10 +5396,10 @@ class ComposerStaticInit3acf5955aeaec02e63728b4e6ee8ad79
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit3acf5955aeaec02e63728b4e6ee8ad79::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit3acf5955aeaec02e63728b4e6ee8ad79::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit3acf5955aeaec02e63728b4e6ee8ad79::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit3acf5955aeaec02e63728b4e6ee8ad79::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInite4f3c215e8755cd86f910ffc8dcf1335::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInite4f3c215e8755cd86f910ffc8dcf1335::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInite4f3c215e8755cd86f910ffc8dcf1335::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInite4f3c215e8755cd86f910ffc8dcf1335::$classMap;
 
         }, null, ClassLoader::class);
     }

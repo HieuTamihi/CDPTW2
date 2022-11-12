@@ -28,11 +28,7 @@ class JobpostingController extends Controller
      */
     public function create()
     {
-<<<<<<< HEAD
-        
-=======
         //
->>>>>>> origin/register_employer
     }
 
     /**

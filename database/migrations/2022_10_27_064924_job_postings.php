@@ -22,33 +22,7 @@ class JobPostings extends Migration
             $table->string('skill');
             $table->string('required');
             $table->string('salary');
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            $table->string('token');
-=======
             $table->string('token')->nullable();
->>>>>>> CRUD_Job_By_Emloy_id
-=======
-            $table->string('token')->nullable();
->>>>>>> RUEmployer_By_ID
-=======
->>>>>>> blog_home
-=======
-            $table->string('token')->nullable();
->>>>>>> origin/change_password_employer
-=======
-            $table->string('token')->nullable();
->>>>>>> origin/detail_page
-=======
-            $table->string('token')->nullable();
->>>>>>> origin/register_and_send_mail
-=======
->>>>>>> origin/register_employer
             $table->timestamps();
         });
     }

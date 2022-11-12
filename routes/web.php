@@ -1,78 +1,26 @@
 <?php
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\CRUDListJobController;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-use App\Http\Controllers\RUEmployerController;
->>>>>>> RUEmployer_By_ID
-=======
-use App\Http\Controllers\RUEmployerController;
->>>>>>> origin/change_password_employer
-=======
->>>>>>> origin/register_and_send_mail
-use App\Http\Controllers\CvController;
 use App\Http\Controllers\CRUDUserController;
 use App\Http\Controllers\CRUDEmloyerController;
 use App\Http\Controllers\CRUDJobpostingController;
-=======
 use App\Http\Controllers\CRUDEmployer;
->>>>>>> CRUD_Employer_By_ID
-use App\Http\Controllers\EmployerController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\viewController;
-use App\Http\Controllers\HomeController;
-<<<<<<< HEAD
-use App\Http\Controllers\JobpostingController;
 use App\Http\Controllers\RecruitmentController;
-use App\Http\Controllers\WishlistController;
-<<<<<<< HEAD
-use App\Models\Customer;
-use App\Models\Wish_lists;
-=======
-use App\Http\Controllers\AdminPostsController;
-use App\Http\Controllers\BlogController;
 use App\Http\Controllers\AdminCommentsController;
 use App\Http\Controllers\BlogCommentController;
->>>>>>> CRUD_post
-=======
 use App\Http\Controllers\AdminPostsController;
 use App\Http\Controllers\BlogController;
-=======
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CRUDListJobController;
 use App\Http\Controllers\RUEmployerController;
 use App\Http\Controllers\CvController;
->>>>>>> origin/detail_page
-use App\Http\Controllers\EmployerController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\HomeController;
-<<<<<<< HEAD
->>>>>>> blog_home
-=======
 use App\Http\Controllers\JobpostingController;
 use App\Http\Controllers\RecruimentController;
-use App\Http\Controllers\TrackingworkController;
 use App\Http\Controllers\WishlistController;
-use App\Models\Customer;
-use App\Models\Wish_lists;
->>>>>>> origin/detail_page
-=======
 use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
->>>>>>> origin/register_employer
-=======
->>>>>>> origin/update_cv,unfollow_wish_list,reset_password
 
 /*
 |--------------------------------------------------------------------------
@@ -92,11 +40,6 @@ Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::get('/', [EmployerController::class, 'index'])->name('index');
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/register_employer
 //dang ky
 //dang ky tai khoan employer
 Route::post('/register', [UserController::class, 'register'])->name('register');
@@ -105,11 +48,9 @@ Route::get('/register', [UserController::class, 'getUserID']);
 Route::post('/registerCT', [UserController::class, 'registerCT'])->name('registerCT');
 Route::get('/registerCT', [UserController::class, 'getCustomerID']);
 
-<<<<<<< HEAD
 //Active tai khoan
 Route::get('active/{newUser}/{confirm}',[UserController::class,'active'])->name('activeAcount');
 
-<<<<<<< HEAD
 //customer
 // Route::resource('/personal_info', CustomerController::class);
 Route::get('/ShowEditUser/{id}', [CustomerController::class, 'ShowEditUser'])->name('ShowEditUser');
@@ -138,30 +79,18 @@ Route::resource('wishlist', WishlistController::class);
 //admin
 Route::resource('listjobPosting', JobpostingController::class);
 Route::resource('employer', EmployerController::class);
-<<<<<<< HEAD
 Route::resource('AdminUser', CRUDUserController::class);
-
 Route::resource('AdminJobposting', CRUDJobpostingController::class);
 Route::resource('AdminEmloyer', CRUDEmloyerController::class);
-=======
+
 // Employer - quan ly job by employer_id
 Route::resource('CRUDJobByEmployer',CRUDListJobController::class);
->>>>>>> CRUD_Job_By_Emloy_id
-
-
-
 
 // Employer - quan ly job by employer_id
 Route::resource('CRUDJobByEmployer',CRUDListJobController::class);
 // RU employer 
 Route::resource('RUEmployer',RUEmployerController::class);
 Route::get('/detail_re/{id}',[RUEmployerController::class,'detail_recruitment'])->name('detail_recruitment');
-
-
-
-
-
-
 
 // Employer - quan ly job by employer_id
 Route::resource('CRUDJobByEmployer',CRUDListJobController::class);
@@ -179,10 +108,8 @@ Route::put('changepass/{id}',[RUEmployerController::class,'changepass'])->name('
 //chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');
 Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
-<<<<<<< HEAD
 Route::get('admin', function () {
     return view('DashboardTemplate.dashboard');
-=======
 
 Route::get('blogSearch', [BlogController::class, 'blogSearch'])->name('blogSearch');
 
@@ -190,14 +117,9 @@ Route::get('blogSearch', [BlogController::class, 'blogSearch'])->name('blogSearc
 Route::resource('/admin-blog-home', AdminPostsController::class);
 Route::resource('/admin-blog-comment', AdminCommentsController::class);
 
-
-
-=======
 //dang ky
 //dang ky tai khoan employer
 Route::post('/register', [UserController::class, 'register'])->name('register');
-<<<<<<< HEAD
-=======
 Route::get('/register', [UserController::class, 'getUserID']);
 //dang ky tai khoan customer
 Route::post('/registerCT', [UserController::class, 'registerCT'])->name('registerCT');
@@ -206,8 +128,6 @@ Route::get('/registerCT', [UserController::class, 'getCustomerID']);
 //Active tai khoan
 Route::get('active/{newUser}/{confirm}',[UserController::class,'active'])->name('activeAcount');
 
-=======
->>>>>>> origin/register_and_send_mail
 //customer
 // Route::resource('/personal_info', CustomerController::class);
 Route::get('/ShowEditUser/{id}', [CustomerController::class, 'ShowEditUser'])->name('ShowEditUser');
@@ -233,8 +153,6 @@ Route::resource('employer', EmployerController::class);
 Route::resource('CRUDJobByEmployer',CRUDListJobController::class);
 
 
-
-
 // Employer - quan ly job by employer_id
 Route::resource('CRUDJobByEmployer',CRUDListJobController::class);
 // RU employer 
@@ -247,11 +165,9 @@ Route::get('recruit/{customer}',[RUEmployerController::class,'recruit'])->name('
 // Change pass Employer
 Route::get('showlayout/{id}',[RUEmployerController::class,'showlayout'])->name('showlayout');
 Route::put('changepass/{id}',[RUEmployerController::class,'changepass'])->name('changepass');
->>>>>>> origin/detail_page
 
 //chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');
-<<<<<<< HEAD
 
 Route::get('blogSearch', [BlogController::class, 'blogSearch'])->name('blogSearch');
 
@@ -263,54 +179,32 @@ Route::resource('/blog-home', AdminPostsController::class);
 Route::resource('/blog-add', AdminPostsController::class);
 // Route::resource('/blog-edit', AdminPostsController::class);
 // });
->>>>>>> blog_home
 
 
 Route::prefix('blogit')->group(function () {
     Route::get('/', [BlogController::class, 'featuredPosts'])->name('blogit');
     Route::get('blogDetail/{id}', [BlogController::class, 'blogDetail'])->name('blogDetail');
-<<<<<<< HEAD
->>>>>>> CRUD_post
 });
-<<<<<<< HEAD
 Route::get('/detail_page/{id}', [EmployerController::class, 'show']);
-=======
 Route::get('listpostbyid',[EmployerController::class,'getPostByID']);
 Route::resource('employer', EmployerController::class);
 Route::get('/detail_page/{id}',[EmployerController::class,'show']);
-<<<<<<< HEAD
 // get post by id employer
 // Route::get('Employser/listpost', [viewController::class,'getListPostByID'])->name('view_employer');
 
 // Manamge Employer by ID
 Route::resource('CRUDEmployer',CRUDEmployer::class);
-
-<<<<<<< HEAD
-
->>>>>>> CRUD_Employer_By_ID
-=======
->>>>>>> CRUD_post
-=======
 });
 
-
-
-
->>>>>>> blog_home
-=======
 
 //Active
 Route::get('active/{newUser}/{confirm}',[UserController::class,'active'])->name('activeAcount');
 
->>>>>>> origin/confirm_email
-=======
 Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
 Route::get('admin', function () {
     return view('DashboardTemplate.dashboard');
 });
 Route::get('/detail_page/{id}', [EmployerController::class, 'show']);
->>>>>>> origin/detail_page
-=======
 //admin
 Route::resource('listjobPosting', ControllersJobpostingController::class);
 Route::resource('employer', EmployerController::class);
@@ -324,7 +218,6 @@ Route::get('admin', function () {
     return view('DashboardTemplate.dashboard');
 });
 Route::get('/detail_page/{id}',[EmployerController::class,'show']);
->>>>>>> origin/register_employer
 Route::get('/{name?}', function ($name = "index") {
     return view($name);
 });

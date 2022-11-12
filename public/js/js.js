@@ -1,32 +1,12 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 $('#customid').slick({
     centerMode: true,
     centerPadding: '60px',
     slidesToShow: 2,
     appendArrows: '.contron-pre-next',
     autoplaySpeed: 4000,
-=======
-$('#hotid').slick({
->>>>>>> origin/detail_page
     infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    appendArrows: '.contron-pre-next',
-    autoplaySpeed: 1000,
-    arrows: true,
     autoplay: true,
     vertical: true,
-=======
-$('#hotid').slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    appendArrows: '.contron-pre-next',
-    autoplaySpeed: 1000,
-    arrows: true,
-    autoplay: true,
->>>>>>> origin/confirm_email
 });
 $('.intem-main').slick({
     infinite: true,
@@ -57,8 +37,4 @@ $('.intem-thume').slick({
     arrows: true,
     infinite: true,
     autoplay: true,
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> origin/confirm_email

@@ -15,10 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id()->autoIncrement();
-<<<<<<< HEAD
-=======
             $table->integer("employer_id")->nullable();
->>>>>>> origin/register_employer
             $table->integer("customer_id")->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -26,14 +23,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer("role");
             $table->integer("status");
-<<<<<<< HEAD
-<<<<<<< HEAD
             $table->string('confirm')->nullable();
-=======
->>>>>>> origin/register_employer
-=======
             $table->string('token')->nullable();
->>>>>>> origin/update_cv,unfollow_wish_list,reset_password
             $table->rememberToken()->nullable();
             $table->timestamps();
         });
