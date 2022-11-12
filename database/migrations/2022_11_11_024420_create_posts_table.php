@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Posts extends Migration
+class CreatePostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,12 +15,11 @@ class Posts extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->integer('comment_id')->nullable();
-            $table->integer('customer_id')->nullable();
             $table->string('title', 255);
             $table->text('content');
             $table->string('image', 255);
             $table->integer('views')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ class Posts extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('posts');
     }
 }

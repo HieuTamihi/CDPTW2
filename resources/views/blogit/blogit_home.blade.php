@@ -16,7 +16,6 @@
                     <div class="col-xs-12 col-sm-12 col-md-9">
                         <div class="noibat">
                             {{-- BAI VIET NOI BAT --}}
-<<<<<<< HEAD
                             @if (isset($featuredPosts))
                                 <h2 class="title-news">Bài viết nổi bật</h2>
                                 <div class="content-nb">
@@ -45,19 +44,6 @@
                                     </div>
                                 </div>
                             @endif
-=======
-                            <h2 class="title-news">Bài viết nổi bật</h2>
-                            <div class="content-nb">
-                                <a href="{{ route('blogDetail', $featuredPosts->id) }}"><img
-                                        src="{{ asset('img/blogit/' . $featuredPosts->image) }}"></a>
-                                <h4><a href="{{ route('blogDetail', $featuredPosts->id) }}">{{ $featuredPosts->title }}</a>
-                                </h4>
-                                <div class="meta">
-                                    <span>Ngày đăng: {{ date('d-m-Y', strtotime($featuredPosts->created_at)) }}</span>
-                                    <span>Lượt xem: 2344 Lượt</span>
-                                </div>
-                            </div>
->>>>>>> blog_home
                         </div>
                         <div class="post-news">
                             <h2 class="title-news">Bài viết mới nhất</h2>
@@ -70,12 +56,7 @@
                                             <h4><a href="{{ route('blogDetail', $row->id) }}">{{ $row->title }}</a></h4>
                                             <div class="meta">
                                                 <span>Ngày đăng: {{ date('d-m-Y', strtotime($row->created_at)) }}</span>
-<<<<<<< HEAD
                                                 <br> <span>Lượt xem: {{ $row->views }}</span>
-=======
-                                                <br> <span>Lượt xem: 2342
-                                                    Lượt</span>
->>>>>>> blog_home
                                             </div>
                                         </div>
                                         <div class="clear"></div>

@@ -8,8 +8,8 @@
             @endif
             <div class="card">
                 <div class="card-header">
-                    <a href="{{ route('blogTrash') }}">
-                        <h3 class="card-title btn btn-warning">Trash <i class="fas fa-trash-alt"></i></h3>
+                    <a href="{{ route('admin-blog-home.index') }}">
+                        <h3 class="card-title btn btn-primary"> <i class="fas fa-arrow-left"></i> Back</h3>
                     </a>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -40,17 +40,10 @@
                                 <td>{{ $result->views }}</td>
                                 <td> {{ date('d-m-Y', strtotime($result->created_at)) }}</td>
                                 <td class="project-actions text-left">
-                                    <a target="_blank_" class="btn btn-success btn-sm modify-icon"
-                                        href="{{ route('blogDetail', $result->id) }}">
-                                        <i class="fas fa-eye ">
-                                        </i>
-                                        View
-                                    </a>
-                                    <a class="btn btn-info btn-sm modify-icon"
-                                        href="{{ route('admin-blog-home.edit', $result->id) }}">
-                                        <i class="fas fa-pencil-alt ">
-                                        </i>
-                                        Edit
+                                    <a class="btn btn-warning btn-sm modify-icon"
+                                        href="{{ route('blogRestore', $result->id) }}">
+                                        <i class='fas fa-trash-restore-alt' style='font-size:20px'></i>
+                                        Restore
                                     </a>
                                     <form method="POST" action="{{ route('admin-blog-home.destroy', $result->id) }}">
                                         @csrf
