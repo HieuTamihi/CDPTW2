@@ -61,11 +61,15 @@ class EmployerController extends Controller
         $detail = Employer::findOrFail($id);
         $relate = $detail->jobs->take(1);
         $job_relate = $detail->jobs->take(3);
-        $customer_id = Auth::user()->customer_id;
-        $apply = Customer::leftJoin('users', 'users.customer_id', '=', 'customers.id')->where('customers.id', '=', $customer_id)->first();
-        $id = Auth::user()->customer_id;
-        $cv = Cv::where('customer_id', '=', $id)->get();
-        return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv'));
+        if(Auth::check())
+        {
+            $customer_id = Auth::user()->customer_id;
+            $apply = Customer::leftJoin('users', 'users.customer_id', '=', 'customers.id')->where('customers.id', '=', $customer_id)->first();
+            $id = Auth::user()->customer_id;
+            $cv = Cv::where('customer_id', '=', $id)->get();
+            return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv'));
+        }
+        return view('detail_page', compact('detail', 'relate', 'job_relate'));
     }
 
     /**
