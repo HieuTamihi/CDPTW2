@@ -1,5 +1,6 @@
 @extends('header')
 @section('footer')
+@if(Auth::check() && Auth::user()->role == 3)
 <div class="form__createcv">
     <div class="container">
         <p class="attention">Hướng dẫn <br>
@@ -9,6 +10,10 @@
         </p>
         @if(Session::has('message'))
         <div class="alert alert-success">{{Session::get('message')}}</div>
+        @elseif (session('error'))
+        <div class="alert alert-danger" role="alert">
+            {{ session('error') }}
+        </div>
         @endif
         <form action="{{route('cv.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -21,7 +26,7 @@
             <p class="title">Thông tin cá nhân</p>
             <div class="resume_form">
                 <div class="input__field"> <label for="">Ảnh 3x4 (*)</label>
-                    <input class="input__input" type="file" name="avatar">
+                    <input class="input__input" type="file" name="avatar" accept="image/*" required>
                 </div>
                 <div class="input__field">
                     <label for="">Họ và tên (*)</label>
@@ -64,7 +69,6 @@
                     <textarea name="infor_other" id="" cols="42" rows="3"></textarea>
                 </div>
                 <div class="input__button">
-                    <input type="button" class="btn btn-outline-danger" value="XEM TRƯỚC">
                     <input type="submit" class="btn btn-danger" value="LƯU CV">
                 </div>
             </div>
@@ -72,4 +76,5 @@
     </div>
 </div>
 <!-- Button trigger modal -->
+@endif
 @endsection

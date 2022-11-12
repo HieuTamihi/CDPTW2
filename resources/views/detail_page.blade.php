@@ -10,6 +10,10 @@
 </div>
 @if(Session::has('message'))
 <div class="alert alert-success">{{Session::get('message')}}</div>
+@elseif (session('error'))
+<div class="alert alert-danger" role="alert">
+    {{ session('error') }}
+</div>
 @endif
 <div class="container">
     <div class="detail__body">
@@ -17,7 +21,7 @@
             <div class="col-12 col-xl-9 detail_body__left">
                 <div class="information">
                     <div class="information__logo">
-                        <a href="#"><img src="{{asset('img/$detail->image')}}" alt=""></a>
+                        <a href="#"><img src="{{asset('img/'.$detail->image)}}" alt=""></a>
                     </div>
                     <div class="information__content">
                         <p>{{$detail->name_company}}</p>
@@ -31,6 +35,7 @@
                         <h6>Công việc</h6>
                     </a>
                     <h6>Chia sẻ</h6>
+                    @if(Auth::check() && Auth::user()->role == 3)
                     <form action="{{route('wishlist.store')}}" method="POST">
                         @csrf
                         @foreach($job_relate as $value)
@@ -40,16 +45,26 @@
                             <h6 class="navi__fol">Theo dõi</h6>
                         </button>
                     </form>
+                    @else
+                    <a href="{{route('login')}}">
+                        <button class="btn__like" style="border: none;background: transparent;">
+                            <h6 class="navi__fol">Theo dõi</h6>
+                        </button>
+                    </a>
+                    @endif
                 </div>
                 <div class="content">
                     <div class="row">
                         <div class="col-12 col-xl-9 content__left">
                             @foreach($relate as $value)
                             <h4>{{$value->title}}</h4>
+                            @if(Auth::check())
                             <p>{{$value->salary}}</p>
+                            @else
                             <a href="{{route('login')}}" class="font-size_a">
                                 <p>Đăng nhập để xem mức lương</p>
                             </a>
+                            @endif
                             <p><?php echo str_replace(' , ', '<p>', $detail->infor) ?></p>
                             </p>
                             <h2>Trách nhiệm công việc:</h2>
@@ -121,9 +136,9 @@
                     <a href="{{route('employer.show',$value->id)}}">
                         <h5>{{$value->title}}</h5>
                     </a>
-                    <a href="#" class="font-size_a">
+                    <!-- <a href="#" class="font-size_a">
                         <p>Đăng nhập để xem mức lương</p>
-                    </a>
+                    </a> -->
                     <div class="list_word__skill">
                         <p><?php echo str_replace(' , ', '<p>', $value->skill) ?></p>
                         <p>JavaScript</p>
@@ -150,6 +165,7 @@
             <div class="modal-body">
                 <form action="{{url('uploadCV')}}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @if(Auth::check() && Auth::user()->role == 3)
                     <div class="input__field d-flex">
                         <label for="">Họ và tên</label>
                         @foreach($job_relate as $value)
@@ -179,7 +195,7 @@
                     <div class="input__field d-flex">
                         <label for="" style="color: #99bbff;">Hoặc chọn CV bạn đã tạo</label>
                         <select style="width: 100%;" name="cv_id">
-                            <option>Chọn CV</option>
+                            <option value="">Chọn CV</option>
                             @foreach($cv as $value)
                             <option value="{{$value->id}}">{{$value->namecv}}</option>
                             @endforeach
@@ -187,7 +203,7 @@
                     </div>
                     <div class="input__field d-flex">
                         <label for="">Giới thiệu bản thân</label>
-                        <textarea name="introduce" id="" cols="100" rows="3"></textarea>
+                        <textarea name="introduce" id="" cols="100" rows="3">{{old('introduce')}}</textarea>
                     </div>
                     <div class="createCV">
                         <span>Nếu bạn chưa có CV, </span><a href="{{asset('createCV')}}">tạo CV tại đây</a>
@@ -196,6 +212,11 @@
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-danger">Save changes</button>
                     </div>
+                    @elseif(Auth::check() && Auth::user()->role != 3)
+                    <p>Phải là tài khoản customer mới có thể ứng tuyển</p>
+                    @else
+                    <a href="{{route('login')}}">Bạn cần phải đăng nhập để ứng tuyển</a>
+                    @endif
                 </form>
             </div>
         </div>

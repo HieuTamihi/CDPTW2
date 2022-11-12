@@ -30,7 +30,6 @@
                             <div class="row">
                                 <div class="col-md-5 intem-slide-img">
                                     <a href="{{route('employer.show',$row->id)}}">
-                                        {{$row->id}}
                                         <img class="intem-img" src="{{url('img')}}/{{$row->image}}" alt="">
                                     </a>
                                 </div>
@@ -76,11 +75,11 @@
                     </h2>
                 </div>
                 <div id="hotid" class="hot-wotk-intem">
-                    <ul id="customid" class="supper-hot-job">
+                    <ul class="supper-hot-job">
                         @foreach($job as $name)
                         <li>
                             <span class="tags"><strong class="tags-txt">{{$name->name_company}}</strong></span>
-                            <br><a href="{{route('employer.show',$row->id)}}">{{$name->title}}</a>
+                            <br><a href="{{route('employer.show',$name->id)}}">{{$name->title}}</a>
                             <p class="job-salary-view">{{$name->salary}}</p>
                         </li>
                         @endforeach

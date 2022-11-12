@@ -42,7 +42,7 @@
                 <div class="lb__confirm">
                     <label for="confirm-pass">Confirm new password</label>
                 </div>
-                <input type="password" name="new_password_confirmation" id="confirm_password" required>
+                <input type="password" name="new_password_confirmation" required>
                 <i class="fa-solid fa-eye" id="show_confirm"></i>
                 <i class="fa-solid fa-eye-slash" id="hide_confirm"></i>
             </div>
