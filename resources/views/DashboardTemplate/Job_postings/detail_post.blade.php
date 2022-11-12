@@ -7,10 +7,14 @@
             <div class="alert alert-success" style="text-align:center;">{{Session::get('notify')}}</div>
             @endif
 <<<<<<< HEAD
+<<<<<<< HEAD
             <a href=""><button class="btn btn-primary" style="float: right;">List Post</button></a>
 =======
             <a href="{{route('CRUDJobByEmployer.index')}}"><button class="btn btn-primary" style="float: right;">List Post</button></a>
 >>>>>>> origin/detail_page
+=======
+            <a href=""><button class="btn btn-primary" style="float: right;">List Post</button></a>
+>>>>>>> origin/recruitment_customer
             <br>
             <br>
             <div class="row">
@@ -63,6 +67,7 @@
                     <?php
                     $i = 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
                     ?>
                     @foreach($show->customers as $value)
 =======
@@ -74,11 +79,16 @@
                     $value->gender == 0 ? $gt = "Nam" : $gt = "Nữ"; 
                     ?>
 >>>>>>> origin/detail_page
+=======
+                    ?>
+                    @foreach($show->customers as $value)
+>>>>>>> origin/recruitment_customer
                     <tr>
                         <th scope="row">{{$i++}}</th>
                         <td>{{$value->fullname}}</td>
                         <td>{{$value->phone_number}}</td>
                         <td>{{$value->address}}</td>
+<<<<<<< HEAD
 <<<<<<< HEAD
                         <td>{{$value->gender}}</td>
                         <td>{{$value->favorite}}</td>
@@ -88,6 +98,11 @@
                         <td>{{$value->favorite}}</td>
                         <td>{{$str}}</td>
 >>>>>>> origin/detail_page
+=======
+                        <td>{{$value->gender}}</td>
+                        <td>{{$value->favorite}}</td>
+                        <td>{{$value->status}}</td>
+>>>>>>> origin/recruitment_customer
                         <td style="display: flex; justify-content: space-evenly">
                             <a href="{{route('detail_recruitment',$value->id)}}">
                             <i class='fas fa-eye'></i>
@@ -105,11 +120,14 @@
                 </tbody>
             </table>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             <div>
               {{$list_recruitmet->links()}}
             </div>
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/recruitment_customer
         </div>
     </section>
 </div>

@@ -10,9 +10,12 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Requests\Job_posting\StoreRequest;
 use App\Http\Requests\Job_posting\UpdateRequest;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use App\Models\Recruitment;
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/recruitment_customer
 
 class CRUDListJobController extends Controller
 {
@@ -28,6 +31,7 @@ class CRUDListJobController extends Controller
         $result = $getPostByID->jobs;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         return view('DashboardTemplate.Job_postings.list_post_by_id',compact('result'));
 =======
         return view('DashboardTemplate.Job_postings.list_post_by_id', compact('result'));
@@ -35,6 +39,9 @@ class CRUDListJobController extends Controller
 =======
         return view('DashboardTemplate.Job_postings.list_post_by_id', compact('result'));
 >>>>>>> origin/detail_page
+=======
+        return view('DashboardTemplate.Job_postings.list_post_by_id',compact('result'));
+>>>>>>> origin/recruitment_customer
     }
 
     /**
@@ -59,6 +66,7 @@ class CRUDListJobController extends Controller
             'employer_id' => Auth::user()->employer->id,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'title'=>$request->title,
 =======
             'title' => $request->title,
@@ -66,16 +74,23 @@ class CRUDListJobController extends Controller
 =======
             'title' => $request->title,
 >>>>>>> origin/detail_page
+=======
+            'title'=>$request->title,
+>>>>>>> origin/recruitment_customer
             'experience' => $request->experience,
             'type' => $request->type,
             'skill' => $request->skill,
             'required' => $request->required,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/recruitment_customer
             'salary' => $request->salary,  
             'token' => md5(Auth::user()->id),
         ]);
         return redirect()->route('CRUDJobByEmployer.index')->with('notify','Add news is successfully');
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/detail_page
@@ -87,6 +102,8 @@ class CRUDListJobController extends Controller
 >>>>>>> origin/change_password_employer
 =======
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/recruitment_customer
     }
 
     /**
@@ -100,6 +117,7 @@ class CRUDListJobController extends Controller
         $show = Job_posting::find($id);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $getstatus = DB::table('recruitments')->where('jobposting_id','=',$id);
         return view('DashboardTemplate.Job_postings.detail_post',compact('show'));
 =======
@@ -111,6 +129,10 @@ class CRUDListJobController extends Controller
         $getstatus = DB::table('recruitments')->where('jobposting_id', '=', $id);
         return view('DashboardTemplate.Job_postings.detail_post', compact('show','list_recruitmet'));
 >>>>>>> origin/detail_page
+=======
+        $getstatus = DB::table('recruitments')->where('jobposting_id','=',$id);
+        return view('DashboardTemplate.Job_postings.detail_post',compact('show'));
+>>>>>>> origin/recruitment_customer
     }
 
     /**
@@ -124,6 +146,7 @@ class CRUDListJobController extends Controller
         $show = Job_posting::find($id);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         return view('DashboardTemplate.Job_postings.edit_post',compact('show'));
 =======
         return view('DashboardTemplate.Job_postings.edit_post', compact('show'));
@@ -131,6 +154,9 @@ class CRUDListJobController extends Controller
 =======
         return view('DashboardTemplate.Job_postings.edit_post', compact('show'));
 >>>>>>> origin/detail_page
+=======
+        return view('DashboardTemplate.Job_postings.edit_post',compact('show'));
+>>>>>>> origin/recruitment_customer
     }
 
     /**
@@ -146,6 +172,7 @@ class CRUDListJobController extends Controller
         $job->update($request->all());
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         return redirect()->route('CRUDJobByEmployer.index')->with('notify','Update Susscessfully');
 =======
         return redirect()->route('CRUDJobByEmployer.index')->with('notify', 'Update Susscessfully');
@@ -153,6 +180,9 @@ class CRUDListJobController extends Controller
 =======
         return redirect()->route('CRUDJobByEmployer.index')->with('notify', 'Update Susscessfully');
 >>>>>>> origin/detail_page
+=======
+        return redirect()->route('CRUDJobByEmployer.index')->with('notify','Update Susscessfully');
+>>>>>>> origin/recruitment_customer
     }
 
     /**
@@ -167,11 +197,15 @@ class CRUDListJobController extends Controller
         DB::table('Job_postings')
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/recruitment_customer
         ->where([
             'id' => $id,
             'token' => $token])
         ->delete();
         return redirect()->route('CRUDJobByEmployer.index')->with('notify','Delete Susscessfully');
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/detail_page
@@ -185,5 +219,7 @@ class CRUDListJobController extends Controller
 >>>>>>> origin/change_password_employer
 =======
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/recruitment_customer
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Employer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use App\Models\Recruitment;
 use App\Http\Requests\Employer\UpdateRequest;
 use Illuminate\Support\Facades\DB;
@@ -31,6 +32,13 @@ use Carbon\Carbon;
 use App\Http\Requests\Employer\UpdateRequest;
 use App\Http\Requests\Employer\ChangePasswordRequest;
 >>>>>>> origin/detail_page
+=======
+use App\Models\Customer;
+use App\Models\Recruitment;
+use App\Http\Requests\Employer\UpdateRequest;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+>>>>>>> origin/recruitment_customer
 
 class RUEmployerController extends Controller
 {
@@ -76,6 +84,7 @@ class RUEmployerController extends Controller
         $showEmploy = Employer::find($id);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         return view('DashboardTemplate.employer.detail_employer',compact('showEmploy'));
 =======
         return view('DashboardTemplate.employer.detail_employer', compact('showEmploy'));
@@ -83,6 +92,9 @@ class RUEmployerController extends Controller
 =======
         return view('DashboardTemplate.employer.detail_employer', compact('showEmploy'));
 >>>>>>> origin/detail_page
+=======
+        return view('DashboardTemplate.employer.detail_employer', compact('showEmploy'));
+>>>>>>> origin/recruitment_customer
     }
 
     /**
@@ -96,6 +108,7 @@ class RUEmployerController extends Controller
         $showEmploy = Employer::find($id);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         return view('DashboardTemplate.employer.edit_employer',compact('showEmploy'));
 =======
         return view('DashboardTemplate.employer.edit_employer', compact('showEmploy'));
@@ -103,6 +116,9 @@ class RUEmployerController extends Controller
 =======
         return view('DashboardTemplate.employer.edit_employer', compact('showEmploy'));
 >>>>>>> origin/detail_page
+=======
+        return view('DashboardTemplate.employer.edit_employer', compact('showEmploy'));
+>>>>>>> origin/recruitment_customer
     }
 
     /**
@@ -117,6 +133,7 @@ class RUEmployerController extends Controller
         $Employer = Employer::find($id);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if($request->hasFile('image_upload'))
         {
             $file = $request->file('image_upload');
@@ -129,10 +146,13 @@ class RUEmployerController extends Controller
 =======
 =======
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/recruitment_customer
         if ($request->hasFile('image_upload')) {
             $file = $request->file('image_upload');
             $file_name = $file->getClientOriginalName();
             $file->move('img', $file_name);
+<<<<<<< HEAD
 <<<<<<< HEAD
             $imagePath = public_path('img/'.$Employer->image);
             if(File::exists($imagePath)){
@@ -142,14 +162,19 @@ class RUEmployerController extends Controller
 >>>>>>> origin/detail_page
                 unlink($imagePath);
             }
+=======
+>>>>>>> origin/recruitment_customer
             $Employer->image = $file_name;
         }
         $Employer->update($request->all());
         return redirect()->back()->with('notify', 'Update Susscessfully');
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/change_password_employer
 =======
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/recruitment_customer
     }
 
     /**
@@ -160,6 +185,7 @@ class RUEmployerController extends Controller
      */
     public function destroy($id)
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         $re = DB::table('recruitments')->select('id')->where('customer_id','=',$id)->get();
@@ -174,11 +200,17 @@ class RUEmployerController extends Controller
         Recruitment::destroy($re[0]->id);
         return redirect()->back()->with('notify', 'Delete Susscessfully');
 >>>>>>> origin/detail_page
+=======
+        $re = DB::table('recruitments')->select('id')->where('customer_id', '=', $id)->get();
+        Recruitment::destroy($re[0]->id);
+        return redirect()->back()->with('notify','Delete Susscessfully');
+>>>>>>> origin/recruitment_customer
     }
 
     public function detail_recruitment($id)
     {
         $customer = Customer::find($id);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
         $re = DB::table('recruitments')->select('id')->where('customer_id', '=', $id)->get();
@@ -187,10 +219,13 @@ class RUEmployerController extends Controller
             'status' => '1',
         ]);
 >>>>>>> origin/detail_page
+=======
+>>>>>>> origin/recruitment_customer
         return view('DashboardTemplate.Job_postings.detail', compact('customer'));
     }
     public function recruit(Customer $customer)
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         Mail::send('DashboardTemplate.emails.send', compact('customer'), function ($email) use ($customer) {
 =======
@@ -199,11 +234,15 @@ class RUEmployerController extends Controller
         $tomorrow = Carbon::tomorrow();
         Mail::send('DashboardTemplate.emails.send', compact('customer', 'job','tomorrow'), function ($email) use ($customer) {
 >>>>>>> origin/detail_page
+=======
+        Mail::send('DashboardTemplate.emails.send', compact('customer'), function ($email) use ($customer) {
+>>>>>>> origin/recruitment_customer
             $email->subject('Thông báo tuyển dụng');
             $email->to($customer->email);
         });
         return redirect()->back()->with('notify', 'Send mail susscrssfully !');
     }
+<<<<<<< HEAD
 
 <<<<<<< HEAD
     public function changepass(ChangePasswordRequest $request,$id)
@@ -243,4 +282,6 @@ class RUEmployerController extends Controller
         return view('DashboardTemplate.employer.showlayout', compact('showEmployByID'));
 >>>>>>> origin/detail_page
     }
+=======
+>>>>>>> origin/recruitment_customer
 }
