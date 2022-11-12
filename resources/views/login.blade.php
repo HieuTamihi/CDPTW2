@@ -1,17 +1,8 @@
-<<<<<<< HEAD
 @if(!Auth::check())
-=======
->>>>>>> origin/register_employer
 @extends('header')
 @section('footer')
 <div class="log__reg__page">
     <div class="container">
-<<<<<<< HEAD
-        @if(session('status'))
-        <div class="alert alert-success" style="text-align:center;">{{session('status')}}</div>
-        @endif
-=======
->>>>>>> origin/register_employer
         <div class="row">
             <div class="page__log">
                 <div class="title__log">
@@ -25,6 +16,11 @@
                 @if(Session()->get('message'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     {{Session()->get('message')}}
+                </div>
+                @endif
+                @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
                 </div>
                 @endif
                 <div class="form__log">
@@ -44,16 +40,12 @@
                         <input type="submit" value="Login" class="btn login__btn">
                         <span class="btn btn reg__btn"><a href="{{route('register')}}" style="text-decoration: none;color:white;">Sign up</a></span>
                     </form>
-                    <a href="#" class="link__forgot">Forgot password</a>
+                    <a href="{{asset('reset_pass')}}" class="link__forgot">Forgot password</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <br>
-<<<<<<< HEAD
-@endsection;
+@endsection
 @endif
-=======
-@endsection;
->>>>>>> origin/register_employer
