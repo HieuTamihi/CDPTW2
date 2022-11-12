@@ -18,9 +18,9 @@ class Posts extends Migration
             $table->integer('comment_id')->nullable();
             $table->integer('customer_id')->nullable();
             $table->string('title', 255);
-            $table->string('content', 5000);
+            $table->text('content');
             $table->string('image', 255);
-            $table->string('views', 255)->nullable();
+            $table->integer('views')->nullable();
             $table->timestamps();
         });
     }

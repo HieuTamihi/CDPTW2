@@ -15,12 +15,19 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\viewController;
 use App\Http\Controllers\HomeController;
+<<<<<<< HEAD
 use App\Http\Controllers\JobpostingController;
 use App\Http\Controllers\RecruimentController;
 use App\Http\Controllers\TrackingworkController;
 use App\Http\Controllers\WishlistController;
 use App\Models\Customer;
 use App\Models\Wish_lists;
+=======
+use App\Http\Controllers\AdminPostsController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\AdminCommentsController;
+use App\Http\Controllers\BlogCommentController;
+>>>>>>> CRUD_post
 
 /*
 |--------------------------------------------------------------------------
@@ -83,8 +90,25 @@ Route::resource('CRUDJobByEmployer',CRUDListJobController::class);
 //chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');
 Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
+<<<<<<< HEAD
 Route::get('admin', function () {
     return view('DashboardTemplate.dashboard');
+=======
+
+Route::get('blogSearch', [BlogController::class, 'blogSearch'])->name('blogSearch');
+
+
+Route::resource('/admin-blog-home', AdminPostsController::class);
+Route::resource('/admin-blog-comment', AdminCommentsController::class);
+
+
+
+
+
+Route::prefix('blogit')->group(function () {
+    Route::get('/', [BlogController::class, 'featuredPosts'])->name('blogit');
+    Route::get('blogDetail/{id}', [BlogController::class, 'blogDetail'])->name('blogDetail');
+>>>>>>> CRUD_post
 });
 <<<<<<< HEAD
 Route::get('/detail_page/{id}', [EmployerController::class, 'show']);
@@ -98,8 +122,11 @@ Route::get('/detail_page/{id}',[EmployerController::class,'show']);
 // Manamge Employer by ID
 Route::resource('CRUDEmployer',CRUDEmployer::class);
 
+<<<<<<< HEAD
 
 >>>>>>> CRUD_Employer_By_ID
+=======
+>>>>>>> CRUD_post
 Route::get('/{name?}', function ($name = "index") {
     return view($name);
 });
