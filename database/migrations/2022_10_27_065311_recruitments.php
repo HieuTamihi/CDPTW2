@@ -14,6 +14,7 @@ class Recruitments extends Migration
     public function up()
     {
         Schema::create('recruitments', function (Blueprint $table) {
+            $table->id()->autoIncrement();
             $table->integer('customer_id');
             $table->integer('jobposting_id');
             $table->integer('cv_id')->nullable();

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RecruitmentRequest;
 use App\Models\Employer;
-use App\Models\Wish_lists;
+use App\Models\Recruitment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class WishlistController extends Controller
+class RecruitmentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +17,7 @@ class WishlistController extends Controller
      */
     public function index()
     {
-        $id = Auth::user()->customer_id;
-        $wishlist = Wish_lists::leftjoin('customers', 'wish_lists.customer_id', '=', 'customers.id')
-            ->leftjoin('job_postings', 'wish_lists.job_posting_id', '=', 'job_postings.id')
-            ->leftjoin('employers', 'employers.id', '=', 'job_postings.employer_id')
-            ->where('customers.id', '=', $id)->select('image', 'wish_lists.id', 'wish_lists.job_posting_id', 'salary', 'name_company','employers.address')->get();
-        return view('tracking_work', compact('wishlist'));
+        //
     }
 
     /**
@@ -40,14 +36,20 @@ class WishlistController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RecruitmentRequest $request)
     {
-        Wish_lists::create([
-            'customer_id' => Auth::user()->customer_id,
-            'job_posting_id' => $request->id,
-            'number' => $request->number,
-        ]);
-        return redirect()->route('wishlist.index')->with('message', 'Công việc đã được thêm vào danh sách theo dõi');
+        $data = new Recruitment();
+        $file = $request->file;
+        $filename = time() . '.' . $file->getClientOriginalExtension();
+        $request->file->move('file', $filename);
+        $data->file = $filename;
+        $data->introduce = $request->introduce;
+        $data->customer_id = Auth::user()->customer_id;
+        $data->jobposting_id = $request->id;
+        $data->cv_id = $request->cv_id;
+        $data->status = 0;
+        $data->save();
+        return redirect()->back()->with('message', 'Ứng tuyển thành công!');
     }
 
     /**
@@ -90,9 +92,8 @@ class WishlistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Wish_lists $wishlist)
+    public function destroy($id)
     {
-        $wishlist->delete();
-        return redirect()->route('wishlist.index')->with('message', 'Bạn đã hủy theo dõi công việc này!');
+        //
     }
 }

@@ -27,9 +27,13 @@ class CreateUsersTable extends Migration
             $table->integer("role");
             $table->integer("status");
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->string('confirm')->nullable();
 =======
 >>>>>>> origin/register_employer
+=======
+            $table->string('token')->nullable();
+>>>>>>> origin/update_cv,unfollow_wish_list,reset_password
             $table->rememberToken()->nullable();
             $table->timestamps();
         });
