@@ -27,7 +27,10 @@ class userSeeder extends Seeder
                 'email' => 'levantuan1293@gmail.com',
                 'phone' => '0987712063',
                 'password' => '$2y$10$MMo3y1jxrv5hxGNzZrzivumc/FOzkCAXM6JumDcANaoCi23/wRHka',
+<<<<<<< HEAD
                 'customer_id' => null,
+=======
+>>>>>>> CRUD_Employer_By_ID
                 'role' => '1',
                 'status' => '1',
             ],
@@ -35,7 +38,10 @@ class userSeeder extends Seeder
                 'email' => 'thaihieu244@gmail.com',
                 'phone' => '0987712063',
                 'password' => '$2y$10$y2NorDtAaQ9Wpkymi86zsu7U8X1zezLFKqPqkpT42pjkdJqVCTuLm',
+<<<<<<< HEAD
                 'customer_id' => null,
+=======
+>>>>>>> CRUD_Employer_By_ID
                 'role' => '2',
                 'status' => '1',
             ],
@@ -43,6 +49,7 @@ class userSeeder extends Seeder
                 'email' => 'thaihieu245@gmail.com',
                 'phone' => '0987712063',
                 'password' => '$2y$10$y2NorDtAaQ9Wpkymi86zsu7U8X1zezLFKqPqkpT42pjkdJqVCTuLm',
+<<<<<<< HEAD
                 'customer_id' => null,
                 'role' => '2',
                 'status' => '1',
@@ -74,6 +81,30 @@ class userSeeder extends Seeder
                 'password' => '$2y$10$y2NorDtAaQ9Wpkymi86zsu7U8X1zezLFKqPqkpT42pjkdJqVCTuLm',
                 'customer_id' => '2',
                 'role' => '3',
+=======
+                'role' => '2',
+                'status' => '1',
+            ]
+            , [
+                'email' => 'thaihieu246@gmail.com',
+                'phone' => '0987712063',
+                'password' => '$2y$10$y2NorDtAaQ9Wpkymi86zsu7U8X1zezLFKqPqkpT42pjkdJqVCTuLm',
+                'role' => '2',
+                'status' => '1',
+            ]
+            , [
+                'email' => 'thaihieu247@gmail.com',
+                'phone' => '0987712063',
+                'password' => '$2y$10$y2NorDtAaQ9Wpkymi86zsu7U8X1zezLFKqPqkpT42pjkdJqVCTuLm',
+                'role' => '2',
+                'status' => '1',
+            ]
+            , [
+                'email' => 'thaihieu248@gmail.com',
+                'phone' => '0987712063',
+                'password' => '$2y$10$y2NorDtAaQ9Wpkymi86zsu7U8X1zezLFKqPqkpT42pjkdJqVCTuLm',
+                'role' => '2',
+>>>>>>> CRUD_Employer_By_ID
                 'status' => '1',
             ]
         ]);

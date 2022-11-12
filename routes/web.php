@@ -1,13 +1,18 @@
 <?php
 
+<<<<<<< HEAD
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CvController;
 use App\Http\Controllers\CRUDUserController;
 use App\Http\Controllers\CRUDEmloyerController;
 use App\Http\Controllers\CRUDJobpostingController;
+=======
+use App\Http\Controllers\CRUDEmployer;
+>>>>>>> CRUD_Employer_By_ID
 use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\viewController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobpostingController;
 use App\Http\Controllers\RecruimentController;
@@ -75,7 +80,20 @@ Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
 Route::get('admin', function () {
     return view('DashboardTemplate.dashboard');
 });
+<<<<<<< HEAD
 Route::get('/detail_page/{id}', [EmployerController::class, 'show']);
+=======
+Route::get('listpostbyid',[EmployerController::class,'getPostByID']);
+Route::resource('employer', EmployerController::class);
+Route::get('/detail_page/{id}',[EmployerController::class,'show']);
+// get post by id employer
+// Route::get('Employser/listpost', [viewController::class,'getListPostByID'])->name('view_employer');
+
+// Manamge Employer by ID
+Route::resource('CRUDEmployer',CRUDEmployer::class);
+
+
+>>>>>>> CRUD_Employer_By_ID
 Route::get('/{name?}', function ($name = "index") {
     return view($name);
 });

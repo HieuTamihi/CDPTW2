@@ -22,6 +22,7 @@ class JobPostings extends Migration
             $table->string('skill');
             $table->string('required');
             $table->string('salary');
+            $table->string('token');
             $table->timestamps();
         });
     }

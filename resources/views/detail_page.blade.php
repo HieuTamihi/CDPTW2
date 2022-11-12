@@ -1,5 +1,6 @@
 @extends('header')
 @section('footer')
+<<<<<<< HEAD
     <!-- Search -->
     <div class="search container">
         <form action="">
@@ -98,7 +99,84 @@
                                         <p><?php echo str_replace(', ', '<p>', $value->skill); ?></p>
                                     </div>
                                 @endforeach
+=======
+<!-- Search -->
+<div class="search container">
+    <form action="">
+        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+        <input type="text" class="search__input form-control" placeholder="Nhập từ khoá tìm kiếm">
+        <button type="submit" class="search__btn btn btn-danger">Tìm kiếm</button>
+    </form>
+</div>
+<div class="container">
+    <div class="detail__body">
+        <div class="row">
+            <div class="col-12 col-xl-9 detail_body__left">
+                <div class="information">
+                    <div class="information__logo">
+                        <a href="#"><img src="{{asset('img/$detail->image')}}" alt=""></a>
+                    </div>
+                    <div class="information__content">
+                        <p>{{$detail->name_company}}</p>
+                    </div>
+                </div>
+                <div class="navi">
+                    <a href="#CV">
+                        <h6>Về công ty</h6>
+                    </a>
+                    <a href="#responsibility">
+                        <h6>Công việc</h6>
+                    </a>
+                    <h6>Chia sẻ</h6>
+                    <h6 class="navi__fol">Theo dõi</h6>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-12 col-xl-9 content__left">
+                            @foreach($relate as $value)
+                            <h4>{{$value->title}}</h4>
+                            <p>{{$value->salary}}</p>
+                            <a href="#" class="font-size_a">
+                                <p>Đăng nhập để xem mức lương</p>
+                            </a>
+                            <p><?php echo str_replace(' , ','<p>',$detail->infor) ?></p>
+                            </p>
+                            <h2>Trách nhiệm công việc:</h2>
+                            <div class="content__left__responsibility" id="responsibility">
+                                <ul>
+                                    <li><?php echo str_replace(' , ','<li>',$detail->responsibility) ?></li>
+                                </ul>
                             </div>
+                            <h2>Kỹ năng & Chuyên môn:</h2>
+                            <div class="content__left__specialize">
+                                <ul>
+                                    <li><?php echo str_replace(', ','<li>',$value->required) ?></li>
+                                </ul>
+                            </div>
+                            @endforeach
+                        </div>
+                        <div class="col-12 col-xl-3 content__right">
+                            <button type=" button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ứng tuyển ngay</button>
+                            <p class="text_align">Hoặc</p>
+                            <a href="#" class="format_a text_align">
+                                <button type=" button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Tạo CV Ứng Tuyển
+                                </button>
+                            </a>
+                            <p class="text_align">4 ngày trước</p>
+                            <h6>Địa điểm</h6>
+                            <p>{{$detail->address}}</p>
+                            <h6>Số năm kinh nghiệm</h6>
+                            @foreach($relate as $value)
+                            <p>{{$value->experience}}</p>
+                            <h6>Loại hình</h6>
+                            <p class="border_type">{{$value->type}}</p>
+                            <h6>Kỹ năng</h6>
+                            <div class="content__right__skill">
+                                <p><?php echo str_replace(', ','<p>',$value->skill) ?></p>
+>>>>>>> CRUD_Employer_By_ID
+                            </div>
+                            @endforeach
                         </div>
                     </div>
 
@@ -125,6 +203,7 @@
                 </div>
 
             </div>
+<<<<<<< HEAD
             <div class="row" id="CV">
                 <div class="col-12 col-xl-9">
                     <div class="list_word">
@@ -147,8 +226,54 @@
                     </div>
                 </div>
                 <div class="col-12 col-xl-3"></div>
+=======
+            <div class="col-12 col-xl-3 detail_body__right">
+                <h6>Website</h6>
+                <a href="{{$detail->website}}">
+                    <p>{{$detail->website}}</p>
+                </a>
+                <h6>Địa điểm</h6>
+                <p>{{$detail->address}}</p>
+                <h6>Các công nghệ sử dụng</h6>
+                @foreach($relate as $value)
+                <div class="detail_body__right__skill">
+                    <p><?php echo str_replace(' , ','<p>',$value->skill) ?></p>
+                </div>
+                @endforeach
+                <!-- <h6>Quốc tịch công ty</h6>
+                <div class="detail_body__right__img"><img src="{{asset('img/Vietnam.png')}}" alt="">
+                    <p>Việt Nam</p>
+                </div> -->
+                <h6>Phúc lợi dành cho bạn</h6>
+                <p><?php echo str_replace(' , ','<p>',$detail->welfare) ?></p>
+>>>>>>> CRUD_Employer_By_ID
             </div>
+         
         </div>
+<<<<<<< HEAD
+=======
+        <div class="row" id="CV">
+            <div class="col-12 col-xl-9">
+                <div class="list_word">
+                  @foreach($job_relate as $value)
+                    <a href="{{route('employer.show',$value->id)}}"><h5>{{$value->title}}</h5></a>
+                    <a href="#" class="font-size_a">
+                        <p>Đăng nhập để xem mức lương</p>
+                    </a>
+                    <div class="list_word__skill">
+                        <p><?php echo str_replace(' , ','<p>',$value->skill) ?></p>
+                        <p>JavaScript</p>
+                        <p>Solution Architect</p>
+                    </div>
+                    <div class="list_word__recruiment">
+                        <a href="#">Ứng tuyển</a> 
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+            <div class="col-12 col-xl-3"></div>
+        </div>
+>>>>>>> CRUD_Employer_By_ID
     </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

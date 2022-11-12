@@ -31,6 +31,15 @@
                                 <div class="alert alert-success">{{Session::get('message')}}</div>
                                 @endif
                                 @csrf
+                                <span class="des__name">Name Company</span>
+                                <input type="text" placeholder="Enter name company" class="type__info__reg" name="name_company">
+                                
+                                <span class="des__name">Address</span>
+                                <input type="text" placeholder="Enter address" class="type__info__reg" name="address">
+
+                                <!-- <span>Image</span>
+                                <input type="file" placeholder="Enter select" class="type__info__reg" name="image"> -->
+
                                 <span class="des__name">Email</span>
                                 <input type="text" placeholder="Enter your email" class="type__info__reg" name="email">
                                 @if ($errors->has('email'))
@@ -48,7 +57,12 @@
                                 @if ($errors->has('phone'))
                                 <strong class="text-danger">{{$errors->first('phone')}}</strong>
                                 @endif
+<<<<<<< HEAD
                                 <input type="hidden" value="{{(int)$user_id->user_id}}" name="user_id">
+=======
+                                <input type="hidden" value="3" name="role">
+                                <input type="hidden" value="1" name="status">
+>>>>>>> CRUD_Employer_By_ID
                                 <input type="submit" value="Sign up" class="btn reg__btn">
                                 <span class="btn btn login__btn"><a href="{{route('login')}}" style="text-decoration: none;color:white;">Login</a></span>
                             </form>

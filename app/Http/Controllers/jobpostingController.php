@@ -28,7 +28,7 @@ class JobpostingController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
