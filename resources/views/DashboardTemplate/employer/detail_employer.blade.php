@@ -55,11 +55,17 @@
                 </button>
             </a>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             <a href="{{route('showlayout',Auth::user()->id)}}">
                 <button class="btn btn-primary" style="float: right; transform: translateX(-20px);">Change Password</button>
             </a>
 >>>>>>> origin/change_password_employer
+=======
+            <a href="{{route('showlayout',Auth::user()->id)}}">
+                <button class="btn btn-primary" style="float: right; transform: translateX(-20px);">Change Password</button>
+            </a>
+>>>>>>> origin/detail_page
         </div>
     </section>
 </div>

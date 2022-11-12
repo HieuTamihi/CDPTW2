@@ -11,9 +11,18 @@ class Customer extends Model
     protected $table = 'customers'; 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> origin/change_password_employer
+=======
+
+    public function job_postings()
+    {
+        return $this->belongsToMany(Job_posting::class,'Recruitments','jobposting_id','customer_id')
+        ->withPivot('status');
+    }
+>>>>>>> origin/detail_page
     protected $fillable = [
         'id',
         'email',
@@ -25,5 +34,8 @@ class Customer extends Model
         'favorite',
         'status',
     ];
+<<<<<<< HEAD
 >>>>>>> RUEmployer_By_ID
+=======
+>>>>>>> origin/detail_page
 }

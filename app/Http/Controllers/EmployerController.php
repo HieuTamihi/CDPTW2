@@ -6,11 +6,17 @@ use App\Models\Customer;
 use App\Models\Cv;
 use App\Models\Employer;
 use App\Models\Job_posting;
+<<<<<<< HEAD
 use App\Models\Recruitment;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+=======
+use Illuminate\Http\Request;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+>>>>>>> origin/detail_page
 
 class EmployerController extends Controller
 {
@@ -25,6 +31,7 @@ class EmployerController extends Controller
         $employer = Employer::all();
         // lấy hết tất cả dữ liều trong Job_posting
         $job = Job_posting::all();
+<<<<<<< HEAD
         $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->get();
         return view('index', compact('employer', 'job', 'name'));
     }
@@ -32,6 +39,10 @@ class EmployerController extends Controller
     public function getPostByID()
     {
         return view('listemployer', compact('getPostByID'));
+=======
+        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->select('name_company')->get();
+        return view('index', compact('employer', 'job', 'name'));
+>>>>>>> origin/detail_page
     }
 
     /**
@@ -65,16 +76,25 @@ class EmployerController extends Controller
     {
         $detail = Employer::findOrFail($id);
         $relate = $detail->jobs->take(1);
+<<<<<<< HEAD
         $job_relate = $detail->jobs->take(3);
 <<<<<<< HEAD
+=======
+        $date = Carbon::now()->day;
+        $job_relate = $detail->jobs->take(3);
+>>>>>>> origin/detail_page
         $customer_id = Auth::user()->customer_id;
         $apply = Customer::leftJoin('users', 'users.customer_id', '=', 'customers.id')->where('customers.id', '=', $customer_id)->first();
         $id = Auth::user()->customer_id;
         $cv = Cv::where('customer_id', '=', $id)->get();
+<<<<<<< HEAD
         return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv'));
 =======
         return view('detail_page', compact('detail', 'relate', 'job_relate'));
 >>>>>>> CRUD_Employer_By_ID
+=======
+        return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv','date'));
+>>>>>>> origin/detail_page
     }
 
     /**

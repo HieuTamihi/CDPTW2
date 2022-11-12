@@ -22,6 +22,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
 <<<<<<< HEAD
+<<<<<<< HEAD
         'customer_id', 
         'email',
 =======
@@ -29,6 +30,10 @@ class User extends Authenticatable
         'user_id', 
         'customer_id', 
 >>>>>>> origin/confirm_email
+=======
+        'customer_id', 
+        'email',
+>>>>>>> origin/detail_page
         'phone', 
         'password', 
         'role', 

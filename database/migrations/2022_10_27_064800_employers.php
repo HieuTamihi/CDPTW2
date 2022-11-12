@@ -16,6 +16,7 @@ class Employers extends Migration
         Schema::create('employers', function (Blueprint $table) {
             $table->id()->autoIncrement();
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->integer('user_id');
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -35,10 +36,14 @@ class Employers extends Migration
 >>>>>>> origin/change_password_employer
 =======
 >>>>>>> origin/confirm_email
+=======
+            $table->integer('user_id');
+>>>>>>> origin/detail_page
             $table->string('website')->nullable();
             $table->string('infor',5000)->nullable();
             $table->string('responsibility',5000)->nullable();
             $table->string('welfare',500)->nullable();
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -54,10 +59,13 @@ class Employers extends Migration
 >>>>>>> origin/change_password_employer
 =======
 >>>>>>> origin/confirm_email
+=======
+>>>>>>> origin/detail_page
             $table->string('name_company');
             $table->string('address')->nullable();
             $table->string('image')->nullable();
             $table->string('email');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             $table->string('phone_number',11);
@@ -67,6 +75,9 @@ class Employers extends Migration
 =======
             $table->string('phone_number',11);
 >>>>>>> origin/change_password_employer
+=======
+            $table->string('phone_number',11);
+>>>>>>> origin/detail_page
             $table->timestamps();
         });
     }

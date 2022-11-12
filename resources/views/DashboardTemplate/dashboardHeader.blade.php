@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @if (Auth::check())
     @if (Auth::user()->role == 1)
         <!DOCTYPE html>
@@ -35,6 +36,10 @@
 =======
 =======
 >>>>>>> origin/change_password_employer
+=======
+@if(Auth::check())
+@if(Auth::user()->role == 1 || Auth::user()->role == 2 )
+>>>>>>> origin/detail_page
 <!DOCTYPE html>
 <html>
 
@@ -108,8 +113,7 @@
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
-                            class="fas fa-bars"></i></a>
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Home</a>
@@ -119,8 +123,7 @@
             <!-- SEARCH FORM -->
             <form class="form-inline ml-3">
                 <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                        aria-label="Search">
+                    <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
                     <div class="input-group-append">
                         <button class="btn btn-navbar" type="submit">
                             <i class="fas fa-search"></i>
@@ -145,11 +148,15 @@
             <!-- Brand Logo -->
             <a href="#" class="brand-link">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
 =======
                 <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
 >>>>>>> blog_home
+=======
+                <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+>>>>>>> origin/detail_page
                 <span class="brand-text font-weight-light">AdminLTE 3</span>
             </a>
             <!-- Sidebar -->
@@ -157,6 +164,9 @@
                 <!-- Sidebar user (optional) -->
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/detail_page
                 @if(Auth::user()->role == 2)
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
@@ -167,6 +177,7 @@
                     </div>
                 </div>
                 @endif
+<<<<<<< HEAD
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -188,6 +199,11 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
 >>>>>>> blog_home
+=======
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+>>>>>>> origin/detail_page
 
                         <li class="nav-item has-treeview menu-open">
                             <a href="#" class="nav-link">
@@ -335,14 +351,19 @@
                             </ul>
                         </li>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> blog_home
 =======
                         <!-- List Job By Employer_ID -->
 >>>>>>> origin/change_password_employer
+=======
+                        <!-- List Job By Employer_ID -->
+>>>>>>> origin/detail_page
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -360,11 +381,15 @@
 =======
                                     Lists Job Posting
 >>>>>>> origin/change_password_employer
+=======
+                                    Lists Job Posting
+>>>>>>> origin/detail_page
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -409,10 +434,16 @@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Lists job</p>
 >>>>>>> origin/change_password_employer
+=======
+                                    <a href="{{route('CRUDJobByEmployer.index')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Lists job</p>
+>>>>>>> origin/detail_page
                                     </a>
                                 </li>
                             </ul>
                         </li>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -479,6 +510,11 @@
 =======
                         <ul class="nav nav-treeview">
 >>>>>>> blog_home
+=======
+                        <!-- END List Job  -->
+
+                        <!-- <ul class="nav nav-treeview">
+>>>>>>> origin/detail_page
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
@@ -497,6 +533,7 @@
                                     <p>Read</p>
                                 </a>
                             </li>
+<<<<<<< HEAD
 <<<<<<< HEAD
                         </ul> -->
                                 <li class="nav-item has-treeview">
@@ -580,6 +617,28 @@
 =======
 =======
                         </ul>
+=======
+                        </ul> -->
+                        <li class="nav-item has-treeview">
+                            @if(Auth::check())
+                            <form method="POST" name="logout" action="{{ route('logout') }}">
+                                @csrf
+                                <a href="javascript:document.logout.submit()" class="nav-link">
+                                    <i class="nav-icon fas fa-table"></i>
+                                    <p>
+                                        Logout
+                                    </p>
+                                </a>
+                            </form>
+                            @else
+                            <a href="{{route('login')}}" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Login
+                                </p>
+                            </a>
+                            @endif
+>>>>>>> origin/detail_page
                         </li>
                     </ul>
                 </nav>
@@ -610,9 +669,46 @@
 </body>
 
 </html>
+<<<<<<< HEAD
 >>>>>>> CRUD_post
 =======
 </body>
 
 </html>
 >>>>>>> blog_home
+=======
+@else
+<section>
+    <div class="error404" style="text-align: center; padding-top:25px;">
+        <div class="error-content">
+            <h3>Xin lỗi, chúng tôi không tìm thấy trang mà bạn cần!</h3>
+            <div class="list-contact">
+                <div class="itemct">
+                    <a href="{{route('index')}}" class="link link--yellow" style="color: blue;">
+                        <i class="iconerror-tgdd"></i>
+                        <p>Trở về trang chủ</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@endif
+@else
+<section>
+    <div class="error404" style="text-align: center; padding-top:25px;">
+        <div class="error-content">
+            <h3>Xin lỗi, chúng tôi không tìm thấy trang mà bạn cần!</h3>
+            <div class="list-contact">
+                <div class="itemct">
+                    <a href="{{route('index')}}" class="link link--yellow" style="color: blue;">
+                        <i class="iconerror-tgdd"></i>
+                        <p>Trở về trang chủ</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@endif
+>>>>>>> origin/detail_page

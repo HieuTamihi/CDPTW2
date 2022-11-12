@@ -18,6 +18,9 @@ class employerSeeder extends Seeder
             [
                 'name_company' => 'FPT',
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/detail_page
                 'user_id'=>'1',
                 'website'=>'https://fpt.com.vn/',
                 'infor'=>'Tổng Công ty Dịch vụ số FPT - FPT mang sứ mệnh sáng tạo những sản phẩm công nghệ đi đầu lĩnh vực Fintech và Big Data, với mong muốn digital hoá những hình thức kinh doanh truyền thống. , Hiện Viettel Digital đang tập trung phát triển một hệ sinh thái tài chính số với core chính là Viettel Money. Bên cạnh đó, chúng tôi cũng đang mở rộng 
@@ -28,6 +31,7 @@ class employerSeeder extends Seeder
                 'welfare'=>'Mức lương thu hút nhân tài, ứng viên tự thỏa thuận khi tham gia phỏng vấn , Có cơ hội làm việc trong một tập đoàn lớn nhưng môi trường không khác gì StartUp , Tham gia vào các dự án công ty.',
                 'address' => '5A/2 Trần Phú, Phường 04, Quận 5, Thành phố Hồ Chí Minh Tầng 12 khu Văn phòng tòa MIPEC, 229 Tây Sơn, Phường Ngã Tư Sở, Quận Đống Đa, Thành phố Hà Nội',
                 'image' => 'CGSQtFPgvd7HKMXvon4l.png',
+<<<<<<< HEAD
 =======
                 'address' => '5A/2 Trần Phú, Phường 04, Quận 5, Thành phố Hồ Chí Minh Tầng 12 khu Văn phòng tòa MIPEC, 229 Tây Sơn, Phường Ngã Tư Sở, Quận Đống Đa, Thành phố Hà Nội',
                 'image' => 'download.png',
@@ -37,6 +41,13 @@ class employerSeeder extends Seeder
             ], [
                 'name_company' => 'Go2Joy Việt Nam',
 <<<<<<< HEAD
+=======
+                'email' => 'FPT@gmail.com',
+                'phone_number' => '0123456789',
+                'created_at' => '2022-11-01 22:21:11',
+            ], [
+                'name_company' => 'Go2Joy Việt Nam',
+>>>>>>> origin/detail_page
                 'user_id'=> '2',
                 'website'=>'https://go2joy.com.vn/',
                 'infor'=>'Tổng Công ty Dịch vụ số Go2Joy - Go2Joy  mang sứ mệnh sáng tạo những sản phẩm công nghệ đi đầu lĩnh vực Fintech và Big Data, với mong muốn digital hoá những hình 
@@ -50,6 +61,10 @@ class employerSeeder extends Seeder
                 'image' => 'logo.4089b512.png',
                 'email' => 'go2joyvn@gmail.com',
                 'phone_number' => '0123456789',
+<<<<<<< HEAD
+=======
+                'created_at' => '2022-11-02 22:21:11',
+>>>>>>> origin/detail_page
             ], [
                 'name_company' => 'SAMO',
                 'user_id'=>'3',
@@ -67,6 +82,10 @@ class employerSeeder extends Seeder
                 'image' => 'TopDev-LogoSAMO-1659088259.png',
                 'email' => 'SAMO@gmail.com',
                 'phone_number' => '0123456789',
+<<<<<<< HEAD
+=======
+                'created_at' => '2022-11-03 22:21:11',
+>>>>>>> origin/detail_page
             ], [
                 'name_company' => 'TMA Solutions',
                 'user_id'=>'4',
@@ -84,6 +103,10 @@ class employerSeeder extends Seeder
                 'image' => 'TopDev-logoleXQXRp4F3f6eLCRvvxOklk4Q5ctPEoh-1656988646.png',
                 'email' => 'Solutions@gmail.com',
                 'phone_number' => '0123456789',
+<<<<<<< HEAD
+=======
+                'created_at' => '2022-11-04 22:21:11',
+>>>>>>> origin/detail_page
             ], [
                 'name_company' => 'Korean IT Companies ',
                 'user_id' => '5',
@@ -101,6 +124,10 @@ class employerSeeder extends Seeder
                 'image' => 'logo-it-ocmp-AdqRx.jpg',
                 'email' => 'Korean@gmail.com',
                 'phone_number' => '0123456789',
+<<<<<<< HEAD
+=======
+                'created_at' => '2022-11-05 22:21:11',
+>>>>>>> origin/detail_page
             ], [
                 'name_company' => 'TAPTAP',
                 'user_id'=>'6',
@@ -118,6 +145,10 @@ class employerSeeder extends Seeder
                 'image' => 'TopDev-logoCmAkkDByOMNZJDE0e4VoD7vIhooacXEH-1654749314.jpg',
                 'email' => 'TAPTAP@gmail.com',
                 'phone_number' => '0123456789',
+<<<<<<< HEAD
+=======
+                'created_at' => '2022-11-06 22:21:11',
+>>>>>>> origin/detail_page
             ], [
                 'name_company' => 'Aventra Group',
                 'user_id'=>'7',
@@ -134,6 +165,7 @@ class employerSeeder extends Seeder
                 'address' => 'Hồ Chí Minh',
                 'image' => 'TopDev-4725e148-96ec-4048-8de8-e41e3959686b-PhuongNguyen-1666144852.jpg',
                 'email' => 'Aventra@gmail.com',
+<<<<<<< HEAD
 =======
                 'address' => '5A/2 Trần Phú, Phường 04, Quận 5, Thành phố Hồ Chí Minh Tầng 12 khu Văn phòng tòa MIPEC, 229 Tây Sơn, Phường Ngã Tư Sở, Quận Đống Đa, Thành phố Hà Nội',
                 'image' => 'download.png',
@@ -154,3 +186,11 @@ class employerSeeder extends Seeder
 =======
 }
 >>>>>>> blog_home
+=======
+                'phone_number' => '0123456789',
+                'created_at' => '2022-11-08 22:21:11',
+            ]
+        ]);
+    }
+}
+>>>>>>> origin/detail_page

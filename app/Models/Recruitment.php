@@ -10,6 +10,7 @@ class Recruitment extends Model
     use HasFactory;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     use HasFactory;
     protected $table = 'recruitments';
@@ -26,3 +27,11 @@ class Recruitment extends Model
     ];
 }
 >>>>>>> RUEmployer_By_ID
+=======
+    use HasFactory;
+    protected $table = 'recruitments';
+    protected $fillable = [
+        'status',
+    ];
+}
+>>>>>>> origin/detail_page

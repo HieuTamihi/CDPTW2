@@ -17,6 +17,9 @@ class customerSeeder extends Seeder
         DB::table('customers')->insert([
             [
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/detail_page
                 'email' => 'thaihieu123@gmail.com',
                 'phone_number' => '0123456789',
                 'fullname' => 'Thai Hieu',
@@ -65,6 +68,7 @@ class customerSeeder extends Seeder
                 'gender' => '1',
                 'favorite' => 'Java, PHP, JS',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 'email' => 'abc@gmail.com',
                 'phone_number' => '000000',
@@ -87,6 +91,8 @@ class customerSeeder extends Seeder
 >>>>>>> blog_home
 =======
 >>>>>>> origin/change_password_employer
+=======
+>>>>>>> origin/detail_page
                 'status' => '1',
             ],
         ]);

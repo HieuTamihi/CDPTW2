@@ -6,7 +6,11 @@
         @if(Session::has('notify'))
             <div class="alert alert-success" style="text-align:center;">{{Session::get('notify')}}</div>
             @endif
+<<<<<<< HEAD
             <a href=""><button class="btn btn-primary" style="float: right;">List Post</button></a>
+=======
+            <a href="{{route('CRUDJobByEmployer.index')}}"><button class="btn btn-primary" style="float: right;">List Post</button></a>
+>>>>>>> origin/detail_page
             <br>
             <br>
             <div class="row">
@@ -58,16 +62,32 @@
                 <tbody>
                     <?php
                     $i = 1;
+<<<<<<< HEAD
                     ?>
                     @foreach($show->customers as $value)
+=======
+                    $str = "";
+                    ?>
+                    @foreach($list_recruitmet as $value)
+                    <?php 
+                    $value->pivot->status == 1 ? $str = "Đã xem" : $str = "Chưa xem";
+                    $value->gender == 0 ? $gt = "Nam" : $gt = "Nữ"; 
+                    ?>
+>>>>>>> origin/detail_page
                     <tr>
                         <th scope="row">{{$i++}}</th>
                         <td>{{$value->fullname}}</td>
                         <td>{{$value->phone_number}}</td>
                         <td>{{$value->address}}</td>
+<<<<<<< HEAD
                         <td>{{$value->gender}}</td>
                         <td>{{$value->favorite}}</td>
                         <td>{{$value->pivot->status}}</td>
+=======
+                        <td>{{$gt}}</td>
+                        <td>{{$value->favorite}}</td>
+                        <td>{{$str}}</td>
+>>>>>>> origin/detail_page
                         <td style="display: flex; justify-content: space-evenly">
                             <a href="{{route('detail_recruitment',$value->id)}}">
                             <i class='fas fa-eye'></i>
@@ -84,6 +104,12 @@
                     @endforeach
                 </tbody>
             </table>
+<<<<<<< HEAD
+=======
+            <div>
+              {{$list_recruitmet->links()}}
+            </div>
+>>>>>>> origin/detail_page
         </div>
     </section>
 </div>

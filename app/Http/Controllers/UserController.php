@@ -12,11 +12,16 @@ use App\Models\Employer;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use App\Http\Requests\User\RegisterRequest;
 use App\Http\Requests\User\LoginRequest;
 =======
 
 >>>>>>> origin/confirm_email
+=======
+use App\Http\Requests\User\RegisterRequest;
+use App\Http\Requests\User\LoginRequest;
+>>>>>>> origin/detail_page
 class UserController extends Controller
 {
     public function logout()
@@ -90,6 +95,7 @@ class UserController extends Controller
                 ]);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if($request->role == 3){
                         Employer::create([
                             'user_id' => $request->user_id,
@@ -101,6 +107,8 @@ class UserController extends Controller
 =======
 =======
 >>>>>>> origin/change_password_employer
+=======
+>>>>>>> origin/detail_page
 
                 //Add Employer table
                 Employer::create([
@@ -113,14 +121,20 @@ class UserController extends Controller
 
                 //Send mail
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/detail_page
                 Mail::send('DashboardTemplate.emails.active', compact('newUser'), function ($email) use ($newUser) {
                     $email->subject('Active Acount');
                     $email->to($newUser->email);
                 });
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> RUEmployer_By_ID
 =======
 >>>>>>> origin/change_password_employer
+=======
+>>>>>>> origin/detail_page
                 return redirect()->route('register')->with('message', 'Tạo tài khoản thành công !');
 =======
                 Mail::send('DashboardTemplate.emails.active',compact('newUser'),function($email) use($newUser) {
@@ -224,6 +238,62 @@ class UserController extends Controller
 >>>>>>> origin/confirm_email
 }
 =======
+    // Active
+    public function active(User $newUser, $confirm)
+    {
+        if ($newUser->confirm == $confirm) {
+            $newUser->update([
+                'status' => '1',
+                'confirm' => '',
+            ]);
+            return redirect()->route('login');
+        }
+    }
+    public function registerCT(Request $request)
+    {
+        if ($request->isMethod('post')) {
+            $validator = Validator::make($request->all(), []);
+            if ($validator->fails()) {
+                return redirect()->back()
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+            $user = DB::table('users')->where('email', $request->email)->first();
+            if (!$user) {
+                $conf = Str::random(10);
+                $newUserCT = User::create([
+                    'email' => $request->email,
+                    'password' => $request->password,
+                    'phone' => $request->phone,
+                    'role' => $request->role = 3,
+                    'status' => $request->status = 0,
+                    'customer_id' => $request->customer_id,
+                    'confirm' => $conf,
+                ]);
+                Customer::create([
+                    'id' => $request->customer_id,
+                    'email' => $request->email,
+                    'phone_number' => $request->phone,
+                    'status' => $request->status = 1,
+                ]);
+
+                 //Send mail
+                 Mail::send('DashboardTemplate.emails.activeCT', compact('newUserCT'), function ($email) use ($newUserCT) {
+                    $email->subject('Active Acount');
+                    $email->to($newUserCT->email);
+                });
+                return redirect()->route('registerCT')->with('message', 'Tạo tài khoản thành công !');
+            } else {
+                return redirect()->route('registerCT')->with('message', 'Tài khoản đã tồn tại !');
+            }
+        }
+    }
+    public function getCustomerID()
+    {
+        $customer_id = DB::table('customers')->select('id')->orderBy('id', 'DESC')->first();
+        (int)$customer_id->id += 1;
+        return view('registerCT', compact('customer_id'));
+    }
     // Active
     public function active(User $newUser, $confirm)
     {

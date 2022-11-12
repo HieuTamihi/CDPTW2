@@ -1,6 +1,7 @@
 @extends('header')
 @section('footer')
 <<<<<<< HEAD
+<<<<<<< HEAD
     <!-- Search -->
     <div class="search container">
         <form action="{{ route('search') }}" method="GET">
@@ -49,11 +50,13 @@
                                             </div>
 =======
 
+=======
+>>>>>>> origin/detail_page
 <!-- Search -->
-<div class="search container-fluid">
-    <form action="">
+<div class="search container">
+    <form action="{{ route('search') }}" method="GET">
         <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
-        <input type="text" class="search__input form-control" placeholder="Nhập từ khoá tìm kiếm">
+        <input type="text" class="search__input form-control" name="keyword" placeholder="Nhập từ khoá tìm kiếm">
         <button type="submit" class="search__btn btn btn-danger">Tìm kiếm</button>
     </form>
 </div>
@@ -79,6 +82,10 @@
                             <div class="row">
                                 <div class="col-md-5 intem-slide-img">
                                     <a href="{{route('employer.show',$row->id)}}">
+<<<<<<< HEAD
+=======
+                                        {{$row->id}}
+>>>>>>> origin/detail_page
                                         <img class="intem-img" src="{{url('img')}}/{{$row->image}}" alt="">
                                     </a>
                                 </div>
@@ -93,7 +100,10 @@
                                         </p>
                                         <div class="spotilght-txt-DC">
                                             <p class="loca-spotlight">{{$row->address}}</p>
+<<<<<<< HEAD
 >>>>>>> CRUD_Employer_By_ID
+=======
+>>>>>>> origin/detail_page
                                         </div>
                                     </div>
                                 </div>
@@ -107,6 +117,7 @@
                             @endforeach
                         </div>
                     </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
                 </div>
                 <div class="col-md-4 hot-work">
@@ -130,6 +141,14 @@
                                 </li>
                             @endforeach
                         </ul>
+=======
+                    <div class="col-md-2 intem-thume">
+                        @foreach ($employer as $row)
+                        <a class="intem-thume-img" href="{{route('employer.show',$row->id)}}">
+                            <img src="{{url('img')}}/{{$row->image}}" alt="">
+                        </a>
+                        @endforeach
+>>>>>>> origin/detail_page
                     </div>
                 </div>
             </div>
@@ -183,7 +202,11 @@
                         @foreach($job as $name)
                         <li>
                             <span class="tags"><strong class="tags-txt">{{$name->name_company}}</strong></span>
+<<<<<<< HEAD
                             <br><a href="{{route('employer.show',$row->id)}}">{{$name->title}}</a>
+=======
+                            <br><a href="{{route('employer.show',$name->id)}}">{{$name->title}}</a>
+>>>>>>> origin/detail_page
                             <p class="job-salary-view">{{$name->salary}}</p>
                         </li>
                         @endforeach

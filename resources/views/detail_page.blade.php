@@ -108,6 +108,9 @@
         <button type="submit" class="search__btn btn btn-danger">Tìm kiếm</button>
     </form>
 </div>
+@if(Session::has('message'))
+<div class="alert alert-success">{{Session::get('message')}}</div>
+@endif
 <div class="container">
     <div class="detail__body">
         <div class="row">
@@ -131,12 +134,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <h6 class="navi__fol">Theo dõi</h6>
 =======
 =======
 >>>>>>> RUEmployer_By_ID
 =======
 >>>>>>> origin/change_password_employer
+=======
+>>>>>>> origin/detail_page
                     @if(Auth::check())
                     <form action="{{route('wishlist.store')}}" method="POST">
                         @csrf
@@ -156,11 +162,14 @@
                     @endif
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> CRUD_Job_By_Emloy_id
 =======
 >>>>>>> RUEmployer_By_ID
 =======
 >>>>>>> origin/change_password_employer
+=======
+>>>>>>> origin/detail_page
                 </div>
                 <div class="content">
                     <div class="row">
@@ -168,21 +177,36 @@
                             @foreach($relate as $value)
                             <h4>{{$value->title}}</h4>
                             <p>{{$value->salary}}</p>
+<<<<<<< HEAD
                             <a href="#" class="font-size_a">
                                 <p>Đăng nhập để xem mức lương</p>
                             </a>
                             <p><?php echo str_replace(' , ','<p>',$detail->infor) ?></p>
+=======
+                            <a href="{{route('login')}}" class="font-size_a">
+                                <p>Đăng nhập để xem mức lương</p>
+                            </a>
+                            <p><?php echo str_replace(' , ', '<p>', $detail->infor) ?></p>
+>>>>>>> origin/detail_page
                             </p>
                             <h2>Trách nhiệm công việc:</h2>
                             <div class="content__left__responsibility" id="responsibility">
                                 <ul>
+<<<<<<< HEAD
                                     <li><?php echo str_replace(' , ','<li>',$detail->responsibility) ?></li>
+=======
+                                    <li><?php echo str_replace(' , ', '<li>', $detail->responsibility) ?></li>
+>>>>>>> origin/detail_page
                                 </ul>
                             </div>
                             <h2>Kỹ năng & Chuyên môn:</h2>
                             <div class="content__left__specialize">
                                 <ul>
+<<<<<<< HEAD
                                     <li><?php echo str_replace(', ','<li>',$value->required) ?></li>
+=======
+                                    <li><?php echo str_replace(', ', '<li>', $value->required) ?></li>
+>>>>>>> origin/detail_page
                                 </ul>
                             </div>
                             @endforeach
@@ -190,12 +214,18 @@
                         <div class="col-12 col-xl-3 content__right">
                             <button type=" button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ứng tuyển ngay</button>
                             <p class="text_align">Hoặc</p>
+<<<<<<< HEAD
                             <a href="#" class="format_a text_align">
                                 <button type=" button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+=======
+                            <a href="{{asset('createCV')}}" class="format_a text_align">
+                                <button type=" button" class="btn btn-primary">
+>>>>>>> origin/detail_page
                                     Tạo CV Ứng Tuyển
                                 </button>
                             </a>
-                            <p class="text_align">4 ngày trước</p>
+                            <p class="text_align"><?php echo str_replace('-','',date('d',strtotime($detail->created_at)) - $date);?> ngày trước</p>
+                            @endforeach
                             <h6>Địa điểm</h6>
                             <p>{{$detail->address}}</p>
                             <h6>Số năm kinh nghiệm</h6>
@@ -205,8 +235,12 @@
                             <p class="border_type">{{$value->type}}</p>
                             <h6>Kỹ năng</h6>
                             <div class="content__right__skill">
+<<<<<<< HEAD
                                 <p><?php echo str_replace(', ','<p>',$value->skill) ?></p>
 >>>>>>> CRUD_Employer_By_ID
+=======
+                                <p><?php echo str_replace(', ', '<p>', $value->skill) ?></p>
+>>>>>>> origin/detail_page
                             </div>
                             @endforeach
                         </div>
@@ -269,6 +303,7 @@
                 <h6>Các công nghệ sử dụng</h6>
                 @foreach($relate as $value)
                 <div class="detail_body__right__skill">
+<<<<<<< HEAD
                     <p><?php echo str_replace(' , ','<p>',$value->skill) ?></p>
                 </div>
                 @endforeach
@@ -281,24 +316,47 @@
 >>>>>>> CRUD_Employer_By_ID
             </div>
          
+=======
+                    <p><?php echo str_replace(', ', '<p>', $value->skill) ?></p>
+                </div>
+                @endforeach
+                <h6>Phúc lợi dành cho bạn</h6>
+                <p><?php echo str_replace(' , ', '<p>', $detail->welfare) ?></p>
+            </div>
+
+>>>>>>> origin/detail_page
         </div>
 <<<<<<< HEAD
 =======
         <div class="row" id="CV">
             <div class="col-12 col-xl-9">
                 <div class="list_word">
+<<<<<<< HEAD
                   @foreach($job_relate as $value)
                     <a href="{{route('employer.show',$value->id)}}"><h5>{{$value->title}}</h5></a>
+=======
+                    @foreach($job_relate as $value)
+                    <a href="{{route('employer.show',$value->id)}}">
+                        <h5>{{$value->title}}</h5>
+                    </a>
+>>>>>>> origin/detail_page
                     <a href="#" class="font-size_a">
                         <p>Đăng nhập để xem mức lương</p>
                     </a>
                     <div class="list_word__skill">
+<<<<<<< HEAD
                         <p><?php echo str_replace(' , ','<p>',$value->skill) ?></p>
                         <p>JavaScript</p>
                         <p>Solution Architect</p>
                     </div>
                     <div class="list_word__recruiment">
                         <a href="#">Ứng tuyển</a> 
+=======
+                        <p><?php echo str_replace(', ', '<p>', $value->skill) ?></p>
+                    </div>
+                    <div class="list_word__recruiment">
+                        <a href="{{route('employer.show',$value->id)}}">Ứng tuyển</a>
+>>>>>>> origin/detail_page
                     </div>
                     @endforeach
                 </div>
@@ -307,6 +365,7 @@
         </div>
 >>>>>>> CRUD_Employer_By_ID
     </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -381,6 +440,8 @@
                     </form>
                 </div>
 =======
+=======
+>>>>>>> origin/detail_page
 </div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -446,8 +507,16 @@
                     <a href="{{route('login')}}">Bạn cần phải đăng nhập để ứng tuyển</a>
                     @endif
                 </form>
+<<<<<<< HEAD
 >>>>>>> CRUD_Job_By_Emloy_id
             </div>
         </div>
     </div>
 @endsection;
+=======
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+>>>>>>> origin/detail_page

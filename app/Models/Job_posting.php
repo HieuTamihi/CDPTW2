@@ -9,6 +9,7 @@ class Job_posting extends Model
 {
     use HasFactory;
 <<<<<<< HEAD
+<<<<<<< HEAD
     protected $fillable = [
         'employer_id', 'title', 'experience', 'type', 'skill', 'required', 'salary'
     ];
@@ -37,6 +38,12 @@ class Job_posting extends Model
     protected $table = 'Job_postings';
 >>>>>>> RUEmployer_By_ID
 =======
+=======
+    public function empl()
+    {
+        return $this->belongsTo(Employer::class,'employer_id');
+    }
+>>>>>>> origin/detail_page
     public function customers()
     {
         return $this->belongsToMany(Customer::class,'Recruitments','jobposting_id','customer_id')
@@ -44,7 +51,10 @@ class Job_posting extends Model
     }
     
     protected $table = 'Job_postings';
+<<<<<<< HEAD
 >>>>>>> origin/change_password_employer
+=======
+>>>>>>> origin/detail_page
     protected $fillable = [
         'employer_id',
         'title',
@@ -55,6 +65,7 @@ class Job_posting extends Model
         'salary',
         'token',
     ];
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -69,3 +80,6 @@ class Job_posting extends Model
 =======
 }
 >>>>>>> origin/change_password_employer
+=======
+}
+>>>>>>> origin/detail_page

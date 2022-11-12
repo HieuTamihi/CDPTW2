@@ -3,9 +3,13 @@
 namespace Database\Seeders;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use DateTime;
 =======
 >>>>>>> blog_home
+=======
+use DateTime;
+>>>>>>> origin/detail_page
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 

@@ -11,6 +11,7 @@
     <link href="{{ asset('css/reset_pass.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/change_pass.css') }}" rel="stylesheet" type="text/css">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <link href="{{ asset('css/change_pass_log.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/tracking_work.css') }}" rel="stylesheet" type="text/css">
 <<<<<<< HEAD
@@ -25,6 +26,13 @@
 >>>>>>> blog_home
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+=======
+    <link href="{{ asset('css/change_pass_log.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/tracking_work.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/personal_info.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/manage_cv.css') }}" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+>>>>>>> origin/detail_page
     <script src="https://kit.fontawesome.com/f6dce9b617.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 <<<<<<< HEAD
@@ -108,6 +116,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     @if (Auth::check() && Auth::user()->role == 2)
 <<<<<<< HEAD
                         <li><a class="btn btn-danger header__right--logemp" href="#">Đăng tuyển</a></li>
@@ -143,12 +152,38 @@
 =======
                     @if (Auth::check() && Auth::user()->role == 2)
 >>>>>>> origin/change_password_employer
+=======
+                    @if (Auth::check() && Auth::user()->role == 2)
+>>>>>>> origin/detail_page
                     <li><a class="btn btn-danger header__right--logemp" href="#">Đăng tuyển</a></li>
                     <li>
                         <form method="POST" name="logout" action="{{ route('logout') }}">
                             @csrf
                             <a href="javascript:document.logout.submit()" class="btn btn-dark header__right--logcus"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
                         </form>
+<<<<<<< HEAD
+=======
+                    </li>
+                    @elseif(Auth::check() && Auth::user()->role == 3)
+                    <li>
+                        <div class="dropdown">
+                            <div class="dropbtn">{{Auth::user()->email}}</div>
+                            <div class="dropdown-content">
+                                <a href="{{route('ShowEditUser',['id'=>Auth::user()->customer_id])}}">Thông tin cá nhân</a>
+                                <a href="{{route('cv.index')}}">Quản lý CV</a>
+                                <a href="{{asset('apply_job')}}">Việc đã ứng tuyển</a>
+                                <a href="{{route('wishlist.index')}}">Việc đang theo dõi</a>
+                                <form method="POST" name="logout" action="{{ route('logout') }}">
+                                    @csrf
+                                    <a href="javascript:document.logout.submit()"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                    @else
+                    <li>
+                        <a class="btn btn-dark header__right--logcus" href="{{ asset('login') }}">Đăng nhập</a>
+>>>>>>> origin/detail_page
                     </li>
                     @elseif(Auth::check() && Auth::user()->role == 3)
                     <li>
