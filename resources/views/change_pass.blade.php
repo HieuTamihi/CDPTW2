@@ -6,18 +6,31 @@
             <h4>Change password</h4>
         </div>
         <div class="form__reset">
-            <form action="">
-                <div class="input__email__change">
-                    <label for="email">Email</label>
-                    <input type="text" class="type__email">
-                </div>
+            @if(Session()->get('message'))
+            <div class="alert alert-success" role="alert">
+                {{Session()->get('message')}}
+            </div>
+            @endif
+            @if (session('error'))
+            <div class="alert alert-danger" role="alert">
+                {{ session('error') }}
+            </div>
+            @endif
+            @php
+            $token = $_GET['token'];
+            $email = $_GET['email'];
+            @endphp
+            <form action="{{url('reset-new-pass')}}" method="POST">
+                @csrf
+                <input type="hidden" name="email" value="{{$email}}">
+                <input type="hidden" name="token" value="{{$token}}">
                 <div class="input__pass__change">
                     <label for="email">Password</label>
-                    <input type="password" class="type__pass">
+                    <input type="password" name="password" class="type__pass" required>
                 </div>
                 <div class="input__confirm__change">
                     <label for="email">Confirm password</label>
-                    <input type="password" class="type__confirm">
+                    <input type="password" name="password_confirmation" class="type__confirm" required>
                 </div>
                 <input type="submit" value="Change" class="btn btn-primary change__btn">
             </form>

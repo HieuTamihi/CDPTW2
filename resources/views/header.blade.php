@@ -10,12 +10,13 @@
     <link href="{{ asset('css/blogit.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/reset_pass.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/change_pass.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/change_pass_log.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/tracking_work.css') }}" rel="stylesheet" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="{{ asset('css/personal_info.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/manage_cv.css') }}" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/f6dce9b617.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-
 </head>
 
 <body>
@@ -46,26 +47,17 @@
     <header class="header">
         <nav class="navbar navbar-expand-lg navbar-light container">
             <div class="container-fluid header__left">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Việc làm
+                            <a class="nav-link active" aria-current="page" href="{{asset('index')}}">Việc làm
                                 IT</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page"
-                                href="{{ asset('resume.resume_create_cv') }}">Tạo
-                                CV</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page"
-                                href="{{ asset('company_information') }}">Công ty
-                                IT</a>
+                            <a class="nav-link active" aria-current="page" href="{{ asset('createCV') }}">Tạo CV</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{ asset('blogit') }}">Blog IT</a>
@@ -75,19 +67,40 @@
             </div>
             <div class="header__right d-flex">
                 <ul>
-                    @if (Auth::check())
-                        @if (Auth::user()->role == 3)
-                            <li><a class="btn btn-danger header__right--logemp" href="#">Đăng tuyển</a></li>
-                        @endif
+                    @if (Auth::check() && Auth::user()->role == 2)
+                    <li><a class="btn btn-danger header__right--logemp" href="#">Đăng tuyển</a></li>
+                    <li>
                         <form method="POST" name="logout" action="{{ route('logout') }}">
                             @csrf
-                            <li> <a class="btn btn-dark header__right--logcus"
-                                    href="javascript:document.logout.submit()"><i
-                                        class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
+                            <a href="javascript:document.logout.submit()" class="btn btn-dark header__right--logcus"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
                         </form>
+                    </li>
+                    @elseif(Auth::check() && Auth::user()->role == 3)
+                    <li>
+                        <div class="dropdown">
+                            <div class="dropbtn">{{Auth::user()->email}}</div>
+                            <div class="dropdown-content">
+                                <a href="{{route('ShowEditUser',['id'=>Auth::user()->customer_id])}}">Thông tin cá nhân</a>
+                                <a href="{{route('cv.index')}}">Quản lý CV</a>
+                                <a href="{{route('wishlist.index')}}">Việc đang theo dõi</a>
+                                <form method="POST" name="logout" action="{{ route('logout') }}">
+                                    @csrf
+                                    <a href="javascript:document.logout.submit()"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                    @elseif(Auth::check() && Auth::user()->role == 1)
+                    <li>
+                        <form method="POST" name="logout" action="{{ route('logout') }}">
+                            @csrf
+                            <a href="javascript:document.logout.submit()" class="btn btn-dark header__right--logcus"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
+                        </form>
+                    </li>
                     @else
-                        <li><a class="btn btn-dark header__right--logcus" href="{{ asset('login') }}">Đăng nhập</a>
-                        </li>
+                    <li>
+                        <a class="btn btn-dark header__right--logcus" href="{{ asset('login') }}">Đăng nhập</a>
+                    </li>
                     @endif
                 </ul>
             </div>
@@ -140,8 +153,7 @@
         </div>
     </footer>
     <!-- End Footer -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
     </script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

@@ -67,14 +67,15 @@ class userSeeder extends Seeder
                 'customer_id' => '1',
                 'role' => '3',
                 'status' => '1',
-            ], [
+            ]
+            , [
                 'email' => 'thaihieu124@gmail.com',
                 'phone' => '0123456788',
                 'password' => '$2y$10$y2NorDtAaQ9Wpkymi86zsu7U8X1zezLFKqPqkpT42pjkdJqVCTuLm',
                 'customer_id' => '2',
                 'role' => '3',
                 'status' => '1',
-            ],
+            ]
         ]);
     }
 }

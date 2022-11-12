@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\AdminPostsRequest;
 use Illuminate\Http\Request;
 use App\Models\Post;
 
@@ -18,6 +17,7 @@ class AdminPostsController extends Controller
         $resultPosts = Post::orderBy('id', 'desc')->paginate(5);
         return view('DashboardTemplate.dashboard_blog_home', compact('resultPosts'));
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -27,13 +27,14 @@ class AdminPostsController extends Controller
     {
         return view('DashboardTemplate.dashboard_blog_add');
     }
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AdminPostsRequest $request)
+    public function store(Request $request)
     {
         if ($request->hasFile('post_image')) {
             $image = $request->post_image;
@@ -49,8 +50,8 @@ class AdminPostsController extends Controller
 
 
         // $posts->save();
-        return redirect()->back()->with('msg', 'Post added successfully');
     }
+
     /**
      * Display the specified resource.
      *
@@ -61,6 +62,7 @@ class AdminPostsController extends Controller
     {
         //
     }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -70,8 +72,8 @@ class AdminPostsController extends Controller
     public function edit($id)
     {
         $showDataEdit = Post::findOrFail($id);
-        return view('DashboardTemplate.dashboard_blog_edit', compact('showDataEdit'));
     }
+
     /**
      * Update the specified resource in storage.
      *
@@ -79,7 +81,7 @@ class AdminPostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(AdminPostsRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $posts = Post::findOrFail($id);
         if ($request->hasFile('post_image')) {
@@ -91,8 +93,8 @@ class AdminPostsController extends Controller
         $posts->content = $request->post_content;
         $posts->image = $image_name;
         $posts->update();
-        return redirect()->back()->with('msg', 'Post updated successfully');
     }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -101,9 +103,7 @@ class AdminPostsController extends Controller
      */
     public function destroy($id)
     {
-        $postDelete = Post::find($id);
-        $postDelete->delete();
-        return redirect()->back()->with('msg', 'Post deleted successfully');
+        //
     }
 
     public function blogTrash()

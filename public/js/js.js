@@ -1,12 +1,12 @@
 $('#customid').slick({
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    vertical: true,
+    centerMode: true,
+    centerPadding: '60px',
+    slidesToShow: 2,
     appendArrows: '.contron-pre-next',
-    autoplaySpeed: 1000,
-    arrows: true,
+    autoplaySpeed: 4000,
     infinite: true,
     autoplay: true,
+    vertical: true,
 });
 $('.intem-main').slick({
     infinite: true,

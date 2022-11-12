@@ -8,6 +8,8 @@
                     <div class="col-sm-6">
                         <h1>Fixed Layout</h1>
                     </div>
+<<<<<<< HEAD
+=======
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -15,6 +17,7 @@
                             <li class="breadcrumb-item active">Fixed Layout</li>
                         </ol>
                     </div>
+>>>>>>> origin/register_employer
                 </div>
             </div><!-- /.container-fluid -->
         </section>
