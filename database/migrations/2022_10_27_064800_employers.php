@@ -15,6 +15,7 @@ class Employers extends Migration
     {
         Schema::create('employers', function (Blueprint $table) {
             $table->id()->autoIncrement();
+<<<<<<< HEAD
             $table->integer('user_id');
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -39,11 +40,17 @@ class Employers extends Migration
 >>>>>>> CRUD_Job_By_Emloy_id
 =======
 >>>>>>> RUEmployer_By_ID
+=======
+>>>>>>> blog_home
             $table->string('name_company');
             $table->string('address')->nullable();
             $table->string('image')->nullable();
             $table->string('email');
+<<<<<<< HEAD
             $table->string('phone_number',11);
+=======
+            $table->integer('phone_number');
+>>>>>>> blog_home
             $table->timestamps();
         });
     }

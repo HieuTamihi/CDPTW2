@@ -17,6 +17,7 @@ class employerSeeder extends Seeder
         DB::table('employers')->insert([
             [
                 'name_company' => 'FPT',
+<<<<<<< HEAD
                 'user_id'=>'1',
                 'website'=>'https://fpt.com.vn/',
                 'infor'=>'Tổng Công ty Dịch vụ số FPT - FPT mang sứ mệnh sáng tạo những sản phẩm công nghệ đi đầu lĩnh vực Fintech và Big Data, với mong muốn digital hoá những hình thức kinh doanh truyền thống. , Hiện Viettel Digital đang tập trung phát triển một hệ sinh thái tài chính số với core chính là Viettel Money. Bên cạnh đó, chúng tôi cũng đang mở rộng 
@@ -27,10 +28,15 @@ class employerSeeder extends Seeder
                 'welfare'=>'Mức lương thu hút nhân tài, ứng viên tự thỏa thuận khi tham gia phỏng vấn , Có cơ hội làm việc trong một tập đoàn lớn nhưng môi trường không khác gì StartUp , Tham gia vào các dự án công ty.',
                 'address' => '5A/2 Trần Phú, Phường 04, Quận 5, Thành phố Hồ Chí Minh Tầng 12 khu Văn phòng tòa MIPEC, 229 Tây Sơn, Phường Ngã Tư Sở, Quận Đống Đa, Thành phố Hà Nội',
                 'image' => 'CGSQtFPgvd7HKMXvon4l.png',
+=======
+                'address' => '5A/2 Trần Phú, Phường 04, Quận 5, Thành phố Hồ Chí Minh Tầng 12 khu Văn phòng tòa MIPEC, 229 Tây Sơn, Phường Ngã Tư Sở, Quận Đống Đa, Thành phố Hà Nội',
+                'image' => 'download.png',
+>>>>>>> blog_home
                 'email' => 'FPT@gmail.com',
                 'phone_number' => '0123456789',
             ], [
                 'name_company' => 'Go2Joy Việt Nam',
+<<<<<<< HEAD
                 'user_id'=> '2',
                 'website'=>'https://go2joy.com.vn/',
                 'infor'=>'Tổng Công ty Dịch vụ số Go2Joy - Go2Joy  mang sứ mệnh sáng tạo những sản phẩm công nghệ đi đầu lĩnh vực Fintech và Big Data, với mong muốn digital hoá những hình 
@@ -128,8 +134,23 @@ class employerSeeder extends Seeder
                 'address' => 'Hồ Chí Minh',
                 'image' => 'TopDev-4725e148-96ec-4048-8de8-e41e3959686b-PhuongNguyen-1666144852.jpg',
                 'email' => 'Aventra@gmail.com',
+=======
+                'address' => '5A/2 Trần Phú, Phường 04, Quận 5, Thành phố Hồ Chí Minh Tầng 12 khu Văn phòng tòa MIPEC, 229 Tây Sơn, Phường Ngã Tư Sở, Quận Đống Đa, Thành phố Hà Nội',
+                'image' => 'download.png',
+                'email' => 'go2joyvn@gmail.com',
+                'phone_number' => '0123456789',
+            ], [
+                'name_company' => 'FPT HCM',
+                'address' => 'quận Thủ Đức, thành phố Hồ Chí Minh',
+                'image' => 'download.png',
+                'email' => 'FPTHCM@gmail.com',
+>>>>>>> blog_home
                 'phone_number' => '0123456789',
             ]
         ]);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> blog_home

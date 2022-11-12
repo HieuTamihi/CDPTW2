@@ -24,6 +24,7 @@ class JobPostings extends Migration
             $table->string('salary');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->string('token');
 =======
             $table->string('token')->nullable();
@@ -31,6 +32,8 @@ class JobPostings extends Migration
 =======
             $table->string('token')->nullable();
 >>>>>>> RUEmployer_By_ID
+=======
+>>>>>>> blog_home
             $table->timestamps();
         });
     }

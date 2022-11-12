@@ -10,6 +10,7 @@
     <link href="{{ asset('css/blogit.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/reset_pass.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/change_pass.css') }}" rel="stylesheet" type="text/css">
+<<<<<<< HEAD
     <link href="{{ asset('css/change_pass_log.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/tracking_work.css') }}" rel="stylesheet" type="text/css">
 <<<<<<< HEAD
@@ -17,11 +18,19 @@
     <link href="{{ asset('css/manage_cv.css') }}" rel="stylesheet" type="text/css">
 =======
 >>>>>>> CRUD_post
+=======
+    <link href="{{ asset('css/tracking_work.css') }}" rel="stylesheet" type="text/css">
+
+
+>>>>>>> blog_home
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/f6dce9b617.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<<<<<<< HEAD
 
+=======
+>>>>>>> blog_home
 </head>
 
 <body>
@@ -60,12 +69,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
+<<<<<<< HEAD
 <a class="nav-link active" aria-current="page" href="#">Việc làm
                                 IT</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{ asset('resume.createCV') }}">Tạo
                                 CV</a>
+=======
+                            <a class="nav-link active" aria-current="page" href="#">Việc làm
+                                IT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ asset('createCV') }}">Tạo CV</a>
+>>>>>>> blog_home
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page"
@@ -80,6 +97,7 @@
             </div>
             <div class="header__right d-flex">
                 <ul>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     @if (Auth::check() && Auth::user()->role == 2)
@@ -155,6 +173,10 @@
                         @if (Auth::user()->role == 3)
                             <li><a class="btn btn-danger header__right--logemp" href="#">Đăng tuyển</a></li>
                         @endif
+=======
+                    <li><a class="btn btn-danger header__right--logemp" href="#">Đăng tuyển</a></li>
+                    @if (Auth::check())
+>>>>>>> blog_home
                         <form method="POST" name="logout" action="{{ route('logout') }}">
                             @csrf
                             <li> <a class="btn btn-dark header__right--logcus"
@@ -164,7 +186,10 @@
                     @else
                         <li><a class="btn btn-dark header__right--logcus" href="{{ asset('login') }}">Đăng nhập</a>
                         </li>
+<<<<<<< HEAD
 >>>>>>> CRUD_post
+=======
+>>>>>>> blog_home
                     @endif
                 </ul>
             </div>
@@ -175,7 +200,11 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+<<<<<<< HEAD
 <div class="row">
+=======
+            <div class="row">
+>>>>>>> blog_home
                 <div class="col-md-3 footer__adresse ">
                     <!-- <a href=""><img src="img/logo-td.png" alt="" /></a> -->
                     <ul>

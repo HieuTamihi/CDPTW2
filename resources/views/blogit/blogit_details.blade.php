@@ -16,6 +16,7 @@
                         <div class="noibat">
 
                             <div class="content-nb">
+<<<<<<< HEAD
                                 <h1>{!! $postDetail->title !!}</h1> <br>
                                 {{-- <a><img src="{{ asset('img/blogit/' . $postDetail->image) }}"></a> --}}
                                 <p>{!! $postDetail->content !!}</p>
@@ -51,10 +52,30 @@
                                     </div>
                                 @endforeach
                                 <br>
+=======
+                                <h4>{{ $postDetail->title }}</h4> <br>
+                                <a><img src="{{ asset('img/blogit/' . $postDetail->image) }}"></a>
+                                <p>{{ $postDetail->content }}</p>
+                                {{-- Comment --}}
+                                <form action="" method="POST" style="border-top: solid 1px #ededed;padding-top:10px">
+                                    @csrf
+                                    <div>
+                                        <div class="form-group">
+                                            <textarea class="form-control" name="comment" placeholder="Hãy nhập bình luận" required maxlength="200"></textarea>
+                                        </div>
+                                    </div>
+                                    <div style="padding-left:915px;padding-top:10px"><input class="btn btn-primary"
+                                            type="submit" name="submit" value="Gửi"> </div>
+                                </form>
+>>>>>>> blog_home
                                 {{-- Comment --}}
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> blog_home
                     <div class="col-xs-12 col-sm-12 col-md-3">
                         <div class="sidebar">
                             <div class="widget ">

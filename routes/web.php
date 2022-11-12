@@ -1,6 +1,7 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CRUDListJobController;
 <<<<<<< HEAD
@@ -32,6 +33,14 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\AdminCommentsController;
 use App\Http\Controllers\BlogCommentController;
 >>>>>>> CRUD_post
+=======
+use App\Http\Controllers\AdminPostsController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\EmployerController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
+>>>>>>> blog_home
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +60,7 @@ Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::get('/', [EmployerController::class, 'index'])->name('index');
 
+<<<<<<< HEAD
 
 //dang ky
 //dang ky tai khoan employer
@@ -122,11 +132,31 @@ Route::resource('/admin-blog-comment', AdminCommentsController::class);
 
 
 
+=======
+//dang ky
+Route::post('/register', [UserController::class, 'register'])->name('register');
+
+//chuyen trang
+
+Route::get('search', [HomeController::class, 'search'])->name('search');
+
+Route::get('blogSearch', [BlogController::class, 'blogSearch'])->name('blogSearch');
+
+Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
+
+// Route::prefix('admin')->group(function () {
+
+Route::resource('/blog-home', AdminPostsController::class);
+Route::resource('/blog-add', AdminPostsController::class);
+// Route::resource('/blog-edit', AdminPostsController::class);
+// });
+>>>>>>> blog_home
 
 
 Route::prefix('blogit')->group(function () {
     Route::get('/', [BlogController::class, 'featuredPosts'])->name('blogit');
     Route::get('blogDetail/{id}', [BlogController::class, 'blogDetail'])->name('blogDetail');
+<<<<<<< HEAD
 >>>>>>> CRUD_post
 });
 <<<<<<< HEAD
@@ -146,6 +176,13 @@ Route::resource('CRUDEmployer',CRUDEmployer::class);
 >>>>>>> CRUD_Employer_By_ID
 =======
 >>>>>>> CRUD_post
+=======
+});
+
+
+
+
+>>>>>>> blog_home
 Route::get('/{name?}', function ($name = "index") {
     return view($name);
 });
