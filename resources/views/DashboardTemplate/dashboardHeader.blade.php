@@ -134,6 +134,35 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Post
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('admin-blog-home.index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Home Posts</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admin-blog-home.create') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Posts</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admin-blog-comment.index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Home comment</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
                         @if(Auth::user()->role == 2)
                         <!-- List Job By Employer_ID -->
@@ -155,7 +184,7 @@
                             </ul>
                         </li>
                         @endif
-                      
+
                         <!-- END List Job  -->
                         <li class="nav-item has-treeview">
                             @if(Auth::check())

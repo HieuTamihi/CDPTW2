@@ -75,7 +75,7 @@
                     </h2>
                 </div>
                 <div id="hotid" class="hot-wotk-intem">
-                    <ul class="supper-hot-job">
+                    <ul id="customid" class="supper-hot-job">
                         @foreach($job as $name)
                         <li>
                             <span class="tags"><strong class="tags-txt">{{$name->name_company}}</strong></span>

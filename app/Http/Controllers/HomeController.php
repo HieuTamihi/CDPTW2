@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
+use App\Models\Employer;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -10,12 +10,10 @@ class HomeController extends Controller
     public function search(Request $request)
     {
 
-        $jobTitle = DB::table('job_postings')->where('title', 'like', '%' . $request->keyword . '%')
-            ->orWhere('skill', 'like', '%' . $request->keyword . '%')
-            ->orWhere('salary', 'like', '%' . $request->keyword . '%')
+        $jobTitle = Employer::where('infor', 'like', '%' . $request->keyword . '%')
+            ->orWhere('address', 'like', '%' . $request->keyword . '%')
+            ->orWhere('name_company', 'like', '%' . $request->keyword . '%')
             ->get();
-        // dd($jobTitle);
-        // dd($jobTitle);
         return view('search', compact('jobTitle', 'request'));
     }
 }

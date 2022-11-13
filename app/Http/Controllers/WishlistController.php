@@ -45,7 +45,6 @@ class WishlistController extends Controller
         Wish_lists::create([
             'customer_id' => Auth::user()->customer_id,
             'job_posting_id' => $request->id,
-            'number' => $request->number,
         ]);
         return redirect()->route('wishlist.index')->with('message', 'Công việc đã được thêm vào danh sách theo dõi');
     }

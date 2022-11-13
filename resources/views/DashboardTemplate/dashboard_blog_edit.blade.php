@@ -3,16 +3,15 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
+            @if (session('msg'))
+                <div class="alert alert-success">{{ session('msg') }}</div>
+            @endif
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1>Edit posts</h1>
-                        @if (session('msg'))
-                            <div class="alert alert-success" style="width: 250px">{{ session('msg') }}</div>
-                        @endif
                     </div>
                     <div class="col-sm-6">
-
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -37,9 +36,13 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="formFile" class="form-label">Image</label>
+                                        <img style="width:100px;height:100px;object-fit: cover;"
+                                            src="{{ asset('img/blogit/' . $showDataEdit->image) }}"
+                                            accept="image/png, image/jpeg">
                                         <input class="form-control" type="file" id="formFile"
-                                            value="{{ $showDataEdit->image }}" accept="image/jpg, image/jpeg, image/png"
-                                            name="post_image">
+                                            accept="image/jpg, image/jpeg, image/png" name="post_image">
+
+
                                         @error('post_image')
                                             <span style="color: red;">{{ $message }}</span>
                                         @enderror

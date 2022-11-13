@@ -48,15 +48,13 @@
                         </td>
                         <td>{{$item->updated_at}}</td>
                         <td class="option__manage">
-                            <a href="#"><i class="fa-solid fa-eye"></i></a>
-                            @foreach($cv as $item)
-                            <form action="{{route('cv.destroy', $item->customer_id)}}" method="POST">
+                            <a href="{{route('viewCV', $item->id)}}"><i class="fa-solid fa-eye"></i></a>
+                            <form action="{{route('cv.destroy', $item->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" style="border: none;background: transparent;"><i class="fa-solid fa-trash"></i></button>
                             </form>
-                            @endforeach
-                            <a href="#"><i class="fa-solid fa-pen"></i></a>
+                            <a href="{{route('cv.edit',$item->id)}}"><i class="fa-solid fa-pen"></i></a>
                         </td>
                     </tr>
                     @endforeach
