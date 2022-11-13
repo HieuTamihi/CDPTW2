@@ -70,6 +70,9 @@ Route::post('/uploadCV', [RecruitmentController::class, 'store']);
 Route::resource('cv', CvController::class);
 Route::get('/viewCV/{id}', [CvController::class, 'viewCV'])->name('viewCV');
 
+//tao CV
+Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
+
 //tracking work
 Route::resource('wishlist', WishlistController::class);
 
@@ -99,12 +102,6 @@ Route::put('changepass/{id}', [RUEmployerController::class, 'changepass'])->name
 
 //chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');
-
-//tao CV
-Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
-
-//upload CV
-Route::post('/uploadCV', [RecruimentController::class, 'store']);
 
 // tim kiem trang chu va trang search
 Route::get('search', [HomeController::class, 'search'])->name('search');
