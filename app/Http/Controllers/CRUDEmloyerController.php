@@ -6,6 +6,7 @@ use App\Models\Employer;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Requests\CRUDEmlpoyerRequests;
 
 use Illuminate\Http\Request;
 
@@ -38,7 +39,7 @@ class CRUDEmloyerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CRUDEmlpoyerRequests $request)
     {
         $data = array();
         $data['user_id'] = $request->user_id;
@@ -97,7 +98,7 @@ class CRUDEmloyerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CRUDEmlpoyerRequests $request, $id)
     {
         $employer = Employer::find($id);
         $employer->update($request->all());

@@ -15,11 +15,12 @@ class Comments extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->integer('post_id');
-            $table->integer('customer_id');
-            $table->string('title');
-            $table->string('content_comment');
-            $table->timestamps();
+            $table->integer('status')->default(1);
+            $table->integer('post_id')->nullable();
+            $table->integer('customer_id')->nullable();
+            $table->string('comment', 255);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

@@ -16,25 +16,73 @@
                         <div class="noibat">
 
                             <div class="content-nb">
-                                <h4>{{ $postDetail->title }}</h4> <br>
-                                <a><img src="{{ asset('img/blogit/' . $postDetail->image) }}"></a>
-                                <p>{{ $postDetail->content }}</p>
+                                <h1>{!! $postDetail->title !!}</h1> <br>
+                                <p>{!! $postDetail->content !!}</p>
                                 {{-- Comment --}}
-                                <form action="" method="POST" style="border-top: solid 1px #ededed;padding-top:10px">
-                                    @csrf
-                                    <div>
-                                        <div class="form-group">
-                                            <textarea class="form-control" name="comment" placeholder="Hãy nhập bình luận" required maxlength="200"></textarea>
+                                <br>
+                                @if (Auth::guest())
+                                    <h5>Vui lòng <a style="text-decoration: none; " href="{{ route('login') }}">đăng
+                                            nhập</a>
+                                        để bình luận</h5>
+                                @else
+                                    <form action="{{ route('storeComments', $postDetail->id) }}" method="POST"
+                                        style="border-top: solid 1px #ededed;padding-top:10px">
+                                        @csrf
+                                        <div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" name="comment" placeholder="Hãy nhập bình luận" required maxlength="200"></textarea>
+                                            </div>
+                                            @error('comment')
+                                                <span style="color: red;">{{ $message }}</span>
+                                            @enderror
                                         </div>
+                                        <div style="padding-top:10px">
+                                            <input class="btn btn-primary" type="submit" name="submit" id="btn_insert"
+                                                value="Gửi">
+                                        </div>
+                                    </form>
+                                @endif
+                                <br>
+
+                                <h4 style="border-top: 2px solid #ededed">Bình luận</h4>
+
+                                @if (session('msg'))
+                                    <div class="alert alert-success">{{ session('msg') }}</div>
+                                @endif
+                                @if (empty($resultComment))
+                                    <div style="text-align: center">
+                                        <div><i class="fa-regular fa-comment fa-2xl"></i></div> <br>
+                                        <div> Hãy là người đầu tiên <br> bình luận trong bài</div>
                                     </div>
-                                    <div style="padding-left:915px;padding-top:10px"><input class="btn btn-primary"
-                                            type="submit" name="submit" value="Gửi"> </div>
-                                </form>
-                                {{-- Comment --}}
+                                @else
+                                    @foreach ($resultComment as $comment)
+                                        <div style="background:
+                                        #fcfaf6">
+                                            <div class="comment-widgets">
+                                                <div class="d-flex flex-row comment-row m-t-0">
+                                                    <div class="comment-text w-100">
+                                                        <h6 class="font-medium">{{ $comment['customers']['email'] }}</h6>
+                                                        <span class="m-b-15 d-block">{{ $comment['comment'] }}</span>
+                                                        <div class="comment-footer">
+                                                            <span
+                                                                class="text-muted float-right">{{ date('d-m-Y H:i', strtotime($comment['created_at'])) }}</span>
+                                                            @if (Auth::check() && Auth::user()->customer_id == $comment['customers']['id'])
+                                                                <button type="button"
+                                                                    class="btn btn-success btn-sm">Edit</button>
+                                                                <button type="button"
+                                                                    class="btn btn-danger btn-sm">Delete</button>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @endif
+                                <br>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-xs-12 col-sm-12 col-md-3">
                         <div class="sidebar">
                             <div class="widget ">

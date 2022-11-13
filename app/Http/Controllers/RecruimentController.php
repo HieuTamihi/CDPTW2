@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RecruitmentRequest;
 use App\Models\Employer;
 use App\Models\Recruitment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class RecruimentController extends Controller
+class RecruitmentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,15 +36,13 @@ class RecruimentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RecruitmentRequest $request)
     {
         $data = new Recruitment();
         $file = $request->file;
-        if ($file) {
-            $filename = time() . '.' . $file->getClientOriginalExtension();
-            $request->file->move('file', $filename);
-            $data->file = $filename;
-        }
+        $filename = time() . '.' . $file->getClientOriginalExtension();
+        $request->file->move('file', $filename);
+        $data->file = $filename;
         $data->introduce = $request->introduce;
         $data->customer_id = Auth::user()->customer_id;
         $data->jobposting_id = $request->id;
