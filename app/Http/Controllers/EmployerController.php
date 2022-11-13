@@ -63,7 +63,8 @@ class EmployerController extends Controller
         $date = Carbon::now()->day;
         if (Auth::check()) {
             $customer_id = Auth::user()->customer_id;
-            $apply = Customer::leftJoin('users', 'users.customer_id', '=', 'customers.id')->where('customers.id', '=', $customer_id)->first();
+            $apply = Customer::leftJoin('users', 'users.customer_id', '=', 'customers.id')
+            ->where('customers.id', '=', $customer_id)->first();
             $id = Auth::user()->customer_id;
             $cv = Cv::where('customer_id', '=', $id)->get();
             return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv','date'));

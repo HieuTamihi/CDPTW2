@@ -45,9 +45,6 @@ class AdminPostsController extends Controller
             'content' => $request->post_content,
             'image' => $image_name,
         ]);
-
-
-
         // $posts->save();
         return redirect()->back()->with('msg', 'Post added successfully');
     }

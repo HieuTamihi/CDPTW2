@@ -31,7 +31,6 @@ class UserController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
-
         $arr = [
             'email' => $request->email,
             'password' => $request->password
@@ -82,7 +81,6 @@ class UserController extends Controller
                     'status' => $request->status = 0,
                     'confirm' => $conf,
                 ]);
-
                 //Add Employer table
                 Employer::create([
                     'user_id' => $newUser->id,
@@ -91,7 +89,6 @@ class UserController extends Controller
                     'email' => $request->email,
                     'phone_number' => $request->phone,
                 ]);
-
                 //Send mail
                 Mail::send('DashboardTemplate.emails.active', compact('newUser'), function ($email) use ($newUser) {
                     $email->subject('Active Acount');
@@ -193,7 +190,6 @@ public function recover_pass(Request $request)
             $user = User::find($id);
             $user->token = $token_random;
             $user->save();
-
             //send mail
             $to_email = $data['email'];
             $link_reset_pass = url('/update-new-pass?email=' . $to_email . '&token=' . $token_random);
