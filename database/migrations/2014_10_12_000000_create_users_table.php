@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('confirm')->nullable();
             $table->rememberToken()->nullable();
             $table->timestamps();
+            $table->date('deleted_at')->nullable();
         });
     }
 

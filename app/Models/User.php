@@ -7,13 +7,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, SoftDeletes;
+    protected $dates = ['deleted_at'];
     public function employer()
     {
-      return $this->hasOne(Employer::class);
+        return $this->hasOne(Employer::class);
     }
     /**
      * The attributes that are mass assignable.
@@ -21,11 +23,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'customer_id', 
+        'customer_id',
         'email',
-        'phone', 
-        'password', 
-        'role', 
+        'phone',
+        'password',
+        'role',
         'status',
         'confirm'
     ];
