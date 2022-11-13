@@ -16,7 +16,6 @@ class CRUDUserController extends Controller
     public function index()
     {
         $users = User::orderBy('created_at', 'DESC')->search()->get();
-
         return view('DashboardTemplate.Admin.index', compact('users'));
     }
 
