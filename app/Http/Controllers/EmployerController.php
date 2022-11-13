@@ -23,9 +23,11 @@ class EmployerController extends Controller
     public function index()
     {
         $employer = Employer::all();
+        $employerOuts = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')
+            ->orderBy('employer_id', 'desc')->paginate(5);
         $job = Job_posting::all();
-        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->select('name_company')->get();
-        return view('index', compact('employer', 'job', 'name'));
+        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->get();
+        return view('index', compact('employerOuts', 'employer', 'job', 'name'));
     }
 
     /**
@@ -64,10 +66,10 @@ class EmployerController extends Controller
         if (Auth::check()) {
             $customer_id = Auth::user()->customer_id;
             $apply = Customer::leftJoin('users', 'users.customer_id', '=', 'customers.id')
-            ->where('customers.id', '=', $customer_id)->first();
+                ->where('customers.id', '=', $customer_id)->first();
             $id = Auth::user()->customer_id;
             $cv = Cv::where('customer_id', '=', $id)->get();
-            return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv','date'));
+            return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv', 'date'));
         }
         return view('detail_page', compact('detail', 'relate', 'job_relate', 'date'));
     }
