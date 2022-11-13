@@ -38,7 +38,7 @@ class CRUDUserController extends Controller
     public function store(Request $request)
     {
         User::create($request->all());
-        return redirect()->route('AdminUser.index');
+        return redirect()->route('AdminUser.index')->with('message', 'thêm User thành công');
     }
 
     /**
@@ -75,7 +75,7 @@ class CRUDUserController extends Controller
     {
         $user = User::find($id);
         $user->update($request->all());
-        return redirect()->route('AdminUser.index');
+        return redirect()->route('AdminUser.index')->with('message', 'Sữa User thành công');
     }
 
     /**
@@ -87,6 +87,6 @@ class CRUDUserController extends Controller
     public function destroy($id)
     {
         $user = User::destroy($id);
-        return redirect()->route('AdminUser.index');
+        return redirect()->route('AdminUser.index')->with('message', 'Xóa User thành công');
     }
 }
