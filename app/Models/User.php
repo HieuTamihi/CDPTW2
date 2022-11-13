@@ -53,4 +53,11 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = Hash::make($password);
     }
+    public function scopeSearch($query)
+    {
+        if ($key = request()->key) {
+            $users = $query->where('email', 'like', '%' . $key . '%');
+        }
+        return $query;
+    }
 }
