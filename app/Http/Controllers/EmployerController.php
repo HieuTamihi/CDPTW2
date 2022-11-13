@@ -59,19 +59,33 @@ class EmployerController extends Controller
      */
     public function show($id)
     {
-        $detail = Employer::findOrFail($id);
-        $relate = $detail->jobs->take(1);
-        $job_relate = $detail->jobs->take(3);
-        $date = Carbon::now()->day;
-        if (Auth::check()) {
-            $customer_id = Auth::user()->customer_id;
-            $apply = Customer::leftJoin('users', 'users.customer_id', '=', 'customers.id')
-                ->where('customers.id', '=', $customer_id)->first();
-            $id = Auth::user()->customer_id;
-            $cv = Cv::where('customer_id', '=', $id)->get();
-            return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv', 'date'));
+        // $detail = Employer::findOrFail($id);
+        $detail = Employer::where('id', $id)->first();
+        if ($detail == null) {
+            echo '
+            <section>
+            <div class="error404" style="text-align: center; padding-top:25px;">
+                <div class="error-content">
+                    <h3>Xin lỗi, chúng tôi không tìm thấy trang mà bạn cần!</h3>
+                    <a href="/index">Vui lòng quay lại trang chủ</a>
+                </div>
+            </div>
+        </section>';
         }
-        return view('detail_page', compact('detail', 'relate', 'job_relate', 'date'));
+        if ($detail != null) {
+            $relate = $detail->jobs->take(1);
+            $job_relate = $detail->jobs->take(3);
+            $date = Carbon::now()->day;
+            if (Auth::check()) {
+                $customer_id = Auth::user()->customer_id;
+                $apply = Customer::leftJoin('users', 'users.customer_id', '=', 'customers.id')
+                    ->where('customers.id', '=', $customer_id)->first();
+                $id = Auth::user()->customer_id;
+                $cv = Cv::where('customer_id', '=', $id)->get();
+                return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv', 'date'));
+            }
+            return view('detail_page', compact('detail', 'relate', 'job_relate', 'date'));
+        }
     }
 
     /**
