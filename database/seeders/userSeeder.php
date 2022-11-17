@@ -16,9 +16,9 @@ class userSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'email' => 'thaihieu243@gmail.com',
+                'email' => 'admin@gmail.com',
                 'phone' => '0987712063',
-                'password' => '$2y$10$y2NorDtAaQ9Wpkymi86zsu7U8X1zezLFKqPqkpT42pjkdJqVCTuLm',
+                'password' => '$2y$10$MMo3y1jxrv5hxGNzZrzivumc/FOzkCAXM6JumDcANaoCi23/wRHka',
                 'customer_id' => null,
                 'role' => '1',
                 'status' => '1',
@@ -28,7 +28,7 @@ class userSeeder extends Seeder
                 'phone' => '0987712063',
                 'password' => '$2y$10$MMo3y1jxrv5hxGNzZrzivumc/FOzkCAXM6JumDcANaoCi23/wRHka',
                 'customer_id' => null,
-                'role' => '1',
+                'role' => '2',
                 'status' => '1',
             ],
             [

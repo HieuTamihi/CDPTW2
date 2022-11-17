@@ -6,6 +6,7 @@ use App\Models\Employer;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Requests\CRUDEmlpoyerRequests;
 
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ class CRUDEmloyerController extends Controller
      */
     public function index()
     {
-        $employer = Employer::all();
+        $employer = Employer::orderBy('id', 'desc')->Search()->paginate(5);
         return view('DashboardTemplate.Employer.index', compact('employer'));
     }
 
@@ -38,7 +39,7 @@ class CRUDEmloyerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CRUDEmlpoyerRequests $request)
     {
         $data = array();
         $data['user_id'] = $request->user_id;
@@ -58,13 +59,11 @@ class CRUDEmloyerController extends Controller
             $get_image->move('img', $new_image);
             $data['image'] = $new_image;
             DB::table('employers')->insert($data);
-            Session::put('message', 'Cập nhật sản phẩm thành công');
-            return redirect()->route('AdminEmloyer.index');
+            return redirect()->route('AdminEmloyer.index')->with('message', 'Thêm Employer thành công');
         }
 
         DB::table('employers')->insert($data);
-        Session::put('message', 'Cập nhật sản phẩm thành công');
-        return redirect()->route('AdminEmloyer.index');
+        return redirect()->route('AdminEmloyer.index')->with('message', 'Thêm Employer thành công');
     }
 
     /**
@@ -97,11 +96,11 @@ class CRUDEmloyerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CRUDEmlpoyerRequests $request, $id)
     {
         $employer = Employer::find($id);
         $employer->update($request->all());
-        return redirect()->route('AdminEmloyer.index');
+        return redirect()->route('AdminEmloyer.index')->with('message', 'Sửa Employer thành công');
     }
 
     /**
@@ -113,6 +112,6 @@ class CRUDEmloyerController extends Controller
     public function destroy($id)
     {
         $employer = Employer::destroy($id);
-        return redirect()->route('AdminEmloyer.index');
+        return redirect()->route('AdminEmloyer.index')->with('message', 'Xóa Employer thành công');
     }
 }

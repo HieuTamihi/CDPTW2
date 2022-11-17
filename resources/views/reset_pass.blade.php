@@ -13,8 +13,21 @@
             </p>
         </div>
         <div class="form__reset">
-            <form action="{{asset('change_pass')}}">
-                <input type="text" placeholder="Email" class="input__email">
+            <form action="{{url('recover_pass')}}" method="POST" novalidate="">
+                @csrf
+<<<<<<< HEAD
+                @if(session('message'))
+                <div class="alert alert-success">
+                    {{session('message')}}
+=======
+                @if(session('status'))
+                <div class="alert alert-success">
+                    {{session('status')}}
+>>>>>>> origin/merge_all_branch
+                </div>
+                @endif
+                <input type="email" placeholder="Email" name="email" class="input__email" value="{{old('email')}}" required>
+                <span class="text-danger">@error('email'){{$message}}@enderror</span>
                 <input type="submit" value="Send a link to create a password" class="btn btn-primary reset__btn">
             </form>
         </div>

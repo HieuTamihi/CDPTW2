@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CRUDJobpostingRequest;
 use App\Models\Job_posting;
 use Illuminate\Support\Facades\DB;
 
@@ -15,7 +16,7 @@ class CRUDJobpostingController extends Controller
      */
     public function index()
     {
-        $jobposting = Job_posting::orderBy('id', 'desc')->paginate(5);
+        $jobposting = Job_posting::orderBy('id', 'desc')->Search()->paginate(5);
         return view('DashboardTemplate.Jobposting.index', compact('jobposting'));
     }
 
@@ -35,7 +36,7 @@ class CRUDJobpostingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CRUDJobpostingRequest $request)
     {
         Job_posting::create($request->all());
         return redirect()->route('AdminJobposting.index');
@@ -71,7 +72,7 @@ class CRUDJobpostingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CRUDJobpostingRequest $request, $id)
     {
         $jobposting = Job_posting::find($id);
         $jobposting->update($request->all());

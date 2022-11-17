@@ -4,10 +4,22 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Employer extends Model
 {
     use HasFactory;
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
+    public function jobs()
+    {
+        return $this->hasMany(Job_posting::class);
+    }
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
+    protected $table = 'employers';
     protected $fillable = [
         'user_id',
         'website',
@@ -18,10 +30,13 @@ class Employer extends Model
         'address',
         'email',
         'phone_number',
-        'image'
+        'image',
     ];
-    public function jobs()
+    public function scopeSearch($query)
     {
-        return $this->hasMany(Job_posting::class);
+        if ($key = request()->key) {
+            $employers = $query->where('name_company', 'like', '%' . $key . '%');
+        }
+        return $query;
     }
 }

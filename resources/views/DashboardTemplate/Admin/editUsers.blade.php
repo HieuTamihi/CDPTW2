@@ -8,13 +8,6 @@
                     <div class="col-sm-6">
                         <h1>ADD User</h1>
                     </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Layout</a></li>
-                            <li class="breadcrumb-item active">Fixed Layout</li>
-                        </ol>
-                    </div>
                 </div>
             </div><!-- /.container-fluid -->
         </section>
@@ -31,48 +24,48 @@
                                 <div class="form-group">
                                     <div class="mb-3">
                                         <label for="inputName">employer_id</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="employer_id" placeholder="employer_id">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $user->employer_id }}" name="employer_id">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">customer_id</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="customer_id" placeholder="customer_id">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $user->customer_id }}" name="customer_id">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">email</label>
-                                        <input type="email" id="inputName" class="form-control" value=""
-                                            name="email" value="{{ $user->email }}">
+                                        <input type="email" id="inputName" class="form-control"
+                                            value="{{ $user->email }}" name="email">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">email_verified_at</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="email_verified_at" placeholder="email_verified_at">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $user->email_verified_at }}" name="email_verified_at">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">phone</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="phone" placeholder="phone">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $user->phone }}" name="phone">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">password</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="password" placeholder="password">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $user->password }}" name="password">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">role</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="role" placeholder="role">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $user->role }}" name="role">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">status</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="status" placeholder="status">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $user->status }}" name="status">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">remember_token</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="remember_token" placeholder="remember_token">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $user->remember_token }}" name="remember_token">
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +75,7 @@
                     <div class="row">
                         <div class="col-12">
                             <a href="" class="btn btn-secondary">Cancel</a>
-                            <button type="submit" class="btn btn-success float-right">Add</button>
+                            <button type="submit" class="btn btn-success float-right">Seve</button>
                         </div>
                     </div>
             </form>

@@ -557,6 +557,10 @@ html {
     border: 1px solid gray;
 }
 
+.detail__body .detail_body__left .information .information__logo{
+    width: 25%;
+}
+
 .detail__body .detail_body__left .information .information__content {
     margin-left: 10px;
 }
@@ -599,6 +603,7 @@ html {
 }
 
 .detail__body .detail_body__left .content .content__right__skill p {
+    margin-left: 5px;
     display: inline-block;
     padding: 0px 5px;
     border: 1px solid gray;
@@ -623,6 +628,7 @@ html {
 }
 
 .detail__body .detail_body__right .detail_body__right__skill p {
+    margin-left: 5px;
     display: inline-block;
     padding: 0px 5px;
     border: 1px solid gray;
@@ -639,6 +645,7 @@ html {
 }
 
 .detail__body .list_word .list_word__skill p {
+    margin-left: 5px;
     display: inline-block;
     padding: 0px 5px;
     border: 1px solid gray;
@@ -647,6 +654,11 @@ html {
 .detail__body .list_word .list_word__recruiment {
     border-bottom: 1px solid gray;
     margin-bottom: 10px;
+}
+
+.detail__body .list_word a {
+    text-decoration: none;
+    color: orange;
 }
 
 .detail__body .font-size_a {
@@ -661,11 +673,9 @@ html {
 }
 
 .log__reg__page {
-<<<<<<< HEAD
     margin-top: 25px;
-=======
-  margin-top: 25px;
->>>>>>> all_vacancies
+    margin-top: 25px;
+    margin-top: 25px;
 }
 
 .title__log h4 {
@@ -881,21 +891,53 @@ html {
     margin: 10px;
 }
 
-<<<<<<< HEAD
 /*# sourceMappingURL=style.css.map */
-=======
 .body__top {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .body__top a {
-  text-decoration: none;
-  background: #0d6efd;
-  color: #ffff;
-  border-radius: 5px;
-  padding: 10px;
+    text-decoration: none;
+    background: #0d6efd;
+    color: #ffff;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
->>>>>>> all_vacancies
+.dropbtn {
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 170px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

@@ -1,71 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal infomation</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/personal_info.css">
-</head>
-<body>
-    <div class="personal__info">
-        <div class="container">
-            <div class="title__personal">
-                <h5>Personal information</h5>
-            </div>
-            <form action="" class="form__info">
-                <div class="input__name">
-                    <div class="lb__fullname">
-                        <label for="name">Full name</label><span>*</span>
-                    </div>
-                    <input type="text" required>
-                </div>
-                <div class="input__date">
-                    <div class="lb__date">
-                        <label for="date">Date of birth</label><span>*</span>
-                    </div>
-                    <input type="text" required>
-                </div>
-                <div class="input__phone">
-                    <div class="lb__phone">
-                        <label for="phone">Phone</label><span>*</span>
-                    </div>                  
-                    <input type="text" required>
-                </div>
-                <div class="input__email">
-                    <div class="lb__email">
-                        <label for="email">Email</label><span>*</span>
-                    </div>
-                    <input type="text" required>
-                </div>
-                <div class="input__address">
-                    <div class="lb__address">
-                        <label for="address">Address</label>
-                    </div>
-                    <input type="text">
-                </div>
-                <div class="select__gender">
-                    <div class="lb__gender">
-                        <label for="gender">Gender</label>
-                    </div>
-                    <Select>
-                        <option value="">Male</option>
-                        <option value="">Female</option>
-                        <option value="">Other</option>
-                    </Select>
-                </div>
-                <div class="area__favorite">
-                    <div class="lb_favorite">
-                        <label for="favorite">Favorite technology</label>
-                    </div>
-                    <textarea name="favorite"></textarea>
-                </div>
-                <input type="submit" value="Save" class="btn save__btn">
-                <input type="submit" value="Change password" class="btn change__btn">
-            </form>
+@extends('header')
+@section('footer')
+<div class="personal__info">
+    <div class="container">
+        <div class="title__personal">
+            <h5>Personal information</h5>
         </div>
+        @if(Session::has('message'))
+        <div class="alert alert-success">{{Session::get('message')}}</div>
+        @endif
+        <form action="{{url('editUser/'.$customer->id)}}" class="form__info" method="POST">
+            @csrf
+            @method('PUT')
+            @if (isset($customer))
+            <div class="input__name1">
+                <div class="lb__fullname">
+                    <label for="name">Full name</label><span>*</span>
+                </div>
+                <input type="text" value="{{$customer->fullname}}" name="fullname" required>
+            </div>
+            <div class="input__date1">
+                <div class="lb__date">
+                    <label for="date">Date of birth</label>
+                </div>
+                <input type="date" value="{{$customer->date}}" name="date" required>
+            </div>
+            <div class="input__phone1">
+                <div class="lb__phone">
+                    <label for="phone">Phone</label><span>*</span>
+                </div>
+                <input type="number" value="{{$customer->phone_number}}" name="phone_number" required>
+            </div>
+            <div class="input__email1">
+                <div class="lb__email">
+                    <label for="email">Email</label><span>*</span>
+                </div>
+                <input type="text" value="{{$customer->email}}" name="email" required>
+            </div>
+            <div class="input__address1">
+                <div class="lb__address">
+                    <label for="address">Address</label>
+                </div>
+                <input type="text" value="{{$customer->address}}" name="address">
+            </div>
+            <div class="select__gender1">
+                <div class="lb__gender">
+                    <label for="gender">Gender</label>
+                </div>
+                <select name="gender" required>
+                    <option value="0" <?php if ($customer->is_featured == 0) {
+                                            echo 'selected';
+                                        } ?>>Male</option>
+                    <option value="1" <?php if ($customer->is_featured == 1) {
+                                            echo 'selected';
+                                        } ?>>Female</option>
+                    <option value="2" <?php if ($customer->is_featured == 2) {
+                                            echo 'selected';
+                                        } ?>>Other</option>
+                </select>
+            </div>
+            <div class="area__favorite1">
+                <div class="lb_favorite">
+                    <label for="favorite">Favorite technology</label>
+                </div>
+                <textarea name="favorite" name="favorite">{{$customer->favorite}}</textarea>
+            </div>
+            <input type="submit" value="Save" class="btn btn-primary save__btn1">
+            <a href="{{asset('change_pass_log')}}"><input type="button" value="Change password" class="btn btn-primary change__btn1"></a>
+            @endif
+        </form>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-</body>
-</html>
+</div>
+@endsection

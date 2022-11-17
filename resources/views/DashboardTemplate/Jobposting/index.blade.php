@@ -72,7 +72,9 @@
 
             </div>
             <!-- /.card -->
-
+            <div>
+                {{ $jobposting->links() }}
+            </div>
         </section>
     </div>
 @endsection

@@ -3,8 +3,10 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <br>
+        @if (Session::has('message'))
+            <div class="alert alert-success" style="text-align:center;">{{ Session::get('message') }}</div>
+        @endif
         <section class="content">
-
             <div class="card">
                 <a href="{{ route('AdminUser.create') }}"
                     style="text-align: center; margin: 10px; padding: 5px 20px; background: #007bff; width: 12%; color: #fff; border-radius: 5px;">Add
@@ -31,6 +33,7 @@
                                 <th style="width:4%">role</th>
                                 <th style="width:4%">status</th>
                                 <th style="width:4%">remember_token</th>
+                                <th style="width:4%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,7 +44,7 @@
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->email_verified_at }}</td>
                                 <td>{{ $user->phone }}</td>
-                                <td>{{ $user->password }}</td>
+                                <td><?php echo substr($user->password, 0, 0) . '.........'; ?></td>
                                 <td>{{ $user->role }}</td>
                                 <td>{{ $user->status }}</td>
                                 <td>{{ $user->remember_token }}</td>

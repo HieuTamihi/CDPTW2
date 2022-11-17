@@ -14,6 +14,7 @@ class WishLists extends Migration
     public function up()
     {
         Schema::create('wish_lists', function (Blueprint $table) {
+            $table->id()->autoIncrement();
             $table->integer('customer_id');
             $table->integer('job_posting_id');
             $table->integer('number')->nullable();
