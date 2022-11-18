@@ -65,10 +65,15 @@ class CRUDListJobController extends Controller
      */
     public function show($id)
     {
-        $show = Job_posting::find($id);
-        $list_recruitmet = $show->customers()->paginate(3);
-        $getstatus = DB::table('recruitments')->where('jobposting_id', '=', $id);
-        return view('DashboardTemplate.Job_postings.detail_post', compact('show','list_recruitmet'));
+        // $show = Job_posting::find($id);
+        $show = Job_posting::where('id', $id)->first();
+        if ($show == null) {
+            echo 'khong tim thay trang nay';
+        } else {
+            $list_recruitmet = $show->customers()->paginate(3);
+            $getstatus = DB::table('recruitments')->where('jobposting_id', '=', $id);
+            return view('DashboardTemplate.Job_postings.detail_post', compact('show', 'list_recruitmet'));
+        }
     }
 
     /**
@@ -79,8 +84,13 @@ class CRUDListJobController extends Controller
      */
     public function edit($id)
     {
-        $show = Job_posting::find($id);
-        return view('DashboardTemplate.Job_postings.edit_post', compact('show'));
+        // $show = Job_posting::find($id);
+        $show = Job_posting::where('id', $id)->first();
+        if ($show == null) {
+            echo 'khong tim thay trang nay';
+        } else {
+            return view('DashboardTemplate.Job_postings.edit_post', compact('show'));
+        }
     }
 
     /**
