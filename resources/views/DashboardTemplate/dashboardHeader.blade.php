@@ -222,6 +222,22 @@
             <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
             <!-- AdminLTE for demo purposes -->
             <script src="{{ asset('dist/js/demo.js') }}"></script>
+            <!-- cketor -->
+            <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+            <script>
+                //ckeditor add Employer
+                CKEDITOR.replace('ckeditorinfor');
+                CKEDITOR.replace('ckeditorresponsibility');
+                CKEDITOR.replace('ckeditorwelfare');
+                //ckeditor edit Employer
+                CKEDITOR.replace('ckeditor_edit_infor');
+                CKEDITOR.replace('ckeditor_edit_responsibility');
+                CKEDITOR.replace('ckeditor_edit_welfare');
+                //ckeditor add jobposting
+                CKEDITOR.replace('ckeditorrequired');
+                //ckeditor edit jobposting
+                CKEDITOR.replace('ckeditor_edit_required');
+            </script>
         </body>
 
         </html>

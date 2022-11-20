@@ -38,3 +38,5 @@ $('.intem-thume').slick({
     infinite: true,
     autoplay: true,
 });
+
+CKEDITOR.replace('#ckeditoerEmployer');
