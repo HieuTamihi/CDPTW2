@@ -24,6 +24,7 @@ class JobPostings extends Migration
             $table->string('salary');
             $table->string('token')->nullable();
             $table->timestamps();
+            $table->date('deleted_at')->nullable();
         });
     }
 

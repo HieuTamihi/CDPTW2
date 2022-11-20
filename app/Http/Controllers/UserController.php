@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\User\RegisterRequest;
 use App\Http\Requests\User\RegisterCTRequest;
 use App\Http\Requests\User\LoginRequest;
+
 class UserController extends Controller
 {
     public function logout()
@@ -63,7 +64,7 @@ class UserController extends Controller
     public function register(RegisterRequest $request)
     {
         if ($request->isMethod('post')) {
-            $validator = Validator::make($request->all(), [ ]);
+            $validator = Validator::make($request->all(), []);
             if ($validator->fails()) {
                 return redirect()->back()
                     ->withErrors($validator)
@@ -137,8 +138,8 @@ class UserController extends Controller
                     'status' => $request->status = 1,
                 ]);
 
-                 //Send mail
-                 Mail::send('DashboardTemplate.emails.activeCT', compact('newUserCT'), function ($email) use ($newUserCT) {
+                //Send mail
+                Mail::send('DashboardTemplate.emails.activeCT', compact('newUserCT'), function ($email) use ($newUserCT) {
                     $email->subject('Active Acount');
                     $email->to($newUserCT->email);
                 });
@@ -164,5 +165,16 @@ class UserController extends Controller
             ]);
             return redirect()->route('login');
         }
+    }
+    //trash user
+    public function User_Trash(Request $r)
+    {
+        $users = User::onlyTrashed()->search()->get();
+        return view('DashboardTemplate.Admin.trash_user', compact('users'));
+    }
+    public function User_untrash($id)
+    {
+        $user = User::withtrash()->find($id);
+        return view('DashboardTemplate.Admin.index')->with('message', 'phục hồi User thành công');
     }
 }

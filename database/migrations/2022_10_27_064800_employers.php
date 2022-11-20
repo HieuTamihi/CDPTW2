@@ -17,15 +17,16 @@ class Employers extends Migration
             $table->id()->autoIncrement();
             $table->integer('user_id');
             $table->string('website')->nullable();
-            $table->string('infor',5000)->nullable();
-            $table->string('responsibility',5000)->nullable();
-            $table->string('welfare',500)->nullable();
+            $table->string('infor', 5000)->nullable();
+            $table->string('responsibility', 5000)->nullable();
+            $table->string('welfare', 500)->nullable();
             $table->string('name_company');
             $table->string('address')->nullable();
             $table->string('image')->nullable();
             $table->string('email');
-            $table->string('phone_number',11);
+            $table->string('phone_number', 11);
             $table->timestamps();
+            $table->date('deleted_at')->nullable();
         });
     }
 

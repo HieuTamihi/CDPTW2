@@ -29,11 +29,6 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <div class="mb-3">
-                                        <label for="inputName">Employer Id</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="employer_id" placeholder="employer_id">
-                                    </div>
-                                    <div class="mb-3">
                                         <label for="inputName">Title</label>
                                         <input type="text" id="inputName" class="form-control" value=""
                                             name="title" placeholder="title">
@@ -55,8 +50,8 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Required</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="required" placeholder="required">
+                                        <textarea type="text" id="ckeditorrequired" class="form-control" value="" name="required"
+                                            placeholder="required"></textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Salary</label>

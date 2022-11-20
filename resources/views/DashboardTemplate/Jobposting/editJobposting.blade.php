@@ -30,11 +30,6 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <div class="mb-3">
-                                        <label for="inputName">Employer Id</label>
-                                        <input type="text" id="inputName" class="form-control"
-                                            value="{{ $jobposting->employer_id }}" name="employer_id">
-                                    </div>
-                                    <div class="mb-3">
                                         <label for="inputName">Title</label>
                                         <input type="text" id="inputName" class="form-control"
                                             value="{{ $jobposting->title }}" name="title">
@@ -56,8 +51,8 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Required</label>
-                                        <input type="text" id="inputName" class="form-control"
-                                            value="{{ $jobposting->required }}" name="required">
+                                        <textarea type="text" id="ckeditor_edit_required" class="form-control" value="{{ $jobposting->required }}"
+                                            name="required"></textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Salary</label>

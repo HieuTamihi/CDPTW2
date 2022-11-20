@@ -126,7 +126,7 @@ Route::post('/registerCT', [UserController::class, 'registerCT'])->name('registe
 Route::get('/registerCT', [UserController::class, 'getCustomerID']);
 
 //Active tai khoan
-Route::get('active/{newUser}/{confirm}',[UserController::class,'active'])->name('activeAcount');
+Route::get('active/{newUser}/{confirm}', [UserController::class, 'active'])->name('activeAcount');
 
 //customer
 // Route::resource('/personal_info', CustomerController::class);
@@ -137,11 +137,18 @@ Route::put('/editUser/{id}', [CustomerController::class, 'editUser'])->name('edi
 Route::get('/change_pass_log', [CustomerController::class, 'changePassword'])->name('change_pass_log');
 Route::post('/change_pass_log', [CustomerController::class, 'updatePassword'])->name('update-password');
 
+//reset password
+Route::get('/reset_pass', [UserController::class, 'resetPass']);
+Route::post('/recover_pass', [UserController::class, 'recover_pass']);
+Route::get('/update-new-pass', [UserController::class, 'update_new_pass']);
+Route::post('/reset-new-pass', [UserController::class, 'reset_new_pass']);
+
 //upload CV
-Route::post('/uploadCV', [RecruimentController::class, 'store']);
+Route::post('/uploadCV', [RecruitmentController::class, 'store']);
 
 //CV
 Route::resource('cv', CvController::class);
+Route::get('/viewCV/{id}', [CvController::class, 'viewCV'])->name('viewCV');
 
 //tracking work
 Route::resource('wishlist', WishlistController::class);
@@ -149,56 +156,128 @@ Route::resource('wishlist', WishlistController::class);
 //admin
 Route::resource('listjobPosting', JobpostingController::class);
 Route::resource('employer', EmployerController::class);
-// Employer - quan ly job by employer_id
-Route::resource('CRUDJobByEmployer',CRUDListJobController::class);
+Route::resource('AdminUser', CRUDUserController::class);
+Route::resource('AdminJobposting', CRUDJobpostingController::class);
+Route::resource('AdminEmloyer', CRUDEmloyerController::class);
+Route::get('User_Trash', [UserController::class, 'User_Trash']);
+Route::get('User_untrash/{id}', [UserController::class, 'User_untrash']);
 
+// Employer - quan ly job by employer_id
+Route::resource('CRUDJobByEmployer', CRUDListJobController::class);
 
 // Employer - quan ly job by employer_id
-Route::resource('CRUDJobByEmployer',CRUDListJobController::class);
-// RU employer 
-Route::resource('RUEmployer',RUEmployerController::class);
+Route::resource('CRUDJobByEmployer', CRUDListJobController::class);
+// RU employer
+Route::resource('RUEmployer', RUEmployerController::class);
+Route::get('/detail_re/{id}', [RUEmployerController::class, 'detail_recruitment'])->name('detail_recruitment');
+
+// Employer - quan ly job by employer_id
+Route::resource('CRUDJobByEmployer', CRUDListJobController::class);
+// RU employer
+Route::resource('RUEmployer', RUEmployerController::class);
 // detail_recruitment
-Route::get('/detail_re/{id}',[RUEmployerController::class,'detail_recruitment'])->name('detail_recruitment');
+Route::get('/detail_re/{id}', [RUEmployerController::class, 'detail_recruitment'])->name('detail_recruitment');
 // Send mail recruitment
-Route::get('recruit/{customer}',[RUEmployerController::class,'recruit'])->name('recruit');
+Route::get('recruit/{customer}', [RUEmployerController::class, 'recruit'])->name('recruit');
 
 // Change pass Employer
-Route::get('showlayout/{id}',[RUEmployerController::class,'showlayout'])->name('showlayout');
-Route::put('changepass/{id}',[RUEmployerController::class,'changepass'])->name('changepass');
+Route::get('showlayout/{id}', [RUEmployerController::class, 'showlayout'])->name('showlayout');
+Route::put('changepass/{id}', [RUEmployerController::class, 'changepass'])->name('changepass');
 
 //chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');
-
-Route::get('blogSearch', [BlogController::class, 'blogSearch'])->name('blogSearch');
-
 Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
+Route::get('admin', function () {
+    return view('DashboardTemplate.dashboard');
 
-// Route::prefix('admin')->group(function () {
-
-Route::resource('/blog-home', AdminPostsController::class);
-Route::resource('/blog-add', AdminPostsController::class);
-// Route::resource('/blog-edit', AdminPostsController::class);
-// });
+    Route::get('blogSearch', [BlogController::class, 'blogSearch'])->name('blogSearch');
 
 
-Route::prefix('blogit')->group(function () {
-    Route::get('/', [BlogController::class, 'featuredPosts'])->name('blogit');
-    Route::get('blogDetail/{id}', [BlogController::class, 'blogDetail'])->name('blogDetail');
-});
-Route::get('/detail_page/{id}', [EmployerController::class, 'show']);
-Route::get('listpostbyid',[EmployerController::class,'getPostByID']);
-Route::resource('employer', EmployerController::class);
-Route::get('/detail_page/{id}',[EmployerController::class,'show']);
-// get post by id employer
-// Route::get('Employser/listpost', [viewController::class,'getListPostByID'])->name('view_employer');
+    Route::resource('/admin-blog-home', AdminPostsController::class);
+    Route::resource('/admin-blog-comment', AdminCommentsController::class);
 
-// Manamge Employer by ID
-Route::resource('CRUDEmployer',CRUDEmployer::class);
+    //dang ky
+    //dang ky tai khoan employer
+    Route::post('/register', [UserController::class, 'register'])->name('register');
+    Route::get('/register', [UserController::class, 'getUserID']);
+    //dang ky tai khoan customer
+    Route::post('/registerCT', [UserController::class, 'registerCT'])->name('registerCT');
+    Route::get('/registerCT', [UserController::class, 'getCustomerID']);
+
+    //Active tai khoan
+    Route::get('active/{newUser}/{confirm}', [UserController::class, 'active'])->name('activeAcount');
+
+    //customer
+    // Route::resource('/personal_info', CustomerController::class);
+    Route::get('/ShowEditUser/{id}', [CustomerController::class, 'ShowEditUser'])->name('ShowEditUser');
+    Route::put('/editUser/{id}', [CustomerController::class, 'editUser'])->name('editUser');
+
+    //change password
+    Route::get('/change_pass_log', [CustomerController::class, 'changePassword'])->name('change_pass_log');
+    Route::post('/change_pass_log', [CustomerController::class, 'updatePassword'])->name('update-password');
+
+    //upload CV
+    Route::post('/uploadCV', [RecruimentController::class, 'store']);
+
+    //CV
+    Route::resource('cv', CvController::class);
+
+    //tracking work
+    Route::resource('wishlist', WishlistController::class);
+
+    //admin
+    Route::resource('listjobPosting', JobpostingController::class);
+    Route::resource('employer', EmployerController::class);
+    // Employer - quan ly job by employer_id
+    Route::resource('CRUDJobByEmployer', CRUDListJobController::class);
+
+
+    // Employer - quan ly job by employer_id
+    Route::resource('CRUDJobByEmployer', CRUDListJobController::class);
+    // RU employer
+    Route::resource('RUEmployer', RUEmployerController::class);
+    // detail_recruitment
+    Route::get('/detail_re/{id}', [RUEmployerController::class, 'detail_recruitment'])->name('detail_recruitment');
+    // Send mail recruitment
+    Route::get('recruit/{customer}', [RUEmployerController::class, 'recruit'])->name('recruit');
+
+    // Change pass Employer
+    Route::get('showlayout/{id}', [RUEmployerController::class, 'showlayout'])->name('showlayout');
+    Route::put('changepass/{id}', [RUEmployerController::class, 'changepass'])->name('changepass');
+
+    //chuyen trang
+    Route::get('search', [HomeController::class, 'search'])->name('search');
+
+    Route::get('blogSearch', [BlogController::class, 'blogSearch'])->name('blogSearch');
+
+    Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
+
+    // Route::prefix('admin')->group(function () {
+
+    Route::resource('/blog-home', AdminPostsController::class);
+    Route::resource('/blog-add', AdminPostsController::class);
+    // Route::resource('/blog-edit', AdminPostsController::class);
+    // });
+
+
+    Route::prefix('blogit')->group(function () {
+        Route::get('/', [BlogController::class, 'featuredPosts'])->name('blogit');
+        Route::get('blogDetail/{id}', [BlogController::class, 'blogDetail'])->name('blogDetail');
+    });
+    Route::get('/detail_page/{id}', [EmployerController::class, 'show']);
+    Route::get('listpostbyid', [EmployerController::class, 'getPostByID']);
+    Route::resource('employer', EmployerController::class);
+    Route::get('/detail_page/{id}', [EmployerController::class, 'show']);
+    // get post by id employer
+    // Route::get('Employser/listpost', [viewController::class,'getListPostByID'])->name('view_employer');
+
+    // Manamge Employer by ID
+    Route::resource('CRUDEmployer', CRUDEmployer::class);
 });
 
 
 //Active
-Route::get('active/{newUser}/{confirm}',[UserController::class,'active'])->name('activeAcount');
+Route::get('active/{newUser}/{confirm}', [UserController::class, 'active'])->name('activeAcount');
 
 Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
 Route::get('admin', function () {

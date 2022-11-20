@@ -29,29 +29,22 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <div class="mb-3">
-                                        <label for="inputName">User id</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="user_id" placeholder="User id">
-                                    </div>
-                                    <div class="mb-3">
                                         <label for="inputName">Website</label>
                                         <input type="text" id="inputName" class="form-control" value=""
                                             name="website" placeholder="website">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">infor</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="infor" placeholder="infor">
+                                        <textarea type="text" id="ckeditorinfor" class="form-control" value="" name="infor" placeholder="infor"></textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">responsibility</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="responsibility" placeholder="responsibility">
+                                        <textarea type="text" id="ckeditorresponsibility" class="form-control" value="" name="responsibility"
+                                            placeholder="responsibility"></textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">welfare</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="welfare" placeholder="welfare">
+                                        <textarea type="text" id="ckeditorwelfare" class="form-control" value="" name="welfare" placeholder="welfare"></textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Name Company</label>

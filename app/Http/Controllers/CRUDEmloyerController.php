@@ -19,7 +19,7 @@ class CRUDEmloyerController extends Controller
      */
     public function index()
     {
-        $employer = Employer::orderBy('id', 'desc')->paginate(5);
+        $employer = Employer::orderBy('id', 'desc')->Search()->paginate(5);
         return view('DashboardTemplate.Employer.index', compact('employer'));
     }
 
@@ -59,13 +59,11 @@ class CRUDEmloyerController extends Controller
             $get_image->move('img', $new_image);
             $data['image'] = $new_image;
             DB::table('employers')->insert($data);
-            Session::put('message', 'Cập nhật sản phẩm thành công');
-            return redirect()->route('AdminEmloyer.index');
+            return redirect()->route('AdminEmloyer.index')->with('message', 'Thêm Employer thành công');
         }
 
         DB::table('employers')->insert($data);
-        Session::put('message', 'Cập nhật sản phẩm thành công');
-        return redirect()->route('AdminEmloyer.index');
+        return redirect()->route('AdminEmloyer.index')->with('message', 'Thêm Employer thành công');
     }
 
     /**
@@ -102,7 +100,7 @@ class CRUDEmloyerController extends Controller
     {
         $employer = Employer::find($id);
         $employer->update($request->all());
-        return redirect()->route('AdminEmloyer.index');
+        return redirect()->route('AdminEmloyer.index')->with('message', 'Sửa Employer thành công');
     }
 
     /**
@@ -114,6 +112,6 @@ class CRUDEmloyerController extends Controller
     public function destroy($id)
     {
         $employer = Employer::destroy($id);
-        return redirect()->route('AdminEmloyer.index');
+        return redirect()->route('AdminEmloyer.index')->with('message', 'Xóa Employer thành công');
     }
 }

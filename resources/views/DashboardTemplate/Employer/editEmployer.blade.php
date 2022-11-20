@@ -29,29 +29,23 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <div class="mb-3">
-                                        <label for="inputName">User id</label>
-                                        <input type="text" id="inputName" class="form-control"
-                                            value="{{ $employer->user_id }}" name="user_id">
-                                    </div>
-                                    <div class="mb-3">
                                         <label for="inputName">Website</label>
                                         <input type="text" id="inputName" class="form-control"
                                             value="{{ $employer->website }}" name="website">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Infor</label>
-                                        <input type="text" id="inputName" class="form-control"
-                                            value="{{ $employer->infor }}" name="infor">
+                                        <textarea type="text" id="ckeditor_edit_infor" class="form-control" value="{{ $employer->infor }}" name="infor"></textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Responsibility</label>
-                                        <input type="text" id="inputName" class="form-control"
-                                            value="{{ $employer->responsibility }}" name="responsibility">
+                                        <textarea type="text" id="ckeditor_edit_responsibility" class="form-control" value="{{ $employer->responsibility }}"
+                                            name="responsibility"></textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Welfare</label>
-                                        <input type="text" id="inputName" class="form-control"
-                                            value="{{ $employer->welfare }}" name="welfare">
+                                        <textarea type="text" id="ckeditor_edit_welfare" class="form-control" value="{{ $employer->welfare }}"
+                                            name="welfare"></textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Name Company</label>

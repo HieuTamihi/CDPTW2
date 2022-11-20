@@ -54,18 +54,9 @@
                                     <form method="POST" action="{{ route('AdminUser.destroy', $user->id) }}">
 
                                         <a class="btn btn-info btn-sm modify-icon"
-                                            href="{{ route('AdminUser.edit', $user->id) }}">
-                                            <i class="fas fa-pencil-alt ">
-                                            </i>
-                                            Edit
+                                            href="{{ asset('User_untrash', $user->id) }}">
+                                            Khôi phục
                                         </a>
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm modify-icon">
-                                            <i class="fas fa-trash ">
-                                            </i>
-                                            Delete
-                                        </button>
                                     </form>
                                 </td>
                                 </tr>

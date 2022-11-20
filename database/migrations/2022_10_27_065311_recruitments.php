@@ -4,7 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+<<<<<<<< HEAD:vendor/laravel/framework/src/Illuminate/Database/Migrations/stubs/migration.create.stub
+class {{ class }} extends Migration
+========
 class Recruitments extends Migration
+>>>>>>>> CRUD_employer:database/migrations/2022_10_27_065311_recruitments.php
 {
     /**
      * Run the migrations.
@@ -13,6 +17,10 @@ class Recruitments extends Migration
      */
     public function up()
     {
+<<<<<<<< HEAD:vendor/laravel/framework/src/Illuminate/Database/Migrations/stubs/migration.create.stub
+        Schema::create('{{ table }}', function (Blueprint $table) {
+            $table->id();
+========
         Schema::create('recruitments', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->integer('customer_id');
@@ -23,6 +31,7 @@ class Recruitments extends Migration
             $table->string('status')->nullable();
             $table->text('introduce')->nullable();
             $table->string('file')->nullable();
+>>>>>>>> CRUD_employer:database/migrations/2022_10_27_065311_recruitments.php
             $table->timestamps();
         });
     }
@@ -34,6 +43,6 @@ class Recruitments extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('{{ table }}');
     }
 }
