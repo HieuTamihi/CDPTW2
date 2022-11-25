@@ -166,15 +166,4 @@ class UserController extends Controller
             return redirect()->route('login');
         }
     }
-    //trash user
-    public function User_Trash(Request $r)
-    {
-        $users = User::onlyTrashed()->search()->get();
-        return view('DashboardTemplate.Admin.trash_user', compact('users'));
-    }
-    public function User_untrash($id)
-    {
-        $user = User::withtrash()->find($id);
-        return view('DashboardTemplate.Admin.index')->with('message', 'phục hồi User thành công');
-    }
 }
