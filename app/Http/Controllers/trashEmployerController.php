@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Employer;
-use App\Models\Job_posting;
-use Illuminate\Support\Facades\Auth;
 
-class CRUDEmployer extends Controller
+class trashEmployerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +14,8 @@ class CRUDEmployer extends Controller
      */
     public function index()
     {
-        $id = Auth::user()->employer->id;
-        $getPostByID = Employer::findOrFail($id);
-        $result = $getPostByID->jobs;
-        return view('DashboardTemplate.Employer.list_post_by_id', compact('result'));
+        $employer = Employer::onlyTrashed()->search()->get();
+        return view('DashboardTemplate.Employer.trash_Employe', compact('employer'));
     }
 
     /**
@@ -29,7 +25,7 @@ class CRUDEmployer extends Controller
      */
     public function create()
     {
-        return view('DashboardTemplate.Employer.add_post');
+        //
     }
 
     /**
@@ -40,18 +36,7 @@ class CRUDEmployer extends Controller
      */
     public function store(Request $request)
     {
-        $user_id = 2;
-        Job_posting::create([
-            'employer_id' => Auth::user()->id,
-            'title' => $request->title,
-            'experience' => $request->experience,
-            'type' => $request->type,
-            'skill' => $request->skill,
-            'required' => $request->required,
-            'salary' => $request->salary,
-            'token' => md5(Auth::user()->id),
-        ]);
-        return redirect()->route('CRUDEmployer.index');
+        //
     }
 
     /**
@@ -62,8 +47,9 @@ class CRUDEmployer extends Controller
      */
     public function show($id)
     {
-        $show = Job_posting::find($id);
-        return view('DashboardTemplate.Employer.detail_post', compact('show'));
+        $employer = Employer::withTrashed($id);
+        $employer->restore();
+        return redirect()->route('AdminEmloyer.index')->with('message', 'Khôi phục Employer thành công');
     }
 
     /**
@@ -74,8 +60,9 @@ class CRUDEmployer extends Controller
      */
     public function edit($id)
     {
-        $show = Job_posting::find($id);
-        return view('DashboardTemplate.Employer.edit_post', compact('show'));
+        $employer = Employer::withTrashed()->find($id);
+        $employer->forceDelete();
+        return redirect()->route('AdminEmloyer.index')->with('message', 'Xóa vĩnh viễn Employer thành công');
     }
 
     /**
@@ -87,9 +74,7 @@ class CRUDEmployer extends Controller
      */
     public function update(Request $request, $id)
     {
-        $job = Job_posting::find($id);
-        $job->update($request->all());
-        return redirect()->route('CRUDEmployer.index');
+        //
     }
 
     /**
@@ -100,7 +85,6 @@ class CRUDEmployer extends Controller
      */
     public function destroy($id)
     {
-        $job = Job_posting::destroy($id);
-        return redirect()->route('CRUDEmployer.index');
+        //
     }
 }

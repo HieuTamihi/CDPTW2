@@ -49,7 +49,9 @@ class trashUserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::withTrashed($id);
+        $user->restore();
+        return redirect()->route('AdminUser.index')->with('message', 'Khôi phục User thành công');
     }
 
     /**
@@ -60,7 +62,9 @@ class trashUserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::withTrashed()->find($id);
+        $user->forceDelete();
+        return redirect()->route('AdminUser.index')->with('message', 'Xóa vĩnh viễn User thành công');
     }
 
     /**
@@ -83,8 +87,6 @@ class trashUserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::withtrash($id);
-        $user->restore();
-        return redirect()->back()->with('no', 'khôi phục thành công');
+        //
     }
 }

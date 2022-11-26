@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\trashUserController;
+use App\Http\Controllers\trashEmployerController;
+use App\Http\Controllers\trashJobpostingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,7 +85,10 @@ Route::resource('employer', EmployerController::class);
 Route::resource('AdminUser', CRUDUserController::class);
 Route::resource('AdminJobposting', CRUDJobpostingController::class);
 Route::resource('AdminEmloyer', CRUDEmloyerController::class);
+//trash
 Route::resource('User_Trash', trashUserController::class);
+Route::resource('Employer_Trash', trashEmployerController::class);
+Route::resource('Jobposting_Trash', trashJobpostingController::class);
 
 // Employer - quan ly job by employer_id
 Route::resource('CRUDJobByEmployer', CRUDListJobController::class);

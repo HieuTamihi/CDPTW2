@@ -39,8 +39,11 @@
                             </tr>
                         </thead>
                         <tbody>
+
                             @foreach ($users as $user)
-                                <td>{{ $user->id }}</td>
+                                <td>
+                                    {{ $user->id }}
+                                </td>
                                 <td>{{ $user->employer_id }}</td>
                                 <td>{{ $user->customer_id }}</td>
                                 <td>{{ $user->email }}</td>
