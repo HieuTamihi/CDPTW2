@@ -3,6 +3,7 @@
 use App\Http\Controllers\CRUDUserController;
 use App\Http\Controllers\CRUDEmloyerController;
 use App\Http\Controllers\CRUDJobpostingController;
+use App\Http\Controllers\CRUDCustomersController;
 use App\Http\Controllers\CRUDEmployer;
 use App\Http\Controllers\viewController;
 use App\Http\Controllers\RecruitmentController;
@@ -85,6 +86,7 @@ Route::resource('employer', EmployerController::class);
 Route::resource('AdminUser', CRUDUserController::class);
 Route::resource('AdminJobposting', CRUDJobpostingController::class);
 Route::resource('AdminEmloyer', CRUDEmloyerController::class);
+Route::resource('AdminCustomers', CRUDCustomersController::class);
 //trash
 Route::resource('User_Trash', trashUserController::class);
 Route::resource('Employer_Trash', trashEmployerController::class);
