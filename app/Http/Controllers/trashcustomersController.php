@@ -3,12 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\CRUDCustomersRequests;
 use App\Models\Customer;
-use Illuminate\Support\Facades\DB;
 
-
-class CRUDCustomersController extends Controller
+class trashcustomersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +14,8 @@ class CRUDCustomersController extends Controller
      */
     public function index()
     {
-        $customer = Customer::orderBy('id', 'desc')->Search()->paginate(5);
-        return view('DashboardTemplate.customers.index', compact('customer'));
+        $customer = Customer::onlyTrashed()->search()->get();
+        return view('DashboardTemplate.customers.trash_Customers', compact('customer'));
     }
 
     /**
@@ -28,7 +25,7 @@ class CRUDCustomersController extends Controller
      */
     public function create()
     {
-        return view('DashboardTemplate.customers.addcustomers');
+        //
     }
 
     /**
@@ -37,10 +34,9 @@ class CRUDCustomersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CRUDCustomersRequests $request)
+    public function store(Request $request)
     {
-        Customer::create($request->all());
-        return redirect()->route('AdminCustomers.index')->with('message', 'Thêm Customer thành công');
+        //
     }
 
     /**
@@ -51,7 +47,9 @@ class CRUDCustomersController extends Controller
      */
     public function show($id)
     {
-        //
+        $customer = Customer::withTrashed($id);
+        $customer->restore();
+        return redirect()->route('AdminCustomers.index')->with('message', 'Khôi phục Customer thành công');
     }
 
     /**
@@ -62,8 +60,9 @@ class CRUDCustomersController extends Controller
      */
     public function edit($id)
     {
-        $customer = Customer::find($id);
-        return view('DashboardTemplate.customers.editCustomers', compact('customer'));
+        $customer = Customer::withTrashed()->find($id);
+        $customer->forceDelete();
+        return redirect()->route('AdminCustomers.index')->with('message', 'Xóa vĩnh viễn Customer thành công');
     }
 
     /**
@@ -73,11 +72,9 @@ class CRUDCustomersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CRUDCustomersRequests $request, $id)
+    public function update(Request $request, $id)
     {
-        $customer = Customer::find($id);
-        $customer->update($request->all());
-        return redirect()->route('AdminCustomers.index');
+        //
     }
 
     /**
@@ -88,7 +85,6 @@ class CRUDCustomersController extends Controller
      */
     public function destroy($id)
     {
-        $customer = Customer::destroy($id);
-        return redirect()->route('AdminCustomers.index')->with('message', 'Xóa Customer thành công');
+        //
     }
 }

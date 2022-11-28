@@ -25,8 +25,8 @@ class CRUDCustomersRequests extends FormRequest
     {
         return [
             'email' => 'required|email|min:10|max:255',
-            'phone_number' => 'required|nullable|regex:/(^([0-9]+) {10} ?$)/u',
-            'fullname' => 'required|regex:/(^([a-zA-z]+)?$)/u|min:5|max:255',
+            'phone_number' => 'required|nullable|max:10',
+            'fullname' => 'required|min:5|max:255',
             'address' => 'required|min:5|max:255',
             'date' => 'required|date',
             'gender' => 'required|regex:/(^([0-9]+)?$)/u|min:1|max:11',
@@ -45,7 +45,6 @@ class CRUDCustomersRequests extends FormRequest
             'fullname.required' => __('Bạn chưa nhập fullname.'),
             'fullname.min' => __('fullname phải hơn 5 ký tự.'),
             'fullname.max' => __('fullname phải không được vượt quá 255 ký tự.'),
-            'fullname.regex' => __('fullname không có ký tự đặt biệt.'),
 
             'address.required' => __('Bạn chưa nhập address.'),
             'address.min' => __('address phải hơn 5 ký tự.'),
@@ -55,14 +54,14 @@ class CRUDCustomersRequests extends FormRequest
             'favorite.min' => __('favorite phải hơn 5 ký tự.'),
             'favorite.max' => __('favorite phải không được vượt quá 255 ký tự.'),
 
-            'email.required' => __('image không được để trống.'),
+            'email.required' => __('email không được để trống.'),
             'email.email' => __('email phải là @.'),
             'email.min' => __('email phải hơn 10 ký tự.'),
             'email.max' => __('email phải không được vượt quá 255 ký tự.'),
 
             'phone_number.required' => __('phone_number không được để trống.'),
             'phone_number.nullable' => __('phone_number chỉ là chữ số.'),
-            'phone_number.regex' => __('phone_number là chử số không được vược quá 10 ký tự.'),
+            'phone_number.max' => __('phone_number là chử số không được vược quá 10 chữ số.'),
 
             'status.required' => __('status không được để trống.'),
             'status.regex' => __('status chỉ là chữ số.'),

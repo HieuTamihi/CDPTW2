@@ -25,6 +25,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\trashUserController;
 use App\Http\Controllers\trashEmployerController;
 use App\Http\Controllers\trashJobpostingController;
+use App\Http\Controllers\trashcustomersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,6 +92,7 @@ Route::resource('AdminCustomers', CRUDCustomersController::class);
 Route::resource('User_Trash', trashUserController::class);
 Route::resource('Employer_Trash', trashEmployerController::class);
 Route::resource('Jobposting_Trash', trashJobpostingController::class);
+Route::resource('Customers_Trash', trashcustomersController::class);
 
 // Employer - quan ly job by employer_id
 Route::resource('CRUDJobByEmployer', CRUDListJobController::class);

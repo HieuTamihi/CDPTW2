@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Edit Employer</h1>
+                        <h1>Edit Customer</h1>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -21,7 +21,7 @@
             </div>
         @endif
         <section class="content">
-            <form action="{{ route('AdminEmloyer.update', $employer->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('AdminCustomers.update', $customer->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 @if ($errors->any())
@@ -32,48 +32,44 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <div class="mb-3">
-                                        <label for="inputName">Website</label>
+                                        <label for="inputName">Email</label>
                                         <input type="text" id="inputName" class="form-control"
-                                            value="{{ $employer->website }}" name="website">
+                                            value="{{ $customer->email }}" name="email">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="inputName">Infor</label>
-                                        <textarea type="text" id="ckeditor_edit_infor" class="form-control" name="infor">{{ $employer->infor }}</textarea>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="inputName">Responsibility</label>
-                                        <textarea type="text" id="ckeditor_edit_responsibility" class="form-control" name="responsibility">{{ $employer->responsibility }}</textarea>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="inputName">Welfare</label>
-                                        <textarea type="text" id="ckeditor_edit_welfare" class="form-control" name="welfare">{{ $employer->welfare }}</textarea>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="inputName">Name Company</label>
+                                        <label for="inputName">Phone Number</label>
                                         <input type="text" id="inputName" class="form-control"
-                                            value="{{ $employer->name_company }}" name="name_company">
+                                            value="{{ $customer->phone_number }}" name="phone_number">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inputName">Fullname</label>
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $customer->fullname }}" name="fullname">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inputName">date</label>
+                                        <input type="date" id="inputName" class="form-control"
+                                            value="{{ $customer->date }}" name="date">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Address</label>
                                         <input type="text" id="inputName" class="form-control"
-                                            value="{{ $employer->address }}" name="address">
+                                            value="{{ $customer->address }}" name="address">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="inputName">Email</label>
-                                        <input type="email" id="inputName" class="form-control"
-                                            value="{{ $employer->email }}" name="email">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="inputName">Phone number</label>
+                                        <label for="inputName">Gender</label>
                                         <input type="text" id="inputName" class="form-control"
-                                            value="{{ $employer->phone_number }}" name="phone_number">
+                                            value="{{ $customer->gender }}" name="gender">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="formFile" class="form-label">Image</label>
-                                        <input class="form-control" type="file" id="formFile" name="image">
-                                        <div class="img">
-                                            <img src="{{ url('img') }}/{{ $employer->image }}" alt="">
-                                        </div>
+                                        <label for="inputName">Favorite</label>
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $customer->favorite }}" name="favorite">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="inputName">Status</label>
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $customer->status }}" name="status">
                                     </div>
                                 </div>
                             </div>
