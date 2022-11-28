@@ -15,7 +15,7 @@ class AdminCommentsController extends Controller
     public function index()
     {
         $resultComment = Comment::with('customers', 'posts')->get();
-        return view('DashboardTemplate.dashboard_comment_home', compact('resultComment'));
+        return view('DashboardTemplate.Comment.dashboard_comment_home', compact('resultComment'));
     }
 
     /**

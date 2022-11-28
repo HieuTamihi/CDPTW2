@@ -25,29 +25,34 @@
                 <div class="row">
                     <div class="col-md-10 intem-main">
                         {{ csrf_field() }}
-                        @foreach ($employer as $row)
+                        @foreach ($employerOuts as $key => $row)
                         <div class="intem-main-child">
                             <div class="row">
                                 <div class="col-md-5 intem-slide-img">
-                                    <a href="{{route('employer.show',$row->id)}}">
-                                        <img class="intem-img" src="{{url('img')}}/{{$row->image}}" alt="">
+                                    @if($row->id == null)
+                                    <a href="#">
+                                        <img class="intem-img" src="{{ url('img') }}/{{ $row->image }}" alt="">
                                     </a>
+                                    @else
+                                    <a href="{{ route('employer.show', $row->id) }}">
+                                        <img class="intem-img" src="{{ url('img') }}/{{ $row->image }}" alt="">
+                                    </a>
+                                    @endif
                                 </div>
                                 <div class="col-md-7 name-spotlight">
                                     <h3 class="title-spotlight">
-                                        <a href="{{route('employer.show',$row->id)}}">{{$row->name_company}}</a>
+                                        @if($row->id == null)
+                                        <a href="#">{{ $row->name_company }}</a>
+                                        @else
+                                        <a href="{{ route('employer.show', $row->id) }}">{{ $row->name_company }}</a>
+                                        @endif
                                     </h3>
                                     <div class="spotilght-txt">
-                                        <p class="loca-spotlight">Seal Commerce is a Global Product Company that
-                                            helps people sell
-                                            better...
+                                        <p class="loca-spotlight">{{ $row->title }}
                                         </p>
                                         <div class="spotilght-txt-DC">
-                                            <p class="loca-spotlight">{{$row->address}}</p>
+                                            <p class="loca-spotlight">{{ $row->address }}</p>
                                         </div>
-                                    </div>
-                                    <div class="spotlight-btn">
-                                        <a href="">Xem Thêm &raquo;</a>
                                     </div>
                                 </div>
                             </div>
@@ -55,10 +60,16 @@
                         @endforeach
                     </div>
                     <div class="col-md-2 intem-thume">
-                        @foreach ($employer as $row)
-                        <a class="intem-thume-img" href="{{route('employer.show',$row->id)}}">
-                            <img src="{{url('img')}}/{{$row->image}}" alt="">
+                        @foreach ($employerOuts as $key => $row)
+                        @if($row->id == null)
+                        <a class="intem-thume-img" href="#">
+                            <img src="{{ url('img') }}/{{ $row->image }}" alt="">
                         </a>
+                        @else
+                        <a class="intem-thume-img" href="{{ route('employer.show', $row->id) }}">
+                            <img src="{{ url('img') }}/{{ $row->image }}" alt="">
+                        </a>
+                        @endif
                         @endforeach
                     </div>
                 </div>
@@ -76,11 +87,16 @@
                 </div>
                 <div id="hotid" class="hot-wotk-intem">
                     <ul id="customid" class="supper-hot-job">
-                        @foreach($job as $name)
+                        @foreach ($name as $key => $job)
                         <li>
-                            <span class="tags"><strong class="tags-txt">{{$name->name_company}}</strong></span>
-                            <br><a href="{{route('employer.show',$name->id)}}">{{$name->title}}</a>
-                            <p class="job-salary-view">{{$name->salary}}</p>
+                            <span class="tags"><strong class="tags-txt">{{ $job->name_company }}</strong></span>
+                            <br>
+                            @if($job->id == null)
+                            <a href="#">{{ $job->title }}</a>
+                            @else
+                            <a href="{{ route('employer.show', $job->id) }}">{{ $job->title }}</a>
+                            @endif
+                            <p class="job-salary-view">{{ $job->salary }}</p>
                         </li>
                         @endforeach
                     </ul>
@@ -99,13 +115,21 @@
         <div class="row cont-bottum-main">
             @foreach ($employer as $row)
             <div class="col-md-2 cont-bottum-main-item">
-                <a href="{{route('employer.show',$row->id)}}">
+                @if($row->id == null)
+                <a href="#">
                     <div class="cont-bottum-main-item-img">
-                        <img src="{{url('img')}}/{{$row->image}}" alt="">
+                        <img src="{{ url('img') }}/{{ $row->image }}" alt="">
                     </div>
                 </a>
+                @else
+                <a href="{{ route('employer.show', $row->id) }}">
+                    <div class="cont-bottum-main-item-img">
+                        <img src="{{ url('img') }}/{{ $row->image }}" alt="">
+                    </div>
+                </a>
+                @endif
                 <div class="cont-bottum-main-item-txt">
-                    <p>{{$row->name_company}}</p>
+                    <p>{{ $row->name_company }}</p>
                 </div>
             </div>
             @endforeach

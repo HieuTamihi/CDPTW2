@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RecruitmentRequest;
-use App\Models\Employer;
 use App\Models\Recruitment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -40,16 +39,26 @@ class RecruitmentController extends Controller
     {
         $data = new Recruitment();
         $file = $request->file;
-        $filename = time() . '.' . $file->getClientOriginalExtension();
-        $request->file->move('file', $filename);
-        $data->file = $filename;
-        $data->introduce = $request->introduce;
-        $data->customer_id = Auth::user()->customer_id;
-        $data->jobposting_id = $request->id;
-        $data->cv_id = $request->cv_id;
-        $data->status = 0;
-        $data->save();
-        return redirect()->back()->with('message', 'Ứng tuyển thành công!');
+        if ($request->has('file')) {
+            $filename = $file->getClientOriginalName();
+            $request->file->move('file', $filename);
+            $data->file = $filename;
+            $data->introduce = $request->introduce;
+            $data->customer_id = Auth::user()->customer_id;
+            $data->jobposting_id = $request->id;
+            $data->cv_id = $request->cv_id;
+            $data->status = 0;
+            $data->save();
+            return redirect()->back()->with('message', 'Ứng tuyển thành công!');
+        } else {
+            $data->introduce = $request->introduce;
+            $data->customer_id = Auth::user()->customer_id;
+            $data->jobposting_id = $request->id;
+            $data->cv_id = $request->cv_id;
+            $data->status = 0;
+            $data->save();
+            return redirect()->back()->with('message', 'Ứng tuyển thành công!');
+        }
     }
 
     /**

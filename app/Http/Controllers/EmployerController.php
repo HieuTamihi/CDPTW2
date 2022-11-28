@@ -23,9 +23,11 @@ class EmployerController extends Controller
     public function index()
     {
         $employer = Employer::all();
+        $employerOuts = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')
+            ->orderBy('employer_id', 'desc')->paginate(5);
         $job = Job_posting::all();
-        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->select('name_company')->get();
-        return view('index', compact('employer', 'job', 'name'));
+        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->get();
+        return view('index', compact('employerOuts', 'employer', 'job', 'name'));
     }
 
     /**
@@ -57,19 +59,25 @@ class EmployerController extends Controller
      */
     public function show($id)
     {
-        $detail = Employer::findOrFail($id);
-        $relate = $detail->jobs->take(1);
-        $job_relate = $detail->jobs->take(3);
-        $date = Carbon::now()->day;
-        if (Auth::check()) {
-            $customer_id = Auth::user()->customer_id;
-            $apply = Customer::leftJoin('users', 'users.customer_id', '=', 'customers.id')
-            ->where('customers.id', '=', $customer_id)->first();
-            $id = Auth::user()->customer_id;
-            $cv = Cv::where('customer_id', '=', $id)->get();
-            return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv','date'));
+        // $detail = Employer::findOrFail($id);
+        $detail = Employer::where('id', $id)->first();
+        if ($detail == null) {
+            return view('error.404');
         }
-        return view('detail_page', compact('detail', 'relate', 'job_relate', 'date'));
+        if ($detail != null) {
+            $relate = $detail->jobs->take(1);
+            $job_relate = $detail->jobs->take(3);
+            $date = Carbon::now()->day;
+            if (Auth::check()) {
+                $customer_id = Auth::user()->customer_id;
+                $apply = Customer::leftJoin('users', 'users.customer_id', '=', 'customers.id')
+                    ->where('customers.id', '=', $customer_id)->first();
+                $id = Auth::user()->customer_id;
+                $cv = Cv::where('customer_id', '=', $id)->get();
+                return view('detail_page', compact('detail', 'relate', 'job_relate', 'apply', 'cv', 'date'));
+            }
+            return view('detail_page', compact('detail', 'relate', 'job_relate', 'date'));
+        }
     }
 
     /**

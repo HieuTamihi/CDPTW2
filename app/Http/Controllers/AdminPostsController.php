@@ -16,7 +16,7 @@ class AdminPostsController extends Controller
     public function index()
     {
         $resultPosts = Post::orderBy('id', 'desc')->paginate(5);
-        return view('DashboardTemplate.dashboard_blog_home', compact('resultPosts'));
+        return view('DashboardTemplate.Blog.dashboard_blog_home', compact('resultPosts'));
     }
     /**
      * Show the form for creating a new resource.
@@ -25,7 +25,7 @@ class AdminPostsController extends Controller
      */
     public function create()
     {
-        return view('DashboardTemplate.dashboard_blog_add');
+        return view('DashboardTemplate.Blog.dashboard_blog_add');
     }
     /**
      * Store a newly created resource in storage.
@@ -67,7 +67,7 @@ class AdminPostsController extends Controller
     public function edit($id)
     {
         $showDataEdit = Post::findOrFail($id);
-        return view('DashboardTemplate.dashboard_blog_edit', compact('showDataEdit'));
+        return view('DashboardTemplate.Blog.dashboard_blog_edit', compact('showDataEdit'));
     }
     /**
      * Update the specified resource in storage.
@@ -106,7 +106,7 @@ class AdminPostsController extends Controller
     public function blogTrash()
     {
         $resultPosts = Post::orderBy('id', 'desc')->onlyTrashed()->paginate(5);
-        return view('DashboardTemplate.dashboard_blog_trash', compact('resultPosts'));
+        return view('DashboardTemplate.Blog.dashboard_blog_trash', compact('resultPosts'));
     }
     public function blogRestore($id)
     {
