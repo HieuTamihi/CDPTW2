@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Cv\CreateCVRequest;
+use App\Http\Requests\Cv\UpdateCVRequest;
 use  App\Models\Cv;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
-use PHPUnit\Framework\Constraint\Count;
 
 class CvController extends Controller
 {
@@ -17,16 +18,24 @@ class CvController extends Controller
      */
     public function index()
     {
-        $customer_id = Auth::user()->customer_id;
-        $cv = Cv::where('customer_id', '=', $customer_id)->paginate(5);
-        return view('manage_cv', compact('cv'))->with('i', (request()->input('page', 1) - 1) * 5);
+        if (Auth::check()) {
+            $customer_id = Auth::user()->customer_id;
+            $cv = Cv::where('customer_id', '=', $customer_id)->paginate(5);
+            return view('manage_cv', compact('cv'))->with('i', (request()->input('page', 1) - 1) * 5);
+        } else {
+            return view('error.404');
+        }
     }
 
     public function viewCV($id)
     {
-        $customer_id = Auth::user()->customer_id;
-        $viewCV = Cv::where('id', '=', $id)->where('customer_id', '=', $customer_id)->get();
-        return view('viewCV', compact('viewCV'));
+        if (Auth::check()) {
+            $customer_id = Auth::user()->customer_id;
+            $viewCV = Cv::where('id', '=', $id)->where('customer_id', '=', $customer_id)->get();
+            return view('viewCV', compact('viewCV'));
+        } else {
+            return view('error.404');
+        }
     }
 
     /**
@@ -45,11 +54,11 @@ class CvController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateCVRequest $request)
     {
         if ($request->has('avatar')) {
             $avatar = $request->file('avatar');
-            $filename = $avatar->getClientOriginalExtension();
+            $filename = $avatar->getClientOriginalName();
             $request->avatar->move('img', $filename);
             Cv::create([
                 'namecv' => $request->namecv,
@@ -93,7 +102,16 @@ class CvController extends Controller
      */
     public function edit(Cv $cv)
     {
-        return view('editCV', compact('cv'));
+        if (Auth::check()) {
+            $cv = Cv::where('id', '=', $cv->id)->where('customer_id', '=', Auth::user()->customer_id)->first();
+            if ($cv == null) {
+                return view('error.404');
+            } else {
+                return view('editCV', compact('cv'));
+            }
+        } else {
+            return view('error.404');
+        }
     }
 
     /**
@@ -103,58 +121,67 @@ class CvController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateCVRequest $request, $id)
     {
-        $cv = Cv::where('id', '=', $id)->where('customer_id', '=', Auth::user()->customer_id)->first();
-        $count = Cv::select('avatar')->where('avatar', '=', $cv->avatar)->count();
-        //kiem tra duoi anh
-        if ($request->has('avatar')) {
-            $avatar = $request->file('avatar');
-            $filename = $avatar->getClientOriginalName();
-            $imagePath = public_path('img/' . $cv->avatar);
-            //dua anh vao thu muc img
-            $avatar->move('img', $filename);
-            if ($count == 1 && File::exists($imagePath)) {
-                unlink($imagePath);
+        if (Auth::check()) {
+            $cv = Cv::where('id', '=', $id)->where('customer_id', '=', Auth::user()->customer_id)->first();
+            //kiem tra duoi anh
+            if ($cv == null) {
+                return view('error.404');
+            } else {
+                if ($request->has('avatar')) {
+                    $avatar = $request->file('avatar');
+                    $filename = $avatar->getClientOriginalName();
+                    //dua anh vao thu muc img
+                    $imagePath = public_path('img/' . $cv->avatar);
+                    $avatar->move('img', $filename);
+                    if (File::exists($imagePath)) {
+                        unlink($imagePath);
+                    }
+                    //update cv
+                    $cv->namecv = $request->namecv;
+                    $cv->customer_id = Auth::user()->customer_id;
+                    $cv->avatar = $request->avatar = $filename;
+                    $cv->fullname = $request->fullname;
+                    $cv->apply_position = $request->apply_position;
+                    $cv->email = $request->email;
+                    $cv->phone_number = $request->phone_number;
+                    $cv->date = $request->date;
+                    $cv->introduce = $request->introduce;
+                    $cv->exp_work = $request->exp_work;
+                    $cv->school_name = $request->school_name;
+                    $cv->learn_time = $request->learn_time;
+                    $cv->majors = $request->majors;
+                    $cv->infor_other = $request->infor_other;
+                    $cv->status = $request->status = 0;
+                    $cv->created_at = DATE(NOW());
+                    $cv->updated_at = DATE(NOW());
+                    $cv->update();
+                    return redirect()->back()->with('message', 'Cập nhật thành công!');
+                } else {
+                    //update cv
+                    $cv->namecv = $request->namecv;
+                    $cv->customer_id = Auth::user()->customer_id;
+                    $cv->fullname = $request->fullname;
+                    $cv->apply_position = $request->apply_position;
+                    $cv->email = $request->email;
+                    $cv->phone_number = $request->phone_number;
+                    $cv->date = $request->date;
+                    $cv->introduce = $request->introduce;
+                    $cv->exp_work = $request->exp_work;
+                    $cv->school_name = $request->school_name;
+                    $cv->learn_time = $request->learn_time;
+                    $cv->majors = $request->majors;
+                    $cv->infor_other = $request->infor_other;
+                    $cv->status = $request->status = 0;
+                    $cv->created_at = DATE(NOW());
+                    $cv->updated_at = DATE(NOW());
+                    $cv->update();
+                    return redirect()->back()->with('message', 'Cập nhật thành công!');
+                }
             }
-            //update cv
-                $cv->namecv = $request->namecv;
-                $cv->customer_id = Auth::user()->customer_id;
-                $cv->fullname = $request->fullname;
-                $cv->avatar = $request->avatar = $filename;
-                $cv->apply_position = $request->apply_position;
-                $cv->email = $request->email;
-                $cv->date = $request->date;
-                $cv->introduce = $request->introduce;
-                $cv->exp_work = $request->exp_work;
-                $cv->school_name = $request->school_name;
-                $cv->learn_time = $request->learn_time;
-                $cv->majors = $request->majors;
-                $cv->infor_other = $request->infor_other;
-                $cv->status = $request->status = 0;
-                $cv->created_at = DATE(NOW());
-                $cv->updated_at = DATE(NOW());
-                $cv->update();
-                return redirect()->route('cv.index')->with('message', 'Cập nhật thành công!');
         } else {
-            //update cv
-            $cv->namecv = $request->namecv;
-            $cv->customer_id = Auth::user()->customer_id;
-            $cv->fullname = $request->fullname;
-            $cv->apply_position = $request->apply_position;
-            $cv->email = $request->email;
-            $cv->date = $request->date;
-            $cv->introduce = $request->introduce;
-            $cv->exp_work = $request->exp_work;
-            $cv->school_name = $request->school_name;
-            $cv->learn_time = $request->learn_time;
-            $cv->majors = $request->majors;
-            $cv->infor_other = $request->infor_other;
-            $cv->status = $request->status = 0;
-            $cv->created_at = DATE(NOW());
-            $cv->updated_at = DATE(NOW());
-            $cv->update();
-            return redirect()->route('cv.index')->with('message', 'Cập nhật thành công!');
+            return view('error.404');
         }
     }
 
@@ -166,7 +193,12 @@ class CvController extends Controller
      */
     public function destroy(Cv $cv)
     {
-        $cv->delete();
-        return redirect()->route('cv.index')->with('message', 'Xóa thành công!');
+        $cv = Cv::where('id', '=', $cv->id)->where('customer_id', '=', Auth::user()->customer_id)->first();
+        if ($cv == null) {
+            return view('error.404');
+        } else {
+            $cv->delete();
+            return redirect()->route('cv.index')->with('message', 'Xóa thành công!');
+        }
     }
 }
