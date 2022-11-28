@@ -19,7 +19,6 @@ class wishlistSeeder extends Seeder
                 'id' => '1',
                 'customer_id' => '1',
                 'job_posting_id' => '1',
-                'number' => '0',
             ], [
                 'id' => '2',
                 'customer_id' => '2',
@@ -28,7 +27,6 @@ class wishlistSeeder extends Seeder
                 'id' => '3',
                 'customer_id' => '3',
                 'job_posting_id' => '3',
-                'number' => '0',
             ]
         ]);
     }

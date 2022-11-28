@@ -4,11 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-<<<<<<<< HEAD:database/migrations/2022_10_27_065311_recruitments.php
-class Recruitments extends Migration
-========
 class {{ class }} extends Migration
->>>>>>>> merge_all_branch:vendor/laravel/framework/src/Illuminate/Database/Migrations/stubs/migration.create.stub
 {
     /**
      * Run the migrations.
@@ -17,21 +13,8 @@ class {{ class }} extends Migration
      */
     public function up()
     {
-<<<<<<<< HEAD:database/migrations/2022_10_27_065311_recruitments.php
-        Schema::create('recruitments', function (Blueprint $table) {
-            $table->id()->autoIncrement();
-            $table->integer('customer_id');
-            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
-            $table->integer('jobposting_id');
-            $table->foreign('jobposting_id')->references('id')->on('job_postings')->onDelete('cascade');
-            $table->integer('cv_id')->nullable();
-            $table->string('status')->nullable();
-            $table->text('introduce')->nullable();
-            $table->string('file')->nullable();
-========
         Schema::create('{{ table }}', function (Blueprint $table) {
             $table->id();
->>>>>>>> merge_all_branch:vendor/laravel/framework/src/Illuminate/Database/Migrations/stubs/migration.create.stub
             $table->timestamps();
         });
     }
