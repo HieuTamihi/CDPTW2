@@ -39,3 +39,4 @@ class Employer extends Model
         }
         return $query;
     }
+}

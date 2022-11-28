@@ -2,11 +2,7 @@
 
 namespace App\Models;
 
-<<<<<<< HEAD
-=======
 use Carbon\Carbon;
-
->>>>>>> blog_home
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
