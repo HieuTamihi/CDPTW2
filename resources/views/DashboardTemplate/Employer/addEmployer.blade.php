@@ -29,6 +29,11 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <div class="mb-3">
+                                        <label for="inputName">User Id</label>
+                                        <input type="text" id="inputName" class="form-control" value=""
+                                            name="user_id" placeholder="user_id">
+                                    </div>
+                                    <div class="mb-3">
                                         <label for="inputName">Website</label>
                                         <input type="text" id="inputName" class="form-control" value=""
                                             name="website" placeholder="website">
