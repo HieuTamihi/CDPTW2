@@ -39,10 +39,10 @@
                     </ul>
 
                     <!-- SEARCH FORM -->
-                    <form class="form-inline ml-3">
+                    <form class="form-inline ml-3" action="">
                         <div class="input-group input-group-sm">
                             <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                aria-label="Search">
+                                aria-label="Search" name="key">
                             <div class="input-group-append">
                                 <button class="btn btn-navbar" type="submit">
                                     <i class="fas fa-search"></i>
@@ -131,6 +131,23 @@
                                     <a href="#" class="nav-link">
                                         <i class="nav-icon fas fa-table"></i>
                                         <p>
+                                            Employer
+                                            <i class="fas fa-angle-left right"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{ route('AdminEmloyer.index') }}" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>List Employer</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item has-treeview">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-table"></i>
+                                        <p>
                                             Job Posting
                                             <i class="fas fa-angle-left right"></i>
                                         </p>
@@ -140,6 +157,23 @@
                                             <a href="{{ route('AdminJobposting.index') }}" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>List Job Posting</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item has-treeview">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-table"></i>
+                                        <p>
+                                            Customers
+                                            <i class="fas fa-angle-left right"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{ route('AdminCustomers.index') }}" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>List Customers</p>
                                             </a>
                                         </li>
                                     </ul>
@@ -205,6 +239,22 @@
             <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
             <!-- AdminLTE for demo purposes -->
             <script src="{{ asset('dist/js/demo.js') }}"></script>
+            <!-- cketor -->
+            <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+            <script>
+                //ckeditor add Employer
+                CKEDITOR.replace('ckeditorinfor');
+                CKEDITOR.replace('ckeditorresponsibility');
+                CKEDITOR.replace('ckeditorwelfare');
+                //ckeditor edit Employer
+                CKEDITOR.replace('ckeditor_edit_infor');
+                CKEDITOR.replace('ckeditor_edit_responsibility');
+                CKEDITOR.replace('ckeditor_edit_welfare');
+                //ckeditor add jobposting
+                CKEDITOR.replace('ckeditorrequired');
+                //ckeditor edit jobposting
+                CKEDITOR.replace('ckeditor_edit_required');
+            </script>
         </body>
 
         </html>

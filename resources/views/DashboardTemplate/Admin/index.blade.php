@@ -3,14 +3,18 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <br>
+        @if (Session::has('message'))
+            <div class="alert alert-success" style="text-align:center;">{{ Session::get('message') }}</div>
+        @endif
         <section class="content">
-
             <div class="card">
-                <a href="{{ route('AdminUser.create') }}"
-                    style="text-align: center; margin: 10px; padding: 5px 20px; background: #007bff; width: 12%; color: #fff; border-radius: 5px;">Add
-                    new</a>
+                <h3 style="margin: 10px" class="card-title">User</h3>
                 <div class="card-header">
-                    <h3 class="card-title">User</h3>
+                    <a href="{{ route('AdminUser.create') }}"
+                        style="text-align: center; margin: 10px; padding: 5px 20px; background: #007bff; width: 12%; color: #fff; border-radius: 5px;">Add
+                        new</a>
+                    <a style="text-align: center; margin: 10px; padding: 5px 20px; width: 12%; border-radius: 5px;"
+                        href="{{ route('User_Trash.index') }}" class="btn btn-default">Thùng Rác</a>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                             <i class="fas fa-minus"></i>
@@ -31,17 +35,21 @@
                                 <th style="width:4%">role</th>
                                 <th style="width:4%">status</th>
                                 <th style="width:4%">remember_token</th>
+                                <th style="width:4%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
+
                             @foreach ($users as $user)
-                                <td>{{ $user->id }}</td>
+                                <td>
+                                    {{ $user->id }}
+                                </td>
                                 <td>{{ $user->employer_id }}</td>
                                 <td>{{ $user->customer_id }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->email_verified_at }}</td>
                                 <td>{{ $user->phone }}</td>
-                                <td>{{ $user->password }}</td>
+                                <td><?php echo substr($user->password, 0, 0) . '.........'; ?></td>
                                 <td>{{ $user->role }}</td>
                                 <td>{{ $user->status }}</td>
                                 <td>{{ $user->remember_token }}</td>

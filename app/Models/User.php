@@ -7,18 +7,29 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
-
+    use HasFactory, Notifiable, SoftDeletes;
+    protected $dates = ['deleted_at'];
+    public function employer()
+    {
+        return $this->hasOne(Employer::class);
+    }
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'email', 'user_id', 'customer_id', 'phone', 'password', 'role', 'status'
+        'customer_id',
+        'email',
+        'phone',
+        'password',
+        'role',
+        'status',
+        'confirm'
     ];
 
     /**
@@ -41,5 +52,12 @@ class User extends Authenticatable
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = Hash::make($password);
+    }
+    public function scopeSearch($query)
+    {
+        if ($key = request()->key) {
+            $users = $query->where('email', 'like', '%' . $key . '%');
+        }
+        return $query;
     }
 }

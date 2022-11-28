@@ -8,13 +8,6 @@
                     <div class="col-sm-6">
                         <h1>ADD Jobposting</h1>
                     </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Layout</a></li>
-                            <li class="breadcrumb-item active">Fixed Layout</li>
-                        </ol>
-                    </div>
                 </div>
             </div><!-- /.container-fluid -->
         </section>
@@ -23,14 +16,18 @@
                 @csrf
                 <div class="row">
                     <div class="col-md-12">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <div class="card card-primary">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <div class="mb-3">
-                                        <label for="inputName">Employer Id</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="employer_id" placeholder="employer_id">
-                                    </div>
                                     <div class="mb-3">
                                         <label for="inputName">Title</label>
                                         <input type="text" id="inputName" class="form-control" value=""
@@ -53,8 +50,8 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Required</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="required" placeholder="required">
+                                        <textarea type="text" id="ckeditorrequired" class="form-control" value="" name="required"
+                                            placeholder="required"></textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Salary</label>

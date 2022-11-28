@@ -1,3 +1,4 @@
+@if(!Auth::check())
 @extends('header')
 @section('footer')
 <div class="log__reg__page">
@@ -17,6 +18,11 @@
                     {{Session()->get('message')}}
                 </div>
                 @endif
+                @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
+                </div>
+                @endif
                 <div class="form__log">
                     <div class="name__log">
                         <h4>LOGIN</h4>
@@ -34,11 +40,12 @@
                         <input type="submit" value="Login" class="btn login__btn">
                         <span class="btn btn reg__btn"><a href="{{route('register')}}" style="text-decoration: none;color:white;">Sign up</a></span>
                     </form>
-                    <a href="#" class="link__forgot">Forgot password</a>
+                    <a href="{{asset('reset_pass')}}" class="link__forgot">Forgot password</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <br>
-@endsection;
+@endsection
+@endif

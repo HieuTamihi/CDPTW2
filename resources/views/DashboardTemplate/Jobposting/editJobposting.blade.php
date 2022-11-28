@@ -8,60 +8,57 @@
                     <div class="col-sm-6">
                         <h1>Edit Job Posting</h1>
                     </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Layout</a></li>
-                            <li class="breadcrumb-item active">Fixed Layout</li>
-                        </ol>
-                    </div>
                 </div>
             </div><!-- /.container-fluid -->
         </section>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <section class="content">
-            <form action="{{ route('AdminJobposting.update', $jobposting->id) }}" method="post"
-                enctype="multipart/form-data">
+            <form action="{{ route('AdminJobposting.update', $jobposting->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
+                @if ($errors->any())
+                @endif
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card card-primary">
                             <div class="card-body">
                                 <div class="form-group">
                                     <div class="mb-3">
-                                        <label for="inputName">Employer Id</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="employer_id" placeholder="employer_id">
-                                    </div>
-                                    <div class="mb-3">
                                         <label for="inputName">Title</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="title" placeholder="title">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $jobposting->title }}" name="title">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Experience</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="experience" placeholder="experience">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $jobposting->experience }}" name="experience">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Type</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="type" placeholder="type">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $jobposting->type }}" name="type">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Skill</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="skill" placeholder="skill">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $jobposting->skill }}" name="skill">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Required</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="required" placeholder="required">
+                                        <textarea type="text" id="ckeditor_edit_required" class="form-control" name="required">{{ $jobposting->required }}</textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Salary</label>
-                                        <input type="text" id="inputName" class="form-control" value=""
-                                            name="salary" placeholder="salary">
+                                        <input type="text" id="inputName" class="form-control"
+                                            value="{{ $jobposting->salary }}" name="salary">
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +68,7 @@
                     <div class="row">
                         <div class="col-12">
                             <a href="" class="btn btn-secondary">Cancel</a>
-                            <button type="submit" class="btn btn-success float-right">Add</button>
+                            <button type="submit" class="btn btn-success float-right">Seve</button>
                         </div>
                     </div>
             </form>

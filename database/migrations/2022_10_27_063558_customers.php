@@ -18,9 +18,13 @@ class Customers extends Migration
             $table->string('email');
             $table->string('phone_number')->unique();
             $table->string('fullname')->nullable();
+            $table->date('date')->nullable();
+            $table->string('address')->nullable();
             $table->integer('gender')->nullable();
+            $table->string('favorite')->nullable();
             $table->integer('status')->nullable();
             $table->timestamps();
+            $table->date('deleted_at')->nullable();
         });
     }
 

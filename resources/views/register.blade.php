@@ -31,13 +31,16 @@
                                 <div class="alert alert-success">{{Session::get('message')}}</div>
                                 @endif
                                 @csrf
-
                                 <span class="des__name">Name Company</span>
-                                <input type="text" placeholder="Enter your email" class="type__info__reg" name="name_company">
-
+                                <input type="text" placeholder="Enter your name company" class="type__info__reg" name="name_company">
+                                @if ($errors->has('name_company'))
+                                <strong class="text-danger">{{$errors->first('name_company')}}</strong>
+                                @endif
                                 <span class="des__name">Address</span>
-                                <input type="text" placeholder="Enter your email" class="type__info__reg" name="address">
-
+                                <input type="text" placeholder="Enter your address" class="type__info__reg" name="address">
+                                @if ($errors->has('address'))
+                                <strong class="text-danger">{{$errors->first('address')}}</strong>
+                                @endif
                                 <span class="des__name">Email</span>
                                 <input type="text" placeholder="Enter your email" class="type__info__reg" name="email">
                                 @if ($errors->has('email'))
@@ -54,8 +57,7 @@
                                 <input type="text" placeholder="Enter your phone number" class="type__info__reg" name="phone">
                                 @if ($errors->has('phone'))
                                 <strong class="text-danger">{{$errors->first('phone')}}</strong>
-                                @endif
-                                <input type="hidden" value="{{(int)$user_id->user_id}}" name="user_id">
+                                @endif  
                                 <input type="submit" value="Sign up" class="btn reg__btn">
                                 <span class="btn btn login__btn"><a href="{{route('login')}}" style="text-decoration: none;color:white;">Login</a></span>
                             </form>
