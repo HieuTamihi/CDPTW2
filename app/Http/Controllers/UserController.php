@@ -74,9 +74,9 @@ class UserController extends Controller
             if (!$user) {
                 $conf = Str::random(10);
                 $newUser = User::create([
-                    'email' => $request->email,
-                    'password' => $request->password,
-                    'phone' => $request->phone,
+                    'email' => htmlspecialchars($request->email),
+                    'password' => htmlspecialchars($request->password),
+                    'phone' => htmlspecialchars($request->phone),
                     'role' => $request->role = 2,
                     'status' => $request->status = 0,
                     'confirm' => $conf,

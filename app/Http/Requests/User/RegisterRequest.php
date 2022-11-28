@@ -27,7 +27,7 @@ class RegisterRequest extends FormRequest
             'name_company' => 'required',
             'address' => 'required',
             'email' => 'required|email',
-            'phone' => 'required|numeric|min:10',
+            'phone' => 'required|numeric|digits:10',
             'password' => 'required|confirmed|min:6',
         ];
     }
@@ -40,7 +40,7 @@ class RegisterRequest extends FormRequest
             'email.email' => ':attribute is format email',
             'phone.required' => 'Please enter :attribute',
             'phone.numeric' => ':attribute is number',
-            'phone.min' => ':attribute more than 10 character',
+            'phone.digits' => ':attribute more than 10 character',
             'password.required' => 'Please enter :attribute',
             'password.confirmed' => ':attribute is correct',
             'password.min' => ':attribute more than 6 character',

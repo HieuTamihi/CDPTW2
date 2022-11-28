@@ -29,7 +29,7 @@ class StoreRequest extends FormRequest
             'type' => 'required|max:255',
             'skill' => 'required|max:255',
             'required' => 'required|max:255',
-            'salary' => 'required|numeric'
+            'salary' => 'required|max:15'
         ];
     }
     public function messages()
@@ -46,7 +46,7 @@ class StoreRequest extends FormRequest
             'required.required' => 'Please enter :attribute',
             'required.max' => ':attribute more than 255 characters',
             'salary.required' => 'Please enter :attribute',
-            'salary.numeric' => ':attribute is number',
+            'salary.max' => ':attribute more than 15 characters',
         ];
     }
 }
