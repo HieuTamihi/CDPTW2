@@ -18,19 +18,16 @@ class commentSeeder extends Seeder
             [
                 'post_id' => '1',
                 'customer_id' => '1',
-                'title' => 'Experience with Agile Scrum1',
                 'comment' => 'Experience with Ember',
+                'created_at' => '2022-11-02',
+                'updated_at' => '2022-11-03',
             ], [
                 'post_id' => '2',
-                'customer_id' => '2',
-                'title' => 'Experience with Agile Scrum2',
+                'customer_id' => '1',
                 'comment' => 'Experience with Ember or other JavaScript2',
-            ], [
-                'post_id' => '3',
-                'customer_id' => '3',
-                'title' => 'Experience with Agile Scrum 3',
-                'comment' => 'Experience with Ember or other JavaScript 3',
-            ]
+                'created_at' => '2022-11-03',
+                'updated_at' => '2022-11-04',
+            ],
         ]);
     }
 }

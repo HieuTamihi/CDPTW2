@@ -24,7 +24,6 @@ class wishlistSeeder extends Seeder
                 'id' => '2',
                 'customer_id' => '2',
                 'job_posting_id' => '2',
-                'number' => '0',
             ], [
                 'id' => '3',
                 'customer_id' => '3',

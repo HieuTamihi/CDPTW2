@@ -28,7 +28,7 @@ class CRUDJobpostingRequest extends FormRequest
             'experience' => 'required|min:5|max:255',
             'type' => 'required|min:5|max:255',
             'skill' => 'required|min:5|max:255',
-            'required' => 'required|min:5|max:5000',
+            'required' => 'required|min:5|max:255',
             'salary' => 'required|min:5|max:255'
 
         ];
@@ -61,7 +61,7 @@ class CRUDJobpostingRequest extends FormRequest
 
             'required.min' => __('Bạn chưa nhập experience.'),
             'required.min' => __('required phải hơn 5 ký tự.'),
-            'required.max' => __('required phải không được vượt quá 5000 ký tự.'),
+            'required.max' => __('required phải không được vượt quá 255 ký tự.'),
 
             'salary.max' => __('Bạn chưa nhập experience.'),
             'salary.min' => __('salary phải hơn 5 ký tự.'),

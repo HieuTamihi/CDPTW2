@@ -108,17 +108,16 @@ class CvController extends Controller
         $cv = Cv::where('id', '=', $id)->where('customer_id', '=', Auth::user()->customer_id)->first();
         $count = Cv::select('avatar')->where('avatar', '=', $cv->avatar)->count();
         //kiem tra duoi anh
-        if ($request->hasFile('avatar')) {
+        if ($request->has('avatar')) {
             $avatar = $request->file('avatar');
             $filename = $avatar->getClientOriginalName();
             $imagePath = public_path('img/' . $cv->avatar);
+            //dua anh vao thu muc img
+            $avatar->move('img', $filename);
             if ($count == 1 && File::exists($imagePath)) {
                 unlink($imagePath);
-                return redirect()->route('cv.index')->with('message', 'Cập nhật thành công!');
-            } else {
-                //dua anh vao thu muc img
-                $avatar->move('img', $filename);
-                //update cv
+            }
+            //update cv
                 $cv->namecv = $request->namecv;
                 $cv->customer_id = Auth::user()->customer_id;
                 $cv->fullname = $request->fullname;
@@ -137,7 +136,6 @@ class CvController extends Controller
                 $cv->updated_at = DATE(NOW());
                 $cv->update();
                 return redirect()->route('cv.index')->with('message', 'Cập nhật thành công!');
-            }
         } else {
             //update cv
             $cv->namecv = $request->namecv;

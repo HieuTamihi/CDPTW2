@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Employer;
 use App\Models\Job_posting;
 use Illuminate\Support\Facades\Auth;
-
 class CRUDEmployer extends Controller
 {
     /**
@@ -19,7 +18,7 @@ class CRUDEmployer extends Controller
         $id = Auth::user()->employer->id;
         $getPostByID = Employer::findOrFail($id);
         $result = $getPostByID->jobs;
-        return view('DashboardTemplate.Employer.list_post_by_id', compact('result'));
+        return view('DashboardTemplate.Employer.list_post_by_id',compact('result'));
     }
 
     /**
@@ -40,15 +39,15 @@ class CRUDEmployer extends Controller
      */
     public function store(Request $request)
     {
-        $user_id = 2;
+        $user_id =2;
         Job_posting::create([
             'employer_id' => Auth::user()->id,
-            'title' => $request->title,
+            'title'=>$request->title,
             'experience' => $request->experience,
             'type' => $request->type,
             'skill' => $request->skill,
             'required' => $request->required,
-            'salary' => $request->salary,
+            'salary' => $request->salary,  
             'token' => md5(Auth::user()->id),
         ]);
         return redirect()->route('CRUDEmployer.index');
@@ -63,7 +62,7 @@ class CRUDEmployer extends Controller
     public function show($id)
     {
         $show = Job_posting::find($id);
-        return view('DashboardTemplate.Employer.detail_post', compact('show'));
+        return view('DashboardTemplate.Employer.detail_post',compact('show'));
     }
 
     /**
@@ -75,7 +74,7 @@ class CRUDEmployer extends Controller
     public function edit($id)
     {
         $show = Job_posting::find($id);
-        return view('DashboardTemplate.Employer.edit_post', compact('show'));
+        return view('DashboardTemplate.Employer.edit_post',compact('show'));
     }
 
     /**

@@ -26,6 +26,9 @@ use App\Http\Controllers\trashUserController;
 use App\Http\Controllers\trashEmployerController;
 use App\Http\Controllers\trashJobpostingController;
 use App\Http\Controllers\trashcustomersController;
+use App\Http\Controllers\AdminPostsController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\AdminCommentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +85,9 @@ Route::get('/viewCV/{id}', [CvController::class, 'viewCV'])->name('viewCV');
 Route::resource('wishlist', WishlistController::class);
 
 //admin
+Route::get('admin', function () {
+    return view('DashboardTemplate.dashboard');
+});
 Route::resource('listjobPosting', JobpostingController::class);
 Route::resource('employer', EmployerController::class);
 Route::resource('AdminUser', CRUDUserController::class);
@@ -105,10 +111,12 @@ Route::get('/detail_re/{id}', [RUEmployerController::class, 'detail_recruitment'
 
 // Employer - quan ly job by employer_id
 Route::resource('CRUDJobByEmployer', CRUDListJobController::class);
-// RU employer
+
+// RU employer 
 Route::resource('RUEmployer', RUEmployerController::class);
 // detail_recruitment
 Route::get('/detail_re/{id}', [RUEmployerController::class, 'detail_recruitment'])->name('detail_recruitment');
+
 // Send mail recruitment
 Route::get('recruit/{customer}', [RUEmployerController::class, 'recruit'])->name('recruit');
 
@@ -118,16 +126,39 @@ Route::put('changepass/{id}', [RUEmployerController::class, 'changepass'])->name
 
 //chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');
+
+//tao CV
 Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
+
+//upload CV
+Route::post('/uploadCV', [RecruimentController::class, 'store']);
+
 Route::get('admin', function () {
     return view('DashboardTemplate.dashboard');
+// tim kiem trang chu va trang search
+Route::get('search', [HomeController::class, 'search'])->name('search');
+Route::get('blogSearch', [BlogController::class, 'blogSearch'])->name('blogSearch');
 
-    Route::get('blogSearch', [BlogController::class, 'blogSearch'])->name('blogSearch');
+// Trang admin chinh sua blog
+Route::resource('/admin-blog-home', AdminPostsController::class);
+Route::get('/admin-blog-trash', [AdminPostsController::class, 'blogTrash'])->name('blogTrash');
+Route::get('/admin-blog-restore/{id}', [AdminPostsController::class, 'blogRestore'])->name('blogRestore');
+Route::get('/admin-blog-permanentlyDelete/{id}', [AdminPostsController::class, 'permanentlyDelete'])->name('permanentlyDelete');
+
+// Trang admin chinh sua comment
+Route::resource('/admin-blog-comment', AdminCommentsController::class);
+Route::get('/admin-comment-status/{id}/{status}', [AdminCommentsController::class, 'commentStatus'])->name('commentStatus');
 
 
-    Route::resource('/admin-blog-home', AdminPostsController::class);
-    Route::resource('/admin-blog-comment', AdminCommentsController::class);
+// Comment trong blog
+Route::prefix('comment')->group(function () {
+    Route::post('/store-comment/{id}', [BlogController::class, 'storeComments'])->name('storeComments');
+});
 
+Route::prefix('blogit')->group(function () {
+    Route::get('/', [BlogController::class, 'featuredPosts'])->name('blogit');
+    Route::get('blogDetail/{id}', [BlogController::class, 'blogDetail'])->name('blogDetail');
+});
     //dang ky
     //dang ky tai khoan employer
     Route::post('/register', [UserController::class, 'register'])->name('register');
@@ -228,7 +259,19 @@ Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
 Route::get('admin', function () {
     return view('DashboardTemplate.dashboard');
 });
+//trang chi tiet
 Route::get('/detail_page/{id}', [EmployerController::class, 'show']);
+
+Route::get('listpostbyid', [EmployerController::class, 'getPostByID']);
+// get post by id employer
+// Route::get('Employser/listpost', [viewController::class,'getListPostByID'])->name('view_employer');
+
+// Manamge Employer by ID
+Route::resource('CRUDEmployer', CRUDEmployer::class);
+
+//admin
+Route::resource('listjobPosting', ControllersJobpostingController::class);
+
 Route::get('/{name?}', function ($name = "index") {
     return view($name);
 });

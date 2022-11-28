@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class AdminCommentsController extends Controller
@@ -13,7 +14,8 @@ class AdminCommentsController extends Controller
      */
     public function index()
     {
-        return 'aa';
+        $resultComment = Comment::with('customers', 'posts')->get();
+        return view('DashboardTemplate.dashboard_comment_home', compact('resultComment'));
     }
 
     /**
@@ -68,7 +70,6 @@ class AdminCommentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
     }
 
     /**
@@ -79,6 +80,15 @@ class AdminCommentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $commentDelete = Comment::find($id);
+        $commentDelete->delete();
+        return redirect()->back()->with('msg', 'Comment deleted successfully');
+    }
+    public function commentStatus($id, $status)
+    {
+        Comment::whereId($id)->update([
+            'status' => $status
+        ]);
+        return redirect()->back()->with('msg', 'Status updated successfully');
     }
 }

@@ -15,15 +15,9 @@
         <div class="form__reset">
             <form action="{{url('recover_pass')}}" method="POST" novalidate="">
                 @csrf
-<<<<<<< HEAD
                 @if(session('message'))
                 <div class="alert alert-success">
                     {{session('message')}}
-=======
-                @if(session('status'))
-                <div class="alert alert-success">
-                    {{session('status')}}
->>>>>>> origin/merge_all_branch
                 </div>
                 @endif
                 <input type="email" placeholder="Email" name="email" class="input__email" value="{{old('email')}}" required>

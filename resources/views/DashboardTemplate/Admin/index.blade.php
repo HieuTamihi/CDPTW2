@@ -39,6 +39,11 @@
                             </tr>
                         </thead>
                         <tbody>
+<<<<<<< HEAD:resources/views/DashboardTemplate/Admin/index.blade.php
+                            @foreach ($users as $user)
+                                <td>
+                                    {{ $user->id }}
+                                </td>
 
                             @foreach ($users as $user)
                                 <td>

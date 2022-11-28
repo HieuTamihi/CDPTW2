@@ -22,24 +22,27 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-7">
+                        <div class="col-7" style="height: 220px;">
                             <h5 class="title__item__company">
-                                <a href="#" style="text-decoration: none;">{{$row->name_company}}</a>
+                                <a href="{{route('employer.show',$row->id)}}" style="text-decoration: none;">{{$row->name_company}}</a>
                             </h5>
                             <div class="address__item__company">
                                 <p>{{$row->address}}</p>
                             </div>
                             <div class="price__item__company">
-                                <form action="#" method="POST">
-                                    <a href="#"><i class="fa-solid fa-money-bill"></i> {{$row->salary}}</a>
-                                    <button value="0" class="btn__like" style="border: none;background: transparent;"><i class="fa-solid fa-heart" style="color: #d34229;"></i></button>
+                                <form action="{{route('wishlist.destroy', $row->id)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="hidden" value="{{$row->job_posting_id}}" name="job_posting_id">
+                                    <a href="{{route('employer.show',$row->id)}}"><i class="fa-solid fa-money-bill"></i> {{$row->salary}}</a>
+                                    <button class="btn__like" style="border: none;background: transparent;"><i class="fa-solid fa-heart" style="color: #d34229;"></i></button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="tracking__work__status">
-                    <a href="#">Còn hạn-Ứng tuyển ngay</a>
+                    <a href="{{route('employer.show',$row->id)}}">Còn hạn-Ứng tuyển ngay</a>
                 </div>
             </div>
             @endforeach
