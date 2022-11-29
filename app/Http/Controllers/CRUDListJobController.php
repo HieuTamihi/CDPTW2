@@ -46,6 +46,7 @@ class CRUDListJobController extends Controller
     {
         Job_posting::create([
             'employer_id' => Auth::user()->employer->id,
+            // 'title' => mysqli_real_escape_string($request->title,DB::mysql_connect()),
             'title' => htmlspecialchars($request->title),
             'experience' => htmlspecialchars($request->experience),
             'type' => htmlspecialchars($request->type),

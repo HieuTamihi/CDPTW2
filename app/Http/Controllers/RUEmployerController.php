@@ -95,30 +95,30 @@ class RUEmployerController extends Controller
      */
     public function update(UpdateRequest $request, $id)
     {
-        $check = DB::table('employers')->where('id',$id)->first();
-        if($check == null){
+        $check = DB::table('employers')->where('id', $id)->first();
+        if ($check == null) {
             return view('error.404');
-        }else{
+        } else {
             $Employer = Employer::find($id);
             if ($request->hasFile('image_upload')) {
                 $file = $request->file('image_upload');
                 $file_name = $file->getClientOriginalName();
                 $file->move('img', $file_name);
                 $imagePath = public_path('img/' . $Employer->image);
-                if (File::exists($imagePath)) {
+                if ($Employer->image != "" && File::exists($imagePath) && $Employer->image != $file_name) {
                     unlink($imagePath);
                 }
-                    $Employer->image = $file_name;
+                $Employer->image = $file_name;
             }
             $Employer->update([
                 'website' => htmlspecialchars($request->website),
-                'infor' =>htmlspecialchars($request->infor),
-                'responsibility' =>htmlspecialchars($request->responsibility),
-                'welfare' =>htmlspecialchars($request->welfare),
-                'name_company' =>htmlspecialchars($request->name_company),
+                'infor' => htmlspecialchars($request->infor),
+                'responsibility' => htmlspecialchars($request->responsibility),
+                'welfare' => htmlspecialchars($request->welfare),
+                'name_company' => htmlspecialchars($request->name_company),
                 'address' => htmlspecialchars($request->address),
-                'email' =>htmlspecialchars($request->email),
-                'phone_number' =>htmlspecialchars($request->phone_number),
+                'email' => htmlspecialchars($request->email),
+                'phone_number' => htmlspecialchars($request->phone_number),
             ]);
             return redirect()->back()->with('notify', 'Update Susscessfully');
         }
@@ -166,10 +166,10 @@ class RUEmployerController extends Controller
 
     public function recruit(Customer $customer)
     {
-        $id = DB::table('recruitments')->where('customer_id',$customer->id)->first();
-        if($id == null){
+        $id = DB::table('recruitments')->where('customer_id', $customer->id)->first();
+        if ($id == null) {
             return view('error.404');
-        }else{
+        } else {
             $id = Customer::findOrFail($customer->id);
             $job = $id->job_postings->take(1);
             $tomorrow = Carbon::tomorrow();
