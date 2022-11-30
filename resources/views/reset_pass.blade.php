@@ -19,6 +19,10 @@
                 <div class="alert alert-success">
                     {{session('message')}}
                 </div>
+                @elseif(session('error'))
+                <div class="alert alert-danger">
+                    {{session('error')}}
+                </div>
                 @endif
                 <input type="email" placeholder="Email" name="email" class="input__email" value="{{old('email')}}" required>
                 <span class="text-danger">@error('email'){{$message}}@enderror</span>

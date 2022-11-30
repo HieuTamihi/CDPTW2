@@ -9,17 +9,18 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Add posts</h1>
+                        <h1>Edit posts</h1>
                     </div>
                     <div class="col-sm-6">
-
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
         </section>
         <section class="content">
-            <form action="{{ route('admin-blog-home.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('admin-blog-home.update', $showDataEdit->id) }}" method="post"
+                enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card card-primary">
@@ -28,16 +29,19 @@
                                     <div class="mb-3">
                                         <label for="inputName">Title</label>
                                         <input type="text" id="inputName" class="form-control"
-                                            value="{{ old('post_title') }}" name="post_title" placeholder="Tiêu đề">
+                                            value="{{ $showDataEdit->title }}" name="post_title" placeholder="Tiêu đề">
                                         @error('post_title')
                                             <span style="color: red;">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="mb-3">
                                         <label for="formFile" class="form-label">Image</label>
-                                        <input class="form-control" type="file" id="formFile"
-                                            value="{{ old('post_image') }}" accept="image/png, image/jpeg"
-                                            name="post_image">
+                                        <img style="width:100px;height:100px;object-fit: cover;"
+                                            src="{{ asset('img/blogit/' . $showDataEdit->image) }}"
+                                            accept="image/png, image/jpeg">
+                                        <input class="form-control" type="file" id="formFile" name="post_image">
+
+
                                         @error('post_image')
                                             <span style="color: red;">{{ $message }}</span>
                                         @enderror
@@ -46,7 +50,7 @@
                                         <div class="mb-3">
                                             <label for="inputName">Content</label>
                                             <textarea id="ckeditorPost" class="form-control" value="" name="post_content" rows="4" cols="50"
-                                                placeholder="Nội dung">{{ old('post_content') }}</textarea>
+                                                placeholder="Nội dung">{!! $showDataEdit->content !!}</textarea>
                                             @error('post_content')
                                                 <span style="color: red;">{{ $message }}</span>
                                             @enderror
@@ -59,8 +63,7 @@
 
                     <div class="row">
                         <div class="col-12">
-                            <a href="" class="btn btn-secondary">Cancel</a>
-                            <button type="submit" class="btn btn-success float-right">Add</button>
+                            <button type="submit" class="btn btn-success float-right">Update</button>
                         </div>
                     </div>
             </form>

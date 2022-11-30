@@ -10,7 +10,7 @@ use App\Http\Controllers\CRUDListJobController;
 use App\Http\Controllers\RUEmployerController;
 use App\Http\Controllers\CvController;
 use App\Http\Controllers\JobpostingController;
-use App\Http\Controllers\RecruimentController;
+use App\Http\Controllers\Recruitment;
 use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
@@ -70,6 +70,9 @@ Route::post('/uploadCV', [RecruitmentController::class, 'store']);
 Route::resource('cv', CvController::class);
 Route::get('/viewCV/{id}', [CvController::class, 'viewCV'])->name('viewCV');
 
+//tao CV
+Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
+
 //tracking work
 Route::resource('wishlist', WishlistController::class);
 
@@ -86,7 +89,7 @@ Route::resource('AdminEmloyer', CRUDEmloyerController::class);
 // Employer - quan ly job by employer_id
 Route::resource('CRUDJobByEmployer', CRUDListJobController::class);
 
-// RU employer 
+// RU employer
 Route::resource('RUEmployer', RUEmployerController::class);
 Route::get('/detail_re/{id}', [RUEmployerController::class, 'detail_recruitment'])->name('detail_recruitment');
 
@@ -99,12 +102,6 @@ Route::put('changepass/{id}', [RUEmployerController::class, 'changepass'])->name
 
 //chuyen trang
 Route::get('search', [HomeController::class, 'search'])->name('search');
-
-//tao CV
-Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
-
-//upload CV
-Route::post('/uploadCV', [RecruimentController::class, 'store']);
 
 // tim kiem trang chu va trang search
 Route::get('search', [HomeController::class, 'search'])->name('search');
@@ -119,11 +116,13 @@ Route::get('/admin-blog-permanentlyDelete/{id}', [AdminPostsController::class, '
 // Trang admin chinh sua comment
 Route::resource('/admin-blog-comment', AdminCommentsController::class);
 Route::get('/admin-comment-status/{id}/{status}', [AdminCommentsController::class, 'commentStatus'])->name('commentStatus');
-
+Route::get('/admin-comment-trash', [AdminCommentsController::class, 'commentTrash'])->name('commentTrash');
+Route::get('/admin-comment-restore/{id}', [AdminCommentsController::class, 'commentRestore'])->name('commentRestore');
 
 // Comment trong blog
 Route::prefix('comment')->group(function () {
     Route::post('/store-comment/{id}', [BlogController::class, 'storeComments'])->name('storeComments');
+    Route::get('/destroy-comment/{id}', [BlogController::class, 'destroyComments'])->name('destroyComments');
 });
 
 Route::prefix('blogit')->group(function () {

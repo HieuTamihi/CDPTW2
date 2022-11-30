@@ -10,8 +10,9 @@
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Comment</h3>
-
+                    <a href="{{ route('admin-blog-comment.index') }}">
+                        <h3 class="card-title btn btn-primary"> <i class="fas fa-arrow-left"></i> Back</h3>
+                    </a>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                             <i class="fas fa-minus"></i>
@@ -50,17 +51,12 @@
                                 <td>{{ $result['customers']->email }}</td>
                                 <td> {{ date('d-m-Y H:i', strtotime($result->created_at)) }}</td>
                                 <td class="project-actions text-left">
-                                    <a target="_blank_" class="btn btn-success btn-sm modify-icon"
-                                        href="{{ route('blogDetail', $result['posts']->id) }}">
-                                        <i class="fas fa-eye ">
-                                        </i>
-                                        View
+                                    <a class="btn btn-warning btn-sm modify-icon"
+                                        href="{{ route('commentRestore', $result->id) }}">
+                                        <i class='fas fa-trash-restore-alt' style='font-size:20px'></i>
+                                        Restore
                                     </a>
-                                    {{-- <a class="btn btn-info btn-sm modify-icon" href="#">
-                                        <i class="fas fa-pencil-alt ">
-                                        </i>
-                                        Lock
-                                    </a> --}}
+
                                     <form method="POST" action="{{ route('admin-blog-comment.destroy', $result->id) }}">
                                         @csrf
                                         @method('DELETE')
