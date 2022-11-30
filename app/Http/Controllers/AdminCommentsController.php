@@ -80,7 +80,7 @@ class AdminCommentsController extends Controller
      */
     public function destroy($id)
     {
-        $commentDelete = Comment::find($id);
+        $commentDelete = Comment::findOrFail($id);
         $commentDelete->delete();
         return redirect()->back()->with('msg', 'Comment deleted successfully');
     }
@@ -90,5 +90,16 @@ class AdminCommentsController extends Controller
             'status' => $status
         ]);
         return redirect()->back()->with('msg', 'Status updated successfully');
+    }
+    public function commentTrash()
+    {
+        $resultComment = Comment::orderBy('id', 'desc')->onlyTrashed()->paginate(5);
+        return view('DashboardTemplate.Comment.dashboard_comment_trash', compact('resultComment'));
+    }
+    public function commentRestore($id)
+    {
+        $commentDelete = Comment::withTrashed()->findOrFail($id);
+        $commentDelete->restore();
+        return redirect()->back()->with('msg', 'Comment restore successfully');
     }
 }

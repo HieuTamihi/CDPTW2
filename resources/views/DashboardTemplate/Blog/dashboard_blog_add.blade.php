@@ -36,8 +36,7 @@
                                     <div class="mb-3">
                                         <label for="formFile" class="form-label">Image</label>
                                         <input class="form-control" type="file" id="formFile"
-                                            value="{{ old('post_image') }}" accept="image/png, image/jpeg"
-                                            name="post_image">
+                                            value="{{ old('post_image') }}" name="post_image">
                                         @error('post_image')
                                             <span style="color: red;">{{ $message }}</span>
                                         @enderror

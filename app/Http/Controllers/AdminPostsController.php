@@ -98,7 +98,7 @@ class AdminPostsController extends Controller
      */
     public function destroy($id)
     {
-        $postDelete = Post::find($id);
+        $postDelete = Post::findOrFail($id);
         $postDelete->delete();
         return redirect()->back()->with('msg', 'Post deleted successfully');
     }
@@ -110,7 +110,7 @@ class AdminPostsController extends Controller
     }
     public function blogRestore($id)
     {
-        $postDelete = Post::withTrashed()->find($id);
+        $postDelete = Post::withTrashed()->findOrFail($id);
         $postDelete->restore();
         return redirect()->back()->with('msg', 'Post restore successfully');
     }

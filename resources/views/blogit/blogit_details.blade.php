@@ -17,6 +17,12 @@
 
                             <div class="content-nb">
                                 <h1>{!! $postDetail->title !!}</h1> <br>
+                                <div id="fb-root"></div>
+                                <script async defer crossorigin="anonymous"
+                                    src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v15.0&appId=905513736763024&autoLogAppEvents=1"
+                                    nonce="mKDNP6AC"></script>
+                                <div class="fb-like" data-href="{{ $urlBlogDetail }}" data-width="" data-layout="button"
+                                    data-action="like" data-size="small" data-share="true"></div>
                                 <p>{!! $postDetail->content !!}</p>
                                 {{-- Comment --}}
                                 <br>
@@ -46,7 +52,6 @@
                                     <br>
                                 @endif
                                 <h4 style="border-top: 2px solid #ededed">Bình luận</h4>
-
                                 @if (session('msg'))
                                     <div class="alert alert-success">{{ session('msg') }}</div>
                                 @endif
@@ -59,6 +64,7 @@
                                     @foreach ($resultComment as $comment)
                                         <div style="background:
                                         #fcfaf6">
+
                                             <div class="comment-widgets">
                                                 <div class="d-flex flex-row comment-row m-t-0">
                                                     <div class="comment-text w-100">
@@ -68,10 +74,17 @@
                                                             <span
                                                                 class="text-muted float-right">{{ date('d-m-Y H:i', strtotime($comment['created_at'])) }}</span>
                                                             @if (Auth::check() && Auth::user()->customer_id == $comment['customers']['id'])
-                                                                <button type="button"
-                                                                    class="btn btn-success btn-sm">Edit</button>
-                                                                <button type="button"
-                                                                    class="btn btn-danger btn-sm">Delete</button>
+                                                                <form method="GET"
+                                                                    action="{{ route('destroyComments', $comment['id']) }}">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button
+                                                                        onclick="return confirm('Do you want to make sure to delete this comment?')"
+                                                                        type="submit"
+                                                                        class="btn btn-danger btn-sm modify-icon">
+                                                                        Delete
+                                                                    </button>
+                                                                </form>
                                                             @endif
                                                         </div>
                                                     </div>
