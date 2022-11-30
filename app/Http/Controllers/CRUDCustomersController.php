@@ -17,7 +17,7 @@ class CRUDCustomersController extends Controller
      */
     public function index()
     {
-        $customer = Customer::orderBy('id', 'desc')->Search()->paginate(5);
+        $customer = Customer::orderBy('id', 'desc')->Search()->paginate(3);
         return view('DashboardTemplate.customers.index', compact('customer'));
     }
 
