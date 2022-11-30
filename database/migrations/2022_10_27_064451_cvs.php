@@ -21,7 +21,7 @@ class Cvs extends Migration
             $table->string('avatar');
             $table->string('apply_position');
             $table->string('email');
-            $table->integer('phone_number');
+            $table->string('phone_number',10);
             $table->date('date');
             $table->string('introduce')->nullable();
             $table->string('exp_work')->nullable();

@@ -12,33 +12,51 @@
             @csrf
             @method('PUT')
             @if (isset($customer))
+            @if ($errors->has('fullname'))
+            <strong class="text-danger">{{$errors->first('fullname')}}</strong>
+            @endif
+            @if ($errors->has('date'))
+            <strong class="text-danger">{{$errors->first('date')}}</strong>
+            @endif
+            @if ($errors->has('phone_number'))
+            <strong class="text-danger">{{$errors->first('phone_number')}}</strong>
+            @endif
+            @if ($errors->has('email'))
+            <strong class="text-danger">{{$errors->first('email')}}</strong>
+            @endif
+            @if ($errors->has('address'))
+            <strong class="text-danger">{{$errors->first('address')}}</strong>
+            @endif
+            @if ($errors->has('favorite'))
+            <strong class="text-danger">{{$errors->first('favorite')}}</strong>
+            @endif
             <div class="input__name1">
                 <div class="lb__fullname">
                     <label for="name">Full name</label><span>*</span>
                 </div>
-                <input type="text" value="{{$customer->fullname}}" name="fullname" required>
+                <input type="text" value="{{$customer->fullname}}" name="fullname">
             </div>
             <div class="input__date1">
                 <div class="lb__date">
-                    <label for="date">Date of birth</label>
+                    <label for="date">Date of birth</label><span>*</span>
                 </div>
-                <input type="date" value="{{$customer->date}}" name="date" required>
+                <input type="date" value="{{$customer->date}}" name="date">
             </div>
             <div class="input__phone1">
                 <div class="lb__phone">
                     <label for="phone">Phone</label><span>*</span>
                 </div>
-                <input type="number" value="{{$customer->phone_number}}" name="phone_number" required>
+                <input type="number" value="{{$customer->phone_number}}" name="phone_number">
             </div>
             <div class="input__email1">
                 <div class="lb__email">
                     <label for="email">Email</label><span>*</span>
                 </div>
-                <input type="text" value="{{$customer->email}}" name="email" required>
+                <input type="text" value="{{$customer->email}}" name="email">
             </div>
             <div class="input__address1">
                 <div class="lb__address">
-                    <label for="address">Address</label>
+                    <label for="address">Address</label><span>*</span>
                 </div>
                 <input type="text" value="{{$customer->address}}" name="address">
             </div>
