@@ -25,7 +25,7 @@ class RegisterCTRequest extends FormRequest
     {
         return [
             'email' => 'required|email',
-            'phone' => 'required|numeric|digits:10',
+            'phone' => 'required|numeric|digits:10|unique:users',
             'password' => 'required|confirmed|min:6',
         ];
     }
@@ -37,6 +37,7 @@ class RegisterCTRequest extends FormRequest
             'phone.required' => 'Please enter :attribute',
             'phone.numeric' => ':attribute is number',
             'phone.digits' => ':attribute more than 10 character',
+            'phone.unique' => ':attribute is exist',
             'password.required' => 'Please enter :attribute',
             'password.confirmed' => ':attribute is correct',
             'password.min' => ':attribute more than 6 character',
