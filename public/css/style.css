@@ -557,7 +557,7 @@ html {
     border: 1px solid gray;
 }
 
-.detail__body .detail_body__left .information .information__logo{
+.detail__body .detail_body__left .information .information__logo {
     width: 25%;
 }
 
@@ -823,12 +823,16 @@ html {
 
 .container-fluid .cont-top .intem-img {
     width: 100%;
-    height: 100%;
+    height: 300px;
 }
 
 .container-fluid .cont-top .loca-spotlight {
     margin-top: 0;
     margin-bottom: 6.5rem;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    overflow: hidden;
 }
 
 .container-fluid .cont-top .supper-hot-job {
@@ -837,7 +841,7 @@ html {
 }
 
 .container-fluid .cont-top .supper-hot-job li {
-    padding: 6.5px;
+    padding: 10px;
     border: 1px solid #ccc;
 }
 
@@ -869,6 +873,12 @@ html {
 
 .container-fluid .cont-bottum .cont-bottum-main-item-txt {
     text-align: center;
+}
+
+.container-fluid .cont-bottum .cont-bottum-main-item-txt p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }
 
 .container-fluid .search-main {

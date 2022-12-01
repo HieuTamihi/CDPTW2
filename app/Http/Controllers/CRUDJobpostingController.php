@@ -16,7 +16,7 @@ class CRUDJobpostingController extends Controller
      */
     public function index()
     {
-        $jobposting = Job_posting::orderBy('id', 'desc')->paginate(5);
+        $jobposting = Job_posting::orderBy('id', 'desc')->Search()->paginate(5);
         return view('DashboardTemplate.Jobposting.index', compact('jobposting'));
     }
 

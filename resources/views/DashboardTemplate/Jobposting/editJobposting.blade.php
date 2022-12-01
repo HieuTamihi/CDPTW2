@@ -24,16 +24,13 @@
             <form action="{{ route('AdminJobposting.update', $jobposting->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
+                @if ($errors->any())
+                @endif
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card card-primary">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <div class="mb-3">
-                                        <label for="inputName">Employer Id</label>
-                                        <input type="text" id="inputName" class="form-control"
-                                            value="{{ $jobposting->employer_id }}" name="employer_id">
-                                    </div>
                                     <div class="mb-3">
                                         <label for="inputName">Title</label>
                                         <input type="text" id="inputName" class="form-control"
@@ -56,8 +53,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Required</label>
-                                        <input type="text" id="inputName" class="form-control"
-                                            value="{{ $jobposting->required }}" name="required">
+                                        <textarea type="text" id="ckeditor_edit_required" class="form-control" name="required">{{ $jobposting->required }}</textarea>
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputName">Salary</label>

@@ -26,7 +26,7 @@ class EmployerController extends Controller
         $employerOuts = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')
             ->orderBy('employer_id', 'desc')->paginate(5);
         $job = Job_posting::all();
-        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->get();
+        $name = Employer::leftjoin('job_postings', 'employers.id', '=', 'job_postings.employer_id')->paginate(3);
         return view('index', compact('employerOuts', 'employer', 'job', 'name'));
     }
 

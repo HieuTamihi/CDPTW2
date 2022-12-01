@@ -3,8 +3,14 @@
 use App\Http\Controllers\CRUDUserController;
 use App\Http\Controllers\CRUDEmloyerController;
 use App\Http\Controllers\CRUDJobpostingController;
+use App\Http\Controllers\CRUDCustomersController;
 use App\Http\Controllers\CRUDEmployer;
+use App\Http\Controllers\viewController;
 use App\Http\Controllers\RecruitmentController;
+use App\Http\Controllers\AdminCommentsController;
+use App\Http\Controllers\BlogCommentController;
+use App\Http\Controllers\AdminPostsController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CRUDListJobController;
 use App\Http\Controllers\RUEmployerController;
@@ -16,9 +22,10 @@ use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AdminPostsController;
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\AdminCommentsController;
+use App\Http\Controllers\trashUserController;
+use App\Http\Controllers\trashEmployerController;
+use App\Http\Controllers\trashJobpostingController;
+use App\Http\Controllers\trashcustomersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,16 +92,26 @@ Route::resource('employer', EmployerController::class);
 Route::resource('AdminUser', CRUDUserController::class);
 Route::resource('AdminJobposting', CRUDJobpostingController::class);
 Route::resource('AdminEmloyer', CRUDEmloyerController::class);
+Route::resource('AdminCustomers', CRUDCustomersController::class);
+//trash
+Route::resource('User_Trash', trashUserController::class);
+Route::resource('Employer_Trash', trashEmployerController::class);
+Route::resource('Jobposting_Trash', trashJobpostingController::class);
+Route::resource('Customers_Trash', trashcustomersController::class);
 
 // Employer - quan ly job by employer_id
 Route::resource('CRUDJobByEmployer', CRUDListJobController::class);
 
-// RU employer 
+// RU employer
 Route::resource('RUEmployer', RUEmployerController::class);
 Route::get('/detail_re/{id}', [RUEmployerController::class, 'detail_recruitment'])->name('detail_recruitment');
 
 // Send mail recruitment
 Route::get('recruit/{customer}', [RUEmployerController::class, 'recruit'])->name('recruit');
+
+
+// detail_recruitment
+Route::get('/detail_re/{id}', [RUEmployerController::class, 'detail_recruitment'])->name('detail_recruitment');
 
 // Change pass Employer
 Route::get('showlayout/{id}', [RUEmployerController::class, 'showlayout'])->name('showlayout');

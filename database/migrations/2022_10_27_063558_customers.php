@@ -24,6 +24,7 @@ class Customers extends Migration
             $table->string('favorite')->nullable();
             $table->integer('status')->nullable();
             $table->timestamps();
+            $table->date('deleted_at')->nullable();
         });
     }
 

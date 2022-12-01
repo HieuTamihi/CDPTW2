@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="{{ asset('css/responsive.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/blogit.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/reset_pass.css') }}" rel="stylesheet" type="text/css">
@@ -32,6 +33,12 @@
                 <ul>
                     <li>
                         <a href="#"><i class="fa-solid fa-phone"></i>028 3897 0023</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-user"></i>Đăng tuyển</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-address-book"></i>Liên hệ</a>
                     </li>
                     @if (Auth::check())
                         @if (Auth::user()->role == 2)
@@ -116,6 +123,7 @@
                     @endif
                 </ul>
             </div>
+
         </nav>
     </header>
     <!-- End header -->

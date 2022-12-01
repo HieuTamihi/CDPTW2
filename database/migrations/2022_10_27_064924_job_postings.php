@@ -20,10 +20,11 @@ class JobPostings extends Migration
             $table->string('experience')->nullable();
             $table->string('type');
             $table->string('skill');
-            $table->string('required');
+            $table->text('required');
             $table->string('salary');
             $table->string('token')->nullable();
             $table->timestamps();
+            $table->date('deleted_at')->nullable();
         });
     }
 

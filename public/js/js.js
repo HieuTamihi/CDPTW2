@@ -1,22 +1,11 @@
-$('#customid').slick({
-    centerMode: true,
-    centerPadding: '60px',
-    slidesToShow: 2,
-    appendArrows: '.contron-pre-next',
-    autoplaySpeed: 4000,
-    infinite: true,
-    autoplay: true,
-    vertical: true,
-});
 $('.intem-main').slick({
-    infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     appendArrows: '.contron-pre-next',
     autoplaySpeed: 1000,
-    arrows: true,
+    // arrows: true,
     infinite: true,
-    autoplay: true,
+    // autoplay: true,
 });
 $('.cont-bottum-main').slick({
     infinite: true,
@@ -27,6 +16,17 @@ $('.cont-bottum-main').slick({
     arrows: true,
     infinite: true,
     autoplay: true,
+    responsive: [{
+        breakpoint: 767,
+        settings: {
+            slidesToShow: 4,
+        }
+    }, {
+        breakpoint: 480,
+        settings: {
+            slidesToShow: 1
+        }
+    },]
 });
 $('.intem-thume').slick({
     slidesToShow: 3,
@@ -36,5 +36,19 @@ $('.intem-thume').slick({
     autoplaySpeed: 1000,
     arrows: true,
     infinite: true,
-    autoplay: true,
+    // autoplay: true,
+    responsive: [{
+        breakpoint: 767,
+        settings: {
+            slidesToShow: 2,
+            vertical: false,
+        }
+    }, {
+        breakpoint: 480,
+        settings: {
+            slidesToShow: 1
+        }
+    },]
 });
+
+CKEDITOR.replace('#ckeditoerEmployer');
