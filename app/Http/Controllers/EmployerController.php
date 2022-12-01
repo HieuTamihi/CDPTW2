@@ -62,15 +62,7 @@ class EmployerController extends Controller
         // $detail = Employer::findOrFail($id);
         $detail = Employer::where('id', $id)->first();
         if ($detail == null) {
-            echo '
-            <section>
-            <div class="error404" style="text-align: center; padding-top:25px;">
-                <div class="error-content">
-                    <h3>Xin lỗi, chúng tôi không tìm thấy trang mà bạn cần!</h3>
-                    <a href="/index">Vui lòng quay lại trang chủ</a>
-                </div>
-            </div>
-        </section>';
+            return view('error.404');
         }
         if ($detail != null) {
             $relate = $detail->jobs->take(1);

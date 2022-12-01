@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\Customer\EditCustomerRequest;
 use App\Models\Recruitment;
 
 class CustomerController extends Controller
@@ -39,7 +40,6 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        
     }
 
     /**
@@ -86,34 +86,50 @@ class CustomerController extends Controller
     //update info user
     public function ShowEditUser($id)
     {
-        $customer = Customer::where('id', '=', $id)->first();
-        return view('personal_info', compact('customer'));
+        if (Auth::check()) {
+            $customer = Customer::where('customers.id', '=', Auth::user()->customer_id)->first();
+            if ($customer == null) {
+                return view('error.404');
+            } else {
+                return view('personal_info', compact('customer'));
+            }
+        } else {
+            return view('error.404');
+        }
     }
 
-    public function editUser($id, Request $request)
+    public function editUser($id, EditCustomerRequest $request)
     {
-        $customer = Customer::where('id', '=', $id)->first();
-        $user = User::where('customer_id', '=', $id)->first();
-        $customer->fullname = $request->fullname;
-        $customer->date = $request->date;
-        $customer->phone_number = $request->phone_number;
-        $customer->email = $request->email;
-        $customer->address = $request->address;
-        $customer->gender = $request->gender;
-        $customer->favorite = $request->favorite;
-        $customer->created_at = DATE(NOW());
-        $customer->updated_at = DATE(NOW());
-        $user->email = $request->email;
-        $user->phone = $request->phone_number;
-        $customer->update();
-        $user->update();
+        $customer = Customer::where('id', '=', $id = Auth::user()->customer_id)->first();
+        $user = User::where('customer_id', '=', $id = Auth::user()->customer_id)->first();
+        if ($customer == null || $user == null) {
+            return view('error.404');
+        } else {
+            $customer->fullname = $request->fullname;
+            $customer->date = $request->date;
+            $customer->phone_number = $request->phone_number;
+            $customer->email = $request->email;
+            $customer->address = $request->address;
+            $customer->gender = $request->gender;
+            $customer->favorite = $request->favorite;
+            $customer->created_at = DATE(NOW());
+            $customer->updated_at = DATE(NOW());
+            $user->email = $request->email;
+            $user->phone = $request->phone_number;
+            $customer->update();
+            $user->update();
 
-        return redirect()->route('ShowEditUser', ['id' => $customer->id])->with('message', 'Cập nhật thành công');
+            return redirect()->route('ShowEditUser', ['id' => $customer->id])->with('message', 'Cập nhật thành công');
+        }
     }
     //change password
     public function changePassword()
     {
-        return view('change_pass_log');
+        if (Auth::check()) {
+            return view('change_pass_log');
+        } else {
+            return view('error.404');
+        }
     }
     public function updatePassword(Request $request)
     {
