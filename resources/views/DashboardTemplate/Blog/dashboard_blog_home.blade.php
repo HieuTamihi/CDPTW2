@@ -34,7 +34,6 @@
                                 <td>{{ $result->id }}</td>
                                 <td>{{ $result->title }}</td>
                                 <td>{{ substr($result->content, 0, 455) }}</td>
-                                {{-- <td>{{ $result->content }}</td> --}}
                                 <td><img src="{{ asset('img/blogit/' . $result->image) }}" width="70px" height="70px"
                                         alt="image" style="object-fit: cover"></td>
                                 <td>{{ $result->views }}</td>

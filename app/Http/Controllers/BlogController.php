@@ -48,10 +48,12 @@ class BlogController extends Controller
 
         $countView = Post::findOrFail($id)->increment('views');
 
+        $urlBlogDetail = $request->url();
+
         $resultComment = Comment::with('customers')->where('post_id', $id)
             ->where('status', 1)
             ->get()->toArray();
-        return view('blogit.blogit_details', compact('viewMore', 'postDetail', 'resultComment'));
+        return view('blogit.blogit_details', compact('viewMore', 'postDetail', 'resultComment', 'urlBlogDetail'));
     }
 
     public function storeComments(Request $request, $id)
@@ -68,5 +70,8 @@ class BlogController extends Controller
 
     public function destroyComments($id)
     {
+        $commentDelete = Comment::findOrFail($id);
+        $commentDelete->delete();
+        return redirect()->back()->with('msg', 'Comment deleted successfully');
     }
 }

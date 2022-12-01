@@ -133,11 +133,13 @@ Route::get('/admin-blog-permanentlyDelete/{id}', [AdminPostsController::class, '
 // Trang admin chinh sua comment
 Route::resource('/admin-blog-comment', AdminCommentsController::class);
 Route::get('/admin-comment-status/{id}/{status}', [AdminCommentsController::class, 'commentStatus'])->name('commentStatus');
-
+Route::get('/admin-comment-trash', [AdminCommentsController::class, 'commentTrash'])->name('commentTrash');
+Route::get('/admin-comment-restore/{id}', [AdminCommentsController::class, 'commentRestore'])->name('commentRestore');
 
 // Comment trong blog
 Route::prefix('comment')->group(function () {
     Route::post('/store-comment/{id}', [BlogController::class, 'storeComments'])->name('storeComments');
+    Route::get('/destroy-comment/{id}', [BlogController::class, 'destroyComments'])->name('destroyComments');
 });
 
 Route::prefix('blogit')->group(function () {

@@ -19,6 +19,7 @@ class CreateCommentsTable extends Migration
             $table->integer('post_id')->nullable();
             $table->integer('customer_id')->nullable();
             $table->string('comment', 255);
+            $table->softDeletes();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();
         });

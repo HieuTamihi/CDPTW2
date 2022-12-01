@@ -10,8 +10,9 @@
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Comment</h3>
-
+                    <a href="{{ route('commentTrash') }}">
+                        <h3 class="card-title btn btn-warning">Trash <i class="fas fa-trash-alt"></i></h3>
+                    </a>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                             <i class="fas fa-minus"></i>

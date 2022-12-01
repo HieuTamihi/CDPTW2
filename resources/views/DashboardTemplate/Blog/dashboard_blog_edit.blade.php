@@ -39,8 +39,7 @@
                                         <img style="width:100px;height:100px;object-fit: cover;"
                                             src="{{ asset('img/blogit/' . $showDataEdit->image) }}"
                                             accept="image/png, image/jpeg">
-                                        <input class="form-control" type="file" id="formFile"
-                                            accept="image/jpg, image/jpeg, image/png" name="post_image">
+                                        <input class="form-control" type="file" id="formFile" name="post_image">
 
 
                                         @error('post_image')
