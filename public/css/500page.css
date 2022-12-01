@@ -1,0 +1,29 @@
+.error-page {
+    text-align: center;
+    background: #fff;
+    border-top: 1px solid #eee;
+}
+
+.error-page .error-inner {
+    display: inline-block;
+}
+
+.error-page .error-inner h1 {
+    font-size: 120px;
+    text-shadow: 3px 5px 2px #3333;
+    color: #dc3545;
+    font-weight: 700;
+}
+
+.error-page .error-inner h1 span {
+    display: block;
+    font-size: 30px;
+    color: #dc3545;
+    font-weight: 600;
+    text-shadow: none;
+}
+
+.error-page .error-inner h1~p {
+    color: blue;
+    font-size: 16px;
+}
