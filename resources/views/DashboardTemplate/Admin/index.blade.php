@@ -10,11 +10,11 @@
             <div class="card">
                 <h3 style="margin: 10px" class="card-title">User</h3>
                 <div class="card-header">
-                    <a href="{{ route('AdminUser.create') }}"
-                        style="text-align: center; margin: 10px; padding: 5px 20px; background: #007bff; width: 12%; color: #fff; border-radius: 5px;">Add
-                        new</a>
-                    <a style="text-align: center; margin: 10px; padding: 5px 20px; width: 12%; border-radius: 5px;"
-                        href="{{ route('User_Trash.index') }}" class="btn btn-default">Thùng Rác</a>
+                <a href="{{ route('AdminUser.create') }}"
+                    style="text-align: center; margin: 10px; padding: 5px 20px; background: #007bff; width: 12%; color: #fff; border-radius: 5px;">Add
+                    new</a>
+                <div class="card-header">
+                    <h3 class="card-title">User</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                             <i class="fas fa-minus"></i>
@@ -39,7 +39,6 @@
                             </tr>
                         </thead>
                         <tbody>
-
                             @foreach ($users as $user)
                                 <td>
                                     {{ $user->id }}

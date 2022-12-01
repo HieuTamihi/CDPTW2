@@ -16,8 +16,8 @@ class Customers extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('email');
-            $table->string('phone_number')->unique();
-            $table->string('fullname')->nullable();
+            $table->string('phone_number',10)->unique();
+            $table->string('fullname',50)->nullable();
             $table->date('date')->nullable();
             $table->string('address')->nullable();
             $table->integer('gender')->nullable();

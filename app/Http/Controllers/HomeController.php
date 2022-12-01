@@ -9,7 +9,6 @@ class HomeController extends Controller
 {
     public function search(Request $request)
     {
-
         $jobTitle = Employer::where('infor', 'like', '%' . $request->keyword . '%')
             ->orWhere('address', 'like', '%' . $request->keyword . '%')
             ->orWhere('name_company', 'like', '%' . $request->keyword . '%')

@@ -20,30 +20,31 @@
                                 <p>{!! $postDetail->content !!}</p>
                                 {{-- Comment --}}
                                 <br>
-                                @if (Auth::guest())
-                                    <h5>Vui lòng <a style="text-decoration: none; " href="{{ route('login') }}">đăng
-                                            nhập</a>
-                                        để bình luận</h5>
-                                @else
-                                    <form action="{{ route('storeComments', $postDetail->id) }}" method="POST"
-                                        style="border-top: solid 1px #ededed;padding-top:10px">
-                                        @csrf
-                                        <div>
-                                            <div class="form-group">
-                                                <textarea class="form-control" name="comment" placeholder="Hãy nhập bình luận" required maxlength="200"></textarea>
+                                @if (Auth::check() && Auth::user()->role == 3)
+                                    @if (Auth::guest())
+                                        <h5>Vui lòng <a style="text-decoration: none; " href="{{ route('login') }}">đăng
+                                                nhập</a>
+                                            để bình luận</h5>
+                                    @else
+                                        <form action="{{ route('storeComments', $postDetail->id) }}" method="POST"
+                                            style="border-top: solid 1px #ededed;padding-top:10px">
+                                            @csrf
+                                            <div>
+                                                <div class="form-group">
+                                                    <textarea class="form-control" name="comment" placeholder="Hãy nhập bình luận" required maxlength="200"></textarea>
+                                                </div>
+                                                @error('comment')
+                                                    <span style="color: red;">{{ $message }}</span>
+                                                @enderror
                                             </div>
-                                            @error('comment')
-                                                <span style="color: red;">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-                                        <div style="padding-top:10px">
-                                            <input class="btn btn-primary" type="submit" name="submit" id="btn_insert"
-                                                value="Gửi">
-                                        </div>
-                                    </form>
+                                            <div style="padding-top:10px">
+                                                <input class="btn btn-primary" type="submit" name="submit" id="btn_insert"
+                                                    value="Gửi">
+                                            </div>
+                                        </form>
+                                    @endif
+                                    <br>
                                 @endif
-                                <br>
-
                                 <h4 style="border-top: 2px solid #ededed">Bình luận</h4>
 
                                 @if (session('msg'))

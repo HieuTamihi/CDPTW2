@@ -1,5 +1,5 @@
 @if (Auth::check())
-    @if (Auth::user()->role == 1)
+    @if (Auth::user()->role == 1 || Auth::user()->role == 2)
         <!DOCTYPE html>
         <html>
 
@@ -73,43 +73,52 @@
                     <!-- Sidebar -->
                     <div class="sidebar">
                         <!-- Sidebar user (optional) -->
-                        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                            <div class="image">
-                                <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2"
-                                    alt="User Image">
+                        @if (Auth::user()->role == 2 && Auth::user()->employer != null)
+                            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                                <div class="image">
+                                <img src="{{ asset('img/' . Auth::user()->employer->image) }}" class="" alt="User Image" style="width:5.1rem;">
+                                </div>
+                                <div class="info">
+                                    <a href="{{ route('RUEmployer.show', Auth::user()->employer->id) }}"
+                                        class="d-block">{{ Auth::user()->employer->name_company }}</a>
+                                </div>
                             </div>
-                            <div class="info">
-                                <a href="#" class="d-block">Alexander Pierce</a>
-                            </div>
-                        </div>
+                        @endif
                         <!-- Sidebar Menu -->
                         <nav class="mt-2">
                             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                                 data-accordion="false">
-
-                                <li class="nav-item has-treeview menu-open">
-                                    <a href="#" class="nav-link">
-                                        <i class="nav-icon fas fa-copy"></i>
-                                        <p>
-                                            Tables
-                                            <i class="fas fa-angle-left right"></i>
-                                        </p>
-                                    </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link active">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Fixed Sidebar</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Fixed Navbar</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                @if (Auth::check() && Auth::user()->role == 1)
+                                    <li class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon fas fa-table"></i>
+                                            <p>
+                                                Post
+                                                <i class="fas fa-angle-left right"></i>
+                                            </p>
+                                        </a>
+                                        <ul class="nav nav-treeview">
+                                            <li class="nav-item">
+                                                <a href="{{ route('admin-blog-home.index') }}" class="nav-link">
+                                                    <i class="far fa-circle nav-icon"></i>
+                                                    <p>Home Posts</p>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ route('admin-blog-home.create') }}" class="nav-link">
+                                                    <i class="far fa-circle nav-icon"></i>
+                                                    <p>Add Posts</p>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{ route('admin-blog-comment.index') }}" class="nav-link">
+                                                    <i class="far fa-circle nav-icon"></i>
+                                                    <p>Home comment</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                @endif
                                 <li class="nav-item has-treeview">
                                     <a href="#" class="nav-link">
                                         <i class="nav-icon fas fa-table"></i>
@@ -127,78 +136,29 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-item has-treeview">
-                                    <a href="#" class="nav-link">
-                                        <i class="nav-icon fas fa-table"></i>
-                                        <p>
-                                            Employer
-                                            <i class="fas fa-angle-left right"></i>
-                                        </p>
-                                    </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="{{ route('AdminEmloyer.index') }}" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>List Employer</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item has-treeview">
-                                    <a href="#" class="nav-link">
-                                        <i class="nav-icon fas fa-table"></i>
-                                        <p>
-                                            Job Posting
-                                            <i class="fas fa-angle-left right"></i>
-                                        </p>
-                                    </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="{{ route('AdminJobposting.index') }}" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>List Job Posting</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item has-treeview">
-                                    <a href="#" class="nav-link">
-                                        <i class="nav-icon fas fa-table"></i>
-                                        <p>
-                                            Customers
-                                            <i class="fas fa-angle-left right"></i>
-                                        </p>
-                                    </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="{{ route('AdminCustomers.index') }}" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>List Customers</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
 
-                                <!-- <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Inbox</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Compose</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Read</p>
-                                </a>
-                            </li>
-                        </ul> -->
+                                @if (Auth::user()->role == 2)
+                                    <!-- List Job By Employer_ID -->
+                                    <li class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon fas fa-table"></i>
+                                            <p>
+                                                Lists Job Posting
+                                                <i class="fas fa-angle-left right"></i>
+                                            </p>
+                                        </a>
+                                        <ul class="nav nav-treeview">
+                                            <li class="nav-item">
+                                                <a href="{{ route('CRUDJobByEmployer.index') }}" class="nav-link">
+                                                    <i class="far fa-circle nav-icon"></i>
+                                                    <p>Lists job</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                @endif
+
+                                <!-- END List Job  -->
                                 <li class="nav-item has-treeview">
                                     @if (Auth::check())
                                         <form method="POST" name="logout" action="{{ route('logout') }}">
@@ -219,6 +179,7 @@
                                         </a>
                                     @endif
                                 </li>
+
                             </ul>
                         </nav>
                     </div>

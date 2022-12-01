@@ -8,15 +8,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Job_posting extends Model
 {
-    use HasFactory, SoftDeletes;
-    protected $dates = ['deleted_at'];
+    use HasFactory;
     public function empl()
     {
-        return $this->belongsTo(Employer::class, 'employer_id');
+        return $this->belongsTo(Employer::class,'employer_id');
     }
     public function customers()
     {
-        return $this->belongsToMany(Customer::class, 'Recruitments', 'jobposting_id', 'customer_id')->withPivot('status');
+        return $this->belongsToMany(Customer::class,'Recruitments','jobposting_id','customer_id')
+        ->withPivot('status');
     }
     protected $table = 'Job_postings';
     protected $fillable = [

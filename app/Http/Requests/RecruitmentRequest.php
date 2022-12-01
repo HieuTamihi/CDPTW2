@@ -24,14 +24,13 @@ class RecruitmentRequest extends FormRequest
     public function rules()
     {
         return [
-            'file' => 'required|mimes:pdf,docx|max:10000',
+            'file' => 'mimes:pdf,docx|max:10000',
         ];
     }
     public function messages()
     {
         return [
-            'file.required' => 'The file is not in the correct format',
-            'file.mimes' => 'The file is not in the correct format',
+            'file' => 'The file is not in the correct format',
         ];
     }
 }

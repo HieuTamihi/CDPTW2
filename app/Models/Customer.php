@@ -11,11 +11,13 @@ class Customer extends Model
     use HasFactory, SoftDeletes;
     protected $dates = ['deleted_at'];
     protected $table = 'customers';
+
     public function job_postings()
     {
         return $this->belongsToMany(Job_posting::class, 'Recruitments', 'jobposting_id', 'customer_id')
             ->withPivot('status');
     }
+    
     protected $fillable = [
         'id',
         'email',

@@ -46,12 +46,13 @@ class CRUDListJobController extends Controller
     {
         Job_posting::create([
             'employer_id' => Auth::user()->employer->id,
-            'title' => $request->title,
-            'experience' => $request->experience,
-            'type' => $request->type,
-            'skill' => $request->skill,
-            'required' => $request->required,
-            'salary' => $request->salary,
+            // 'title' => mysqli_real_escape_string($request->title,DB::mysql_connect()),
+            'title' => htmlspecialchars($request->title),
+            'experience' => htmlspecialchars($request->experience),
+            'type' => htmlspecialchars($request->type),
+            'skill' => htmlspecialchars($request->skill),
+            'required' => htmlspecialchars($request->required),
+            'salary' => htmlspecialchars($request->salary),
             'token' => md5(Auth::user()->id),
         ]);
         return redirect()->route('CRUDJobByEmployer.index')->with('notify', 'Add news is successfully');
@@ -65,10 +66,17 @@ class CRUDListJobController extends Controller
      */
     public function show($id)
     {
-        $show = Job_posting::find($id);
-        $list_recruitmet = $show->customers()->paginate(3);
-        $getstatus = DB::table('recruitments')->where('jobposting_id', '=', $id);
-        return view('DashboardTemplate.Job_postings.detail_post', compact('show','list_recruitmet'));
+        $show = DB::table('Job_postings')->where('id',$id)->where(function ($que){
+            $que->where('employer_id',Auth::user()->employer->id);
+        })->first() ;
+        if ($show == null) {
+            return view('error.404');
+        } else {
+            $show = Job_posting::findOrFail($show->id);
+            $list_recruitmet = $show->customers()->paginate(5);
+            $getstatus = DB::table('recruitments')->where('jobposting_id', '=', $id);
+            return view('DashboardTemplate.Job_postings.detail_post', compact('show','list_recruitmet'));
+        }
     }
 
     /**
@@ -79,8 +87,14 @@ class CRUDListJobController extends Controller
      */
     public function edit($id)
     {
-        $show = Job_posting::find($id);
-        return view('DashboardTemplate.Job_postings.edit_post', compact('show'));
+        $show = DB::table('Job_postings')->where('id',$id)->where(function ($que){
+            $que->where('employer_id',Auth::user()->employer->id);
+        })->first() ;
+        if ($show == null) {
+            return view('error.404');
+        }else {
+            return view('DashboardTemplate.Job_postings.edit_post', compact('show'));
+        }
     }
 
     /**
@@ -92,9 +106,21 @@ class CRUDListJobController extends Controller
      */
     public function update(UpdateRequest $request, $id)
     {
-        $job = Job_posting::find($id);
-        $job->update($request->all());
-        return redirect()->route('CRUDJobByEmployer.index')->with('notify', 'Update Susscessfully');
+        $check = DB::table('Job_postings')->where('id',$id)->first();
+        if($check == null){
+            return view('error.404');
+        }else{
+            $job = Job_posting::find($id);
+            $job->update([
+                'title' => htmlspecialchars($request->title),
+                'experience' => htmlspecialchars($request->experience),
+                'type' => htmlspecialchars($request->type),
+                'skill' => htmlspecialchars($request->skill),
+                'required' => htmlspecialchars($request->required),
+                'salary' => htmlspecialchars($request->salary),
+            ]);
+            return redirect()->route('CRUDJobByEmployer.index')->with('notify', 'Update Susscessfully');
+        }
     }
 
     /**

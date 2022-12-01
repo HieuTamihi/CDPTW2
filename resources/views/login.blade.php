@@ -38,7 +38,8 @@
                         <strong class="text-danger">{{$errors->first('password')}}</strong>
                         @endif
                         <input type="submit" value="Login" class="btn login__btn">
-                        <span class="btn btn reg__btn"><a href="{{route('register')}}" style="text-decoration: none;color:white;">Sign up</a></span>
+                        <span class="btn btn reg__btn"><a href="{{route('register')}}" 
+                        style="text-decoration: none;color:white;">Sign up</a></span>
                     </form>
                     <a href="{{asset('reset_pass')}}" class="link__forgot">Forgot password</a>
                 </div>

@@ -16,12 +16,17 @@ class WishlistController extends Controller
      */
     public function index()
     {
-        $id = Auth::user()->customer_id;
-        $wishlist = Wish_lists::leftjoin('customers', 'wish_lists.customer_id', '=', 'customers.id')
-            ->leftjoin('job_postings', 'wish_lists.job_posting_id', '=', 'job_postings.id')
-            ->leftjoin('employers', 'employers.id', '=', 'job_postings.employer_id')
-            ->where('customers.id', '=', $id)->select('image', 'wish_lists.id', 'wish_lists.job_posting_id', 'salary', 'name_company','employers.address')->get();
-        return view('tracking_work', compact('wishlist'));
+        if (Auth::check()) {
+            $id = Auth::user()->customer_id;
+            $wishlist = Wish_lists::leftjoin('customers', 'wish_lists.customer_id', '=', 'customers.id')
+                ->leftjoin('job_postings', 'wish_lists.job_posting_id', '=', 'job_postings.id')
+                ->leftjoin('employers', 'employers.id', '=', 'job_postings.employer_id')
+                ->where('customers.id', '=', $id)
+                ->select('image', 'wish_lists.id', 'wish_lists.job_posting_id', 'salary', 'name_company', 'employers.address')->get();
+            return view('tracking_work', compact('wishlist'));
+        } else {
+            return view('error.404');
+        }
     }
 
     /**

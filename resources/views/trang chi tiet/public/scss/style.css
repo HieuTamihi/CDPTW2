@@ -1,0 +1,87 @@
+.detail__body {
+  padding-top: 20px;
+}
+.detail__body .detail_body__left .information {
+  padding: 10px 10px;
+  display: flex;
+  border: 1px solid gray;
+}
+.detail__body .detail_body__left .information .information__content {
+  margin-left: 10px;
+}
+.detail__body .detail_body__left .navi {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid gray;
+  padding: 0 10px;
+}
+.detail__body .detail_body__left .navi a {
+  text-decoration: none;
+  color: #000;
+}
+.detail__body .detail_body__left .navi h6 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+.detail__body .detail_body__left .navi .navi__fol {
+  border: 1px solid red;
+  padding: 5px 5px;
+  color: red;
+}
+.detail__body .detail_body__left .content {
+  padding: 10px 10px;
+  border: 1px solid gray;
+}
+.detail__body .detail_body__left .content .content__left h4 {
+  color: #d34127;
+}
+.detail__body .detail_body__left .content .content__right button {
+  width: 100%;
+  background: #d34127;
+}
+.detail__body .detail_body__left .content .content__right__skill p {
+  display: inline-block;
+  padding: 0px 5px;
+  border: 1px solid gray;
+}
+.detail__body .detail_body__left .format_a {
+  color: #000;
+  text-decoration: none;
+}
+.detail__body .detail_body__left .text_align {
+  text-align: center;
+}
+.detail__body .detail_body__right {
+  border: 1px solid gray;
+}
+.detail__body .detail_body__right a {
+  text-decoration: none;
+  color: #000;
+}
+.detail__body .detail_body__right .detail_body__right__skill p {
+  display: inline-block;
+  padding: 0px 5px;
+  border: 1px solid gray;
+}
+.detail__body .detail_body__right .detail_body__right__img img {
+  width: 30%;
+}
+.detail__body .list_word {
+  margin-top: 10px;
+  border: 1px solid gray;
+  padding: 10px 10px;
+}
+.detail__body .list_word .list_word__skill p {
+  display: inline-block;
+  padding: 0px 5px;
+  border: 1px solid gray;
+}
+.detail__body .list_word .list_word__recruiment {
+  border-bottom: 1px solid gray;
+  margin-bottom: 10px;
+}
+.detail__body .font-size_a {
+  font-size: 12px;
+  text-decoration: none;
+  color: red;
+}/*# sourceMappingURL=style.css.map */

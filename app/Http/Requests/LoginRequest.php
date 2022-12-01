@@ -28,8 +28,16 @@ class LoginRequest extends FormRequest
             'password' => 'required|min:6',
         ];
     }
-<<<<<<< HEAD
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'email.required' => __('Bạn chưa nhập email'),
+            'password.required' => __('Bạn chưa nhập mật khẩu'),
+        ];
+    }
 }
-=======
-}
->>>>>>> origin/register_employer

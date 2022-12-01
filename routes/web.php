@@ -16,7 +16,7 @@ use App\Http\Controllers\CRUDListJobController;
 use App\Http\Controllers\RUEmployerController;
 use App\Http\Controllers\CvController;
 use App\Http\Controllers\JobpostingController;
-use App\Http\Controllers\RecruimentController;
+use App\Http\Controllers\Recruitment;
 use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\EmployerController;
 use Illuminate\Support\Facades\Route;
@@ -77,6 +77,9 @@ Route::post('/uploadCV', [RecruitmentController::class, 'store']);
 //CV
 Route::resource('cv', CvController::class);
 Route::get('/viewCV/{id}', [CvController::class, 'viewCV'])->name('viewCV');
+
+//tao CV
+Route::get('createcv', [UserController::class, 'createCV'])->name('createCV');
 
 //tracking work
 Route::resource('wishlist', WishlistController::class);

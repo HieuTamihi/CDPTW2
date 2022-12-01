@@ -10,11 +10,13 @@
                     </div>
                     <ul class="select__reg nav tab-nav">
                         <li class="nav-item sl__employ" style="color: #fff;padding: 0px 6px;background: #404040;border: 1px solid #000;">
-                            <a href="{{route('register')}}" class="nav-link"><span id="color-text-em" style="color: #fff;">Employer</span>
+                            <a href="{{route('register')}}" class="nav-link">
+                                <span id="color-text-em" style="color: #fff;">Employer</span>
                             </a>
                         </li>
                         <li class="nav-item sl__cus" style="color: #000;padding: 0px 6px;border: 1px solid #000;background: #fff">
-                            <a href="{{route('registerCT')}}" class="nav-link active"><span id="color-text-cus" style="color: #000;">Customer</span>
+                            <a href="{{route('registerCT')}}" class="nav-link active">
+                                <span id="color-text-cus" style="color: #000;">Customer</span>
                             </a>
                         </li>
                     </ul>
@@ -25,7 +27,6 @@
                     @endif
                     <div class="tab-content">
                         <div class="tab-pane active" id="form-employ">
-                            <!-- PAGE Employer -->
                             <form action="{{route('register')}}" class="tab-pane active" method="POST">
                                 @if(Session::has('message'))
                                 <div class="alert alert-success">{{Session::get('message')}}</div>
@@ -57,17 +58,15 @@
                                 <input type="text" placeholder="Enter your phone number" class="type__info__reg" name="phone">
                                 @if ($errors->has('phone'))
                                 <strong class="text-danger">{{$errors->first('phone')}}</strong>
-                                @endif  
+                                @endif
                                 <input type="submit" value="Sign up" class="btn reg__btn">
                                 <span class="btn btn login__btn"><a href="{{route('login')}}" style="text-decoration: none;color:white;">Login</a></span>
                             </form>
-                            <!-- PAGE Employer -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<br>
-@endsection;
+</div><br>
+@endsection

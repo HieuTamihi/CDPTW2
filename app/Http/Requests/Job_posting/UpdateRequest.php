@@ -29,7 +29,7 @@ class UpdateRequest extends FormRequest
             'type' => 'max:255',
             'skill' => 'max:255',
             'required' => 'max:255',
-            'salary' => 'numeric'
+            'salary' => 'max:15'
         ];
     }
     public function messages()

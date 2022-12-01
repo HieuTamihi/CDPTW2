@@ -9,6 +9,20 @@ class Cv extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id', 'customer_id','namecv', 'fullname', 'avatar', 'apply_position', 'email', 'phone_number', 'date', 'introduce', 'exp_work', 'school_name', 'learn_time', 'majors', 'infor_other','status'
+        'id', 
+        'customer_id', 
+        'namecv', 
+        'fullname', 
+        'avatar', 
+        'apply_position', 
+        'email', 
+        'phone_number', 
+        'date', 'introduce', 
+        'exp_work', 
+        'school_name', 
+        'learn_time', 
+        'majors', 
+        'infor_other', 
+        'status'
     ];
 }
