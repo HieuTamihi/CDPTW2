@@ -43,7 +43,7 @@
                     @if (Auth::check())
                         @if (Auth::user()->role == 2)
                             <li>
-                                <a href="DashboardTemplate.dashboard">Quản lý Job</a>
+                               <a href="{{asset('DashboardTemplate.dashboard')}}">Quản lý Job</a>
                             </li>
                         @endif
                     @endif
