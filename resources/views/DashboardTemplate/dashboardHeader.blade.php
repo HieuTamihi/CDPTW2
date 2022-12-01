@@ -119,9 +119,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                @endif
-
-                                <li class="nav-item has-treeview">
+                                    <li class="nav-item has-treeview">
                                     <a href="#" class="nav-link">
                                         <i class="nav-icon fas fa-table"></i>
                                         <p>
@@ -189,6 +187,9 @@
                                         </li>
                                     </ul>
                                 </li>
+                                @endif
+
+
 
                                 @if (Auth::user()->role == 2)
                                     <!-- List Job By Employer_ID -->
