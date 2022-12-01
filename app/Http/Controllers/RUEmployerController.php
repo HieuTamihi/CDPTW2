@@ -166,10 +166,14 @@ class RUEmployerController extends Controller
 
     public function recruit(Customer $customer)
     {
-        $id = DB::table('recruitments')->where('customer_id', $customer->id)->first();
-        if ($id == null) {
-            return view('error.404');
-        } else {
+        $check = DB::table('job_postings')->where('employer_id', Auth::user()->employer->id)->first();
+        $check = Job_posting::findOrFail($check->id);
+        $re = $check->customers;
+        $array = array();
+        for ($i = 0; $i < count($re); $i++) {
+            $array[] = $re[$i]->id;
+        }
+        if (in_array($customer->id, $array)) {
             $id = Customer::findOrFail($customer->id);
             $job = $id->job_postings->take(1);
             $tomorrow = Carbon::tomorrow();
@@ -178,6 +182,8 @@ class RUEmployerController extends Controller
                 $email->to($customer->email);
             });
             return redirect()->back()->with('notify', 'Send mail susscrssfully !');
+        } else {
+            return view('error.404');
         }
     }
 
