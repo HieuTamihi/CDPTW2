@@ -76,7 +76,8 @@
                         @if (Auth::user()->role == 2 && Auth::user()->employer != null)
                             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                                 <div class="image">
-                                <img src="{{ asset('img/' . Auth::user()->employer->image) }}" class="" alt="User Image" style="width:5.1rem;">
+                                    <img src="{{ asset('img/' . Auth::user()->employer->image) }}" class=""
+                                        alt="User Image" style="width:5.1rem;">
                                 </div>
                                 <div class="info">
                                     <a href="{{ route('RUEmployer.show', Auth::user()->employer->id) }}"
