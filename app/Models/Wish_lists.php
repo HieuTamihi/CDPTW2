@@ -10,6 +10,6 @@ class Wish_lists extends Model
     use HasFactory;
     protected $primaryKey = 'id';
     protected $fillable = [
-        'id', 'customer_id', 'job_posting_id', 'number',
+        'id', 'customer_id', 'job_posting_id'
     ];
 }

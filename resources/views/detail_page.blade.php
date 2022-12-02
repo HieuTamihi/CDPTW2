@@ -42,7 +42,7 @@
                                     <input value="{{ $value->id }}" hidden name="id"
                                         class="input__input form-control" type="text">
                                 @endforeach
-                                <button type="submit" value="1" name="number" class="btn__like"
+                                <button type="submit" class="btn__like"
                                     style="border: none;background: transparent;">
                                     <h6 class="navi__fol">Theo dõi</h6>
                                 </button>

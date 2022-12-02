@@ -98,6 +98,13 @@ class WishlistController extends Controller
     public function destroy(Wish_lists $wishlist)
     {
         $wishlist->delete();
-        return redirect()->route('wishlist.index')->with('message', 'Bạn đã hủy theo dõi công việc này!');
+        if($wishlist == null)
+        {
+            return view('error.404');
+        }
+        else
+        {
+            return redirect()->route('wishlist.index')->with('message', 'Bạn đã hủy theo dõi công việc này!');
+        }
     }
 }
